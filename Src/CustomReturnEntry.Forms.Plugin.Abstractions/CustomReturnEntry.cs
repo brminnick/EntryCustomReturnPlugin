@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 using Xamarin.Forms;
 
@@ -38,7 +35,7 @@ namespace CustomReturnEntry.Forms.Plugin.Abstractions
         /// <summary>
         /// Invoke Completed event
         /// </summary>
-        internal void InvokeCompleted()
+        public void InvokeCompleted()
         {
             Completed?.Invoke(this, null);
         }

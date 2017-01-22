@@ -8,11 +8,11 @@ using Android.Views.InputMethods;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
-using CustomReturnEntry.Forms.Plugin.Droid;
-using CustomReturnEntry.Forms.Plugin.Abstractions;
+using EntryCustomReturn.Forms.Plugin.Droid;
+using EntryCustomReturn.Forms.Plugin.Abstractions;
 
-[assembly: ExportRenderer(typeof(CustomReturnEntry.Forms.Plugin.Abstractions.CustomReturnEntry), typeof(CustomReturnEntryRenderer))]
-namespace CustomReturnEntry.Forms.Plugin.Droid
+[assembly: ExportRenderer(typeof(CustomReturnEntry), typeof(CustomReturnEntryRenderer))]
+namespace EntryCustomReturn.Forms.Plugin.Droid
 {
     /// <summary>
     /// CustomReturnEntry Implementation

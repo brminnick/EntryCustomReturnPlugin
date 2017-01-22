@@ -7,11 +7,11 @@ using Foundation;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 
-using CustomReturnEntry.Forms.Plugin.iOS;
-using CustomReturnEntry.Forms.Plugin.Abstractions;
+using EntryCustomReturn.Forms.Plugin.iOS;
+using EntryCustomReturn.Forms.Plugin.Abstractions;
 
-[assembly: ExportRenderer(typeof(CustomReturnEntry.Forms.Plugin.Abstractions.CustomReturnEntry), typeof(CustomReturnEntryRenderer))]
-namespace CustomReturnEntry.Forms.Plugin.iOS
+[assembly: ExportRenderer(typeof(CustomReturnEntry), typeof(CustomReturnEntryRenderer))]
+namespace EntryCustomReturn.Forms.Plugin.iOS
 {
     [Preserve(AllMembers = true)]
     public class CustomReturnEntryRenderer : EntryRenderer

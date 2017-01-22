@@ -2,7 +2,7 @@
 
 using Xamarin.Forms;
 
-namespace CustomReturnEntry.Forms.Plugin.Abstractions
+namespace EntryCustomReturn.Forms.Plugin.Abstractions
 {
     /// <summary>
     /// CustomReturnEntry Interface

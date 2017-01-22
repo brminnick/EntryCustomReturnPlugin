@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+   <metadata minClientVersion="2.8.1">
+       <id>Xam.Plugins.Forms.CustomReturnEntry</id>
+       <version>1.0.0</version>
+       <title>Custom Return Entry Control Plugin for Xamarin.Forms</title>
+       <authors>Brandon Minnick</authors>
+       <owners>Brandon Minnick</owners>
+       <licenseUrl>https://github.com/brminnick/CustomReturnEntry/blob/master/license</licenseUrl>
+       <projectUrl>https://github.com/brminnick/CustomReturnEntry</projectUrl>
+      <iconUrl>TBD</iconUrl>
+       <requireLicenseAcceptance>false</requireLicenseAcceptance>
+       <description>
+         Custom control for your Xamarin.Forms project to customize the keyboard Return button.
+         Ensure you call CustomEntryRenderer.Init() on each platform!
+         Built against: 2.3.3.180
+       </description>
+       <summary>Customize the Return Keyboard Buton for an Entry in your Xamarin.Forms projects! Ensure you call CustomEntryRenderer.Init() on each platform!</summary>
+       <tags>xamarin, pcl, xam.pcl, android, xamarin.forms, ios</tags>
+       <dependencies>
+         <dependency id="Xamarin.Forms" version="2.3.3.180" />
+       </dependencies>
+     <releaseNotes>
+     </releaseNotes>
+   </metadata>
+   <files>
+      <!--Core-->
+     <file src="Src\CustomReturnEntry.Forms.Plugin.Abstractions\bin\Release\CustomReturnEntry.Forms.Plugin.Abstractions.dll" target="lib\portable-net45+wp80+win8+wpa81\CustomReturnEntry.Forms.Plugin.Abstractions.dll" />
+     <file src="Src\CustomReturnEntry.Forms.Plugin.Abstractions\bin\Release\CustomReturnEntry.Forms.Plugin.Abstractions.xml" target="lib\portable-net45+wp80+win8+wpa81\CustomReturnEntry.Forms.Plugin.Abstractions.xml" />
+     <file src="Src\CustomReturnEntry.Forms.Plugin.Abstractions\bin\Release\CustomReturnEntry.Forms.Plugin.Abstractions.pdb" target="lib\portable-net45+wp80+win8+wpa81\CustomReturnEntry.Forms.Plugin.Abstractions.pdb" />
+
+     <!--Win Phone Silverlight-->
+     <file src="Src\CustomReturnEntry.Forms.Plugin.WindowsPhone\bin\Release\CustomReturnEntry.Forms.Plugin.WindowsPhone.dll" target="lib\wp8\CustomReturnEntry.Forms.Plugin.WindowsPhone.dll" />
+     <file src="Src\CustomReturnEntry.Forms.Plugin.WindowsPhone\bin\Release\CustomReturnEntry.Forms.Plugin.WindowsPhone.xml" target="lib\wp8\CustomReturnEntry.Forms.Plugin.WindowsPhone.xml" />
+     <file src="Src\CustomReturnEntry.Forms.Plugin.WindowsPhone\bin\Release\CustomReturnEntry.Forms.Plugin.WindowsPhone.pdb" target="lib\wp8\CustomReturnEntry.Forms.Plugin.WindowsPhone.pdb" />
+     <file src="Src\CustomReturnEntry.Forms.Plugin.Abstractions\bin\Release\CustomReturnEntry.Forms.Plugin.Abstractions.dll" target="lib\wp8\CustomReturnEntry.Forms.Plugin.Abstractions.dll" />
+     <file src="Src\CustomReturnEntry.Forms.Plugin.Abstractions\bin\Release\CustomReturnEntry.Forms.Plugin.Abstractions.xml" target="lib\wp8\CustomReturnEntry.Forms.Plugin.Abstractions.xml" />
+     <file src="Src\CustomReturnEntry.Forms.Plugin.Abstractions\bin\Release\CustomReturnEntry.Forms.Plugin.Abstractions.pdb" target="lib\wp8\CustomReturnEntry.Forms.Plugin.Abstractions.pdb" />
+
+     <!--Win Phone RT-->
+     <file src="Src\CustomReturnEntry.Forms.Plugin.WindowsPhoneRT\bin\Release\CustomReturnEntry.Forms.Plugin.WindowsPhoneRT.dll" target="lib\wpa81\CustomReturnEntry.Forms.Plugin.WindowsPhoneRT.dll" />
+     <file src="Src\CustomReturnEntry.Forms.Plugin.WindowsPhoneRT\bin\Release\CustomReturnEntry.Forms.Plugin.WindowsPhoneRT.xml" target="lib\wpa81\CustomReturnEntry.Forms.Plugin.WindowsPhoneRT.xml" />
+     <file src="Src\CustomReturnEntry.Forms.Plugin.WindowsPhoneRT\bin\Release\CustomReturnEntry.Forms.Plugin.WindowsPhoneRT.pdb" target="lib\wpa81\CustomReturnEntry.Forms.Plugin.WindowsPhoneRT.pdb" />
+     <file src="Src\CustomReturnEntry.Forms.Plugin.Abstractions\bin\Release\CustomReturnEntry.Forms.Plugin.Abstractions.dll" target="lib\wpa81\CustomReturnEntry.Forms.Plugin.Abstractions.dll" />
+     <file src="Src\CustomReturnEntry.Forms.Plugin.Abstractions\bin\Release\CustomReturnEntry.Forms.Plugin.Abstractions.xml" target="lib\wpa81\CustomReturnEntry.Forms.Plugin.Abstractions.xml" />
+     <file src="Src\CustomReturnEntry.Forms.Plugin.Abstractions\bin\Release\CustomReturnEntry.Forms.Plugin.Abstractions.pdb" target="lib\wpa81\CustomReturnEntry.Forms.Plugin.Abstractions.pdb" />
+
+     <!--Win Store-->
+     <file src="Src\CustomReturnEntry.Forms.Plugin.WindowsStore\bin\Release\CustomReturnEntry.Forms.Plugin.WindowsStore.dll" target="lib\win81\CustomReturnEntry.Forms.Plugin.WindowsStore.dll" />
+     <file src="Src\CustomReturnEntry.Forms.Plugin.WindowsStore\bin\Release\CustomReturnEntry.Forms.Plugin.WindowsStore.xml" target="lib\win81\CustomReturnEntry.Forms.Plugin.WindowsStore.xml" />
+     <file src="Src\CustomReturnEntry.Forms.Plugin.WindowsStore\bin\Release\CustomReturnEntry.Forms.Plugin.WindowsStore.pdb" target="lib\win81\CustomReturnEntry.Forms.Plugin.WindowsStore.pdb" />
+     <file src="Src\CustomReturnEntry.Forms.Plugin.Abstractions\bin\Release\CustomReturnEntry.Forms.Plugin.Abstractions.dll" target="lib\win81\CustomReturnEntry.Forms.Plugin.Abstractions.dll" />
+     <file src="Src\CustomReturnEntry.Forms.Plugin.Abstractions\bin\Release\CustomReturnEntry.Forms.Plugin.Abstractions.xml" target="lib\win81\CustomReturnEntry.Forms.Plugin.Abstractions.xml" />
+     <file src="Src\CustomReturnEntry.Forms.Plugin.Abstractions\bin\Release\CustomReturnEntry.Forms.Plugin.Abstractions.pdb" target="lib\win81\CustomReturnEntry.Forms.Plugin.Abstractions.pdb" />
+
+       <!--UWP-->
+       <file src="Src\CustomReturnEntry.Forms.Plugin.UWP\bin\Release\CustomReturnEntry.Forms.Plugin.UWP.dll" target="lib\UAP10\CustomReturnEntry.Forms.Plugin.UWP.dll" />
+       <file src="Src\CustomReturnEntry.Forms.Plugin.UWP\bin\Release\CustomReturnEntry.Forms.Plugin.UWP.xml" target="lib\UAP10\CustomReturnEntry.Forms.Plugin.UWP.xml" />
+       <file src="Src\CustomReturnEntry.Forms.Plugin.UWP\bin\Release\CustomReturnEntry.Forms.Plugin.UWP.pdb" target="lib\UAP10\CustomReturnEntry.Forms.Plugin.UWP.pdb" />
+       <file src="Src\CustomReturnEntry.Forms.Plugin.Abstractions\bin\Release\CustomReturnEntry.Forms.Plugin.Abstractions.dll" target="lib\UAP10\CustomReturnEntry.Forms.Plugin.Abstractions.dll" />
+       <file src="Src\CustomReturnEntry.Forms.Plugin.Abstractions\bin\Release\CustomReturnEntry.Forms.Plugin.Abstractions.xml" target="lib\UAP10\CustomReturnEntry.Forms.Plugin.Abstractions.xml" />
+       <file src="Src\CustomReturnEntry.Forms.Plugin.Abstractions\bin\Release\CustomReturnEntry.Forms.Plugin.Abstractions.pdb" target="lib\UAP10\CustomReturnEntry.Forms.Plugin.Abstractions.pdb" />
+
+
+
+       <!--Xamarin.Android-->
+     <file src="Src\CustomReturnEntry.Forms.Plugin.Android\bin\Release\CustomReturnEntry.Forms.Plugin.Android.dll" target="lib\MonoAndroid10\CustomReturnEntry.Forms.Plugin.Android.dll" />
+     <file src="Src\CustomReturnEntry.Forms.Plugin.Android\bin\Release\CustomReturnEntry.Forms.Plugin.Android.xml" target="lib\MonoAndroid10\CustomReturnEntry.Forms.Plugin.Android.xml" />
+     <file src="Src\CustomReturnEntry.Forms.Plugin.Android\bin\Release\CustomReturnEntry.Forms.Plugin.Android.pdb" target="lib\MonoAndroid10\CustomReturnEntry.Forms.Plugin.Android.pdb" />
+     <file src="Src\CustomReturnEntry.Forms.Plugin.Abstractions\bin\Release\CustomReturnEntry.Forms.Plugin.Abstractions.dll" target="lib\MonoAndroid10\CustomReturnEntry.Forms.Plugin.Abstractions.dll" />
+     <file src="Src\CustomReturnEntry.Forms.Plugin.Abstractions\bin\Release\CustomReturnEntry.Forms.Plugin.Abstractions.xml" target="lib\MonoAndroid10\CustomReturnEntry.Forms.Plugin.Abstractions.xml" />
+     <file src="Src\CustomReturnEntry.Forms.Plugin.Abstractions\bin\Release\CustomReturnEntry.Forms.Plugin.Abstractions.pdb" target="lib\MonoAndroid10\CustomReturnEntry.Forms.Plugin.Abstractions.pdb" />
+
+     <!--Xamarin.iOSUnified-->
+     <file src="Src\CustomReturnEntry.Forms.Plugin.iOSUnified\bin\iPhone\Release\CustomReturnEntry.Forms.Plugin.iOS.dll" target="lib\Xamarin.iOS10\CustomReturnEntry.Forms.Plugin.iOS.dll" />
+     <file src="Src\CustomReturnEntry.Forms.Plugin.iOSUnified\bin\iPhone\Release\CustomReturnEntry.Forms.Plugin.iOS.xml" target="lib\Xamarin.iOS10\CustomReturnEntry.Forms.Plugin.iOS.xml" />
+     <file src="Src\CustomReturnEntry.Forms.Plugin.Abstractions\bin\Release\CustomReturnEntry.Forms.Plugin.Abstractions.dll" target="lib\Xamarin.iOS10\CustomReturnEntry.Forms.Plugin.Abstractions.dll" />
+     <file src="Src\CustomReturnEntry.Forms.Plugin.Abstractions\bin\Release\CustomReturnEntry.Forms.Plugin.Abstractions.xml" target="lib\Xamarin.iOS10\CustomReturnEntry.Forms.Plugin.Abstractions.xml" />
+      
+   </files>
+</package>

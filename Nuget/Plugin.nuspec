@@ -26,49 +26,12 @@
    <files>
       <!--Core-->
      <file src="Src\CustomReturnEntry.Forms.Plugin.Abstractions\bin\Release\CustomReturnEntry.Forms.Plugin.Abstractions.dll" target="lib\portable-net45+wp80+win8+wpa81\CustomReturnEntry.Forms.Plugin.Abstractions.dll" />
-     <file src="Src\CustomReturnEntry.Forms.Plugin.Abstractions\bin\Release\CustomReturnEntry.Forms.Plugin.Abstractions.xml" target="lib\portable-net45+wp80+win8+wpa81\CustomReturnEntry.Forms.Plugin.Abstractions.xml" />
      <file src="Src\CustomReturnEntry.Forms.Plugin.Abstractions\bin\Release\CustomReturnEntry.Forms.Plugin.Abstractions.pdb" target="lib\portable-net45+wp80+win8+wpa81\CustomReturnEntry.Forms.Plugin.Abstractions.pdb" />
-
-     <!--Win Phone Silverlight-->
-     <file src="Src\CustomReturnEntry.Forms.Plugin.WindowsPhone\bin\Release\CustomReturnEntry.Forms.Plugin.WindowsPhone.dll" target="lib\wp8\CustomReturnEntry.Forms.Plugin.WindowsPhone.dll" />
-     <file src="Src\CustomReturnEntry.Forms.Plugin.WindowsPhone\bin\Release\CustomReturnEntry.Forms.Plugin.WindowsPhone.xml" target="lib\wp8\CustomReturnEntry.Forms.Plugin.WindowsPhone.xml" />
-     <file src="Src\CustomReturnEntry.Forms.Plugin.WindowsPhone\bin\Release\CustomReturnEntry.Forms.Plugin.WindowsPhone.pdb" target="lib\wp8\CustomReturnEntry.Forms.Plugin.WindowsPhone.pdb" />
-     <file src="Src\CustomReturnEntry.Forms.Plugin.Abstractions\bin\Release\CustomReturnEntry.Forms.Plugin.Abstractions.dll" target="lib\wp8\CustomReturnEntry.Forms.Plugin.Abstractions.dll" />
-     <file src="Src\CustomReturnEntry.Forms.Plugin.Abstractions\bin\Release\CustomReturnEntry.Forms.Plugin.Abstractions.xml" target="lib\wp8\CustomReturnEntry.Forms.Plugin.Abstractions.xml" />
-     <file src="Src\CustomReturnEntry.Forms.Plugin.Abstractions\bin\Release\CustomReturnEntry.Forms.Plugin.Abstractions.pdb" target="lib\wp8\CustomReturnEntry.Forms.Plugin.Abstractions.pdb" />
-
-     <!--Win Phone RT-->
-     <file src="Src\CustomReturnEntry.Forms.Plugin.WindowsPhoneRT\bin\Release\CustomReturnEntry.Forms.Plugin.WindowsPhoneRT.dll" target="lib\wpa81\CustomReturnEntry.Forms.Plugin.WindowsPhoneRT.dll" />
-     <file src="Src\CustomReturnEntry.Forms.Plugin.WindowsPhoneRT\bin\Release\CustomReturnEntry.Forms.Plugin.WindowsPhoneRT.xml" target="lib\wpa81\CustomReturnEntry.Forms.Plugin.WindowsPhoneRT.xml" />
-     <file src="Src\CustomReturnEntry.Forms.Plugin.WindowsPhoneRT\bin\Release\CustomReturnEntry.Forms.Plugin.WindowsPhoneRT.pdb" target="lib\wpa81\CustomReturnEntry.Forms.Plugin.WindowsPhoneRT.pdb" />
-     <file src="Src\CustomReturnEntry.Forms.Plugin.Abstractions\bin\Release\CustomReturnEntry.Forms.Plugin.Abstractions.dll" target="lib\wpa81\CustomReturnEntry.Forms.Plugin.Abstractions.dll" />
-     <file src="Src\CustomReturnEntry.Forms.Plugin.Abstractions\bin\Release\CustomReturnEntry.Forms.Plugin.Abstractions.xml" target="lib\wpa81\CustomReturnEntry.Forms.Plugin.Abstractions.xml" />
-     <file src="Src\CustomReturnEntry.Forms.Plugin.Abstractions\bin\Release\CustomReturnEntry.Forms.Plugin.Abstractions.pdb" target="lib\wpa81\CustomReturnEntry.Forms.Plugin.Abstractions.pdb" />
-
-     <!--Win Store-->
-     <file src="Src\CustomReturnEntry.Forms.Plugin.WindowsStore\bin\Release\CustomReturnEntry.Forms.Plugin.WindowsStore.dll" target="lib\win81\CustomReturnEntry.Forms.Plugin.WindowsStore.dll" />
-     <file src="Src\CustomReturnEntry.Forms.Plugin.WindowsStore\bin\Release\CustomReturnEntry.Forms.Plugin.WindowsStore.xml" target="lib\win81\CustomReturnEntry.Forms.Plugin.WindowsStore.xml" />
-     <file src="Src\CustomReturnEntry.Forms.Plugin.WindowsStore\bin\Release\CustomReturnEntry.Forms.Plugin.WindowsStore.pdb" target="lib\win81\CustomReturnEntry.Forms.Plugin.WindowsStore.pdb" />
-     <file src="Src\CustomReturnEntry.Forms.Plugin.Abstractions\bin\Release\CustomReturnEntry.Forms.Plugin.Abstractions.dll" target="lib\win81\CustomReturnEntry.Forms.Plugin.Abstractions.dll" />
-     <file src="Src\CustomReturnEntry.Forms.Plugin.Abstractions\bin\Release\CustomReturnEntry.Forms.Plugin.Abstractions.xml" target="lib\win81\CustomReturnEntry.Forms.Plugin.Abstractions.xml" />
-     <file src="Src\CustomReturnEntry.Forms.Plugin.Abstractions\bin\Release\CustomReturnEntry.Forms.Plugin.Abstractions.pdb" target="lib\win81\CustomReturnEntry.Forms.Plugin.Abstractions.pdb" />
-
-       <!--UWP-->
-       <file src="Src\CustomReturnEntry.Forms.Plugin.UWP\bin\Release\CustomReturnEntry.Forms.Plugin.UWP.dll" target="lib\UAP10\CustomReturnEntry.Forms.Plugin.UWP.dll" />
-       <file src="Src\CustomReturnEntry.Forms.Plugin.UWP\bin\Release\CustomReturnEntry.Forms.Plugin.UWP.xml" target="lib\UAP10\CustomReturnEntry.Forms.Plugin.UWP.xml" />
-       <file src="Src\CustomReturnEntry.Forms.Plugin.UWP\bin\Release\CustomReturnEntry.Forms.Plugin.UWP.pdb" target="lib\UAP10\CustomReturnEntry.Forms.Plugin.UWP.pdb" />
-       <file src="Src\CustomReturnEntry.Forms.Plugin.Abstractions\bin\Release\CustomReturnEntry.Forms.Plugin.Abstractions.dll" target="lib\UAP10\CustomReturnEntry.Forms.Plugin.Abstractions.dll" />
-       <file src="Src\CustomReturnEntry.Forms.Plugin.Abstractions\bin\Release\CustomReturnEntry.Forms.Plugin.Abstractions.xml" target="lib\UAP10\CustomReturnEntry.Forms.Plugin.Abstractions.xml" />
-       <file src="Src\CustomReturnEntry.Forms.Plugin.Abstractions\bin\Release\CustomReturnEntry.Forms.Plugin.Abstractions.pdb" target="lib\UAP10\CustomReturnEntry.Forms.Plugin.Abstractions.pdb" />
-
-
 
        <!--Xamarin.Android-->
      <file src="Src\CustomReturnEntry.Forms.Plugin.Android\bin\Release\CustomReturnEntry.Forms.Plugin.Android.dll" target="lib\MonoAndroid10\CustomReturnEntry.Forms.Plugin.Android.dll" />
-     <file src="Src\CustomReturnEntry.Forms.Plugin.Android\bin\Release\CustomReturnEntry.Forms.Plugin.Android.xml" target="lib\MonoAndroid10\CustomReturnEntry.Forms.Plugin.Android.xml" />
      <file src="Src\CustomReturnEntry.Forms.Plugin.Android\bin\Release\CustomReturnEntry.Forms.Plugin.Android.pdb" target="lib\MonoAndroid10\CustomReturnEntry.Forms.Plugin.Android.pdb" />
      <file src="Src\CustomReturnEntry.Forms.Plugin.Abstractions\bin\Release\CustomReturnEntry.Forms.Plugin.Abstractions.dll" target="lib\MonoAndroid10\CustomReturnEntry.Forms.Plugin.Abstractions.dll" />
-     <file src="Src\CustomReturnEntry.Forms.Plugin.Abstractions\bin\Release\CustomReturnEntry.Forms.Plugin.Abstractions.xml" target="lib\MonoAndroid10\CustomReturnEntry.Forms.Plugin.Abstractions.xml" />
      <file src="Src\CustomReturnEntry.Forms.Plugin.Abstractions\bin\Release\CustomReturnEntry.Forms.Plugin.Abstractions.pdb" target="lib\MonoAndroid10\CustomReturnEntry.Forms.Plugin.Abstractions.pdb" />
 
      <!--Xamarin.iOSUnified-->

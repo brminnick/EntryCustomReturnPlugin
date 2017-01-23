@@ -13,13 +13,13 @@ In the `FinishedLaunching` method of the `AppDelegate`, add `CustomReturnEntryRe
 	{
 		public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 		{
-      ...
+                        ...
       
 			global::Xamarin.Forms.Forms.Init();
 
 			EntryCustomReturn.Forms.Plugin.iOS.CustomReturnEntryRenderer.Init();
   
-      ...
+                        ...
 		}
 	}
 ```
@@ -45,8 +45,8 @@ In the `Oncreated` method of the `MainActivity`, add `CustomReturnEntryRenderer.
 ```
 **Note:** You must call  `EntryCustomReturn.Forms.Plugin.Droid.CustomReturnEntryRenderer.Init();` *after* you call `Xamarin.Forms.Init(this, bundle);`
 
-#### Usage in Xamarin.Forms Project
- 1. Set the ReturnType property
+## Usage in Xamarin.Forms Project
+### 1. Set the ReturnType property
  
  The ReturnType Property is an enum containing 5 different types: Go, Next, Done, Send, Search;
 
@@ -57,7 +57,7 @@ var goReturnTypeCustomEntry = new CustomReturnEntry
 };
 ```
 
- 2. Subscribe the `CustomReturnEntry.Completed` Event
+### 2. Subscribe the `CustomReturnEntry.Completed` Event
  
  `CustomReturnEntry.Completed` will fire when the user finalizes the text in an entry with the return key.
  ```

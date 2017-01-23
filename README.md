@@ -26,6 +26,8 @@ In the `FinishedLaunching` method of the `AppDelegate`, add `CustomReturnEntryRe
 
 **Note:** You must call  `EntryCustomReturn.Forms.Plugin.iOS.CustomReturnEntryRenderer.Init();` *after* you call `Xamarin.Forms.Init();`
 
+![iPhone Demo](./Artwork/iOS Gif.gif)
+
 ### Android
 In the `Oncreated` method of the `MainActivity`, add `CustomReturnEntryRenderer.Init();`:
 ```
@@ -44,6 +46,8 @@ In the `Oncreated` method of the `MainActivity`, add `CustomReturnEntryRenderer.
 	}
 ```
 **Note:** You must call  `EntryCustomReturn.Forms.Plugin.Droid.CustomReturnEntryRenderer.Init();` *after* you call `Xamarin.Forms.Init(this, bundle);`
+
+![Android Demo](./Artwork/Android Gif.gif)
 
 ## Usage in Xamarin.Forms Project
 ### 1. Set the ReturnType property

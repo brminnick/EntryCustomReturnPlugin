@@ -103,6 +103,9 @@
     <Reference Include="Xamarin.Forms.Xaml">
       <HintPath>..\..\Tests\packages\Xamarin.Forms.2.3.4.184-pre1\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
+    <Reference Include="Calabash">
+      <HintPath>..\..\Tests\packages\Xamarin.TestCloud.Agent.0.20.3\lib\Xamarin.iOS10\Calabash.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EntryCustomReturnSampleApp\EntryCustomReturnSampleApp.csproj">

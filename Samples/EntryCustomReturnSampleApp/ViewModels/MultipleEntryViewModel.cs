@@ -56,28 +56,28 @@ namespace EntryCustomReturnSampleApp
 		#region Methods
 		void ExecuteGoButtonCommand()
 		{
-			var outputString = new StringBuilder();
-			outputString.AppendLine($"{nameof(NextReturnTypeEntryText)}:");
-			outputString.AppendLine($"\t{NextReturnTypeEntryText}");
-			outputString.AppendLine();
+			var outputStringBuilder = new StringBuilder();
+			outputStringBuilder.AppendLine($"{nameof(NextReturnTypeEntryText)}:");
+			outputStringBuilder.AppendLine($"\t{NextReturnTypeEntryText}");
+			outputStringBuilder.AppendLine();
 
-			outputString.AppendLine($"{nameof(DoneReturnTypeEntryText)}:");
-			outputString.AppendLine($"\t{DoneReturnTypeEntryText}");
-			outputString.AppendLine();
+			outputStringBuilder.AppendLine($"{nameof(DoneReturnTypeEntryText)}:");
+			outputStringBuilder.AppendLine($"\t{DoneReturnTypeEntryText}");
+			outputStringBuilder.AppendLine();
 
-			outputString.AppendLine($"{nameof(GoReturnTypeEntryText)}:");
-			outputString.AppendLine($"\t{GoReturnTypeEntryText}");
-			outputString.AppendLine();
+			outputStringBuilder.AppendLine($"{nameof(GoReturnTypeEntryText)}:");
+			outputStringBuilder.AppendLine($"\t{GoReturnTypeEntryText}");
+			outputStringBuilder.AppendLine();
 
-			outputString.AppendLine($"{nameof(SearchReturnTypeEntryText)}:");
-			outputString.AppendLine($"\t{SearchReturnTypeEntryText}");
-			outputString.AppendLine();
+			outputStringBuilder.AppendLine($"{nameof(SearchReturnTypeEntryText)}:");
+			outputStringBuilder.AppendLine($"\t{SearchReturnTypeEntryText}");
+			outputStringBuilder.AppendLine();
 
-			outputString.AppendLine($"{nameof(SendReturnTypeEntryText)}:");
-			outputString.AppendLine($"\t{SendReturnTypeEntryText}");
-			outputString.AppendLine();
+			outputStringBuilder.AppendLine($"{nameof(SendReturnTypeEntryText)}:");
+			outputStringBuilder.AppendLine($"\t{SendReturnTypeEntryText}");
+			outputStringBuilder.AppendLine();
 
-			ResultLabelText = outputString.ToString();
+			ResultLabelText = outputStringBuilder.ToString();
 		}
 		#endregion
 	}

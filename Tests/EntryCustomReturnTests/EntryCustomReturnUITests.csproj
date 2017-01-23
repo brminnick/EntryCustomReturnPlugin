@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{9DB24B67-9058-4352-8414-47074CECB66B}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>EntryCustomReturnTests</RootNamespace>
+    <RootNamespace>EntryCustomReturnUITests</RootNamespace>
     <AssemblyName>EntryCustomReturnUITests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
@@ -34,11 +34,42 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Tests.cs" />
     <Compile Include="AppInitializer.cs" />
+    <Compile Include="Pages\BasePage.cs" />
+    <Compile Include="Tests\MultipleEntryPageTests.cs" />
+    <Compile Include="Tests\BaseTest.cs" />
+    <Compile Include="Pages\MultipleEntryPage.cs" />
+    <Compile Include="Tests\ReplTests.cs" />
+    <Compile Include="Pages\OptionSelectionPage.cs" />
+    <Compile Include="Pages\PickEntryReturnTypePage.cs" />
+    <Compile Include="Helpers\TestHelpers.cs" />
+    <Compile Include="Tests\PickEntryReturnTypeTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Pages\" />
+    <Folder Include="Tests\" />
+    <Folder Include="Helpers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Samples\Droid\EntryCustomReturnSampleApp.Droid.csproj">
+      <Project>{D44D8A4B-E5AF-4629-AC50-98966AB42D11}</Project>
+      <Name>EntryCustomReturnSampleApp.Droid</Name>
+      <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Samples\iOS\EntryCustomReturnSampleApp.iOS.csproj">
+      <Project>{A76C73CF-FC6F-4AF9-B702-1EA82CDE36F3}</Project>
+      <Name>EntryCustomReturnSampleApp.iOS</Name>
+      <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Src\EntryCustomReturn.Forms.Plugin.Abstractions\EntryCustomReturn.Forms.Plugin.Abstractions.csproj">
+      <Project>{67F9D3A8-F71E-4428-913F-C37AE82CDB24}</Project>
+      <Name>EntryCustomReturn.Forms.Plugin.Abstractions</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="..\..\Samples\EntryCustomReturnSampleApp.Shared\EntryCustomReturnSampleApp.Shared.projitems" Label="Shared" Condition="Exists('..\..\Samples\EntryCustomReturnSampleApp.Shared\EntryCustomReturnSampleApp.Shared.projitems')" />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

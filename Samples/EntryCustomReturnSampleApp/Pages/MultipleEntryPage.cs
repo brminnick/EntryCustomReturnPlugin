@@ -60,14 +60,18 @@ namespace EntryCustomReturnSampleApp
 
 			var goButton = new Button
 			{
-				Text = "Go"
+				Text = "Go",
+				AutomationId = AutomationIdConstants.GoButtonAutomationId
 			};
 			goButton.SetBinding<MultipleEntryViewModel>(Button.CommandProperty, vm => vm.GoButtonCommand);
 
-			var resultLabel = new Label();
+			var resultLabel = new Label
+			{
+				AutomationId = AutomationIdConstants.ResultsLabelAutomationId
+			};
 			resultLabel.SetBinding<MultipleEntryViewModel>(Label.TextProperty, vm => vm.ResultLabelText);
 
-			Title = "Multiple Entries";
+			Title = PageTitles.MultipleEntryPageTitle;
 
 			Padding = new Thickness(10);
 

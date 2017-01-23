@@ -34,8 +34,8 @@
     <Compile Include="Pages\BaseContentPage.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\MultipleEntryViewModel.cs" />
-    <Compile Include="Pages\SelectEntryPage.cs" />
-    <Compile Include="ViewModels\SelectEntryViewModel.cs" />
+    <Compile Include="Pages\PickEntryReturnTypePage.cs" />
+    <Compile Include="ViewModels\PickEntryReturnTypeViewModel.cs" />
     <Compile Include="Pages\OptionSelectionPage.cs" />
   </ItemGroup>
   <ItemGroup>

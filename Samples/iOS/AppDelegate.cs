@@ -19,6 +19,10 @@ namespace EntryCustomReturnSampleApp.iOS
 
 			CustomReturnEntryRenderer.Init();
 
+#if DEBUG
+			Xamarin.Calabash.Start();
+#endif
+
 			return base.FinishedLaunching(app, options);
 		}
 	}

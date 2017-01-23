@@ -23,11 +23,15 @@ namespace EntryCustomReturnSampleApp
 
 			_openSelectEntryPageButton = new Button
 			{
-				Text = "Open Select Entry Page",
-				AutomationId = AutomationIdConstants.OpenSelectEntryPageButtonAutomationId
+				Text = "Open Pick Entry Return Type Page",
+				AutomationId = AutomationIdConstants.OpenPickEntryReturnTypeButtonAutomationId
 			};
 
-			Title = "Select Page";
+			Title = PageTitles.OptionSelectionPageTitle;
+
+			NavigationPage.SetBackButtonTitle(this, "");
+
+			Padding = new Thickness(10);
 
 			Content = new StackLayout
 			{
@@ -43,7 +47,7 @@ namespace EntryCustomReturnSampleApp
 		protected override void SubscribeEventHandlers()
 		{
 			_openSelectEntryPageButton.Clicked += HandleOpenSelectEntryPageButtonClicked;
-			_openMultipleEntryPageButton.Clicked += HandleOpenSelectEntryPageButtonClicked;
+			_openMultipleEntryPageButton.Clicked += HandleOpenMultipleEntryPageButtonClicked;
 
 			AreEventHandlersSubscribed = true;
 		}
@@ -51,7 +55,7 @@ namespace EntryCustomReturnSampleApp
 		protected override void UnsubscribeEventHandlers()
 		{
 			_openSelectEntryPageButton.Clicked -= HandleOpenSelectEntryPageButtonClicked;
-			_openMultipleEntryPageButton.Clicked -= HandleOpenSelectEntryPageButtonClicked;
+			_openMultipleEntryPageButton.Clicked -= HandleOpenMultipleEntryPageButtonClicked;
 
 			AreEventHandlersSubscribed = false;
 		}
@@ -63,7 +67,7 @@ namespace EntryCustomReturnSampleApp
 
 		void HandleOpenSelectEntryPageButtonClicked(object sender, EventArgs e)
 		{
-			Device.BeginInvokeOnMainThread(async () => await Navigation.PushAsync(new SelectEntryPage()));
+			Device.BeginInvokeOnMainThread(async () => await Navigation.PushAsync(new PickEntryReturnTypePage()));
 		}
 		#endregion
 	}

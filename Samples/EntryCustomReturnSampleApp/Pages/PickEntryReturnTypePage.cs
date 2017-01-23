@@ -6,26 +6,26 @@ using EntryCustomReturnSampleApp.Shared;
 
 namespace EntryCustomReturnSampleApp
 {
-	public class SelectEntryPage : BaseContentPage<SelectEntryViewModel>
+	public class PickEntryReturnTypePage : BaseContentPage<PickEntryReturnTypeViewModel>
 	{
 		#region Constructors
-		public SelectEntryPage()
+		public PickEntryReturnTypePage()
 		{
 			var customizableEntry = new CustomReturnEntry
 			{
 				AutomationId = AutomationIdConstants.CustomizableEntryAutomationId
 			};
-			customizableEntry.SetBinding<SelectEntryViewModel>(CustomReturnEntry.ReturnTypeProperty, vm => vm.EntryReturnType);
-			customizableEntry.SetBinding<SelectEntryViewModel>(CustomReturnEntry.PlaceholderProperty, vm => vm.EntryPlaceHolderText);
+			customizableEntry.SetBinding<PickEntryReturnTypeViewModel>(CustomReturnEntry.ReturnTypeProperty, vm => vm.EntryReturnType);
+			customizableEntry.SetBinding<PickEntryReturnTypeViewModel>(CustomReturnEntry.PlaceholderProperty, vm => vm.EntryPlaceHolderText);
 
 			var entryReturnTypePicker = new Picker
 			{
 				AutomationId = AutomationIdConstants.EntryReturnTypePickerAutomationId
 			};
-			entryReturnTypePicker.SetBinding<SelectEntryViewModel>(Picker.ItemsSourceProperty, vm => vm.EntryReturnTypePickerSource);
-			entryReturnTypePicker.SetBinding<SelectEntryViewModel>(Picker.SelectedItemProperty, vm => vm.PickerSelection);
+			entryReturnTypePicker.SetBinding<PickEntryReturnTypeViewModel>(Picker.ItemsSourceProperty, vm => vm.EntryReturnTypePickerSource);
+			entryReturnTypePicker.SetBinding<PickEntryReturnTypeViewModel>(Picker.SelectedItemProperty, vm => vm.PickerSelection);
 
-			Title = "Pick Return Type";
+			Title = PageTitles.PickEntryReturnTypePageTitle;
 
 			Padding = new Thickness(10);
 

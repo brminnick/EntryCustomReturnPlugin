@@ -4,7 +4,7 @@ using EntryCustomReturn.Forms.Plugin.Abstractions;
 
 namespace EntryCustomReturnSampleApp
 {
-	public class SelectEntryViewModel : BaseViewModel
+	public class PickEntryReturnTypeViewModel : BaseViewModel
 	{
 		#region Fields
 		string _entryPlaceHolderText;
@@ -13,7 +13,7 @@ namespace EntryCustomReturnSampleApp
 		#endregion
 
 		#region Constructors
-		public SelectEntryViewModel()
+		public PickEntryReturnTypeViewModel()
 		{
 			EntryReturnTypePickerSource = new List<ReturnType>();
 

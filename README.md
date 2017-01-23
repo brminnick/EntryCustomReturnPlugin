@@ -53,7 +53,7 @@ In the `Oncreated` method of the `MainActivity`, add `CustomReturnEntryRenderer.
 ```
 var goReturnTypeCustomEntry = new CustomReturnEntry
 {
-			ReturnType = ReturnType.Go
+	ReturnType = ReturnType.Go
 };
 ```
 

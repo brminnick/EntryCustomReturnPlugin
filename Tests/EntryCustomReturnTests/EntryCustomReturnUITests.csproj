@@ -40,5 +40,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <Import Project="..\..\Samples\EntryCustomReturnSampleApp.Shared\EntryCustomReturnSampleApp.Shared.projitems" Label="Shared" Condition="Exists('..\..\Samples\EntryCustomReturnSampleApp.Shared\EntryCustomReturnSampleApp.Shared.projitems')" />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

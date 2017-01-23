@@ -1,6 +1,8 @@
-﻿using EntryCustomReturn.Forms.Plugin.Abstractions;
+﻿using Xamarin.Forms;
 
-using Xamarin.Forms;
+using EntryCustomReturn.Forms.Plugin.Abstractions;
+
+using EntryCustomReturnSampleApp.Shared;
 
 namespace EntryCustomReturnSampleApp
 {
@@ -9,11 +11,17 @@ namespace EntryCustomReturnSampleApp
 		#region Constructors
 		public SelectEntryPage()
 		{
-			var customizableEntry = new CustomReturnEntry();
+			var customizableEntry = new CustomReturnEntry
+			{
+				AutomationId = AutomationIdConstants.CustomizableEntryAutomationId
+			};
 			customizableEntry.SetBinding<SelectEntryViewModel>(CustomReturnEntry.ReturnTypeProperty, vm => vm.EntryReturnType);
 			customizableEntry.SetBinding<SelectEntryViewModel>(CustomReturnEntry.PlaceholderProperty, vm => vm.EntryPlaceHolderText);
 
-			var entryReturnTypePicker = new Picker();
+			var entryReturnTypePicker = new Picker
+			{
+				AutomationId = AutomationIdConstants.EntryReturnTypePickerAutomationId
+			};
 			entryReturnTypePicker.SetBinding<SelectEntryViewModel>(Picker.ItemsSourceProperty, vm => vm.EntryReturnTypePickerSource);
 			entryReturnTypePicker.SetBinding<SelectEntryViewModel>(Picker.SelectedItemProperty, vm => vm.PickerSelection);
 

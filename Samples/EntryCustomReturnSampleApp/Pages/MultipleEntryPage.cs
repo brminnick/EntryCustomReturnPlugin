@@ -4,6 +4,8 @@ using Xamarin.Forms;
 
 using EntryCustomReturn.Forms.Plugin.Abstractions;
 
+using EntryCustomReturnSampleApp.Shared;
+
 namespace EntryCustomReturnSampleApp
 {
 	public class MultipleEntryPage : BaseContentPage<MultipleEntryViewModel>
@@ -19,35 +21,40 @@ namespace EntryCustomReturnSampleApp
 			_nextReturnTypeEntry = new CustomReturnEntry
 			{
 				ReturnType = ReturnType.Next,
-				Placeholder = "Return Type: Next"
+				Placeholder = "Return Type: Next",
+				AutomationId = AutomationIdConstants.NextReturnTypeEntryAutomationId
 			};
 			_nextReturnTypeEntry.SetBinding<MultipleEntryViewModel>(Entry.TextProperty, vm => vm.NextReturnTypeEntryText);
 
 			_doneReturnTypeEntry = new CustomReturnEntry
 			{
 				ReturnType = ReturnType.Done,
-				Placeholder = "Return Type: Done"
+				Placeholder = "Return Type: Done",
+				AutomationId = AutomationIdConstants.DoneReturnTypeEntryAutomationId
 			};
 			_doneReturnTypeEntry.SetBinding<MultipleEntryViewModel>(Entry.TextProperty, vm => vm.DoneReturnTypeEntryText);
 
 			_goReturnTypeEntry = new CustomReturnEntry
 			{
 				ReturnType = ReturnType.Go,
-				Placeholder = "Return Type: Go"
+				Placeholder = "Return Type: Go",
+				AutomationId = AutomationIdConstants.GoReturnTypeEntryAutomationId
 			};
 			_goReturnTypeEntry.SetBinding<MultipleEntryViewModel>(Entry.TextProperty, vm => vm.GoReturnTypeEntryText);
 
 			_searchReturnTypeEntry = new CustomReturnEntry
 			{
 				ReturnType = ReturnType.Search,
-				Placeholder = "Return Type: Search"
+				Placeholder = "Return Type: Search",
+				AutomationId = AutomationIdConstants.SearchReturnTypeEntryAutomationId
 			};
 			_searchReturnTypeEntry.SetBinding<MultipleEntryViewModel>(Entry.TextProperty, vm => vm.SearchReturnTypeEntryText);
 
 			_sendReturnTypeEntry = new CustomReturnEntry
 			{
 				ReturnType = ReturnType.Send,
-				Placeholder = "Return Type: Send"
+				Placeholder = "Return Type: Send",
+				AutomationId = AutomationIdConstants.SendReturnTypeEntryAutomationId
 			};
 			_sendReturnTypeEntry.SetBinding<MultipleEntryViewModel>(Entry.TextProperty, vm => vm.SendReturnTypeEntryText);
 

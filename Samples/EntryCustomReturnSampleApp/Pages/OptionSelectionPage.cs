@@ -2,6 +2,8 @@
 
 using Xamarin.Forms;
 
+using EntryCustomReturnSampleApp.Shared;
+
 namespace EntryCustomReturnSampleApp
 {
 	public class OptionSelectionPage : BaseContentPage<BaseViewModel>
@@ -15,12 +17,14 @@ namespace EntryCustomReturnSampleApp
 		{
 			_openMultipleEntryPageButton = new Button
 			{
-				Text = "Open Multiple Entry Page"
+				Text = "Open Multiple Entry Page",
+				AutomationId = AutomationIdConstants.OpenMultipleEntryPageButtonAutomationId
 			};
 
 			_openSelectEntryPageButton = new Button
 			{
-				Text = "Open Select Entry Page"
+				Text = "Open Select Entry Page",
+				AutomationId = AutomationIdConstants.OpenSelectEntryPageButtonAutomationId
 			};
 
 			Title = "Select Page";

@@ -34,7 +34,7 @@ namespace EntryCustomReturn.Forms.Plugin.Android
 
 			if (customControl != null && entry != null)
 			{
-				KeyboardHelpers.SetKeyboardButtonType(ReturnTypeEffect.GetReturnType(entry), customControl);
+				customControl.ImeOptions = KeyboardHelpers.GetKeyboardButtonType(ReturnTypeEffect.GetReturnType(entry));
 
 				customControl.EditorAction += HandleEditorAction;
 			}
@@ -48,8 +48,7 @@ namespace EntryCustomReturn.Forms.Plugin.Android
 			{
 				if (customControl != null)
 				{
-					KeyboardHelpers.SetKeyboardButtonType(ReturnType.Default, customControl);
-
+					customControl.ImeOptions = KeyboardHelpers.GetKeyboardButtonType(ReturnType.Default);
 					customControl.EditorAction -= HandleEditorAction;
 				}
 			}

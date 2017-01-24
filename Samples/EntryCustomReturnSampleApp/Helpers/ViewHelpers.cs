@@ -9,6 +9,44 @@ namespace EntryCustomReturnSampleApp
 {
 	public static class ViewHelpers
 	{
+		public static View CreatePickEntryReturnTypePaageLayout(bool shouldUseEffects)
+		{
+			Entry customizableEntry;
+
+			switch (shouldUseEffects)
+			{
+				case true:
+					customizableEntry = new Entry();
+					ReturnTypeEffect.SetReturnType(customizableEntry, ReturnType.Go);
+					customizableEntry.SetBinding<PickEntryReturnTypeViewModel>(ReturnTypeEffect.ReturnTypeProperty, vm => vm.EntryReturnType);
+					break;
+				case false:
+					customizableEntry = new CustomReturnEntry();
+					customizableEntry.SetBinding<PickEntryReturnTypeViewModel>(CustomReturnEntry.ReturnTypeProperty, vm => vm.EntryReturnType);
+					break;
+				default:
+					throw new Exception("Invalid Type");
+			}
+
+			customizableEntry.AutomationId = AutomationIdConstants.CustomizableEntryAutomationId;
+			customizableEntry.SetBinding<PickEntryReturnTypeViewModel>(Entry.PlaceholderProperty, vm => vm.EntryPlaceHolderText);
+
+			var entryReturnTypePicker = new Picker
+			{
+				AutomationId = AutomationIdConstants.EntryReturnTypePickerAutomationId
+			};
+			entryReturnTypePicker.SetBinding<PickEntryReturnTypeViewModel>(Picker.ItemsSourceProperty, vm => vm.EntryReturnTypePickerSource);
+			entryReturnTypePicker.SetBinding<PickEntryReturnTypeViewModel>(Picker.SelectedItemProperty, vm => vm.PickerSelection);
+
+			return new StackLayout
+			{
+				Children = {
+					customizableEntry,
+					entryReturnTypePicker
+				}
+			};
+		}
+
 		public static View CreateMultipleEntryPageLayout(bool shouldUseEffects)
 		{
 			var nextReturnTypeEntry = CreateEntry<MultipleEntryViewModel>(shouldUseEffects,

@@ -34,11 +34,12 @@
     <Compile Include="Pages\BaseContentPage.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\MultipleEntryViewModel.cs" />
-    <Compile Include="Pages\PickEntryReturnTypePage.cs" />
+    <Compile Include="Pages\PickCustomRendererEntryReturnTypePage.cs" />
     <Compile Include="ViewModels\PickEntryReturnTypeViewModel.cs" />
     <Compile Include="Pages\OptionSelectionPage.cs" />
     <Compile Include="Helpers\ViewHelpers.cs" />
     <Compile Include="Pages\MultipleEffectsEntryPage.cs" />
+    <Compile Include="Pages\PickEffectsEntryReturnTypePage.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Src\EntryCustomReturn.Forms.Plugin.Abstractions\EntryCustomReturn.Forms.Plugin.Abstractions.csproj">

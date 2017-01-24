@@ -91,7 +91,10 @@ namespace EntryCustomReturnSampleApp
 
 		void HandleOpenSelectEntryPageButtonClicked(object sender, EventArgs e)
 		{
-			Device.BeginInvokeOnMainThread(async () => await Navigation.PushAsync(new PickEntryReturnTypePage(false)));
+			if (_entryTypePicker.SelectedItem.Equals(_pickerItemListEffectsText))
+				Device.BeginInvokeOnMainThread(async () => await Navigation.PushAsync(new PickEffectsEntryReturnTypePage()));
+			else if (_entryTypePicker.SelectedItem.Equals(_pickerItemListCustomRenderersText))
+				Device.BeginInvokeOnMainThread(async () => await Navigation.PushAsync(new PickCustomRendererEntryReturnTypePage()));
 		}
 		#endregion
 	}

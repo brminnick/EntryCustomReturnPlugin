@@ -4,9 +4,9 @@ using EntryCustomReturn.Forms.Plugin.Abstractions;
 
 namespace EntryCustomReturn.Forms.Plugin.iOS
 {
-	public static class KeyboardHelpers
+	static class KeyboardHelpers
 	{
-		public static UIReturnKeyType GetKeyboardButtonType(ReturnType returnType)
+		internal static UIReturnKeyType GetKeyboardButtonType(ReturnType returnType)
 		{
 			switch (returnType)
 			{

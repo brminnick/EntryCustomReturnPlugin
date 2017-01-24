@@ -2,6 +2,7 @@ using System;
 
 using Android.Widget;
 using Android.Runtime;
+using Android.Views.InputMethods;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;

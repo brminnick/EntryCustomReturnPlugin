@@ -80,7 +80,7 @@ namespace EntryCustomReturnSampleApp
 			};
 		}
 
-		static Entry CreateEntry<T>(bool shouldUseEffects, ReturnType returnType, string placeholder, string automationId, Expression<Func<T, object>> textPropertyBindingSource)
+		static Entry CreateEntry<T>(bool shouldUseEffects, ReturnType returnType, string placeholder, string automationId, Expression<Func<T, object>> textPropertyBindingSource) where T : BaseViewModel
 		{
 			Entry entry;
 
@@ -128,6 +128,7 @@ namespace EntryCustomReturnSampleApp
 			switch (shouldUseEffects)
 			{
 				case true:
+					goReturnTypeEntry.SetBinding(ReturnTypeEffect.ReturnCommandProperty, "GoReturnTypeEntryReturnCommand");
 					goReturnTypeEntry.SetBinding<MultipleEntryViewModel>(ReturnTypeEffect.ReturnCommandProperty, vm => vm.GoReturnTypeEntryReturnCommand);
 					break;
 				case false:

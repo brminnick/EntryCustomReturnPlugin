@@ -87,12 +87,13 @@ namespace EntryCustomReturn.Forms.Plugin.Abstractions
 				entry.Effects.Add(new EntryReturnTypeEffect());
 			}
 		}
-	}
 
-	class EntryReturnTypeEffect : RoutingEffect
-	{
-		public EntryReturnTypeEffect() : base(EffectConstants.Name)
-		{ 
+		class EntryReturnTypeEffect : RoutingEffect
+		{
+			public EntryReturnTypeEffect() : base(EffectConstants.Name)
+			{ 
+			}
 		}
 	}
+
 }

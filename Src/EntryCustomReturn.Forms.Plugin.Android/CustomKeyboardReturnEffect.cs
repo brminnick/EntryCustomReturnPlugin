@@ -1,9 +1,8 @@
 ﻿using System;
+using System.Diagnostics;
 
-using Android.App;
 using Android.Widget;
 using Android.Runtime;
-using Android.Views.InputMethods;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
@@ -30,12 +29,12 @@ namespace EntryCustomReturn.Forms.Plugin.Android
 
 		void SetKeyboardReturnButton()
 		{
-			var customEntry = Element as CustomReturnEntry;
 			var customControl = Control as EntryEditText;
+			var entry = Element as Entry;
 
-			if (Control != null && customEntry != null)
+			if (customControl != null && entry != null)
 			{
-				KeyboardHelpers.SetKeyboardButtonType(customEntry.ReturnType, customControl);
+				KeyboardHelpers.SetKeyboardButtonType(ReturnTypeEffect.GetReturnType(entry), customControl);
 
 				customControl.EditorAction += HandleEditorAction;
 			}
@@ -45,26 +44,34 @@ namespace EntryCustomReturn.Forms.Plugin.Android
 		{
 			var customControl = Control as EntryEditText;
 
-			if (Control != null)
+			try
 			{
-				KeyboardHelpers.SetKeyboardButtonType(ReturnType.Default, customControl);
+				if (customControl != null)
+				{
+					KeyboardHelpers.SetKeyboardButtonType(ReturnType.Default, customControl);
 
-				customControl.EditorAction -= HandleEditorAction;
+					customControl.EditorAction -= HandleEditorAction;
+				}
+			}
+			catch (ObjectDisposedException e)
+			{
+				Debug.WriteLine(e);
 			}
 		}
 
 		void HandleEditorAction(object sender, TextView.EditorActionEventArgs e)
 		{
 			var returnType = ReturnTypeEffect.GetReturnType(Element);
+			if (returnType != ReturnType.Next)
+				HideSoftKeyboard();
 
 			ReturnTypeEffect.GetReturnCommandProperty(Element)?.Execute(null);
 		}
 
-		public static void HideSoftKeyboard(Activity activity)
+		void HideSoftKeyboard()
 		{
-			var inputMethodManager = (InputMethodManager)activity.GetSystemService(Activity.InputMethodService);
-			inputMethodManager.HideSoftInputFromWindow(activity.CurrentFocus.WindowToken, 0);
+			var entry = Element as Entry;
+			entry?.Unfocus();
 		}
-
 	}
 }

@@ -30,13 +30,15 @@
   <ItemGroup>
     <Compile Include="App.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Pages\MultipleEntryPage.cs" />
+    <Compile Include="Pages\MultipleCustomRendererEntryPage.cs" />
     <Compile Include="Pages\BaseContentPage.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\MultipleEntryViewModel.cs" />
     <Compile Include="Pages\PickEntryReturnTypePage.cs" />
     <Compile Include="ViewModels\PickEntryReturnTypeViewModel.cs" />
     <Compile Include="Pages\OptionSelectionPage.cs" />
+    <Compile Include="Helpers\ViewHelpers.cs" />
+    <Compile Include="Pages\MultipleEffectsEntryPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Src\EntryCustomReturn.Forms.Plugin.Abstractions\EntryCustomReturn.Forms.Plugin.Abstractions.csproj">
@@ -47,6 +49,7 @@
   <ItemGroup>
     <Folder Include="Pages\" />
     <Folder Include="ViewModels\" />
+    <Folder Include="Helpers\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 using Xamarin.Forms;
 
@@ -9,36 +10,41 @@ namespace EntryCustomReturnSampleApp
 	public class OptionSelectionPage : BaseContentPage<BaseViewModel>
 	{
 		#region Constant Fields
-		readonly Button _openMultipleCustomReturnEntryPageButton, _openSelectEntryPageUsingCustomRenderersButton, 
-			_openSelectEntryPageUsingEffectsButton, _openMultipleEffectsEntryPageButton;
+		readonly Button _openMultileEntryPageButton, _openPickerEntryPageButton;
+		readonly Picker _entryTypePicker;
+		const string _pickerItemListEffectsText = "Effects";
+		const string _pickerItemListCustomRenderersText = "CustomRenderers";
 		#endregion
 
 		#region Constructors
 		public OptionSelectionPage()
 		{
-			_openMultipleCustomReturnEntryPageButton = new Button
+			_openMultileEntryPageButton = new Button
 			{
-				Text = "Multiple CustomReturnEntry Page",
+				Text = "Multiple Entry Page",
 				AutomationId = AutomationIdConstants.OpenMultipleCustomReturnEntryPageButtonAutomationId
 			};
 
-			_openSelectEntryPageUsingCustomRenderersButton = new Button
+			_openPickerEntryPageButton = new Button
 			{
-				Text = "CustomReturnEntry Return Type Picker Page",
+				Text = "Return Type Picker Page",
 				AutomationId = AutomationIdConstants.OpenSelectEntryPageUsingCustomRenderersButton
 			};
 
-			_openSelectEntryPageUsingEffectsButton = new Button
+			var pickerLabel = new Label
 			{
-				Text = "Effects Entry Return Type Picker Page",
-				AutomationId = AutomationIdConstants.OpenSelectEntryPageUsingEffectsButton
+				Text = "Generate Entrys Using"
 			};
 
-			_openMultipleEffectsEntryPageButton = new Button
+			var pickerItemSourceList = new List<string>
 			{
-				Text = "Multiple Effects Entry Page",
-				AutomationId = AutomationIdConstants.OpenMultipleEffectsEntryPageButtonAutomationId
+				_pickerItemListEffectsText,
+				_pickerItemListCustomRenderersText
 			};
+
+			_entryTypePicker = new Picker();
+			_entryTypePicker.ItemsSource = pickerItemSourceList;
+			_entryTypePicker.SelectedIndex = 0;
 
 			Title = PageTitles.OptionSelectionPageTitle;
 
@@ -49,10 +55,10 @@ namespace EntryCustomReturnSampleApp
 			Content = new StackLayout
 			{
 				Children = {
-					_openSelectEntryPageUsingCustomRenderersButton,
-					_openSelectEntryPageUsingEffectsButton,
-					_openMultipleCustomReturnEntryPageButton,
-					_openMultipleEffectsEntryPageButton
+					_openPickerEntryPageButton,
+					_openMultileEntryPageButton,
+					pickerLabel,
+					_entryTypePicker
 				}
 			};
 		}
@@ -61,42 +67,31 @@ namespace EntryCustomReturnSampleApp
 		#region Methods
 		protected override void SubscribeEventHandlers()
 		{
-			_openSelectEntryPageUsingEffectsButton.Clicked += HandleOpenSelectEntryPageUsingEffectsButtonClicked;
-			_openSelectEntryPageUsingCustomRenderersButton.Clicked += HandleOpenSelectEntryPageUsingCustomRenderersButtonClicked;
-			_openMultipleCustomReturnEntryPageButton.Clicked += HandleOpenMultipleCustomReturnEntryPageButtonClicked;
-			_openMultipleEffectsEntryPageButton.Clicked += HandleOpenMultipleEffectsEntryPageButtonClicked;
+			_openPickerEntryPageButton.Clicked += HandleOpenSelectEntryPageButtonClicked;
+			_openMultileEntryPageButton.Clicked += HandleOpenMultipleEntryPageButtonClicked;
 
 			AreEventHandlersSubscribed = true;
 		}
 
 		protected override void UnsubscribeEventHandlers()
 		{
-			_openSelectEntryPageUsingEffectsButton.Clicked -= HandleOpenSelectEntryPageUsingEffectsButtonClicked;
-			_openSelectEntryPageUsingCustomRenderersButton.Clicked -= HandleOpenSelectEntryPageUsingCustomRenderersButtonClicked;
-			_openMultipleCustomReturnEntryPageButton.Clicked -= HandleOpenMultipleCustomReturnEntryPageButtonClicked;
-			_openMultipleEffectsEntryPageButton.Clicked -= HandleOpenMultipleEffectsEntryPageButtonClicked;
+			_openPickerEntryPageButton.Clicked -= HandleOpenSelectEntryPageButtonClicked;
+			_openMultileEntryPageButton.Clicked -= HandleOpenMultipleEntryPageButtonClicked;
 
 			AreEventHandlersSubscribed = false;
 		}
 
-		void HandleOpenSelectEntryPageUsingEffectsButtonClicked(object sender, EventArgs e)
+		void HandleOpenMultipleEntryPageButtonClicked(object sender, EventArgs e)
 		{
-			Device.BeginInvokeOnMainThread(async () => await Navigation.PushAsync(new PickEntryReturnTypePage(true)));
+			if(_entryTypePicker.SelectedItem.Equals(_pickerItemListEffectsText))
+				Device.BeginInvokeOnMainThread(async () => await Navigation.PushAsync(new MultipleEffectsEntryPage()));
+			else if(_entryTypePicker.SelectedItem.Equals(_pickerItemListCustomRenderersText))
+				Device.BeginInvokeOnMainThread(async () => await Navigation.PushAsync(new MultipleCustomRendererEntryPage()));
 		}
 
-		void HandleOpenMultipleCustomReturnEntryPageButtonClicked(object sender, EventArgs e)
-		{
-			Device.BeginInvokeOnMainThread(async () => await Navigation.PushAsync(new MultipleEntryPage(false)));
-		}
-
-		void HandleOpenSelectEntryPageUsingCustomRenderersButtonClicked(object sender, EventArgs e)
+		void HandleOpenSelectEntryPageButtonClicked(object sender, EventArgs e)
 		{
 			Device.BeginInvokeOnMainThread(async () => await Navigation.PushAsync(new PickEntryReturnTypePage(false)));
-		}
-
-		void HandleOpenMultipleEffectsEntryPageButtonClicked(object sender, EventArgs e)
-		{
-			Device.BeginInvokeOnMainThread(async () => await Navigation.PushAsync(new MultipleEntryPage(true)));
 		}
 		#endregion
 	}

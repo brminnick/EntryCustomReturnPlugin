@@ -1,24 +1,21 @@
 ﻿using System;
-
-using Xamarin.Forms;
+using System.Linq.Expressions;
 
 using EntryCustomReturn.Forms.Plugin.Abstractions;
-
 using EntryCustomReturnSampleApp.Shared;
-using System.Linq.Expressions;
+using Xamarin.Forms;
 
 namespace EntryCustomReturnSampleApp
 {
-	public class MultipleEntryPage : BaseContentPage<MultipleEntryViewModel>
+	public static class ViewHelpers
 	{
-		#region Constructors
-		public MultipleEntryPage(bool shouldUseEffects)
+		public static View CreateMultipleEntryPageLayout(bool shouldUseEffects)
 		{
 			var nextReturnTypeEntry = CreateEntry<MultipleEntryViewModel>(shouldUseEffects,
-																		  ReturnType.Next,
-																		  "Return Type: Next",
-																		  AutomationIdConstants.NextReturnTypeEntryAutomationId,
-																		  vm => vm.NextReturnTypeEntryText);
+																					  ReturnType.Next,
+																					  "Return Type: Next",
+																					  AutomationIdConstants.NextReturnTypeEntryAutomationId,
+																					  vm => vm.NextReturnTypeEntryText);
 
 			var goReturnTypeEntry = CreateEntry<MultipleEntryViewModel>(shouldUseEffects,
 																		ReturnType.Go,
@@ -64,10 +61,6 @@ namespace EntryCustomReturnSampleApp
 			resultLabel.SetBinding<MultipleEntryViewModel>(Label.TextProperty, vm => vm.ResultLabelText);
 
 
-			Title = PageTitles.MultipleEntryPageTitle;
-
-			Padding = new Thickness(10);
-
 			var mainStackLayout = new StackLayout
 			{
 				Children = {
@@ -81,26 +74,13 @@ namespace EntryCustomReturnSampleApp
 				}
 			};
 
-			Content = new ScrollView
+			return new ScrollView
 			{
 				Content = mainStackLayout
 			};
 		}
 
-		#endregion
-
-		#region Methods
-		protected override void SubscribeEventHandlers()
-		{
-			AreEventHandlersSubscribed = true;
-		}
-
-		protected override void UnsubscribeEventHandlers()
-		{
-			AreEventHandlersSubscribed = false;
-		}
-
-		Entry CreateEntry<T>(bool shouldUseEffects, ReturnType returnType, string placeholder, string automationId, Expression<Func<T, object>> textPropertyBindingSource)
+		static Entry CreateEntry<T>(bool shouldUseEffects, ReturnType returnType, string placeholder, string automationId, Expression<Func<T, object>> textPropertyBindingSource)
 		{
 			Entry entry;
 
@@ -126,7 +106,7 @@ namespace EntryCustomReturnSampleApp
 			return entry;
 		}
 
-		void ConfigureEntryReturnCommand(bool shouldUseEffects, Entry entry, Action action)
+		static void ConfigureEntryReturnCommand(bool shouldUseEffects, Entry entry, Action action)
 		{
 			var command = new Command(action);
 
@@ -143,7 +123,7 @@ namespace EntryCustomReturnSampleApp
 			}
 		}
 
-		void ConfigureGoReturnTypeEntryCommandBinding(bool shouldUseEffects, Entry goReturnTypeEntry)
+		static void ConfigureGoReturnTypeEntryCommandBinding(bool shouldUseEffects, Entry goReturnTypeEntry)
 		{
 			switch (shouldUseEffects)
 			{
@@ -155,6 +135,5 @@ namespace EntryCustomReturnSampleApp
 					break;
 			}
 		}
-		#endregion
 	}
 }

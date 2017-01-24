@@ -16,7 +16,7 @@ namespace EntryCustomReturnUITests
 		public OptionSelectionPage(IApp app, Platform platform) : base(app, platform, PageTitles.OptionSelectionPageTitle)
 		{
 			_openSelectEntryPageButton = x => x.Marked(AutomationIdConstants.OpenPickEntryReturnTypeButtonAutomationId);
-			_openMultipleEntryPageButton = x => x.Marked(AutomationIdConstants.OpenMultipleEntryPageButtonAutomationId);
+			_openMultipleEntryPageButton = x => x.Marked(AutomationIdConstants.OpenMultipleCustomReturnEntryPageButtonAutomationId);
 		}
 		#endregion
 

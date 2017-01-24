@@ -9,12 +9,15 @@ namespace EntryCustomReturnSampleApp
 		#region Fields
 		string _resultLabelText, _nextReturnTypeEntryText, _doneReturnTypeEntryText, _goReturnTypeEntryText,
 			_searchReturnTypeEntryText, _sendReturnTypeEntryText;
-		ICommand _goButtonCommand;
+		ICommand _goButtonCommand, _goReturnTypeEntryReturnCommand;
 		#endregion
 
 		#region Properties
 		public ICommand GoButtonCommand => _goButtonCommand ??
 			(_goButtonCommand = new Command(ExecuteGoButtonCommand));
+
+		public ICommand GoReturnTypeEntryReturnCommand => _goReturnTypeEntryReturnCommand ??
+			(_goReturnTypeEntryReturnCommand = new Command(ExecuteGoReturnTypeEntryReturnCommand));
 
 		public string ResultLabelText
 		{
@@ -56,6 +59,16 @@ namespace EntryCustomReturnSampleApp
 		#region Methods
 		void ExecuteGoButtonCommand()
 		{
+			OutputTextInputToResultsLabel();
+		}
+
+		void ExecuteGoReturnTypeEntryReturnCommand(object obj)
+		{
+			OutputTextInputToResultsLabel();
+		}
+
+		void OutputTextInputToResultsLabel()
+		{
 			var outputStringBuilder = new StringBuilder();
 			outputStringBuilder.AppendLine($"{nameof(NextReturnTypeEntryText)}:");
 			outputStringBuilder.AppendLine($"\t{NextReturnTypeEntryText}");
@@ -64,17 +77,17 @@ namespace EntryCustomReturnSampleApp
 			outputStringBuilder.AppendLine($"{nameof(DoneReturnTypeEntryText)}:");
 			outputStringBuilder.AppendLine($"\t{DoneReturnTypeEntryText}");
 			outputStringBuilder.AppendLine();
-
-			outputStringBuilder.AppendLine($"{nameof(GoReturnTypeEntryText)}:");
-			outputStringBuilder.AppendLine($"\t{GoReturnTypeEntryText}");
+			
+			outputStringBuilder.AppendLine($"{nameof(SendReturnTypeEntryText)}:");
+			outputStringBuilder.AppendLine($"\t{SendReturnTypeEntryText}");
 			outputStringBuilder.AppendLine();
 
 			outputStringBuilder.AppendLine($"{nameof(SearchReturnTypeEntryText)}:");
 			outputStringBuilder.AppendLine($"\t{SearchReturnTypeEntryText}");
 			outputStringBuilder.AppendLine();
 
-			outputStringBuilder.AppendLine($"{nameof(SendReturnTypeEntryText)}:");
-			outputStringBuilder.AppendLine($"\t{SendReturnTypeEntryText}");
+			outputStringBuilder.AppendLine($"{nameof(GoReturnTypeEntryText)}:");
+			outputStringBuilder.AppendLine($"\t{GoReturnTypeEntryText}");
 			outputStringBuilder.AppendLine();
 
 			ResultLabelText = outputStringBuilder.ToString();

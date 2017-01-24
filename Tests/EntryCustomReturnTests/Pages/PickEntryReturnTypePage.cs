@@ -5,6 +5,7 @@ using Xamarin.UITest;
 using EntryCustomReturnSampleApp.Shared;
 
 using Query = System.Func<Xamarin.UITest.Queries.AppQuery, Xamarin.UITest.Queries.AppQuery>;
+
 using EntryCustomReturn.Forms.Plugin.Abstractions;
 
 namespace EntryCustomReturnUITests

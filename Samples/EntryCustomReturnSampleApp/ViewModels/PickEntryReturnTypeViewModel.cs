@@ -17,6 +17,7 @@ namespace EntryCustomReturnSampleApp
 		{
 			EntryReturnTypePickerSource = new List<ReturnType>();
 
+			EntryReturnTypePickerSource.Add(ReturnType.Default);
 			EntryReturnTypePickerSource.Add(ReturnType.Done);
 			EntryReturnTypePickerSource.Add(ReturnType.Go);
 			EntryReturnTypePickerSource.Add(ReturnType.Next);

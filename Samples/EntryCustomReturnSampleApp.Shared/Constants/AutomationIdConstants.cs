@@ -14,8 +14,10 @@ namespace EntryCustomReturnSampleApp.Shared
 		#endregion
 
 		#region OptionSelectionPage
-		public const string OpenMultipleEntryPageButtonAutomationId = "OpenMultipleEntryPageButton";
-		public const string OpenPickEntryReturnTypeButtonAutomationId = "OpenPickEntryReturnTypeButton";
+		public const string OpenMultipleCustomReturnEntryPageButtonAutomationId = "OpenMultipleEntryPageButton";
+		public const string OpenSelectEntryPageUsingCustomRenderersButton = "OpenSelectEntryPageUsingCustomRenderersButton";
+		public const string OpenSelectEntryPageUsingEffectsButton = "OpenSelectEntryPageUsingEffectsButton";
+		public const string OpenMultipleEffectsEntryPageButtonAutomationId = "OpenMultipleEffectsEntryPageButton";
 		#endregion
 
 		#region PickEntryReturnType

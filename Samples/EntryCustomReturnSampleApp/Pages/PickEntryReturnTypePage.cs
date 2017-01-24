@@ -3,20 +3,34 @@
 using EntryCustomReturn.Forms.Plugin.Abstractions;
 
 using EntryCustomReturnSampleApp.Shared;
+using System;
 
 namespace EntryCustomReturnSampleApp
 {
 	public class PickEntryReturnTypePage : BaseContentPage<PickEntryReturnTypeViewModel>
 	{
 		#region Constructors
-		public PickEntryReturnTypePage()
+		public PickEntryReturnTypePage(bool shouldUseEffects)
 		{
-			var customizableEntry = new CustomReturnEntry
+			Entry customizableEntry;
+
+			switch (shouldUseEffects)
 			{
-				AutomationId = AutomationIdConstants.CustomizableEntryAutomationId
-			};
-			customizableEntry.SetBinding<PickEntryReturnTypeViewModel>(CustomReturnEntry.ReturnTypeProperty, vm => vm.EntryReturnType);
-			customizableEntry.SetBinding<PickEntryReturnTypeViewModel>(CustomReturnEntry.PlaceholderProperty, vm => vm.EntryPlaceHolderText);
+				case true:
+					customizableEntry = new Entry();
+					ReturnTypeEffect.SetReturnType(customizableEntry, ReturnType.Go);
+					customizableEntry.SetBinding<PickEntryReturnTypeViewModel>(ReturnTypeEffect.ReturnTypeProperty, vm => vm.EntryReturnType);
+					break;
+				case false:
+					customizableEntry = new CustomReturnEntry();
+					customizableEntry.SetBinding<PickEntryReturnTypeViewModel>(CustomReturnEntry.ReturnTypeProperty, vm => vm.EntryReturnType);
+					break;
+				default:
+					throw new Exception("Invalid Type");
+			}
+
+			customizableEntry.AutomationId = AutomationIdConstants.CustomizableEntryAutomationId;
+			customizableEntry.SetBinding<PickEntryReturnTypeViewModel>(Entry.PlaceholderProperty, vm => vm.EntryPlaceHolderText);
 
 			var entryReturnTypePicker = new Picker
 			{
@@ -37,6 +51,7 @@ namespace EntryCustomReturnSampleApp
 				}
 			};
 		}
+
 		#endregion
 
 		#region Methods

@@ -1,5 +1,4 @@
 using System;
-using System.Threading.Tasks;
 
 using Android.Widget;
 using Android.Runtime;
@@ -23,7 +22,7 @@ namespace EntryCustomReturn.Forms.Plugin.Droid
 		/// <summary>
 		/// Used for registration with dependency service
 		/// </summary>
-		public new async static Task Init()
+		public static void Init()
 		{
 			var temp = DateTime.Now;
 		}
@@ -32,7 +31,7 @@ namespace EntryCustomReturn.Forms.Plugin.Droid
 		{
 			base.OnElementChanged(e);
 
-			var customEntry = Element as Abstractions.CustomReturnEntry;
+			var customEntry = Element as CustomReturnEntry;
 
 			if (Control != null && customEntry != null)
 			{
@@ -43,7 +42,7 @@ namespace EntryCustomReturn.Forms.Plugin.Droid
 					if (customEntry?.ReturnType != ReturnType.Next)
 						customEntry?.Unfocus();
 
-					customEntry?.InvokeCompleted();
+					customEntry?.ReturnCommand?.Execute(null);
 				};
 			}
 		}

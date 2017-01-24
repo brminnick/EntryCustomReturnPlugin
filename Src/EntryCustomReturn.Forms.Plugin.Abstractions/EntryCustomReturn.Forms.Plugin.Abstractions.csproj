@@ -38,6 +38,9 @@
   <ItemGroup>
     <Compile Include="CustomReturnEntry.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="EffectConstants.cs" />
+    <Compile Include="CustomEnums.cs" />
+    <Compile Include="ReturnTypeEffect.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">

@@ -61,7 +61,7 @@
   <ItemGroup>
     <Compile Include="CustomReturnEntryRenderer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="CustomReturnEntryEffect.cs" />
+    <Compile Include="CustomKeyboardReturnEffect.cs" />
     <Compile Include="KeyboardHelpers.cs" />
   </ItemGroup>
   <ItemGroup>

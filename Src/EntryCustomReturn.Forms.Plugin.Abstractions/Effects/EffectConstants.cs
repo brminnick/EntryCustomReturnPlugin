@@ -3,7 +3,7 @@
 	public static class EffectConstants
 	{
 		const string ResolutionGroupName = "EntryCustomReturn.Forms.Plugin";
-		const string EffectName = "CustomReturnEntryEffect";
+		const string EffectName = "CustomKeyboardReturnEffect";
 
 		public static readonly string Name = $"{ResolutionGroupName}.{EffectName}";
 	}

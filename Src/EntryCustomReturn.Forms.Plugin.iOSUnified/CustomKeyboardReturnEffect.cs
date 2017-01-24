@@ -1,4 +1,5 @@
 ﻿using UIKit;
+using Foundation;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
@@ -7,10 +8,11 @@ using EntryCustomReturn.Forms.Plugin.iOS;
 using EntryCustomReturn.Forms.Plugin.Abstractions;
 
 [assembly: ResolutionGroupName("EntryCustomReturn.Forms.Plugin")]
-[assembly: ExportEffect(typeof(CustomReturnEntryEffect), nameof(CustomReturnEntryEffect))]
+[assembly: ExportEffect(typeof(CustomKeyboardReturnEffect), nameof(CustomKeyboardReturnEffect))]
 namespace EntryCustomReturn.Forms.Plugin.iOS
 {
-	public class CustomReturnEntryEffect : PlatformEffect
+	[Preserve(AllMembers = true)]
+	public class CustomKeyboardReturnEffect : PlatformEffect
 	{
 		protected override void OnAttached()
 		{
@@ -28,7 +30,6 @@ namespace EntryCustomReturn.Forms.Plugin.iOS
 
 			if (args.PropertyName == CustomReturnEntry.ReturnTypeProperty.PropertyName)
 				SetKeyboardReturnButton();
-
 		}
 
 		void SetKeyboardReturnButton()

@@ -55,10 +55,10 @@ namespace EntryCustomReturnSampleApp
 			Content = new StackLayout
 			{
 				Children = {
-					_openPickerEntryPageButton,
-					_openMultileEntryPageButton,
 					pickerLabel,
-					_entryTypePicker
+					_entryTypePicker,
+					_openPickerEntryPageButton,
+					_openMultileEntryPageButton
 				}
 			};
 		}

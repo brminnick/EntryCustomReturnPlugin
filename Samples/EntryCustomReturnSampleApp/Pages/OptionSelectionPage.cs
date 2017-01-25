@@ -37,9 +37,9 @@ namespace EntryCustomReturnSampleApp
 			_entryTypePicker = new Picker
 			{
 				AutomationId = AutomationIdConstants.EntryTypePickerAutomationId,
-				SelectedIndex = 0,
 				ItemsSource = PickerConstants.PickerItemSourceList
 			};
+			_entryTypePicker.SelectedIndex = 0;
 
 			Title = PageTitles.OptionSelectionPageTitle;
 

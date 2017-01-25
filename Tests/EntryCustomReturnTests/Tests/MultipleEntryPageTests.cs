@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 
 using Xamarin.UITest;
-using System.Text;
+
 using EntryCustomReturnSampleApp.Shared;
 
 namespace EntryCustomReturnUITests
@@ -65,30 +65,10 @@ namespace EntryCustomReturnUITests
 			var retrievedLabelText = MultipleEntryPage.ResultsLabelText;
 			Assert.AreEqual(expectedLabelTextStringBuilder, retrievedLabelText);
 		}
+
 		string GetExpectedLabelText(string enteredText)
 		{
-			var expectedLabelTextStringBuilder = new StringBuilder();
-			expectedLabelTextStringBuilder.AppendLine("NextReturnTypeEntryText:");
-			expectedLabelTextStringBuilder.AppendLine($"\t{enteredText}");
-			expectedLabelTextStringBuilder.AppendLine();
-
-			expectedLabelTextStringBuilder.AppendLine($"DoneReturnTypeEntryText:");
-			expectedLabelTextStringBuilder.AppendLine($"\t{enteredText}");
-			expectedLabelTextStringBuilder.AppendLine();
-
-			expectedLabelTextStringBuilder.AppendLine($"GoReturnTypeEntryText:");
-			expectedLabelTextStringBuilder.AppendLine($"\t{enteredText}");
-			expectedLabelTextStringBuilder.AppendLine();
-
-			expectedLabelTextStringBuilder.AppendLine($"SearchReturnTypeEntryText:");
-			expectedLabelTextStringBuilder.AppendLine($"\t{enteredText}");
-			expectedLabelTextStringBuilder.AppendLine();
-
-			expectedLabelTextStringBuilder.AppendLine($"SendReturnTypeEntryText:");
-			expectedLabelTextStringBuilder.AppendLine($"\t{enteredText}");
-			expectedLabelTextStringBuilder.AppendLine();
-
-			return expectedLabelTextStringBuilder.ToString();
+			return StringBuilderHelpers.ConvertTextInputToResultsLabel(enteredText, enteredText, enteredText, enteredText, enteredText);
 		}
 	}
 }

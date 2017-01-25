@@ -1,7 +1,9 @@
-﻿using System;
-using System.Windows.Input;
+﻿using System.Windows.Input;
+
 using Xamarin.Forms;
-using System.Text;
+
+using EntryCustomReturnSampleApp.Shared;
+
 namespace EntryCustomReturnSampleApp
 {
 	public class MultipleEntryViewModel : BaseViewModel
@@ -69,28 +71,11 @@ namespace EntryCustomReturnSampleApp
 
 		void OutputTextInputToResultsLabel()
 		{
-			var outputStringBuilder = new StringBuilder();
-			outputStringBuilder.AppendLine($"{nameof(NextReturnTypeEntryText)}:");
-			outputStringBuilder.AppendLine($"\t{NextReturnTypeEntryText}");
-			outputStringBuilder.AppendLine();
-
-			outputStringBuilder.AppendLine($"{nameof(DoneReturnTypeEntryText)}:");
-			outputStringBuilder.AppendLine($"\t{DoneReturnTypeEntryText}");
-			outputStringBuilder.AppendLine();
-			
-			outputStringBuilder.AppendLine($"{nameof(SendReturnTypeEntryText)}:");
-			outputStringBuilder.AppendLine($"\t{SendReturnTypeEntryText}");
-			outputStringBuilder.AppendLine();
-
-			outputStringBuilder.AppendLine($"{nameof(SearchReturnTypeEntryText)}:");
-			outputStringBuilder.AppendLine($"\t{SearchReturnTypeEntryText}");
-			outputStringBuilder.AppendLine();
-
-			outputStringBuilder.AppendLine($"{nameof(GoReturnTypeEntryText)}:");
-			outputStringBuilder.AppendLine($"\t{GoReturnTypeEntryText}");
-			outputStringBuilder.AppendLine();
-
-			ResultLabelText = outputStringBuilder.ToString();
+			ResultLabelText = StringBuilderHelpers.ConvertTextInputToResultsLabel(NextReturnTypeEntryText,
+																				 DoneReturnTypeEntryText,
+																				 SendReturnTypeEntryText,
+																				 SearchReturnTypeEntryText,
+																				 GoReturnTypeEntryText);
 		}
 		#endregion
 	}

@@ -53,6 +53,7 @@ namespace EntryCustomReturnUITests
 			OptionSelectionPage.SetEntryPickerType(customEntryType);
 			OptionSelectionPage.TapOpenMultipleEntryPageButton();
 
+			MultipleEntryPage.EnterDefaultReturnTypeEntryText(enteredText);
 			MultipleEntryPage.EnterNextReturnTypeEntryText(enteredText);
 			MultipleEntryPage.EnterDoneReturnTypeEntryText(enteredText);
 			MultipleEntryPage.EnterSendReturnTypeEntryText(enteredText);
@@ -68,7 +69,7 @@ namespace EntryCustomReturnUITests
 
 		string GetExpectedLabelText(string enteredText)
 		{
-			return StringBuilderHelpers.ConvertTextInputToResultsLabel(enteredText, enteredText, enteredText, enteredText, enteredText);
+			return StringBuilderHelpers.ConvertTextInputToResultsLabel(enteredText, enteredText, enteredText, enteredText, enteredText, enteredText);
 		}
 	}
 }

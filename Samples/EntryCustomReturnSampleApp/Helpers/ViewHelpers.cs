@@ -49,29 +49,17 @@ namespace EntryCustomReturnSampleApp
 
 		public static View CreateMultipleEntryPageLayout(bool shouldUseEffects)
 		{
+			var defaultReturnTypeEntry = CreateEntry<MultipleEntryViewModel>(shouldUseEffects,
+																			ReturnType.Default,
+																			"Return Type: Default",
+																			AutomationIdConstants.DefaultReturnTypeEntryAutomationId,
+																			vm => vm.DefaultReturnTypeEntryText);
+			
 			var nextReturnTypeEntry = CreateEntry<MultipleEntryViewModel>(shouldUseEffects,
 																					  ReturnType.Next,
 																					  "Return Type: Next",
 																					  AutomationIdConstants.NextReturnTypeEntryAutomationId,
 																					  vm => vm.NextReturnTypeEntryText);
-
-			var goReturnTypeEntry = CreateEntry<MultipleEntryViewModel>(shouldUseEffects,
-																		ReturnType.Go,
-																	   	"Return Type: Go",
-																	   	AutomationIdConstants.GoReturnTypeEntryAutomationId,
-																	   	vm => vm.GoReturnTypeEntryText);
-
-			var searchReturnTypeEntry = CreateEntry<MultipleEntryViewModel>(shouldUseEffects,
-																		   ReturnType.Search,
-																		   "Return Type: Search",
-																		   AutomationIdConstants.SearchReturnTypeEntryAutomationId,
-																		   vm => vm.SearchReturnTypeEntryText);
-
-			var sendReturnTypeEntry = CreateEntry<MultipleEntryViewModel>(shouldUseEffects,
-																		  	ReturnType.Send,
-																			"Return Type: Send",
-																		  	AutomationIdConstants.SendReturnTypeEntryAutomationId,
-																	 		vm => vm.SendReturnTypeEntryText);
 
 			var doneReturnTypeEntry = CreateEntry<MultipleEntryViewModel>(shouldUseEffects,
 																		  ReturnType.Done,
@@ -79,6 +67,25 @@ namespace EntryCustomReturnSampleApp
 																		  AutomationIdConstants.DoneReturnTypeEntryAutomationId,
 																		  vm => vm.DoneReturnTypeEntryText);
 
+			var sendReturnTypeEntry = CreateEntry<MultipleEntryViewModel>(shouldUseEffects,
+																		  	ReturnType.Send,
+																			"Return Type: Send",
+																		  	AutomationIdConstants.SendReturnTypeEntryAutomationId,
+																	 		vm => vm.SendReturnTypeEntryText);
+
+			var searchReturnTypeEntry = CreateEntry<MultipleEntryViewModel>(shouldUseEffects,
+																		   ReturnType.Search,
+																		   "Return Type: Search",
+																		   AutomationIdConstants.SearchReturnTypeEntryAutomationId,
+																		   vm => vm.SearchReturnTypeEntryText);
+
+			var goReturnTypeEntry = CreateEntry<MultipleEntryViewModel>(shouldUseEffects,
+																		ReturnType.Go,
+																	   	"Return Type: Go",
+																	   	AutomationIdConstants.GoReturnTypeEntryAutomationId,
+																	   	vm => vm.GoReturnTypeEntryText);
+
+			ConfigureEntryReturnCommand(shouldUseEffects, defaultReturnTypeEntry, () => nextReturnTypeEntry.Focus());
 			ConfigureEntryReturnCommand(shouldUseEffects, nextReturnTypeEntry, () => doneReturnTypeEntry.Focus());
 			ConfigureEntryReturnCommand(shouldUseEffects, doneReturnTypeEntry, () => sendReturnTypeEntry.Focus());
 			ConfigureEntryReturnCommand(shouldUseEffects, sendReturnTypeEntry, () => searchReturnTypeEntry.Focus());
@@ -102,6 +109,7 @@ namespace EntryCustomReturnSampleApp
 			var mainStackLayout = new StackLayout
 			{
 				Children = {
+					defaultReturnTypeEntry,
 					nextReturnTypeEntry,
 					doneReturnTypeEntry,
 					sendReturnTypeEntry,
@@ -173,6 +181,8 @@ namespace EntryCustomReturnSampleApp
 					goReturnTypeEntry.SetBinding<MultipleEntryViewModel>(CustomReturnEntry.ReturnCommandProperty, vm => vm.GoReturnTypeEntryReturnCommand);
 					break;
 			}
+
+			goReturnTypeEntry.Unfocus();
 		}
 	}
 }

@@ -1,8 +1,10 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 
 using Xamarin.UITest;
 
 using EntryCustomReturnSampleApp.Shared;
+using EntryCustomReturn.Forms.Plugin.Abstractions;
 
 using Query = System.Func<Xamarin.UITest.Queries.AppQuery, Xamarin.UITest.Queries.AppQuery>;
 
@@ -11,13 +13,14 @@ namespace EntryCustomReturnUITests
 	public class MultipleEntryPage : BasePage
 	{
 		#region Constant Fields
-		readonly Query _nextReturnTypeEntry, _doneReturnTypeEntry, _goReturnTypeEntry,
+		readonly Query _nextReturnTypeEntry, _defaultReturnTypeEntry, _doneReturnTypeEntry, _goReturnTypeEntry,
 			_searchReturnTypeEntry, _sendReturnTypeEntry, _goButton, _resultsLabel;
 		#endregion
 
 		#region Constructors
 		public MultipleEntryPage(IApp app, Platform platform) : base(app, platform, PageTitles.MultipleEntryPageTitle)
 		{
+			_defaultReturnTypeEntry = x => x.Marked(AutomationIdConstants.DefaultReturnTypeEntryAutomationId);
 			_nextReturnTypeEntry = x => x.Marked(AutomationIdConstants.NextReturnTypeEntryAutomationId);
 			_doneReturnTypeEntry = x => x.Marked(AutomationIdConstants.DoneReturnTypeEntryAutomationId);
 			_goReturnTypeEntry = x => x.Marked(AutomationIdConstants.GoReturnTypeEntryAutomationId);
@@ -35,15 +38,23 @@ namespace EntryCustomReturnUITests
 		#region Methods
 		public void EnterTextIntoAllEntrysUsingReturnButton(string text)
 		{
-			app.Tap(_nextReturnTypeEntry);
+			app.Tap(_defaultReturnTypeEntry);
 
-			for (int i = 0; i < 5; i++)
+			for (int i = 0; i < Enum.GetNames(typeof(ReturnType)).Length; i++)
 			{
 				ClearThenEnterText(text);
 				app.PressEnter();
 			}
 
 			app.Screenshot($"Entered Text Into All Entrys Using Return Button: {text}");
+		}
+
+		public void EnterDefaultReturnTypeEntryText(string text)
+		{
+			app.Tap(_defaultReturnTypeEntry);
+			ClearThenEnterText(text);
+			app.DismissKeyboard();
+			app.Screenshot($"Entered Default Return Type Entry Text: {text}");
 		}
 
 		public void EnterNextReturnTypeEntryText(string text)

@@ -15,7 +15,7 @@ namespace EntryCustomReturn.Forms.Plugin.Abstractions
 			BindableProperty.CreateAttached(propertyName: nameof(ReturnType),
 				returnType: typeof(ReturnType),
 				declaringType: typeof(Entry),
-				defaultValue: ReturnType.Done,
+				defaultValue: ReturnType.Default,
 				propertyChanged: OnReturnTypeChanged);
 
 		/// <summary>
@@ -25,7 +25,8 @@ namespace EntryCustomReturn.Forms.Plugin.Abstractions
 			BindableProperty.CreateAttached(propertyName: "Command",
 				returnType: typeof(ICommand),
 				declaringType: typeof(Entry),
-				defaultValue: null);
+				defaultValue: null,
+				propertyChanged: OnReturnCommandPropertyChanged);
 
 		/// <summary>
 		/// Gets the ReturnType
@@ -69,31 +70,38 @@ namespace EntryCustomReturn.Forms.Plugin.Abstractions
 
 		static void OnReturnTypeChanged(BindableObject bindable, object oldValue, object newValue)
 		{
+			UpdateEffect(bindable);
+		}
+
+		static void OnReturnCommandPropertyChanged(BindableObject bindable, object oldValue, object newValue)
+		{
+			UpdateEffect(bindable);
+		}
+
+		static void UpdateEffect(BindableObject bindable)
+		{
 			var entry = bindable as Entry;
 
 			if (entry == null)
 				return;
 
-			var returnType = (ReturnType)newValue;
+			RemoveEffect(entry);
 
-			if (returnType.Equals(ReturnType.Default))
-			{
-				var toRemove = entry.Effects.FirstOrDefault(e => e is EntryReturnTypeEffect);
-				if (toRemove != null)
-					entry.Effects.Remove(toRemove);
-			}
-			else
-			{
-				entry.Effects.Add(new EntryReturnTypeEffect());
-			}
+			entry.Effects.Add(new EntryReturnTypeEffect());
 		}
 
-		class EntryReturnTypeEffect : RoutingEffect
+		static void RemoveEffect(Entry entry)
 		{
-			public EntryReturnTypeEffect() : base(EffectConstants.Name)
-			{ 
-			}
+			var toRemove = entry.Effects.FirstOrDefault(e => e is EntryReturnTypeEffect);
+			if (toRemove != null)
+				entry.Effects.Remove(toRemove);
 		}
 	}
 
+	class EntryReturnTypeEffect : RoutingEffect
+	{
+		public EntryReturnTypeEffect() : base(EffectConstants.Name)
+		{
+		}
+	}
 }

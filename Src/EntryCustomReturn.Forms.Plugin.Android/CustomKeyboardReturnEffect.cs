@@ -60,17 +60,7 @@ namespace EntryCustomReturn.Forms.Plugin.Android
 
 		void HandleEditorAction(object sender, TextView.EditorActionEventArgs e)
 		{
-			var returnType = ReturnTypeEffect.GetReturnType(Element);
-			if (returnType != ReturnType.Next)
-				HideSoftKeyboard();
-
 			ReturnTypeEffect.GetReturnCommandProperty(Element)?.Execute(null);
-		}
-
-		void HideSoftKeyboard()
-		{
-			var entry = Element as Entry;
-			entry?.Unfocus();
 		}
 	}
 }

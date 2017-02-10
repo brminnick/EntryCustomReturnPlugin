@@ -39,9 +39,6 @@ namespace EntryCustomReturn.Forms.Plugin.Android
 
 				Control.EditorAction += (object sender, TextView.EditorActionEventArgs args) =>
 				{
-					if (customEntry?.ReturnType != ReturnType.Next)
-						customEntry?.Unfocus();
-
 					customEntry?.ReturnCommand?.Execute(null);
 				};
 			}

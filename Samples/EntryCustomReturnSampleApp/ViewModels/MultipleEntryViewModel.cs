@@ -10,7 +10,8 @@ namespace EntryCustomReturnSampleApp
 	{
 		#region Fields
 		string _resultLabelText, _nextReturnTypeEntryText, _doneReturnTypeEntryText, _goReturnTypeEntryText,
-			_searchReturnTypeEntryText, _sendReturnTypeEntryText;
+			_searchReturnTypeEntryText, _sendReturnTypeEntryText, _defaultReturnTypeEntryText;
+
 		ICommand _goButtonCommand, _goReturnTypeEntryReturnCommand;
 		#endregion
 
@@ -37,6 +38,12 @@ namespace EntryCustomReturnSampleApp
 		{
 			get { return _doneReturnTypeEntryText; }
 			set { SetProperty(ref _doneReturnTypeEntryText, value); }
+		}
+
+		public string DefaultReturnTypeEntryText
+		{
+			get { return _defaultReturnTypeEntryText; }
+			set { SetProperty(ref _defaultReturnTypeEntryText, value); }
 		}
 
 		public string GoReturnTypeEntryText
@@ -71,7 +78,8 @@ namespace EntryCustomReturnSampleApp
 
 		void OutputTextInputToResultsLabel()
 		{
-			ResultLabelText = StringBuilderHelpers.ConvertTextInputToResultsLabel(NextReturnTypeEntryText,
+			ResultLabelText = StringBuilderHelpers.ConvertTextInputToResultsLabel(DefaultReturnTypeEntryText,
+																				 NextReturnTypeEntryText,
 																				 DoneReturnTypeEntryText,
 																				 SendReturnTypeEntryText,
 																				 SearchReturnTypeEntryText,

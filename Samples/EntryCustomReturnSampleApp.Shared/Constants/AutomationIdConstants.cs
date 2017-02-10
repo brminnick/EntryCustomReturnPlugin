@@ -6,6 +6,7 @@ namespace EntryCustomReturnSampleApp.Shared
 		#region MultipleEntryPage
 		public const string GoButtonAutomationId = "GoButton";
 		public const string GoReturnTypeEntryAutomationId = "GoReturnTypeEntry";
+		public const string DefaultReturnTypeEntryAutomationId = "DefaultReturnTypeEntry";
 		public const string DoneReturnTypeEntryAutomationId = "DoneReturnTypeEntry";
 		public const string NextReturnTypeEntryAutomationId = "NextReturnTypeEntry";
 		public const string ResultsLabelAutomationId = "ResultsLabel";

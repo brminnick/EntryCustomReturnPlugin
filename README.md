@@ -49,7 +49,7 @@ The EntryCustomReturnPlugin can be consumed either as a [`CustomRenderer`](https
 
 ## Custom Renderer
 
-### 1. Set the `ReturnType` property
+### 1. Set the `ReturnType` Property
  
 The `ReturnType` Property is an enum containing 6 different types: Default, Go, Next, Done, Send, Search;
 
@@ -62,7 +62,7 @@ var goReturnTypeCustomEntry = new CustomReturnEntry
 
 ### 2. Set the `ReturnCommand` Command
  
- `CustomReturnEntry.ReturnCommand` will fire when the user finalizes the text in an entry with the return key.
+ `ReturnCommand` will fire when the user finalizes the text in an entry with the return key.
  
 ```
 goReturnTypeCustomEntry.ReturnCommand = new Command(() => Navigation.PushAsync(new ContentPage())); 
@@ -70,7 +70,7 @@ goReturnTypeCustomEntry.ReturnCommand = new Command(() => Navigation.PushAsync(n
 
 ## Effect
 
-### 1. Set the `ReturnType` property
+### 1. Set the `ReturnType` Property
 
 The `ReturnType` Property is an enum containing 6 different types: Default, Go, Next, Done, Send, Search;
 
@@ -81,7 +81,7 @@ ReturnTypeEffect.SetReturnType(goReturnTypeEntry, ReturnType.Go);
 
 ### 2. Set the `ReturnCommand` Command
  
- `CustomReturnEntry.ReturnCommand` will fire when the user finalizes the text in an entry with the return key.
+ `ReturnCommand` will fire when the user finalizes the text in an entry with the return key.
  ```
  ReturnTypeEffect.SetReturnCommandProperty(goReturnTypeEntry, new Command(() => Navigation.PushAsync(new ContentPage()));
  ```

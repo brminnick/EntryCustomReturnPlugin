@@ -96,4 +96,3 @@ ReturnTypeEffect.SetReturnType(goReturnTypeEntry, ReturnType.Go);
  ```
 
 ![iPhone Demo](./Artwork/iOS Gif.gif)
-![Android Demo](./Artwork/Android Gif.gif)

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Threading;
 
 using Xamarin.UITest;
 
@@ -27,6 +28,7 @@ namespace EntryCustomReturnUITests
 
 		#region Properties
 		public string CustomizableEntryPlaceholder => TestHelpers.GetPlaceholderText(app, AutomationIdConstants.CustomizableEntryAutomationId);
+		public string PickerText => app.Query(_entryReturnTypePicker)?.FirstOrDefault()?.Text;
 		#endregion
 
 		#region Methods
@@ -47,46 +49,90 @@ namespace EntryCustomReturnUITests
 			app.WaitForElement(pickerQuery);
 			app.Tap(pickerQuery);
 
+			ScrollToPickerLocation(returnType);
+
+			SelectValueFromPicker(returnType);
+
+			app.Screenshot($"Selected Return Type From Picker: {returnType.ToString()}");
+		}
+
+		void ScrollToPickerLocation(ReturnType returnType)
+		{
 			if (OnAndroid)
 			{
 				app.Query(x => x.Marked("select_dialog_listview").Invoke("smoothScrollToPosition", (int)returnType - 1));
-				app.Tap(returnType.ToString());
 			}
 			else
 			{
-				app.Query(x => x.Class("UIPickerView").Invoke("selectRow", (int)returnType, "inComponent", 0, "animated", true));
+				app.Query(x => x.Class("UIPickerView").Invoke("selectRow", (int)returnType + 1, "inComponent", 0, "animated", true));
 
 				var maxNumberInEnum = Enum.GetValues(typeof(ReturnType)).Length - 1;
 
 				if (returnType == (ReturnType)maxNumberInEnum)
 					app.Query(x => x.Class("UIPickerView").Invoke("selectRow", (int)returnType - 1, "inComponent", 0, "animated", true));
-
-				SelectValueFromPicker(returnType);
-
-				app.Tap(x => x.Marked("Done"));
 			}
-
-			app.Screenshot($"Selected Return Type From Picker: {returnType.ToString()}");
 		}
 
 		void SelectValueFromPicker(ReturnType returnType)
 		{
-			switch (returnType)
+			if (OniOS && returnType.ToString() == PickerText)
 			{
-				case ReturnType.Done:
-					var deviceCenterXCoordinate = app.Query()?.FirstOrDefault()?.Rect?.CenterX;
+				var nextReturnType = returnType + 2;
+				TapPickerValue(nextReturnType);
+			}
 
-					var donePickerQuery = app.Query("Done")?.LastOrDefault();
-					var donePickerXCoordinate = donePickerQuery?.Rect?.CenterX ?? deviceCenterXCoordinate ?? 500;
-					var donePickerYCoordinate = donePickerQuery?.Rect?.CenterY ?? 0;
+			TapPickerValue(returnType);
 
-					app.TapCoordinates(donePickerXCoordinate, donePickerYCoordinate);
-					break;
+			if (OniOS)
+				TapDoneButtonOniOSPicker();
 
-				default:
+		}
+
+		void TapPickerValue(ReturnType returnType)
+		{
+			Thread.Sleep(500);
+
+			switch (OnAndroid)
+			{
+				case true:
 					app.Tap(returnType.ToString());
 					break;
+					
+				default:
+					switch (returnType)
+					{
+						case ReturnType.Done:
+							var doneQuery = app.Query("Done");
+							var donePickerQuery = doneQuery?.Where(x => x.Class == "UILabel").LastOrDefault();
+
+							var donePickerXCoordinate = donePickerQuery?.Rect?.CenterX ?? 500;
+							var donePickerYCoordinate = donePickerQuery?.Rect?.CenterY ?? 0;
+
+							app.TapCoordinates(donePickerXCoordinate, donePickerYCoordinate);
+							break;
+
+						default:
+							app.Tap(returnType.ToString());
+							break;
+					}
+					break;
 			}
+		}
+
+		void TapDoneButtonOniOSPicker()
+		{
+			if (OnAndroid)
+				return;
+			
+			var doneQuery = app.Query("Done");
+
+			var pickerDoneButtonQuery = doneQuery?.Where(x => x.Class == "UIButtonLabel")?.FirstOrDefault();
+
+			var pickerDoneButtonX = pickerDoneButtonQuery?.Rect?.CenterX ?? 500;
+			var pickerDoneButtonY = pickerDoneButtonQuery?.Rect?.CenterY ?? 0;
+
+			app.TapCoordinates(pickerDoneButtonX, pickerDoneButtonY);
+
 		}
 		#endregion
 	}

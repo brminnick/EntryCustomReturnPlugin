@@ -54,7 +54,7 @@ namespace EntryCustomReturnSampleApp
 																			"Return Type: Default",
 																			AutomationIdConstants.DefaultReturnTypeEntryAutomationId,
 																			vm => vm.DefaultReturnTypeEntryText);
-			
+
 			var nextReturnTypeEntry = CreateEntry<MultipleEntryViewModel>(shouldUseEffects,
 																					  ReturnType.Next,
 																					  "Return Type: Next",
@@ -174,7 +174,6 @@ namespace EntryCustomReturnSampleApp
 			switch (shouldUseEffects)
 			{
 				case true:
-					goReturnTypeEntry.SetBinding(ReturnTypeEffect.ReturnCommandProperty, "GoReturnTypeEntryReturnCommand");
 					goReturnTypeEntry.SetBinding<MultipleEntryViewModel>(ReturnTypeEffect.ReturnCommandProperty, vm => vm.GoReturnTypeEntryReturnCommand);
 					break;
 				case false:
@@ -182,7 +181,7 @@ namespace EntryCustomReturnSampleApp
 					break;
 			}
 
-			goReturnTypeEntry.Unfocus();
+			Device.BeginInvokeOnMainThread(goReturnTypeEntry.Unfocus);
 		}
 	}
 }

@@ -1,14 +1,8 @@
-﻿using System;
-
-using Android.App;
-using Android.Content;
+﻿using Android.App;
 using Android.Content.PM;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
 
-using EntryCustomReturn.Forms.Plugin.Droid;
+using EntryCustomReturn.Forms.Plugin.Android;
 
 namespace EntryCustomReturnSampleApp.Droid
 {

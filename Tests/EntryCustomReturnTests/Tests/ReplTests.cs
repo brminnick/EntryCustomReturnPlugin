@@ -12,6 +12,7 @@ namespace EntryCustomReturnUITests
 		{
 		}
 
+		[Ignore]
 		[Test]
 		public void ReplTest()
 		{

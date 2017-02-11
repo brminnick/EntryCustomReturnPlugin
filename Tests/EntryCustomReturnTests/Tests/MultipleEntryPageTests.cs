@@ -1,7 +1,8 @@
 ﻿using NUnit.Framework;
 
 using Xamarin.UITest;
-using System.Text;
+
+using EntryCustomReturnSampleApp.Shared;
 
 namespace EntryCustomReturnUITests
 {
@@ -16,11 +17,12 @@ namespace EntryCustomReturnUITests
 			base.TestSetup();
 
 			OptionSelectionPage.WaitForPageToLoad();
-			OptionSelectionPage.TapOpenMultipleEntryPageButton();
 		}
 
+		[TestCase(CustomEntryType.Effects)]
+		[TestCase(CustomEntryType.CustomRenderers)]
 		[Test]
-		public void EnterTextIntoMultipleEntriesUsingReturnButton()
+		public void EnterTextIntoMultipleEntriesUsingReturnButton(CustomEntryType customEntryType)
 		{
 			//Arrange
 			const string enteredText = "Hello World";
@@ -28,21 +30,30 @@ namespace EntryCustomReturnUITests
 
 
 			//Act
+			OptionSelectionPage.SetEntryPickerType(customEntryType);
+			OptionSelectionPage.TapOpenMultipleEntryPageButton();
+
 			MultipleEntryPage.EnterTextIntoAllEntrysUsingReturnButton(enteredText);
 
 			//Assert
 			var retrievedLabelText = MultipleEntryPage.ResultsLabelText;
-			Assert.AreEqual(expectedLabelTextStringBuilder,retrievedLabelText);
+			Assert.AreEqual(expectedLabelTextStringBuilder, retrievedLabelText);
 		}
 
+		[TestCase(CustomEntryType.Effects)]
+		[TestCase(CustomEntryType.CustomRenderers)]
 		[Test]
-		public void EnterTextIntoMultipleEntriesWithoutUsingReturnButton()
+		public void EnterTextIntoMultipleEntriesWithoutUsingReturnButton(CustomEntryType customEntryType)
 		{
 			//Arrange
 			const string enteredText = "Hello World";
 			var expectedLabelTextStringBuilder = GetExpectedLabelText(enteredText);
 
 			//Act
+			OptionSelectionPage.SetEntryPickerType(customEntryType);
+			OptionSelectionPage.TapOpenMultipleEntryPageButton();
+
+			MultipleEntryPage.EnterDefaultReturnTypeEntryText(enteredText);
 			MultipleEntryPage.EnterNextReturnTypeEntryText(enteredText);
 			MultipleEntryPage.EnterDoneReturnTypeEntryText(enteredText);
 			MultipleEntryPage.EnterSendReturnTypeEntryText(enteredText);
@@ -55,30 +66,10 @@ namespace EntryCustomReturnUITests
 			var retrievedLabelText = MultipleEntryPage.ResultsLabelText;
 			Assert.AreEqual(expectedLabelTextStringBuilder, retrievedLabelText);
 		}
+
 		string GetExpectedLabelText(string enteredText)
 		{
-			var expectedLabelTextStringBuilder = new StringBuilder();
-			expectedLabelTextStringBuilder.AppendLine("NextReturnTypeEntryText:");
-			expectedLabelTextStringBuilder.AppendLine($"\t{enteredText}");
-			expectedLabelTextStringBuilder.AppendLine();
-
-			expectedLabelTextStringBuilder.AppendLine($"DoneReturnTypeEntryText:");
-			expectedLabelTextStringBuilder.AppendLine($"\t{enteredText}");
-			expectedLabelTextStringBuilder.AppendLine();
-
-			expectedLabelTextStringBuilder.AppendLine($"GoReturnTypeEntryText:");
-			expectedLabelTextStringBuilder.AppendLine($"\t{enteredText}");
-			expectedLabelTextStringBuilder.AppendLine();
-
-			expectedLabelTextStringBuilder.AppendLine($"SearchReturnTypeEntryText:");
-			expectedLabelTextStringBuilder.AppendLine($"\t{enteredText}");
-			expectedLabelTextStringBuilder.AppendLine();
-
-			expectedLabelTextStringBuilder.AppendLine($"SendReturnTypeEntryText:");
-			expectedLabelTextStringBuilder.AppendLine($"\t{enteredText}");
-			expectedLabelTextStringBuilder.AppendLine();
-
-			return expectedLabelTextStringBuilder.ToString();
+			return StringBuilderHelpers.ConvertTextInputToResultsLabel(enteredText, enteredText, enteredText, enteredText, enteredText, enteredText);
 		}
 	}
 }

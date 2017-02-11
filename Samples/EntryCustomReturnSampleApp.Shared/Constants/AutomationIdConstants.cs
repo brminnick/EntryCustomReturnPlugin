@@ -6,6 +6,7 @@ namespace EntryCustomReturnSampleApp.Shared
 		#region MultipleEntryPage
 		public const string GoButtonAutomationId = "GoButton";
 		public const string GoReturnTypeEntryAutomationId = "GoReturnTypeEntry";
+		public const string DefaultReturnTypeEntryAutomationId = "DefaultReturnTypeEntry";
 		public const string DoneReturnTypeEntryAutomationId = "DoneReturnTypeEntry";
 		public const string NextReturnTypeEntryAutomationId = "NextReturnTypeEntry";
 		public const string ResultsLabelAutomationId = "ResultsLabel";
@@ -14,8 +15,9 @@ namespace EntryCustomReturnSampleApp.Shared
 		#endregion
 
 		#region OptionSelectionPage
-		public const string OpenMultipleEntryPageButtonAutomationId = "OpenMultipleEntryPageButton";
-		public const string OpenPickEntryReturnTypeButtonAutomationId = "OpenPickEntryReturnTypeButton";
+		public const string OpenMultileEntryPageButtonAutomationId = "OpenMultileEntryPageButton";
+		public const string OpenPickerEntryPageButtonAutomationId = "OpenPickerEntryPageButton";
+		public const string EntryTypePickerAutomationId = "EntryTypePicker";
 		#endregion
 
 		#region PickEntryReturnType

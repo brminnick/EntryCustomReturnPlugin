@@ -11,8 +11,11 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Constants\AutomationIdConstants.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Constants\PageTitles.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Constants\PickerConstants.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)StringHelpers\StringBuilderHelpers.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Constants\" />
+    <Folder Include="$(MSBuildThisFileDirectory)StringHelpers\" />
   </ItemGroup>
 </Project>

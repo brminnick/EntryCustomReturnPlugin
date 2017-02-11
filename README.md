@@ -1,5 +1,9 @@
 A simple way to modify the Return Button on the Keyboard of a Xamarin.Forms Entry
 
+| Return Button Type | Android | iOS |
+|--------------------|---------|-----|
+| Default            |![](./Artwork/Return Button Images/Android/DefaultButton.png)|![](./Artwork/Return Button Images/iOS/DefaultButton.png)|
+
 # Setup 
 
 * Available on NuGet: https://www.nuget.org/packages/Xam.Plugins.Forms.CustomReturnEntry/ [![NuGet](https://img.shields.io/nuget/v/Xam.Plugins.Forms.CustomReturnEntry.svg?label=NuGet)](https://www.nuget.org/packages/Xam.Plugins.Forms.CustomReturnEntry/)

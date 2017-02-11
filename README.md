@@ -49,7 +49,7 @@ The EntryCustomReturnPlugin can be consumed either as a [`CustomRenderer`](https
 
 ## Custom Renderer
 
-### 1. Set the ReturnType property
+### 1. Set the `ReturnType` property
  
 The `ReturnType` Property is an enum containing 6 different types: Default, Go, Next, Done, Send, Search;
 
@@ -60,7 +60,7 @@ var goReturnTypeCustomEntry = new CustomReturnEntry
 };
 ```
 
-### 2. Set the `CustomReturnEntry.ReturnCommand` Command
+### 2. Set the `ReturnCommand` Command
  
  `CustomReturnEntry.ReturnCommand` will fire when the user finalizes the text in an entry with the return key.
  
@@ -79,7 +79,7 @@ var goReturnTypeEntry = new Entry()
 ReturnTypeEffect.SetReturnType(goReturnTypeEntry, ReturnType.Go);
 ```
 
-### 2. Set the `CustomReturnEntry.ReturnCommand` Command
+### 2. Set the `ReturnCommand` Command
  
  `CustomReturnEntry.ReturnCommand` will fire when the user finalizes the text in an entry with the return key.
  ```

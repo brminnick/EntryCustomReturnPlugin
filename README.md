@@ -1,4 +1,13 @@
-A simple way to modify the Return Button on the Keyboard of a Xamarin.Forms Entry
+#Modify the Keyboard Return Button
+
+| Return Button Type | Android | iOS |
+|--------------------|---------|-----|
+| **Default**            |![](./Artwork/Return Button Images/Android/DefaultButton.png)|![](./Artwork/Return Button Images/iOS/DefaultButton.png)|
+| **Done**            |![](./Artwork/Return Button Images/Android/DoneButton.png)|![](./Artwork/Return Button Images/iOS/DoneButton.png)|
+| **Go**            |![](./Artwork/Return Button Images/Android/GoButton.png)|![](./Artwork/Return Button Images/iOS/GoButton.png)|
+| **Next**            |![](./Artwork/Return Button Images/Android/NextButton.png)|![](./Artwork/Return Button Images/iOS/NextButton.png)|
+| **Search**            |![](./Artwork/Return Button Images/Android/SearchButton.png)|![](./Artwork/Return Button Images/iOS/SearchButton.png)|
+| **Send**            |![](./Artwork/Return Button Images/Android/SendButton.png)|![](./Artwork/Return Button Images/iOS/SendButton.png)|
 
 # Setup 
 
@@ -87,4 +96,3 @@ ReturnTypeEffect.SetReturnType(goReturnTypeEntry, ReturnType.Go);
  ```
 
 ![iPhone Demo](./Artwork/iOS Gif.gif)
-![Android Demo](./Artwork/Android Gif.gif)

@@ -70,7 +70,7 @@ goReturnTypeCustomEntry.ReturnCommand = new Command(() => Navigation.PushAsync(n
 
 ## Effect
 
-### 1. Set the ReturnType property
+### 1. Set the `ReturnType property
 
 The `ReturnType` Property is an enum containing 6 different types: Default, Go, Next, Done, Send, Search;
 

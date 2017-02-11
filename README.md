@@ -1,6 +1,6 @@
 #Modify the `Xamarin.Forms.Entry` Keyboard Return Button
 
-| Return Button Type | Android | iOS |
+| ReturnType | Android | iOS |
 |--------------------|---------|-----|
 | **Default**            |![](./Artwork/Return Button Images/Android/DefaultButton.png)|![](./Artwork/Return Button Images/iOS/DefaultButton.png)|
 | **Done**            |![](./Artwork/Return Button Images/Android/DoneButton.png)|![](./Artwork/Return Button Images/iOS/DoneButton.png)|

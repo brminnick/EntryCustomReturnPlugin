@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 
 using Xamarin.UITest;
 
@@ -53,8 +54,26 @@ namespace EntryCustomReturnUITests
 			}
 			else
 			{
-				if (returnType == ReturnType.Done)
-				{
+				app.Query(x => x.Class("UIPickerView").Invoke("selectRow", (int)returnType, "inComponent", 0, "animated", true));
+
+				var maxNumberInEnum = Enum.GetValues(typeof(ReturnType)).Length - 1;
+
+				if (returnType == (ReturnType)maxNumberInEnum)
+					app.Query(x => x.Class("UIPickerView").Invoke("selectRow", (int)returnType - 1, "inComponent", 0, "animated", true));
+
+				SelectValueFromPicker(returnType);
+
+				app.Tap(x => x.Marked("Done"));
+			}
+
+			app.Screenshot($"Selected Return Type From Picker: {returnType.ToString()}");
+		}
+
+		void SelectValueFromPicker(ReturnType returnType)
+		{
+			switch (returnType)
+			{
+				case ReturnType.Done:
 					var deviceCenterXCoordinate = app.Query()?.FirstOrDefault()?.Rect?.CenterX;
 
 					var donePickerQuery = app.Query("Done")?.LastOrDefault();
@@ -62,21 +81,12 @@ namespace EntryCustomReturnUITests
 					var donePickerYCoordinate = donePickerQuery?.Rect?.CenterY ?? 0;
 
 					app.TapCoordinates(donePickerXCoordinate, donePickerYCoordinate);
-				}
-				else if(returnType == ReturnType.Go)
-				{
-					app.Tap(ReturnType.Next.ToString());
-					app.Tap(ReturnType.Go.ToString());
-				}
-				else
-				{
+					break;
+
+				default:
 					app.Tap(returnType.ToString());
-				}
-
-				app.Tap(x => x.Marked("Done"));
+					break;
 			}
-
-			app.Screenshot($"Selected Return Type From Picker: {returnType.ToString()}");
 		}
 		#endregion
 	}

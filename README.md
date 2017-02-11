@@ -1,4 +1,4 @@
-A simple way to modify the Return Button on the Keyboard of a Xamarin.Forms Entry
+#Modify the Keyboard Return Button
 
 | Return Button Type | Android | iOS |
 |--------------------|---------|-----|

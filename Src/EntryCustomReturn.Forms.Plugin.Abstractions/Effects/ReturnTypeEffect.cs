@@ -9,7 +9,7 @@ namespace EntryCustomReturn.Forms.Plugin.Abstractions
 	public static class ReturnTypeEffect
 	{
 		/// <summary>
-		/// Return Type Property of the Entry
+		/// Return Type Property the Keyboard Return Key
 		/// </summary>
 		public static readonly BindableProperty ReturnTypeProperty =
 			BindableProperty.CreateAttached(propertyName: nameof(ReturnType),
@@ -19,7 +19,7 @@ namespace EntryCustomReturn.Forms.Plugin.Abstractions
 				propertyChanged: OnReturnTypeChanged);
 
 		/// <summary>
-		/// Completed Event Property of the Entry
+		/// Command that occurs when the user finalizes the text in an entry with the return key
 		/// </summary>
 		public static readonly BindableProperty ReturnCommandProperty =
 			BindableProperty.CreateAttached(propertyName: "Command",
@@ -29,7 +29,7 @@ namespace EntryCustomReturn.Forms.Plugin.Abstractions
 				propertyChanged: OnReturnCommandPropertyChanged);
 
 		/// <summary>
-		/// Gets the ReturnType
+		/// Gets the Type of the Keyboard Return Key
 		/// </summary>
 		/// <returns>The return type.</returns>
 		/// <param name="view">View.</param>
@@ -39,7 +39,7 @@ namespace EntryCustomReturn.Forms.Plugin.Abstractions
 		}
 
 		/// <summary>
-		/// Sets the ReturnType
+		/// Sets the Type of the Keyboard Return Key
 		/// </summary>
 		/// <param name="view">View.</param>
 		/// <param name="value">Value.</param>
@@ -49,7 +49,7 @@ namespace EntryCustomReturn.Forms.Plugin.Abstractions
 		}
 
 		/// <summary>
-		/// Gets the ReturnType
+		/// Gets the Command that occurs when the user finalizes the text in an entry with the return key
 		/// </summary>
 		/// <returns>The return type.</returns>
 		/// <param name="view">View.</param>
@@ -59,7 +59,7 @@ namespace EntryCustomReturn.Forms.Plugin.Abstractions
 		}
 
 		/// <summary>
-		/// Sets the ReturnType
+		/// Set the Command that occurs when the user finalizes the text in an entry with the return key
 		/// </summary>
 		/// <param name="view">View.</param>
 		/// <param name="value">Value.</param>

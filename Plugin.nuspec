@@ -4,8 +4,8 @@
        <id>Xam.Plugins.Forms.CustomReturnEntry</id>
        <version>2.0.0</version>
        <title>Custom Return Entry Control Plugin for Xamarin.Forms</title>
-       <authors>Brandon Minnick</authors>
-       <owners>Brandon Minnick</owners>
+       <authors>Brandon Minnick, Colby Williams</authors>
+       <owners>Brandon Minnick, Colby Williams</owners>
        <licenseUrl>https://github.com/brminnick/EntryCustomReturnPlugin/blob/master/license</licenseUrl>
        <projectUrl>https://github.com/brminnick/EntryCustomReturnPlugin</projectUrl>
       <iconUrl>https://github.com/brminnick/EntryCustomReturnPlugin/blob/master/Artwork/icon.png</iconUrl>

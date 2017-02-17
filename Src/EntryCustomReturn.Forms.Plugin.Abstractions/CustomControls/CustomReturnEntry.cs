@@ -11,7 +11,7 @@ namespace EntryCustomReturn.Forms.Plugin.Abstractions
 	public class CustomReturnEntry : Entry
 	{
 		/// <summary>
-		/// Occurs when the user finalizes the text in an entry with the return key
+		/// Command Property that occurs when the user finalizes the text in an entry with the return key
 		/// </summary>
 		public static readonly BindableProperty ReturnCommandProperty =
 			BindableProperty.Create(nameof(ReturnCommand), typeof(ICommand), typeof(CustomReturnEntry), null);
@@ -35,7 +35,7 @@ namespace EntryCustomReturn.Forms.Plugin.Abstractions
 		}
 
 		/// <summary>
-		/// Invoke Completed event
+		/// Occurs when the user finalizes the text in an entry with the return key
 		/// </summary>
 		public ICommand ReturnCommand
 		{

@@ -2,7 +2,7 @@
 
 | ReturnType | Android | iOS |
 |--------------------|---------|-----|
-| **Default**            |![](./Artwork/Return Button Images/Android/DefaultButton.png)|![](./Artwork/Return Button Images/iOS/DefaultButton.png)|
+| **Default**            |![](https://github.com/brminnick/EntryCustomReturnPlugin/blob/master/Artwork/Return%20Button%20Images/Android/DefaultButton.png)|![](./Artwork/Return Button Images/iOS/DefaultButton.png)|
 | **Done**            |![](./Artwork/Return Button Images/Android/DoneButton.png)|![](./Artwork/Return Button Images/iOS/DoneButton.png)|
 | **Go**            |![](./Artwork/Return Button Images/Android/GoButton.png)|![](./Artwork/Return Button Images/iOS/GoButton.png)|
 | **Next**            |![](./Artwork/Return Button Images/Android/NextButton.png)|![](./Artwork/Return Button Images/iOS/NextButton.png)|

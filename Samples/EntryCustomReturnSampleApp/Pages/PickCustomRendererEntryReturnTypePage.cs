@@ -13,7 +13,7 @@ namespace EntryCustomReturnSampleApp
 
 			Padding = new Thickness(10);
 
-			Content = ViewHelpers.CreatePickEntryReturnTypePaageLayout(false);
+			Content = ViewHelpers.CreatePickEntryReturnTypePageLayout(false);
 		}
 
 		#endregion

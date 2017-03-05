@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
+﻿using UIKit;
 using Foundation;
-using UIKit;
+
 using EntryCustomReturn.Forms.Plugin.iOS;
 
 namespace EntryCustomReturnSampleApp.iOS

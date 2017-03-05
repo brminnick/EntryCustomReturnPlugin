@@ -12,7 +12,7 @@ using EntryCustomReturn.Forms.Plugin.Abstractions;
 namespace EntryCustomReturn.Forms.Plugin.iOS
 {
 	[Preserve(AllMembers = true)]
-	public class CustomKeyboardReturnEffect : PlatformEffect
+	sealed class CustomKeyboardReturnEffect : PlatformEffect
 	{
 		protected override void OnAttached()
 		{

@@ -1,5 +1,4 @@
-﻿using Android.Widget;
-using Android.Views.InputMethods;
+﻿using Android.Views.InputMethods;
 
 using EntryCustomReturn.Forms.Plugin.Abstractions;
 

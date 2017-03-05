@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Linq.Expressions;
 
+using Xamarin.Forms;
+
 using EntryCustomReturn.Forms.Plugin.Abstractions;
 using EntryCustomReturnSampleApp.Shared;
-using Xamarin.Forms;
 
 namespace EntryCustomReturnSampleApp
 {
 	public static class ViewHelpers
 	{
-		public static View CreatePickEntryReturnTypePaageLayout(bool shouldUseEffects)
+		public static View CreatePickEntryReturnTypePageLayout(bool shouldUseEffects)
 		{
 			Entry customizableEntry;
 
@@ -147,7 +148,7 @@ namespace EntryCustomReturnSampleApp
 			}
 			entry.Placeholder = placeholder;
 			entry.AutomationId = automationId;
-			entry.SetBinding<T>(Entry.TextProperty, textPropertyBindingSource);
+			entry.SetBinding(Entry.TextProperty, textPropertyBindingSource);
 
 			return entry;
 		}

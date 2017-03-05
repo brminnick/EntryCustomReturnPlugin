@@ -160,7 +160,7 @@ namespace EntryCustomReturnSampleApp
 			switch (shouldUseEffects)
 			{
 				case true:
-					ReturnTypeEffect.SetReturnCommandProperty(entry, command);
+					ReturnTypeEffect.SetReturnCommand(entry, command);
 					break;
 				case false:
 					((CustomReturnEntry)entry).ReturnCommand = command;

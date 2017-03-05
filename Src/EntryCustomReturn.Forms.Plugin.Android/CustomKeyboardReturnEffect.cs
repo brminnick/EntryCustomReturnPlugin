@@ -60,7 +60,7 @@ namespace EntryCustomReturn.Forms.Plugin.Android
 
 		void HandleEditorAction(object sender, TextView.EditorActionEventArgs e)
 		{
-			ReturnTypeEffect.GetReturnCommandProperty(Element)?.Execute(null);
+			ReturnTypeEffect.GetReturnCommand(Element)?.Execute(null);
 		}
 	}
 }

@@ -56,7 +56,7 @@ namespace EntryCustomReturn.Forms.Plugin.Abstractions
 		[Obsolete("Use GetReturnCommand")]
 		public static ICommand GetReturnCommandProperty(BindableObject view)
 		{
-			return (ICommand)view.GetValue(ReturnCommandProperty);
+			return GetReturnCommand(view);
 		}
 
 		/// <summary>
@@ -67,7 +67,7 @@ namespace EntryCustomReturn.Forms.Plugin.Abstractions
 		[Obsolete("Use SetReturnCommand")]
 		public static void SetReturnCommandProperty(BindableObject view, ICommand value)
 		{
-			view.SetValue(ReturnCommandProperty, value);
+			SetReturnCommand(view, value);
 		}
 
 		/// <summary>

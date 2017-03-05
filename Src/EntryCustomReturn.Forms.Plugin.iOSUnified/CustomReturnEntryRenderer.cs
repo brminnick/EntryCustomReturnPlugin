@@ -13,7 +13,7 @@ using EntryCustomReturn.Forms.Plugin.Abstractions;
 namespace EntryCustomReturn.Forms.Plugin.iOS
 {
 	[Preserve(AllMembers = true)]
-	public class CustomReturnEntryRenderer : EntryRenderer
+	public sealed class CustomReturnEntryRenderer : EntryRenderer
 	{
 		/// <summary>
 		/// Used for registration with the dependency service

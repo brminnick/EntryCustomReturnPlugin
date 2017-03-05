@@ -15,7 +15,7 @@ using EntryCustomReturn.Forms.Plugin.Abstractions;
 namespace EntryCustomReturn.Forms.Plugin.Android
 {
 	[Preserve(AllMembers = true)]
-	public class CustomKeyboardReturnEffect : PlatformEffect
+	sealed class CustomKeyboardReturnEffect : PlatformEffect
 	{
 		protected override void OnAttached()
 		{
@@ -60,7 +60,7 @@ namespace EntryCustomReturn.Forms.Plugin.Android
 
 		void HandleEditorAction(object sender, TextView.EditorActionEventArgs e)
 		{
-			ReturnTypeEffect.GetReturnCommandProperty(Element)?.Execute(null);
+			ReturnTypeEffect.GetReturnCommand(Element)?.Execute(null);
 		}
 	}
 }

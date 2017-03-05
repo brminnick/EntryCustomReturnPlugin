@@ -53,7 +53,29 @@ namespace EntryCustomReturn.Forms.Plugin.Abstractions
 		/// </summary>
 		/// <returns>The return type.</returns>
 		/// <param name="view">View.</param>
+		[Obsolete("Use GetReturnCommand")]
 		public static ICommand GetReturnCommandProperty(BindableObject view)
+		{
+			return GetReturnCommand(view);
+		}
+
+		/// <summary>
+		/// Set the Command that occurs when the user finalizes the text in an entry with the return key
+		/// </summary>
+		/// <param name="view">View.</param>
+		/// <param name="value">Value.</param>
+		[Obsolete("Use SetReturnCommand")]
+		public static void SetReturnCommandProperty(BindableObject view, ICommand value)
+		{
+			SetReturnCommand(view, value);
+		}
+
+		/// <summary>
+		/// Gets the Command that occurs when the user finalizes the text in an entry with the return key
+		/// </summary>
+		/// <returns>The return type.</returns>
+		/// <param name="view">View.</param>
+		public static ICommand GetReturnCommand(BindableObject view)
 		{
 			return (ICommand)view.GetValue(ReturnCommandProperty);
 		}
@@ -63,7 +85,7 @@ namespace EntryCustomReturn.Forms.Plugin.Abstractions
 		/// </summary>
 		/// <param name="view">View.</param>
 		/// <param name="value">Value.</param>
-		public static void SetReturnCommandProperty(BindableObject view, ICommand value)
+		public static void SetReturnCommand(BindableObject view, ICommand value)
 		{
 			view.SetValue(ReturnCommandProperty, value);
 		}

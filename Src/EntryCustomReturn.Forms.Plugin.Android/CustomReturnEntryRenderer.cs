@@ -2,7 +2,6 @@ using System;
 
 using Android.Widget;
 using Android.Runtime;
-using Android.Views.InputMethods;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
@@ -17,7 +16,7 @@ namespace EntryCustomReturn.Forms.Plugin.Android
 	/// CustomReturnEntry Implementation
 	/// </summary>
 	[Preserve(AllMembers = true)]
-	public class CustomReturnEntryRenderer : EntryRenderer
+	public sealed class CustomReturnEntryRenderer : EntryRenderer
 	{
 		/// <summary>
 		/// Used for registration with dependency service

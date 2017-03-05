@@ -12,7 +12,7 @@ using EntryCustomReturn.Forms.Plugin.Abstractions;
 namespace EntryCustomReturn.Forms.Plugin.iOS
 {
 	[Preserve(AllMembers = true)]
-	public class CustomKeyboardReturnEffect : PlatformEffect
+	sealed class CustomKeyboardReturnEffect : PlatformEffect
 	{
 		protected override void OnAttached()
 		{
@@ -58,7 +58,7 @@ namespace EntryCustomReturn.Forms.Plugin.iOS
 
 		bool HandleShouldReturn(UITextField textField)
 		{
-			ReturnTypeEffect.GetReturnCommandProperty(Element)?.Execute(null);
+			ReturnTypeEffect.GetReturnCommand(Element)?.Execute(null);
 			return true;
 		}
 	}

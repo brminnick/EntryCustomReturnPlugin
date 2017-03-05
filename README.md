@@ -92,7 +92,7 @@ ReturnTypeEffect.SetReturnType(goReturnTypeEntry, ReturnType.Go);
  
  `ReturnCommand` will fire when the user finalizes the text in an entry with the return key.
  ```
- ReturnTypeEffect.SetReturnCommandProperty(goReturnTypeEntry, new Command(() => Navigation.PushAsync(new ContentPage()));
+ ReturnTypeEffect.SetReturnCommand(goReturnTypeEntry, new Command(() => Navigation.PushAsync(new ContentPage()));
  ```
 
 ![iPhone Demo](./Artwork/iOS Gif.gif)

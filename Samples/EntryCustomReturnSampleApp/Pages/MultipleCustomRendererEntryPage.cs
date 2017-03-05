@@ -15,9 +15,9 @@ namespace EntryCustomReturnSampleApp
 		{
 			Title = PageTitles.MultipleEntryPageTitle;
 
-			Padding = new Thickness(10, Device.OnPlatform(10, 0, 0), 10, 0);
+			Padding = ViewHelpers.GetPagePadding();
 
-			Content = ViewHelpers.CreateMultipleEntryPageLayout(false);
+			Content = ViewHelpers.CreateMultipleEntryPageLayout(false, ViewModel);
 		}
 
 		#endregion

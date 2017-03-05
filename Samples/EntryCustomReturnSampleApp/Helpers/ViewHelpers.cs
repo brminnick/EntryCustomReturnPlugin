@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq.Expressions;
 
 using Xamarin.Forms;
 
@@ -10,7 +9,7 @@ namespace EntryCustomReturnSampleApp
 {
 	public static class ViewHelpers
 	{
-		public static View CreatePickEntryReturnTypePageLayout(bool shouldUseEffects)
+		public static View CreatePickEntryReturnTypePageLayout(bool shouldUseEffects, PickEntryReturnTypeViewModel pickEntryReturnTypeViewModel)
 		{
 			Entry customizableEntry;
 
@@ -19,25 +18,25 @@ namespace EntryCustomReturnSampleApp
 				case true:
 					customizableEntry = new Entry();
 					ReturnTypeEffect.SetReturnType(customizableEntry, ReturnType.Go);
-					customizableEntry.SetBinding<PickEntryReturnTypeViewModel>(ReturnTypeEffect.ReturnTypeProperty, vm => vm.EntryReturnType);
+					customizableEntry.SetBinding(ReturnTypeEffect.ReturnTypeProperty, nameof(pickEntryReturnTypeViewModel.EntryReturnType));
 					break;
 				case false:
 					customizableEntry = new CustomReturnEntry();
-					customizableEntry.SetBinding<PickEntryReturnTypeViewModel>(CustomReturnEntry.ReturnTypeProperty, vm => vm.EntryReturnType);
+					customizableEntry.SetBinding(CustomReturnEntry.ReturnTypeProperty, nameof(pickEntryReturnTypeViewModel.EntryReturnType));
 					break;
 				default:
 					throw new Exception("Invalid Type");
 			}
 
 			customizableEntry.AutomationId = AutomationIdConstants.CustomizableEntryAutomationId;
-			customizableEntry.SetBinding<PickEntryReturnTypeViewModel>(Entry.PlaceholderProperty, vm => vm.EntryPlaceHolderText);
+			customizableEntry.SetBinding(Entry.PlaceholderProperty, nameof(pickEntryReturnTypeViewModel.EntryPlaceHolderText));
 
 			var entryReturnTypePicker = new Picker
 			{
 				AutomationId = AutomationIdConstants.EntryReturnTypePickerAutomationId
 			};
-			entryReturnTypePicker.SetBinding<PickEntryReturnTypeViewModel>(Picker.ItemsSourceProperty, vm => vm.EntryReturnTypePickerSource);
-			entryReturnTypePicker.SetBinding<PickEntryReturnTypeViewModel>(Picker.SelectedItemProperty, vm => vm.PickerSelection);
+			entryReturnTypePicker.SetBinding(Picker.ItemsSourceProperty, nameof(pickEntryReturnTypeViewModel.EntryReturnTypePickerSource));
+			entryReturnTypePicker.SetBinding(Picker.SelectedItemProperty, nameof(pickEntryReturnTypeViewModel.PickerSelection));
 
 			return new StackLayout
 			{
@@ -48,63 +47,63 @@ namespace EntryCustomReturnSampleApp
 			};
 		}
 
-		public static View CreateMultipleEntryPageLayout(bool shouldUseEffects)
+		public static View CreateMultipleEntryPageLayout(bool shouldUseEffects, MultipleEntryViewModel multipleEntryViewModel)
 		{
-			var defaultReturnTypeEntry = CreateEntry<MultipleEntryViewModel>(shouldUseEffects,
-																			ReturnType.Default,
-																			"Return Type: Default",
-																			AutomationIdConstants.DefaultReturnTypeEntryAutomationId,
-																			vm => vm.DefaultReturnTypeEntryText);
+			var defaultReturnTypeEntry = CreateEntry(shouldUseEffects,
+											ReturnType.Default,
+											"Return Type: Default",
+											AutomationIdConstants.DefaultReturnTypeEntryAutomationId,
+											nameof(multipleEntryViewModel.DefaultReturnTypeEntryText));
 
-			var nextReturnTypeEntry = CreateEntry<MultipleEntryViewModel>(shouldUseEffects,
-																					  ReturnType.Next,
-																					  "Return Type: Next",
-																					  AutomationIdConstants.NextReturnTypeEntryAutomationId,
-																					  vm => vm.NextReturnTypeEntryText);
+			var nextReturnTypeEntry = CreateEntry(shouldUseEffects,
+										  	ReturnType.Next,
+										  	"Return Type: Next",
+										  	AutomationIdConstants.NextReturnTypeEntryAutomationId,
+										  	nameof(multipleEntryViewModel.NextReturnTypeEntryText));
 
-			var doneReturnTypeEntry = CreateEntry<MultipleEntryViewModel>(shouldUseEffects,
-																		  ReturnType.Done,
-																		  "Return Type: Done",
-																		  AutomationIdConstants.DoneReturnTypeEntryAutomationId,
-																		  vm => vm.DoneReturnTypeEntryText);
+			var doneReturnTypeEntry = CreateEntry(shouldUseEffects,
+										  	ReturnType.Done,
+										  	"Return Type: Done",
+										  	AutomationIdConstants.DoneReturnTypeEntryAutomationId,
+										  	nameof(multipleEntryViewModel.DoneReturnTypeEntryText));
 
-			var sendReturnTypeEntry = CreateEntry<MultipleEntryViewModel>(shouldUseEffects,
-																		  	ReturnType.Send,
-																			"Return Type: Send",
-																		  	AutomationIdConstants.SendReturnTypeEntryAutomationId,
-																	 		vm => vm.SendReturnTypeEntryText);
+			var sendReturnTypeEntry = CreateEntry(shouldUseEffects,
+										  	ReturnType.Send,
+											"Return Type: Send",
+										  	AutomationIdConstants.SendReturnTypeEntryAutomationId,
+									 		nameof(multipleEntryViewModel.SendReturnTypeEntryText));
 
-			var searchReturnTypeEntry = CreateEntry<MultipleEntryViewModel>(shouldUseEffects,
-																		   ReturnType.Search,
-																		   "Return Type: Search",
-																		   AutomationIdConstants.SearchReturnTypeEntryAutomationId,
-																		   vm => vm.SearchReturnTypeEntryText);
+			var searchReturnTypeEntry = CreateEntry(shouldUseEffects,
+										   	ReturnType.Search,
+										   	"Return Type: Search",
+										   	AutomationIdConstants.SearchReturnTypeEntryAutomationId,
+										   	nameof(multipleEntryViewModel.SearchReturnTypeEntryText));
 
-			var goReturnTypeEntry = CreateEntry<MultipleEntryViewModel>(shouldUseEffects,
-																		ReturnType.Go,
-																	   	"Return Type: Go",
-																	   	AutomationIdConstants.GoReturnTypeEntryAutomationId,
-																	   	vm => vm.GoReturnTypeEntryText);
+			var goReturnTypeEntry = CreateEntry(shouldUseEffects,
+											ReturnType.Go,
+										   	"Return Type: Go",
+										   	AutomationIdConstants.GoReturnTypeEntryAutomationId,
+										   	nameof(multipleEntryViewModel.GoReturnTypeEntryText));
 
 			ConfigureEntryReturnCommand(shouldUseEffects, defaultReturnTypeEntry, () => nextReturnTypeEntry.Focus());
 			ConfigureEntryReturnCommand(shouldUseEffects, nextReturnTypeEntry, () => doneReturnTypeEntry.Focus());
 			ConfigureEntryReturnCommand(shouldUseEffects, doneReturnTypeEntry, () => sendReturnTypeEntry.Focus());
 			ConfigureEntryReturnCommand(shouldUseEffects, sendReturnTypeEntry, () => searchReturnTypeEntry.Focus());
 			ConfigureEntryReturnCommand(shouldUseEffects, searchReturnTypeEntry, () => goReturnTypeEntry.Focus());
-			ConfigureGoReturnTypeEntryCommandBinding(shouldUseEffects, goReturnTypeEntry);
+			ConfigureGoReturnTypeEntryCommandBinding(shouldUseEffects, goReturnTypeEntry, multipleEntryViewModel);
 
 			var goButton = new Button
 			{
 				Text = "Go",
 				AutomationId = AutomationIdConstants.GoButtonAutomationId
 			};
-			goButton.SetBinding<MultipleEntryViewModel>(Button.CommandProperty, vm => vm.GoButtonCommand);
+			goButton.SetBinding(Button.CommandProperty, nameof(multipleEntryViewModel.GoButtonCommand));
 
 			var resultLabel = new Label
 			{
 				AutomationId = AutomationIdConstants.ResultsLabelAutomationId
 			};
-			resultLabel.SetBinding<MultipleEntryViewModel>(Label.TextProperty, vm => vm.ResultLabelText);
+			resultLabel.SetBinding(Label.TextProperty, nameof(multipleEntryViewModel.ResultLabelText));
 
 
 			var mainStackLayout = new StackLayout
@@ -127,7 +126,22 @@ namespace EntryCustomReturnSampleApp
 			};
 		}
 
-		static Entry CreateEntry<T>(bool shouldUseEffects, ReturnType returnType, string placeholder, string automationId, Expression<Func<T, object>> textPropertyBindingSource) where T : BaseViewModel
+		public static Thickness GetPagePadding()
+		{
+			switch (Device.RuntimePlatform)
+			{
+				case Device.Windows:
+				case Device.WinPhone:
+				case Device.Android:
+					return new Thickness(10, 0, 10, 0);
+				case Device.iOS:
+					return new Thickness(10, 10, 10, 0);
+				default:
+					throw new Exception("OS Not Supported");
+			}
+		}
+
+		static Entry CreateEntry(bool shouldUseEffects, ReturnType returnType, string placeholder, string automationId, string bindingSource)
 		{
 			Entry entry;
 
@@ -148,7 +162,7 @@ namespace EntryCustomReturnSampleApp
 			}
 			entry.Placeholder = placeholder;
 			entry.AutomationId = automationId;
-			entry.SetBinding(Entry.TextProperty, textPropertyBindingSource);
+			entry.SetBinding(Entry.TextProperty, bindingSource);
 
 			return entry;
 		}
@@ -170,15 +184,15 @@ namespace EntryCustomReturnSampleApp
 			}
 		}
 
-		static void ConfigureGoReturnTypeEntryCommandBinding(bool shouldUseEffects, Entry goReturnTypeEntry)
+		static void ConfigureGoReturnTypeEntryCommandBinding(bool shouldUseEffects, Entry goReturnTypeEntry, MultipleEntryViewModel multipleEntryViewModel)
 		{
 			switch (shouldUseEffects)
 			{
 				case true:
-					goReturnTypeEntry.SetBinding<MultipleEntryViewModel>(ReturnTypeEffect.ReturnCommandProperty, vm => vm.GoReturnTypeEntryReturnCommand);
+					goReturnTypeEntry.SetBinding(ReturnTypeEffect.ReturnCommandProperty, nameof(multipleEntryViewModel.GoReturnTypeEntryReturnCommand));
 					break;
 				case false:
-					goReturnTypeEntry.SetBinding<MultipleEntryViewModel>(CustomReturnEntry.ReturnCommandProperty, vm => vm.GoReturnTypeEntryReturnCommand);
+					goReturnTypeEntry.SetBinding(CustomReturnEntry.ReturnCommandProperty, nameof(multipleEntryViewModel.GoReturnTypeEntryReturnCommand));
 					break;
 			}
 

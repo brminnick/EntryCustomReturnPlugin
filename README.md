@@ -9,6 +9,19 @@
 | **Search**            |![](https://github.com/brminnick/EntryCustomReturnPlugin/blob/master/Artwork/Return Button Images/Android/SearchButton.png)|![](https://github.com/brminnick/EntryCustomReturnPlugin/blob/master/Artwork/Return Button Images/iOS/SearchButton.png)|
 | **Send**            |![](https://github.com/brminnick/EntryCustomReturnPlugin/blob/master/Artwork/Return Button Images/Android/SendButton.png)|![](https://github.com/brminnick/EntryCustomReturnPlugin/blob/master/Artwork/Return Button Images/iOS/SendButton.png)|
 
+**Platform Support**
+
+|Platform|Supported|Version|
+| ------------------- | :-----------: | :------------------: |
+|Xamarin.iOS|Yes|iOS 8+|
+|Xamarin.iOS Unified|Yes|iOS 8+|
+|Xamarin.Android|Yes|API 15+|
+|Windows Phone Silverlight|No||
+|Windows Phone RT|No||
+|Windows Store RT|No||
+|Windows 10 UWP|No||
+|Xamarin.Mac|No||
+
 # Setup 
 
 * Available on NuGet: https://www.nuget.org/packages/Xam.Plugins.Forms.CustomReturnEntry/ [![NuGet](https://img.shields.io/nuget/v/Xam.Plugins.Forms.CustomReturnEntry.svg?label=NuGet)](https://www.nuget.org/packages/Xam.Plugins.Forms.CustomReturnEntry/)

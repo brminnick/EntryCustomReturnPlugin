@@ -1,4 +1,4 @@
-﻿using UIKit;
+﻿using Windows.UI.Xaml.Input;
 
 using EntryCustomReturn.Forms.Plugin.Abstractions;
 
@@ -6,22 +6,18 @@ namespace EntryCustomReturn.Forms.Plugin.iOS
 {
     static class KeyboardHelpers
     {
-        internal static UIReturnKeyType GetKeyboardButtonType(ReturnType returnType)
+        internal static InputScopeNameValue GetKeyboardButtonType(ReturnType returnType)
         {
             switch (returnType)
             {
-                case ReturnType.Go:
-                    return UIReturnKeyType.Go;
-                case ReturnType.Next:
-                    return UIReturnKeyType.Next;
-                case ReturnType.Send:
-                    return UIReturnKeyType.Send;
-                case ReturnType.Search:
-                    return UIReturnKeyType.Search;
-                case ReturnType.Done:
-                    return UIReturnKeyType.Done;
                 case ReturnType.Default:
-                    return UIReturnKeyType.Default;
+                case ReturnType.Done:
+                case ReturnType.Go:
+                case ReturnType.Next:
+                case ReturnType.Send:
+                    return InputScopeNameValue.Default;
+                case ReturnType.Search:
+                    return InputScopeNameValue.Search;
                 default:
                     throw new System.Exception("Return Type Not Supported");
             }

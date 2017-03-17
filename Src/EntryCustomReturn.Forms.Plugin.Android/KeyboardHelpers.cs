@@ -20,8 +20,10 @@ namespace EntryCustomReturn.Forms.Plugin.Android
 					return ImeAction.Search;
 				case ReturnType.Done:
 					return ImeAction.Done;
-				default:
+				case ReturnType.Default:
 					return ImeAction.Done;
+                default:
+                    throw new System.Exception("Return Type Not Supported");
 			}
 		}
 	}

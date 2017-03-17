@@ -33,7 +33,8 @@ namespace EntryCustomReturn.Forms.Plugin.UWP
 
             if (Control != null && customEntry != null)
             {
-                SetKeyboardEnterButton(customEntry.ReturnType);
+                KeyboardHelpers.SetKeyboardEnterButton(Control, customEntry.ReturnType);
+
                 Control.KeyUp += (sender, eventArgs) =>
                 {
                     if (eventArgs.Key == Windows.System.VirtualKey.Enter)
@@ -51,22 +52,9 @@ namespace EntryCustomReturn.Forms.Plugin.UWP
                 var customEntry = sender as CustomReturnEntry;
 
                 if (Control != null && customEntry != null)
-                    SetKeyboardEnterButton(customEntry.ReturnType);
+                    KeyboardHelpers.SetKeyboardEnterButton(Control, customEntry.ReturnType);
             }
 
-        }
-
-        void SetKeyboardEnterButton(ReturnType returnType)
-        {
-            var scopeName = new InputScopeName()
-            {
-                NameValue = KeyboardHelpers.GetKeyboardButtonType(returnType)
-            };
-            var inputScope = new InputScope
-            {
-                Names = { scopeName }
-            };
-            Control.InputScope = inputScope;
         }
     }
 }

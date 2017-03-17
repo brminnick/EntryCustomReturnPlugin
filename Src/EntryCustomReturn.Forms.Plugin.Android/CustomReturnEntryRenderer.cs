@@ -37,9 +37,7 @@ namespace EntryCustomReturn.Forms.Plugin.Android
                 Control.ImeOptions = KeyboardHelpers.GetKeyboardButtonType(customEntry.ReturnType);
 
                 Control.EditorAction += (object sender, TextView.EditorActionEventArgs args) =>
-                {
-                    customEntry?.ReturnCommand?.Execute(null);
-                };
+                    customEntry.ReturnCommand?.Execute(null);
             }
         }
 

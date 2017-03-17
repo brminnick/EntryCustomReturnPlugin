@@ -107,6 +107,7 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomKeyboardReturnEffect.cs" />
     <Compile Include="CustomReturnEntryRenderer.cs" />
     <Compile Include="KeyboardHelpers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

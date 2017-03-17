@@ -1,5 +1,7 @@
 ﻿using Windows.UI.Xaml.Input;
 
+using Xamarin.Forms.Platform.UWP;
+
 using EntryCustomReturn.Forms.Plugin.Abstractions;
 
 namespace EntryCustomReturn.Forms.Plugin.UWP
@@ -21,6 +23,19 @@ namespace EntryCustomReturn.Forms.Plugin.UWP
                 default:
                     throw new System.Exception("Return Type Not Supported");
             }
+        }
+
+        internal static void SetKeyboardEnterButton(FormsTextBox control, ReturnType returnType)
+        {
+            var scopeName = new InputScopeName()
+            {
+                NameValue = GetKeyboardButtonType(returnType)
+            };
+            var inputScope = new InputScope
+            {
+                Names = { scopeName }
+            };
+            control.InputScope = inputScope;
         }
     }
 }

@@ -16,10 +16,10 @@
 |Xamarin.iOS|Yes|iOS 8+|
 |Xamarin.iOS Unified|Yes|iOS 8+|
 |Xamarin.Android|Yes|API 15+|
+|Windows 10 UWP|Yes|10+|
 |Windows Phone Silverlight|No||
 |Windows Phone RT|No||
 |Windows Store RT|No||
-|Windows 10 UWP|No||
 |Xamarin.Mac|No||
 
 # Setup 

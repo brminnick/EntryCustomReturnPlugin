@@ -12,50 +12,50 @@ using EntryCustomReturn.Forms.Plugin.Abstractions;
 [assembly: ExportRenderer(typeof(CustomReturnEntry), typeof(CustomReturnEntryRenderer))]
 namespace EntryCustomReturn.Forms.Plugin.Android
 {
-	/// <summary>
-	/// CustomReturnEntry Implementation
-	/// </summary>
-	[Preserve(AllMembers = true)]
-	public sealed class CustomReturnEntryRenderer : EntryRenderer
-	{
-		/// <summary>
-		/// Used for registration with dependency service
-		/// </summary>
-		public static void Init()
-		{
-			var temp = DateTime.Now;
-		}
+    /// <summary>
+    /// CustomReturnEntry Implementation
+    /// </summary>
+    [Preserve(AllMembers = true)]
+    public sealed class CustomReturnEntryRenderer : EntryRenderer
+    {
+        /// <summary>
+        /// Used for registration with dependency service
+        /// </summary>
+        public static void Init()
+        {
+            var temp = DateTime.Now;
+        }
 
-		protected override void OnElementChanged(ElementChangedEventArgs<Entry> e)
-		{
-			base.OnElementChanged(e);
+        protected override void OnElementChanged(ElementChangedEventArgs<Entry> e)
+        {
+            base.OnElementChanged(e);
 
-			var customEntry = Element as CustomReturnEntry;
+            var customEntry = Element as CustomReturnEntry;
 
-			if (Control != null && customEntry != null)
-			{
-				Control.ImeOptions = KeyboardHelpers.GetKeyboardButtonType(customEntry.ReturnType);
+            if (Control != null && customEntry != null)
+            {
+                Control.ImeOptions = KeyboardHelpers.GetKeyboardButtonType(customEntry.ReturnType);
 
-				Control.EditorAction += (object sender, TextView.EditorActionEventArgs args) =>
-				{
-					customEntry?.ReturnCommand?.Execute(null);
-				};
-			}
-		}
+                Control.EditorAction += (object sender, TextView.EditorActionEventArgs args) =>
+                {
+                    customEntry?.ReturnCommand?.Execute(null);
+                };
+            }
+        }
 
-		protected override void OnElementPropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
-		{
-			base.OnElementPropertyChanged(sender, e);
+        protected override void OnElementPropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            base.OnElementPropertyChanged(sender, e);
 
-			if (e.PropertyName == CustomReturnEntry.ReturnTypeProperty.PropertyName)
-			{
-				var customEntry = sender as CustomReturnEntry;
+            if (e.PropertyName == CustomReturnEntry.ReturnTypeProperty.PropertyName)
+            {
+                var customEntry = sender as CustomReturnEntry;
 
-				if (Control != null && customEntry != null)
-					Control.ImeOptions = KeyboardHelpers.GetKeyboardButtonType(customEntry.ReturnType);
-			}
+                if (Control != null && customEntry != null)
+                    Control.ImeOptions = KeyboardHelpers.GetKeyboardButtonType(customEntry.ReturnType);
+            }
 
-		}
-	}
+        }
+    }
 }
 

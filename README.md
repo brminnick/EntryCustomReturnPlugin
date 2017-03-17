@@ -1,4 +1,4 @@
-#Customize the `Xamarin.Forms.Entry` Keyboard Return Button
+# Customize the `Xamarin.Forms.Entry` Keyboard Return Button
 
 | ReturnType | Android | iOS |
 |--------------------|---------|-----|

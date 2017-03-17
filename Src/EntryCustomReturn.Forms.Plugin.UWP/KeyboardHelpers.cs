@@ -2,7 +2,7 @@
 
 using EntryCustomReturn.Forms.Plugin.Abstractions;
 
-namespace EntryCustomReturn.Forms.Plugin.iOS
+namespace EntryCustomReturn.Forms.Plugin.UWP
 {
     static class KeyboardHelpers
     {

@@ -6,11 +6,11 @@ using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 using Xamarin.Forms.Platform.UWP;
 
-using EntryCustomReturn.Forms.Plugin.iOS;
+using EntryCustomReturn.Forms.Plugin.UWP;
 using EntryCustomReturn.Forms.Plugin.Abstractions;
 
 [assembly: ExportRenderer(typeof(CustomReturnEntry), typeof(CustomReturnEntryRenderer))]
-namespace EntryCustomReturn.Forms.Plugin.iOS
+namespace EntryCustomReturn.Forms.Plugin.UWP
 {
     [Preserve(AllMembers = true)]
     public sealed class CustomReturnEntryRenderer : EntryRenderer
@@ -30,11 +30,15 @@ namespace EntryCustomReturn.Forms.Plugin.iOS
 
             var customEntry = Element as CustomReturnEntry;
 
-            SetKeyboardEnterButton(customEntry.ReturnType);
 
             if (Control != null && customEntry != null)
             {
-                Control.KeyDown += (sender, eventArgs) => customEntry?.ReturnCommand?.Execute(null);
+                SetKeyboardEnterButton(customEntry.ReturnType);
+                Control.KeyUp += (sender, eventArgs) =>
+                {
+                    if (eventArgs.Key == Windows.System.VirtualKey.Enter)
+                        customEntry.ReturnCommand?.Execute(null);
+                };
             }
         }
 

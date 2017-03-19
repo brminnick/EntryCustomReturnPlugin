@@ -39,7 +39,7 @@ namespace EntryCustomReturn.Forms.Plugin.iOS
 			if (customControl == null)
 				return;
 
-			customControl.ReturnKeyType = KeyboardHelpers.GetKeyboardButtonType(ReturnTypeEffect.GetReturnType(Element));
+			customControl.ReturnKeyType = KeyboardHelpers.GetKeyboardButtonType(CustomReturnEffect.GetReturnType(Element));
 
 			customControl.ShouldReturn += HandleShouldReturn;
 		}
@@ -58,7 +58,7 @@ namespace EntryCustomReturn.Forms.Plugin.iOS
 
 		bool HandleShouldReturn(UITextField textField)
 		{
-			ReturnTypeEffect.GetReturnCommand(Element)?.Execute(null);
+            CustomReturnEffect.GetReturnCommand(Element)?.Execute(null);
 			return true;
 		}
 	}

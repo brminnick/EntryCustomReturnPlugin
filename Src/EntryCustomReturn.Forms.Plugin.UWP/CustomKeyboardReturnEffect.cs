@@ -39,7 +39,7 @@ namespace EntryCustomReturn.Forms.Plugin.UWP
             if (customControl == null)
                 return;
 
-            KeyboardHelpers.SetKeyboardEnterButton(customControl, ReturnTypeEffect.GetReturnType(Element));
+            KeyboardHelpers.SetKeyboardEnterButton(customControl, CustomReturnEffect.GetReturnType(Element));
             Control.KeyUp += HandleKeyUp;
         }
 
@@ -57,7 +57,7 @@ namespace EntryCustomReturn.Forms.Plugin.UWP
         void HandleKeyUp(object sender, KeyRoutedEventArgs e)
         {
             if (e.Key == Windows.System.VirtualKey.Enter)
-                ReturnTypeEffect.GetReturnCommand(Element)?.Execute(null);
+                CustomReturnEffect.GetReturnCommand(Element)?.Execute(null);
         }
     }
 }

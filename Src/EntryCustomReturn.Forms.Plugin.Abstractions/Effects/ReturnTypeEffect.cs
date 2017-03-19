@@ -6,7 +6,11 @@ using Xamarin.Forms;
 
 namespace EntryCustomReturn.Forms.Plugin.Abstractions
 {
-	public static class ReturnTypeEffect
+    /// <summary>
+    /// ReturnTypeEffect Interface
+    /// </summary>
+    [Obsolete("Use CustomReturnEffect")]
+    public static class ReturnTypeEffect
 	{
 		/// <summary>
 		/// Return Type Property the Keyboard Return Key
@@ -46,28 +50,6 @@ namespace EntryCustomReturn.Forms.Plugin.Abstractions
 		public static void SetReturnType(BindableObject view, ReturnType value)
 		{
 			view.SetValue(ReturnTypeProperty, value);
-		}
-
-		/// <summary>
-		/// Gets the Command that occurs when the user finalizes the text in an entry with the return key
-		/// </summary>
-		/// <returns>The return type.</returns>
-		/// <param name="view">View.</param>
-		[Obsolete("Use GetReturnCommand")]
-		public static ICommand GetReturnCommandProperty(BindableObject view)
-		{
-			return GetReturnCommand(view);
-		}
-
-		/// <summary>
-		/// Set the Command that occurs when the user finalizes the text in an entry with the return key
-		/// </summary>
-		/// <param name="view">View.</param>
-		/// <param name="value">Value.</param>
-		[Obsolete("Use SetReturnCommand")]
-		public static void SetReturnCommandProperty(BindableObject view, ICommand value)
-		{
-			SetReturnCommand(view, value);
 		}
 
 		/// <summary>
@@ -117,13 +99,6 @@ namespace EntryCustomReturn.Forms.Plugin.Abstractions
 			var toRemove = entry.Effects.FirstOrDefault(e => e is EntryReturnTypeEffect);
 			if (toRemove != null)
 				entry.Effects.Remove(toRemove);
-		}
-	}
-
-	class EntryReturnTypeEffect : RoutingEffect
-	{
-		public EntryReturnTypeEffect() : base(EffectConstants.Name)
-		{
 		}
 	}
 }

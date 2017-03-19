@@ -17,8 +17,8 @@ namespace EntryCustomReturnSampleApp
 			{
 				case true:
 					customizableEntry = new Entry();
-					ReturnTypeEffect.SetReturnType(customizableEntry, ReturnType.Go);
-					customizableEntry.SetBinding(ReturnTypeEffect.ReturnTypeProperty, nameof(pickEntryReturnTypeViewModel.EntryReturnType));
+                    CustomReturnEffect.SetReturnType(customizableEntry, ReturnType.Go);
+					customizableEntry.SetBinding(CustomReturnEffect.ReturnTypeProperty, nameof(pickEntryReturnTypeViewModel.EntryReturnType));
 					break;
 				case false:
 					customizableEntry = new CustomReturnEntry();
@@ -149,7 +149,7 @@ namespace EntryCustomReturnSampleApp
 			{
 				case true:
 					entry = new Entry();
-					ReturnTypeEffect.SetReturnType(entry, returnType);
+                    CustomReturnEffect.SetReturnType(entry, returnType);
 					break;
 				case false:
 					entry = new CustomReturnEntry
@@ -174,7 +174,7 @@ namespace EntryCustomReturnSampleApp
 			switch (shouldUseEffects)
 			{
 				case true:
-					ReturnTypeEffect.SetReturnCommand(entry, command);
+					CustomReturnEffect.SetReturnCommand(entry, command);
 					break;
 				case false:
 					((CustomReturnEntry)entry).ReturnCommand = command;
@@ -189,7 +189,7 @@ namespace EntryCustomReturnSampleApp
 			switch (shouldUseEffects)
 			{
 				case true:
-					goReturnTypeEntry.SetBinding(ReturnTypeEffect.ReturnCommandProperty, nameof(multipleEntryViewModel.GoReturnTypeEntryReturnCommand));
+					goReturnTypeEntry.SetBinding(CustomReturnEffect.ReturnCommandProperty, nameof(multipleEntryViewModel.GoReturnTypeEntryReturnCommand));
 					break;
 				case false:
 					goReturnTypeEntry.SetBinding(CustomReturnEntry.ReturnCommandProperty, nameof(multipleEntryViewModel.GoReturnTypeEntryReturnCommand));

@@ -131,29 +131,30 @@ The `ReturnType` Property is an enum containing 6 different types: Default, Go, 
 
 ```
 var goReturnTypeEntry = new Entry()
-ReturnTypeEffect.SetReturnType(goReturnTypeEntry, ReturnType.Go);
+CustomReturnEffect.SetReturnType(goReturnTypeEntry, ReturnType.Go);
 ```
 
 It can also be used as a [Bindable Property to bind to a ViewModel](https://github.com/brminnick/EntryCustomReturnPlugin/blob/master/Samples/EntryCustomReturnSampleApp/Helpers/ViewHelpers.cs#L21)
 
 ```
 var viewModel = new MyViewModel();
-var customReturnEntry = new CustomReturnEntry();
-customReturnEntry.SetBinding(ReturnTypeEffect.ReturnTypeProperty, nameof(viewModel.EntryReturnType));
+var customReturnEntry = new Entry();
+customReturnEntry.SetBinding(CustomReturnEffect.ReturnTypeProperty, nameof(viewModel.EntryReturnType));
 ```
 
 ### 2. Set the `ReturnCommand` Command
  
  `ReturnCommand` will fire when the user finalizes the text in an entry with the return key.
  ```
- ReturnTypeEffect.SetReturnCommand(goReturnTypeEntry, new Command(() => Navigation.PushAsync(new ContentPage()));
+ var goReturnTypeEntry = new Entry()
+ CustomReturnEffect.SetReturnCommand(goReturnTypeEntry, new Command(() => Navigation.PushAsync(new ContentPage()));
  ```
  
  It can also be used as a [Bindable Property to bind to a ViewModel](https://github.com/brminnick/EntryCustomReturnPlugin/blob/master/Samples/EntryCustomReturnSampleApp/Helpers/ViewHelpers.cs#L192)
  ```
  var viewModel = new MyViewModel();
- var customReturnEntry = new CustomReturnEntry();
- customReturnEntry.SetBinding(ReturnTypeEffect.ReturnCommandProperty, nameof(viewModel.EntryReturnCommand));
+ var customReturnEntry = new Entry();
+ customReturnEntry.SetBinding(CustomReturnEffect.ReturnCommandProperty, nameof(viewModel.EntryReturnCommand));
  ```
 
 ![iPhone Demo](./Artwork/iOS%20Gif.gif)

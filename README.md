@@ -101,7 +101,7 @@ var goReturnTypeCustomEntry = new CustomReturnEntry
 };
 ```
 
-It can also be used as a [Bindable Property to bind to a ViewModel](https://github.com/brminnick/EntryCustomReturnPlugin/blob/master/Samples/EntryCustomReturnSampleApp/Helpers/ViewHelpers.cs#L25)
+It can also be used as a [Bindable Property to bind to a ViewModel](./Samples/EntryCustomReturnSampleApp/Helpers/ViewHelpers.cs#L25)
 ```
 var viewModel = new MyViewModel();
 var customReturnEntry = new CustomReturnEntry();

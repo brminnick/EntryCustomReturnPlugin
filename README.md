@@ -137,4 +137,4 @@ customReturnEntry.SetBinding(ReturnTypeEffect.ReturnTypeProperty, nameof(viewMod
  customReturnEntry.SetBinding(ReturnTypeEffect.ReturnCommandProperty, nameof(viewModel.EntryReturnCommand));
  ```
 
-![iPhone Demo](./Artwork/iOS Gif.gif)
+![iPhone Demo](./Artwork/iOS%20Gif.gif)

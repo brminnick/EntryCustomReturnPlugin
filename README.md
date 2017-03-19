@@ -1,13 +1,13 @@
 # Custom `Xamarin.Forms.Entry` Keyboard Return Button
 
-| ReturnType | Android | iOS |
-|--------------------|---------|-----|
-| **Default**            |![](https://github.com/brminnick/EntryCustomReturnPlugin/blob/master/Artwork/Return%20Button%20Images/Android/DefaultButton.png)|![](https://github.com/brminnick/EntryCustomReturnPlugin/blob/master/Artwork/Return%20Button%20Images/iOS/DefaultButton.png)|
-| **Done**            |![](https://github.com/brminnick/EntryCustomReturnPlugin/blob/master/Artwork/Return%20Button%20Images/Android/DoneButton.png)|![](https://github.com/brminnick/EntryCustomReturnPlugin/blob/master/Artwork/Return%20Button%20Images/iOS/DoneButton.png)|
-| **Go**            |![](https://github.com/brminnick/EntryCustomReturnPlugin/blob/master/Artwork/Return%20Button%20Images/Android/GoButton.png)|![](https://github.com/brminnick/EntryCustomReturnPlugin/blob/master/Artwork/Return%20Button%20Images/iOS/GoButton.png)|
-| **Next**            |![](https://github.com/brminnick/EntryCustomReturnPlugin/blob/master/Artwork/Return%20Button%20Images/Android/NextButton.png)|![](https://github.com/brminnick/EntryCustomReturnPlugin/blob/master/Artwork/Return%20Button%20Images/iOS/NextButton.png)|
-| **Search**            |![](https://github.com/brminnick/EntryCustomReturnPlugin/blob/master/Artwork/Return%20Button%20Images/Android/SearchButton.png)|![](https://github.com/brminnick/EntryCustomReturnPlugin/blob/master/Artwork/Return%20Button%20Images/iOS/SearchButton.png)|
-| **Send**            |![](https://github.com/brminnick/EntryCustomReturnPlugin/blob/master/Artwork/Return%20Button%20Images/Android/SendButton.png)|![](https://github.com/brminnick/EntryCustomReturnPlugin/blob/master/Artwork/Return%20Button%20Images/iOS/SendButton.png)|
+| ReturnType | Android | iOS | UWP |
+|--------------------|---------|-----|-----| 
+| **Default**            |![](https://github.com/brminnick/EntryCustomReturnPlugin/blob/master/Artwork/Return%20Button%20Images/Android/DefaultButton.png)|![](https://github.com/brminnick/EntryCustomReturnPlugin/blob/master/Artwork/Return%20Button%20Images/iOS/DefaultButton.png)|![](https://github.com/brminnick/EntryCustomReturnPlugin/blob/master/Artwork/Return%20Button%20Images/UWP/DefaultButton.png)|
+| **Done**            |![](https://github.com/brminnick/EntryCustomReturnPlugin/blob/master/Artwork/Return%20Button%20Images/Android/DoneButton.png)|![](https://github.com/brminnick/EntryCustomReturnPlugin/blob/master/Artwork/Return%20Button%20Images/iOS/DoneButton.png)|![](https://github.com/brminnick/EntryCustomReturnPlugin/blob/master/Artwork/Return%20Button%20Images/UWP/DefaultButton.png)|
+| **Go**            |![](https://github.com/brminnick/EntryCustomReturnPlugin/blob/master/Artwork/Return%20Button%20Images/Android/GoButton.png)|![](https://github.com/brminnick/EntryCustomReturnPlugin/blob/master/Artwork/Return%20Button%20Images/iOS/GoButton.png)|![](https://github.com/brminnick/EntryCustomReturnPlugin/blob/master/Artwork/Return%20Button%20Images/UWP/DefaultButton.png)|
+| **Next**            |![](https://github.com/brminnick/EntryCustomReturnPlugin/blob/master/Artwork/Return%20Button%20Images/Android/NextButton.png)|![](https://github.com/brminnick/EntryCustomReturnPlugin/blob/master/Artwork/Return%20Button%20Images/iOS/NextButton.png)|![](https://github.com/brminnick/EntryCustomReturnPlugin/blob/master/Artwork/Return%20Button%20Images/UWP/DefaultButton.png)|
+| **Search**            |![](https://github.com/brminnick/EntryCustomReturnPlugin/blob/master/Artwork/Return%20Button%20Images/Android/SearchButton.png)|![](https://github.com/brminnick/EntryCustomReturnPlugin/blob/master/Artwork/Return%20Button%20Images/iOS/SearchButton.png)|![](https://github.com/brminnick/EntryCustomReturnPlugin/blob/master/Artwork/Return%20Button%20Images/UWP/SearchButton.png)|
+| **Send**            |![](https://github.com/brminnick/EntryCustomReturnPlugin/blob/master/Artwork/Return%20Button%20Images/Android/SendButton.png)|![](https://github.com/brminnick/EntryCustomReturnPlugin/blob/master/Artwork/Return%20Button%20Images/iOS/SendButton.png)|![](https://github.com/brminnick/EntryCustomReturnPlugin/blob/master/Artwork/Return%20Button%20Images/UWP/DefaultButton.png)|
 
 **Platform Support**
 
@@ -16,10 +16,10 @@
 |Xamarin.iOS|Yes|iOS 8+|
 |Xamarin.iOS Unified|Yes|iOS 8+|
 |Xamarin.Android|Yes|API 15+|
+|Windows 10 UWP|Yes|10+|
 |Windows Phone Silverlight|No||
 |Windows Phone RT|No||
 |Windows Store RT|No||
-|Windows 10 UWP|No||
 |Xamarin.Mac|No||
 
 # Setup 

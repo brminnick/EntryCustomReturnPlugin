@@ -28,7 +28,7 @@
 * Install into your PCL project and Client projects.
 
 ## iOS
-In the `FinishedLaunching` method of the `AppDelegate`, add `CustomReturnEntryRenderer.Init();`:
+In the `FinishedLaunching` method of `AppDelegate.cs`, add `CustomReturnEntryRenderer.Init();`:
 ```
 	public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
 	{
@@ -45,10 +45,10 @@ In the `FinishedLaunching` method of the `AppDelegate`, add `CustomReturnEntryRe
 	}
 ```
 
-**Note:** You must call  `EntryCustomReturn.Forms.Plugin.iOS.CustomReturnEntryRenderer.Init();` *after* you call `Xamarin.Forms.Init();`
+**Note:** You must call  `EntryCustomReturn.Forms.Plugin.iOS.CustomReturnEntryRenderer.Init();` *after* you call `Xamarin.Forms.Forms.Init();`
 
 ## Android
-In the `Oncreated` method of the `MainActivity`, add `CustomReturnEntryRenderer.Init();`:
+In the `Oncreated` method of `MainActivity.cs`, add `CustomReturnEntryRenderer.Init();`:
 ```
 	public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
 	{

@@ -66,6 +66,25 @@ In the `Oncreated` method of the `MainActivity`, add `CustomReturnEntryRenderer.
 ```
 **Note:** You must call  `EntryCustomReturn.Forms.Plugin.Droid.CustomReturnEntryRenderer.Init();` *after* you call `Xamarin.Forms.Init(this, bundle);`
 
+## UWP
+In the `OnLaunched` method of `App.xaml.cs`, add `CustomReturnEntryRenderer.Init();`:
+```
+	public partial class App : Application
+	{
+		protected override void OnLaunched(LaunchActivatedEventArgs e)
+		{
+			...
+
+			global::Xamarin.Forms.Forms.Init(e);
+
+			EntryCustomReturn.Forms.Plugin.UWP.CustomReturnEntryRenderer.Init();
+
+			...
+		}
+	}
+```
+**Note:** You must call  `EntryCustomReturn.Forms.Plugin.UWP.CustomReturnEntryRenderer.Init();` *after* you call `Xamarin.Forms.Forms.Init(e);`
+
 # Usage in Xamarin.Forms Project
 The EntryCustomReturnPlugin can be consumed either as a [`CustomRenderer`](https://developer.xamarin.com/guides/xamarin-forms/custom-renderer/entry/#Consuming_the_Custom_Control/) or as an [`Effect`](https://developer.xamarin.com/guides/xamarin-forms/effects/creating/#Consuming_the_Effect_in_C).
 

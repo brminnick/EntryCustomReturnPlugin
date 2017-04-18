@@ -12,7 +12,7 @@ namespace EntryCustomReturn.Forms.Plugin.Abstractions
     public static class CustomReturnEffect
     {
         /// <summary>
-        /// Return Type Property the Keyboard Return Key
+        /// Return Type Property of the Keyboard Return Key
         /// </summary>
         public static readonly BindableProperty ReturnTypeProperty =
             BindableProperty.CreateAttached(propertyName: nameof(ReturnType),

@@ -1,26 +1,24 @@
-using System;
+﻿using System;
 
-using Android.Widget;
-using Android.Runtime;
+using Windows.UI.Xaml.Input;
 
 using Xamarin.Forms;
-using Xamarin.Forms.Platform.Android;
+using Xamarin.Forms.Internals;
+using Xamarin.Forms.Platform.UWP;
 
-using EntryCustomReturn.Forms.Plugin.Android;
+using EntryCustomReturn.Forms.Plugin.UWP;
 using EntryCustomReturn.Forms.Plugin.Abstractions;
 
 [assembly: ExportRenderer(typeof(CustomReturnEntry), typeof(CustomReturnEntryRenderer))]
-namespace EntryCustomReturn.Forms.Plugin.Android
+namespace EntryCustomReturn.Forms.Plugin.UWP
 {
-    /// <summary>
-    /// CustomReturnEntry Implementation
-    /// </summary>
     [Preserve(AllMembers = true)]
     public sealed class CustomReturnEntryRenderer : EntryRenderer
     {
         /// <summary>
-        /// Used for registration with dependency service
+        /// Used for registration with the dependency service
         /// </summary>
+        /// <returns></returns>
         public static void Init()
         {
             var temp = DateTime.Now;
@@ -32,12 +30,16 @@ namespace EntryCustomReturn.Forms.Plugin.Android
 
             var customEntry = Element as CustomReturnEntry;
 
+
             if (Control != null && customEntry != null)
             {
-                Control.ImeOptions = KeyboardHelpers.GetKeyboardButtonType(customEntry.ReturnType);
+                KeyboardHelpers.SetKeyboardEnterButton(Control, customEntry.ReturnType);
 
-                Control.EditorAction += (object sender, TextView.EditorActionEventArgs args) =>
-                    customEntry.ReturnCommand?.Execute(null);
+                Control.KeyUp += (sender, eventArgs) =>
+                {
+                    if (eventArgs.Key == Windows.System.VirtualKey.Enter)
+                        customEntry.ReturnCommand?.Execute(null);
+                };
             }
         }
 
@@ -50,10 +52,9 @@ namespace EntryCustomReturn.Forms.Plugin.Android
                 var customEntry = sender as CustomReturnEntry;
 
                 if (Control != null && customEntry != null)
-                    Control.ImeOptions = KeyboardHelpers.GetKeyboardButtonType(customEntry.ReturnType);
+                    KeyboardHelpers.SetKeyboardEnterButton(Control, customEntry.ReturnType);
             }
 
         }
     }
 }
-

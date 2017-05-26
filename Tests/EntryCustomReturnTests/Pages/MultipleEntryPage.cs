@@ -46,6 +46,8 @@ namespace EntryCustomReturnUITests
 				app.PressEnter();
 			}
 
+            app.DismissKeyboard();
+
 			app.Screenshot($"Entered Text Into All Entrys Using Return Button: {text}");
 		}
 

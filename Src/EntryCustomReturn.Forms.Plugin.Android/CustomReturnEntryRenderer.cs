@@ -3,7 +3,6 @@ using System;
 using Android.Views;
 using Android.Widget;
 using Android.Runtime;
-using Android.Text.Method;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;

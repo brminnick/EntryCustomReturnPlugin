@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 using EntryCustomReturn.Forms.Plugin.Abstractions;
 
@@ -15,42 +16,38 @@ namespace EntryCustomReturnSampleApp
 		#region Constructors
 		public PickEntryReturnTypeViewModel()
 		{
-			EntryReturnTypePickerSource = new List<ReturnType>();
+            EntryReturnTypePickerSource = new List<ReturnType>();
 
-			EntryReturnTypePickerSource.Add(ReturnType.Default);
-			EntryReturnTypePickerSource.Add(ReturnType.Done);
-			EntryReturnTypePickerSource.Add(ReturnType.Go);
-			EntryReturnTypePickerSource.Add(ReturnType.Next);
-			EntryReturnTypePickerSource.Add(ReturnType.Search);
-			EntryReturnTypePickerSource.Add(ReturnType.Send);
-
-			UpdateEntryReturnType();
+            foreach(ReturnType returnType in Enum.GetValues(typeof(ReturnType)))
+                EntryReturnTypePickerSource.Add(returnType);
+            
+            UpdateEntryReturnType();
 		}
 		#endregion
 
 		#region Properties
 		public string EntryPlaceHolderText
 		{
-			get { return _entryPlaceHolderText; }
-			set { SetProperty(ref _entryPlaceHolderText, value); }
+			get => _entryPlaceHolderText;
+			set => SetProperty(ref _entryPlaceHolderText, value);
 		}
 
 		public List<ReturnType> EntryReturnTypePickerSource
 		{
-			get { return _entryReturnTypePickerSource; }
-			set { SetProperty(ref _entryReturnTypePickerSource, value); }
+			get => _entryReturnTypePickerSource;
+			set => SetProperty(ref _entryReturnTypePickerSource, value);
 		}
 
 		public ReturnType EntryReturnType
 		{
-			get { return _entryReturnType; }
-			set { SetProperty(ref _entryReturnType, value); }
+			get => _entryReturnType;
+			set => SetProperty(ref _entryReturnType, value);
 		}
 
 		public ReturnType PickerSelection
 		{
-			get { return _pickerSelection; }
-			set { SetProperty(ref _pickerSelection, value, UpdateEntryReturnType); }
+			get => _pickerSelection;
+			set => SetProperty(ref _pickerSelection, value, UpdateEntryReturnType);
 		}
 		#endregion
 

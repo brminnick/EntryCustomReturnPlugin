@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 
+using Android.Views;
 using Android.Widget;
 using Android.Runtime;
 
@@ -37,10 +38,19 @@ namespace EntryCustomReturn.Forms.Plugin.Android
 				customControl.ImeOptions = KeyboardHelpers.GetKeyboardButtonType(CustomReturnEffect.GetReturnType(entry));
 
 				customControl.EditorAction += HandleEditorAction;
+				customControl.KeyPress += HandleKeyPress;
 			}
 		}
 
-		void UnsetKeyboardReturnButton()
+        void HandleKeyPress(object sender, global::Android.Views.View.KeyEventArgs e)
+        {
+			if (e?.Event?.KeyCode == Keycode.Enter && e?.Event?.Action == KeyEventActions.Up)
+				CustomReturnEffect.GetReturnCommand(Element)?.Execute(null);
+
+			e.Handled = false;
+        }
+
+        void UnsetKeyboardReturnButton()
 		{
 			var customControl = Control as EntryEditText;
 
@@ -50,6 +60,7 @@ namespace EntryCustomReturn.Forms.Plugin.Android
 				{
 					customControl.ImeOptions = KeyboardHelpers.GetKeyboardButtonType(ReturnType.Default);
 					customControl.EditorAction -= HandleEditorAction;
+                    customControl.KeyPress -= HandleKeyPress;
 				}
 			}
 			catch (ObjectDisposedException e)
@@ -60,6 +71,9 @@ namespace EntryCustomReturn.Forms.Plugin.Android
 
 		void HandleEditorAction(object sender, TextView.EditorActionEventArgs e)
 		{
+			if (e?.Event?.KeyCode == Keycode.Enter)
+				return;
+            
             CustomReturnEffect.GetReturnCommand(Element)?.Execute(null);
 		}
 	}

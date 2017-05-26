@@ -1,4 +1,4 @@
-https://www.bitrise.io/app/01a7d986a483dc66/status.svg?token=rLlWyVD2Qe1pY9nZy-mN0A&branch=master
+[![Build Status](https://www.bitrise.io/app/01a7d986a483dc66/status.svg?token=rLlWyVD2Qe1pY9nZy-mN0A&branch=master)](https://www.bitrise.io/app/01a7d986a483dc66)
 
 # Custom `Xamarin.Forms.Entry` Keyboard Return Button
 

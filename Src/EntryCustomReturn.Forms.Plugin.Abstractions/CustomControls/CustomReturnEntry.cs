@@ -15,10 +15,13 @@ namespace EntryCustomReturn.Forms.Plugin.Abstractions
 		public static readonly BindableProperty ReturnCommandProperty =
 			BindableProperty.Create(nameof(ReturnCommand), typeof(ICommand), typeof(CustomReturnEntry), null);
 
-		/// <summary>
-		/// Return Type Property of the Entry
-		/// </summary>
-		public static readonly BindableProperty ReturnTypeProperty =
+        public static readonly BindableProperty ReturnCommandParameterProperty =
+            BindableProperty.Create(nameof(CommandParameter), typeof(object), typeof(CustomReturnEntry), null);
+
+        /// <summary>
+        /// Return Type Property of the Entry
+        /// </summary>
+        public static readonly BindableProperty ReturnTypeProperty =
 			BindableProperty.Create(propertyName: nameof(ReturnType),
 				returnType: typeof(ReturnType),
 				declaringType: typeof(CustomReturnEntry),
@@ -41,5 +44,11 @@ namespace EntryCustomReturn.Forms.Plugin.Abstractions
 			get { return (ICommand)GetValue(ReturnCommandProperty); }
 			set { SetValue(ReturnCommandProperty, value); }
 		}
-	}
+
+        public object CommandParameter
+        {
+            get { return GetValue(CommandParameterProperty); }
+            set { SetValue(CommandParameterProperty, value); }
+        }
+    }
 }

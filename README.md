@@ -118,6 +118,7 @@ customReturnEntry.SetBinding(CustomReturnEntry.ReturnTypeProperty, nameof(viewMo
  
 ```
 goReturnTypeCustomEntry.ReturnCommand = new Command(() => Navigation.PushAsync(new ContentPage())); 
+goReturnTypeCustomEntry.ReturnCommandParameter = "StringParameter";
 ```
 
 It can also be used as a [Bindable Property to bind to a ViewModel](./Samples/EntryCustomReturnSampleApp/Helpers/ViewHelpers.cs#L195)

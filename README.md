@@ -125,6 +125,8 @@ It can also be used as a [Bindable Property to bind to a ViewModel](./Samples/En
  var viewModel = new MyViewModel();
  var customReturnEntry = new CustomReturnEntry();
  customReturnEntry.SetBinding(CustomReturnEntry.ReturnCommandProperty, nameof(viewModel.EntryReturnCommand));
+ customReturnEntry.SetBinding(CustomReturnEffect.ReturnCommandParameterProperty, nameof(viewModel.EntryReturnCommandParameter));
+					
 ```
 
 ## Effect
@@ -165,11 +167,13 @@ customReturnEditor.SetBinding(CustomReturnEffect.ReturnTypeProperty, nameof(view
  ```
  var goReturnTypeEntry = new Entry()
  CustomReturnEffect.SetReturnCommand(goReturnTypeEntry, new Command(() => Navigation.PushAsync(new ContentPage()));
+ CustomReturnEffect.SetReturnCommandParameter(goReturnTypeEntry, "StringParameter");
  ```
 
   ```
  var goReturnTypeEditor = new Editor()
  CustomReturnEffect.SetReturnCommand(goReturnTypeEditor, new Command(() => Navigation.PushAsync(new ContentPage()));
+ CustomReturnEffect.SetReturnCommandParameter(goReturnTypeEditor, "StringParameter");
  ```
  
  It can also be used as a [Bindable Property to bind to a ViewModel](./Samples/EntryCustomReturnSampleApp/Helpers/ViewHelpers.cs#L192)
@@ -177,12 +181,14 @@ customReturnEditor.SetBinding(CustomReturnEffect.ReturnTypeProperty, nameof(view
  var viewModel = new MyViewModel();
  var customReturnEntry = new Entry();
  customReturnEntry.SetBinding(CustomReturnEffect.ReturnCommandProperty, nameof(viewModel.EntryReturnCommand));
+ customReturnEntry.SetBinding(CustomReturnEffect.ReturnCommandParameterProperty, nameof(viewModel.EntryReturnCommandParameter));
  ```
 
   ```
  var viewModel = new MyViewModel();
  var customReturnEditor = new Editor();
  customReturnEditor.SetBinding(CustomReturnEffect.ReturnCommandProperty, nameof(viewModel.EntryReturnCommand));
+ customReturnEditor.SetBinding(CustomReturnEffect.ReturnCommandParameterProperty, nameof(viewModel.EntryReturnCommandParameter));
  ```
 
 ![iPhone Demo](./Artwork/iOS%20Gif.gif)

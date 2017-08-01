@@ -58,7 +58,7 @@ namespace EntryCustomReturn.Forms.Plugin.iOS
 
 		bool HandleShouldReturn(UITextField textField)
 		{
-            CustomReturnEffect.GetReturnCommand(Element)?.Execute(null);
+            CustomReturnEffect.GetReturnCommand(Element)?.Execute(CustomReturnEffect.GetReturnCommandParameter(Element));
 			return true;
 		}
 	}

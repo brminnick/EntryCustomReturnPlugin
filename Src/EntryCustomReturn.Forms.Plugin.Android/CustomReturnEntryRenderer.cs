@@ -41,7 +41,7 @@ namespace EntryCustomReturn.Forms.Plugin.Android
 				Control.KeyPress += (sender, keyEventArgs) =>
 				{
 					if (keyEventArgs?.Event?.KeyCode == Keycode.Enter && keyEventArgs?.Event?.Action == KeyEventActions.Up)
-						customEntry.ReturnCommand?.Execute(null);
+						customEntry.ReturnCommand?.Execute(customEntry.CommandParameter);
 
 					keyEventArgs.Handled = false;
 				};
@@ -51,7 +51,7 @@ namespace EntryCustomReturn.Forms.Plugin.Android
 					if (args?.Event?.KeyCode == Keycode.Enter)
 						return;
 
-					customEntry.ReturnCommand?.Execute(null);
+					customEntry.ReturnCommand?.Execute(customEntry.CommandParameter);
 				};
 			}
 		}

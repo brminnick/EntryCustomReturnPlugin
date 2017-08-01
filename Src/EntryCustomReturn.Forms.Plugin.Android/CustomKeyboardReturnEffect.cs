@@ -45,7 +45,7 @@ namespace EntryCustomReturn.Forms.Plugin.Android
         void HandleKeyPress(object sender, global::Android.Views.View.KeyEventArgs e)
         {
 			if (e?.Event?.KeyCode == Keycode.Enter && e?.Event?.Action == KeyEventActions.Up)
-				CustomReturnEffect.GetReturnCommand(Element)?.Execute(null);
+				CustomReturnEffect.GetReturnCommand(Element)?.Execute(CustomReturnEffect.GetReturnCommandParameter(Element));
 
 			e.Handled = false;
         }
@@ -74,7 +74,7 @@ namespace EntryCustomReturn.Forms.Plugin.Android
 			if (e?.Event?.KeyCode == Keycode.Enter)
 				return;
             
-            CustomReturnEffect.GetReturnCommand(Element)?.Execute(null);
+            CustomReturnEffect.GetReturnCommand(Element)?.Execute(CustomReturnEffect.GetReturnCommandParameter(Element));
 		}
 	}
 }

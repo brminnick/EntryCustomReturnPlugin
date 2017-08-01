@@ -9,23 +9,30 @@ namespace EntryCustomReturn.Forms.Plugin.Abstractions
 	/// </summary>
 	public class CustomReturnEntry : Entry
 	{
-		/// <summary>
-		/// Command Property that occurs when the user finalizes the text in an entry with the return key
-		/// </summary>
-		public static readonly BindableProperty ReturnCommandProperty =
-			BindableProperty.Create(nameof(ReturnCommand), typeof(ICommand), typeof(CustomReturnEntry), null);
+        /// <summary>
+        /// Command Property that occurs when the user finalizes the text in an entry with the return key
+        /// </summary>
+        public static readonly BindableProperty ReturnCommandProperty =
+            BindableProperty.Create(nameof(ReturnCommand), 
+                                    typeof(ICommand), 
+                                    typeof(CustomReturnEntry));
 
+        /// <summary>
+        /// Backing store for the ReturnCommandParameter bindable property
+        /// </summary>
         public static readonly BindableProperty ReturnCommandParameterProperty =
-            BindableProperty.Create(nameof(CommandParameter), typeof(object), typeof(CustomReturnEntry), null);
+            BindableProperty.Create(nameof(CommandParameter), 
+                                    typeof(object), 
+                                    typeof(CustomReturnEntry));
 
         /// <summary>
         /// Return Type Property of the Entry
         /// </summary>
         public static readonly BindableProperty ReturnTypeProperty =
-			BindableProperty.Create(propertyName: nameof(ReturnType),
-				returnType: typeof(ReturnType),
-				declaringType: typeof(CustomReturnEntry),
-				defaultValue: ReturnType.Done);
+			BindableProperty.Create(nameof(ReturnType),
+                                    typeof(ReturnType),
+                                    typeof(CustomReturnEntry),
+                                    ReturnType.Done);
 
 		/// <summary>
 		/// Type of the Keyboard Return Key
@@ -45,10 +52,13 @@ namespace EntryCustomReturn.Forms.Plugin.Abstractions
 			set { SetValue(ReturnCommandProperty, value); }
 		}
 
+        /// <summary>
+        /// Gets or sets the ReturnCommand parameter
+        /// </summary>
         public object CommandParameter
         {
-            get { return GetValue(CommandParameterProperty); }
-            set { SetValue(CommandParameterProperty, value); }
+            get { return GetValue(ReturnCommandParameterProperty); }
+            set { SetValue(ReturnCommandParameterProperty, value); }
         }
     }
 }

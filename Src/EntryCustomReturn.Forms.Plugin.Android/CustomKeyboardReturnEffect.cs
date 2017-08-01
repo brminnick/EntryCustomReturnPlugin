@@ -30,16 +30,22 @@ namespace EntryCustomReturn.Forms.Plugin.Android
 
 		void SetKeyboardReturnButton()
 		{
-			var customControl = Control as EntryEditText;
-			var entry = Element as Entry;
+			var entry = Element as InputView;
 
-			if (customControl != null && entry != null)
+            if (Control is EntryEditText entryEditText)
 			{
-				customControl.ImeOptions = KeyboardHelpers.GetKeyboardButtonType(CustomReturnEffect.GetReturnType(entry));
+				entryEditText.ImeOptions = KeyboardHelpers.GetKeyboardButtonType(CustomReturnEffect.GetReturnType(entry));
 
-				customControl.EditorAction += HandleEditorAction;
-				customControl.KeyPress += HandleKeyPress;
+				entryEditText.EditorAction += HandleEditorAction;
+				entryEditText.KeyPress += HandleKeyPress;
 			}
+            else if(Control is EditText editText)
+            {
+				editText.ImeOptions = KeyboardHelpers.GetKeyboardButtonType(CustomReturnEffect.GetReturnType(entry));
+                editText.InputType = global::Android.Text.InputTypes.TextFlagImeMultiLine;
+				editText.EditorAction += HandleEditorAction;
+				editText.KeyPress += HandleKeyPress;
+            }
 		}
 
         void HandleKeyPress(object sender, global::Android.Views.View.KeyEventArgs e)
@@ -52,15 +58,20 @@ namespace EntryCustomReturn.Forms.Plugin.Android
 
         void UnsetKeyboardReturnButton()
 		{
-			var customControl = Control as EntryEditText;
-
 			try
 			{
-				if (customControl != null)
+                if (Control is EntryEditText entryEditText)
 				{
-					customControl.ImeOptions = KeyboardHelpers.GetKeyboardButtonType(ReturnType.Default);
-					customControl.EditorAction -= HandleEditorAction;
-                    customControl.KeyPress -= HandleKeyPress;
+					entryEditText.ImeOptions = KeyboardHelpers.GetKeyboardButtonType(ReturnType.Default);
+					entryEditText.EditorAction -= HandleEditorAction;
+                    entryEditText.KeyPress -= HandleKeyPress;
+				}
+				else if (Control is EditText editText)
+				{
+					editText.ImeOptions = KeyboardHelpers.GetKeyboardButtonType(ReturnType.Default);
+                    editText.InputType = default(global::Android.Text.InputTypes);
+					editText.EditorAction -= HandleEditorAction;
+					editText.KeyPress -= HandleKeyPress;
 				}
 			}
 			catch (ObjectDisposedException e)

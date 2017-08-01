@@ -1,4 +1,6 @@
-﻿using UIKit;
+﻿using System;
+
+using UIKit;
 using Foundation;
 
 using Xamarin.Forms;
@@ -34,31 +36,43 @@ namespace EntryCustomReturn.Forms.Plugin.iOS
 
 		void SetKeyboardReturnButton()
 		{
-			var customControl = Control as UITextField;
-
-			if (customControl == null)
-				return;
-
-			customControl.ReturnKeyType = KeyboardHelpers.GetKeyboardButtonType(CustomReturnEffect.GetReturnType(Element));
-
-			customControl.ShouldReturn += HandleShouldReturn;
+            if (Control is UITextField textFieldControl)
+            {
+                textFieldControl.ReturnKeyType = KeyboardHelpers.GetKeyboardButtonType(CustomReturnEffect.GetReturnType(Element));
+                textFieldControl.ShouldReturn += HandleShouldReturn;
+            }
+            else if(Control is UITextView textViewControl)
+            {
+				textViewControl.ReturnKeyType = KeyboardHelpers.GetKeyboardButtonType(CustomReturnEffect.GetReturnType(Element));
+				textViewControl.ShouldChangeText += HandleShouldChangeText;
+            }
 		}
 
-		void UnsetKeyboardReturnButton()
+        void UnsetKeyboardReturnButton()
 		{
-			var customControl = Control as UITextField;
-
-			if (customControl == null)
-				return;
-
-			customControl.ReturnKeyType = UIReturnKeyType.Default;
-
-			customControl.ShouldReturn -= HandleShouldReturn;
+            if (Control is UITextField textFieldControl)
+            {
+                textFieldControl.ReturnKeyType = UIReturnKeyType.Default;
+                textFieldControl.ShouldReturn -= HandleShouldReturn;
+            }
+            else if (Control is UITextView textViewControl)
+            {
+                textViewControl.ReturnKeyType = UIReturnKeyType.Default;
+                textViewControl.ShouldChangeText -= HandleShouldChangeText;
+            }
 		}
 
 		bool HandleShouldReturn(UITextField textField)
 		{
             CustomReturnEffect.GetReturnCommand(Element)?.Execute(CustomReturnEffect.GetReturnCommandParameter(Element));
+			return true;
+		}
+
+		bool HandleShouldChangeText(UITextView textView, NSRange range, string text)
+		{
+            if (text.Equals("\n"))
+                CustomReturnEffect.GetReturnCommand(Element)?.Execute(CustomReturnEffect.GetReturnCommandParameter(Element));
+
 			return true;
 		}
 	}

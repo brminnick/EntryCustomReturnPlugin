@@ -127,6 +127,8 @@ It can also be used as a [Bindable Property to bind to a ViewModel](./Samples/En
 
 ## Effect
 
+Effects can be attached to either a `Xamarin.Forms.Editor`or a `Xamarin.Forms.Entry` control.
+
 ### 1. Set the `ReturnType` Property
 
 The `ReturnType` Property is an enum containing 6 different types: Default, Go, Next, Done, Send, Search.
@@ -134,6 +136,11 @@ The `ReturnType` Property is an enum containing 6 different types: Default, Go, 
 ```
 var goReturnTypeEntry = new Entry()
 CustomReturnEffect.SetReturnType(goReturnTypeEntry, ReturnType.Go);
+```
+
+```
+var goReturnTypeEditor = new Editor()
+CustomReturnEffect.SetReturnType(goReturnTypeEditor, ReturnType.Go);
 ```
 
 It can also be used as a [Bindable Property to bind to a ViewModel](./Samples/EntryCustomReturnSampleApp/Helpers/ViewHelpers.cs#L21)
@@ -144,6 +151,12 @@ var customReturnEntry = new Entry();
 customReturnEntry.SetBinding(CustomReturnEffect.ReturnTypeProperty, nameof(viewModel.EntryReturnType));
 ```
 
+```
+var viewModel = new MyViewModel();
+var customReturnEditor = new Editor();
+customReturnEditor.SetBinding(CustomReturnEffect.ReturnTypeProperty, nameof(viewModel.EntryReturnType));
+```
+
 ### 2. Set the `ReturnCommand` Command
  
  `ReturnCommand` will fire when the user finalizes the text in an entry with the return key.
@@ -151,12 +164,23 @@ customReturnEntry.SetBinding(CustomReturnEffect.ReturnTypeProperty, nameof(viewM
  var goReturnTypeEntry = new Entry()
  CustomReturnEffect.SetReturnCommand(goReturnTypeEntry, new Command(() => Navigation.PushAsync(new ContentPage()));
  ```
+
+  ```
+ var goReturnTypeEditor = new Editor()
+ CustomReturnEffect.SetReturnCommand(goReturnTypeEditor, new Command(() => Navigation.PushAsync(new ContentPage()));
+ ```
  
  It can also be used as a [Bindable Property to bind to a ViewModel](./Samples/EntryCustomReturnSampleApp/Helpers/ViewHelpers.cs#L192)
  ```
  var viewModel = new MyViewModel();
  var customReturnEntry = new Entry();
  customReturnEntry.SetBinding(CustomReturnEffect.ReturnCommandProperty, nameof(viewModel.EntryReturnCommand));
+ ```
+
+  ```
+ var viewModel = new MyViewModel();
+ var customReturnEditor = new Editor();
+ customReturnEditor.SetBinding(CustomReturnEffect.ReturnCommandProperty, nameof(viewModel.EntryReturnCommand));
  ```
 
 ![iPhone Demo](./Artwork/iOS%20Gif.gif)

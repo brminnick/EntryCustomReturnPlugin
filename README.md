@@ -2,6 +2,8 @@
 
 # Custom Keyboard Return Button
 
+Supports both `Xamarin.Forms.Entry` and `Xamarin.Forms.Editor` controls
+
 | ReturnType | Android | iOS | UWP |
 |--------------------|---------|-----|-----| 
 | **Default**            |![](https://github.com/brminnick/EntryCustomReturnPlugin/blob/master/Artwork/Return%20Button%20Images/Android/DefaultButton.png)|![](https://github.com/brminnick/EntryCustomReturnPlugin/blob/master/Artwork/Return%20Button%20Images/iOS/DefaultButton.png)|![](https://github.com/brminnick/EntryCustomReturnPlugin/blob/master/Artwork/Return%20Button%20Images/UWP/DefaultButton.png)|

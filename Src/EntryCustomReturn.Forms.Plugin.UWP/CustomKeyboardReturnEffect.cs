@@ -34,24 +34,20 @@ namespace EntryCustomReturn.Forms.Plugin.UWP
 
         void SetKeyboardReturnButton()
         {
-            var customControl = Control as FormsTextBox;
-
-            if (customControl == null)
-                return;
-
-            KeyboardHelpers.SetKeyboardEnterButton(customControl, CustomReturnEffect.GetReturnType(Element));
-            Control.KeyUp += HandleKeyUp;
+            if (Control is FormsTextBox formsTextBox)
+            {
+                KeyboardHelpers.SetKeyboardEnterButton(formsTextBox, CustomReturnEffect.GetReturnType(Element));
+                Control.KeyUp += HandleKeyUp;
+            }
         }
 
         void UnsetKeyboardReturnButton()
         {
-            var customControl = Control as FormsTextBox;
-
-            if (customControl == null)
-                return;
-
-            KeyboardHelpers.SetKeyboardEnterButton(customControl, ReturnType.Default);
-            Control.KeyUp -= HandleKeyUp;
+            if (Control is FormsTextBox formsTextBox)
+            {
+                KeyboardHelpers.SetKeyboardEnterButton(formsTextBox, ReturnType.Default);
+                Control.KeyUp -= HandleKeyUp;
+            }
         }
 
         void HandleKeyUp(object sender, KeyRoutedEventArgs e)

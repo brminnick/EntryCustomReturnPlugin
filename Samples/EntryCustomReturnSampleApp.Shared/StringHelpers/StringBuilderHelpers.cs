@@ -31,7 +31,7 @@ namespace EntryCustomReturnSampleApp.Shared
 			outputStringBuilder.AppendLine($"{nameof(goReturnTypeEntryText)}: {goReturnTypeEntryText}");
 			outputStringBuilder.AppendLine();
 
-            outputStringBuilder.AppendLine($"Command Parameter Type: {commandParamter.GetType()}");
+            outputStringBuilder.AppendLine($"Command Parameter Type: {commandParamter?.GetType()}");
 
             return outputStringBuilder;
 		}

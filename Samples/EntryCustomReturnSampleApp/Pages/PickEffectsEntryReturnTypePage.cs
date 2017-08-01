@@ -4,30 +4,30 @@ using EntryCustomReturnSampleApp.Shared;
 
 namespace EntryCustomReturnSampleApp
 {
-	public class PickEffectsEntryReturnTypePage : BaseContentPage<PickEntryReturnTypeViewModel>
-	{
-		#region Constructors
-		public PickEffectsEntryReturnTypePage()
-		{
-			Title = PageTitles.PickEntryReturnTypePageTitle;
+    public class PickEffectsEntryReturnTypePage : BaseContentPage<PickEntryReturnTypeViewModel>
+    {
+        #region Constructors
+        public PickEffectsEntryReturnTypePage(InputViewType inputViewType)
+        {
+            Title = PageTitles.PickEntryReturnTypePageTitle;
 
-			Padding = new Thickness(10);
+            Padding = new Thickness(10);
 
-			Content = ViewHelpers.CreatePickEntryReturnTypePageLayout(false, ViewModel);
-		}
+            Content = ViewHelpers.CreatePickEntryReturnTypePageLayout(inputViewType, true, ViewModel);
+        }
 
-		#endregion
+        #endregion
 
-		#region Methods
-		protected override void SubscribeEventHandlers()
-		{
-			AreEventHandlersSubscribed = true;
-		}
+        #region Methods
+        protected override void SubscribeEventHandlers()
+        {
+            AreEventHandlersSubscribed = true;
+        }
 
-		protected override void UnsubscribeEventHandlers()
-		{
-			AreEventHandlersSubscribed = false;
-		}
-		#endregion
-	}
+        protected override void UnsubscribeEventHandlers()
+        {
+            AreEventHandlersSubscribed = false;
+        }
+        #endregion
+    }
 }

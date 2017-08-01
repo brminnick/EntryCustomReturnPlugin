@@ -11,13 +11,13 @@ namespace EntryCustomReturnSampleApp
 		#endregion
 
 		#region Constructors
-		public MultipleCustomRendererEntryPage()
+		public MultipleCustomRendererEntryPage(InputViewType inputViewType)
 		{
 			Title = PageTitles.MultipleEntryPageTitle;
 
 			Padding = ViewHelpers.GetPagePadding();
 
-			Content = ViewHelpers.CreateMultipleEntryPageLayout(false, ViewModel);
+			Content = ViewHelpers.CreateMultipleEntryPageLayout(inputViewType,false, ViewModel);
 		}
 
 		#endregion

@@ -7,90 +7,120 @@ using EntryCustomReturnSampleApp.Shared;
 
 namespace EntryCustomReturnSampleApp
 {
-	public class OptionSelectionPage : BaseContentPage<BaseViewModel>
-	{
-		#region Constant Fields
-		readonly Button _openMultileEntryPageButton, _openPickerEntryPageButton;
-		readonly Picker _entryTypePicker;
-		#endregion
+    public class OptionSelectionPage : BaseContentPage<BaseViewModel>
+    {
+        #region Constant Fields
+        readonly Button _openMultileEntryPageButton, _openPickerEntryPageButton;
+        readonly Picker _customEntryTypePicker, _inputTypePicker;
+        #endregion
 
-		#region Constructors
-		public OptionSelectionPage()
-		{
-			_openMultileEntryPageButton = new Button
-			{
-				Text = "Multiple Entry Page",
-				AutomationId = AutomationIdConstants.OpenMultileEntryPageButtonAutomationId
-			};
+        #region Constructors
+        public OptionSelectionPage()
+        {
+            _openMultileEntryPageButton = new Button
+            {
+                Text = "Multiple Entry Page",
+                AutomationId = AutomationIdConstants.OpenMultileEntryPageButton
+            };
 
-			_openPickerEntryPageButton = new Button
-			{
-				Text = "Return Type Picker Page",
-				AutomationId = AutomationIdConstants.OpenPickerEntryPageButtonAutomationId
-			};
+            _openPickerEntryPageButton = new Button
+            {
+                Text = "Return Type Picker Page",
+                AutomationId = AutomationIdConstants.OpenPickerEntryPageButton
+            };
 
-			var pickerLabel = new Label
-			{
-				Text = "Generate Entrys Using"
-			};
+            var customEntryTypeLabel = new Label { Text = "Generate" };
 
-			_entryTypePicker = new Picker
-			{
-				AutomationId = AutomationIdConstants.EntryTypePickerAutomationId,
-				ItemsSource = PickerConstants.PickerItemSourceList
-			};
-			_entryTypePicker.SelectedIndex = 0;
+            _customEntryTypePicker = new Picker
+            {
+                AutomationId = AutomationIdConstants.CustomEntryTypePicker,
+                ItemsSource = PickerConstants.CustomEntryPickerItemSourceList
+            };
+            _customEntryTypePicker.SelectedIndex = 0;
 
-			Title = PageTitles.OptionSelectionPageTitle;
+            var inputTypeLabel = new Label { Text = "Using" };
 
-			NavigationPage.SetBackButtonTitle(this, "");
+            _inputTypePicker = new Picker
+            {
+                AutomationId = AutomationIdConstants.InputTypePicker,
+                ItemsSource = PickerConstants.InputViewPickerItemSourceList
+            };
+            _inputTypePicker.SelectedIndex = 0;
 
-			Padding = new Thickness(10);
+            Title = PageTitles.OptionSelectionPageTitle;
 
-			Content = new StackLayout
-			{
-				Children = {
-					pickerLabel,
-					_entryTypePicker,
-					_openPickerEntryPageButton,
-					_openMultileEntryPageButton
-	}
-			};
-		}
-		#endregion
+            NavigationPage.SetBackButtonTitle(this, "");
 
-		#region Methods
-		protected override void SubscribeEventHandlers()
-		{
-			_openPickerEntryPageButton.Clicked += HandleOpenSelectEntryPageButtonClicked;
-			_openMultileEntryPageButton.Clicked += HandleOpenMultipleEntryPageButtonClicked;
+            Padding = new Thickness(10);
 
-			AreEventHandlersSubscribed = true;
-		}
+            Content = new StackLayout
+            {
+                Children = {
+                    customEntryTypeLabel,
+                    _customEntryTypePicker,
+                    inputTypeLabel,
+                    _inputTypePicker,
+                    _openPickerEntryPageButton,
+                    _openMultileEntryPageButton
+    }
+            };
+        }
+        #endregion
 
-		protected override void UnsubscribeEventHandlers()
-		{
-			_openPickerEntryPageButton.Clicked -= HandleOpenSelectEntryPageButtonClicked;
-			_openMultileEntryPageButton.Clicked -= HandleOpenMultipleEntryPageButtonClicked;
+        #region Methods
+        protected override void SubscribeEventHandlers()
+        {
+            _openPickerEntryPageButton.Clicked += HandleOpenSelectEntryPageButtonClicked;
+            _openMultileEntryPageButton.Clicked += HandleOpenMultipleEntryPageButtonClicked;
 
-			AreEventHandlersSubscribed = false;
-		}
+            AreEventHandlersSubscribed = true;
+        }
 
-		void HandleOpenMultipleEntryPageButtonClicked(object sender, EventArgs e)
-		{
-			if (_entryTypePicker.SelectedItem.Equals(PickerConstants.PickerItemListEffectsText))
-				Device.BeginInvokeOnMainThread(async () => await Navigation.PushAsync(new MultipleEffectsEntryPage()));
-			else if (_entryTypePicker.SelectedItem.Equals(PickerConstants.PickerItemListCustomRenderersText))
-				Device.BeginInvokeOnMainThread(async () => await Navigation.PushAsync(new MultipleCustomRendererEntryPage()));
-		}
+        protected override void UnsubscribeEventHandlers()
+        {
+            _openPickerEntryPageButton.Clicked -= HandleOpenSelectEntryPageButtonClicked;
+            _openMultileEntryPageButton.Clicked -= HandleOpenMultipleEntryPageButtonClicked;
 
-		void HandleOpenSelectEntryPageButtonClicked(object sender, EventArgs e)
-		{
-			if (_entryTypePicker.SelectedItem.Equals(PickerConstants.PickerItemListEffectsText))
-				Device.BeginInvokeOnMainThread(async () => await Navigation.PushAsync(new PickEffectsEntryReturnTypePage()));
-			else if (_entryTypePicker.SelectedItem.Equals(PickerConstants.PickerItemListCustomRenderersText))
-				Device.BeginInvokeOnMainThread(async () => await Navigation.PushAsync(new PickCustomRendererEntryReturnTypePage()));
-		}
-		#endregion
-	}
+            AreEventHandlersSubscribed = false;
+        }
+
+        void HandleOpenMultipleEntryPageButtonClicked(object sender, EventArgs e)
+        {
+            var inputTypeSelected = (InputViewType)_inputTypePicker.SelectedIndex;
+
+            switch (_customEntryTypePicker.SelectedItem)
+            {
+                case PickerConstants.CustomEntryTypePickerItemListEffectsText:
+                    Device.BeginInvokeOnMainThread(async () => await Navigation.PushAsync(new MultipleEffectsEntryPage(inputTypeSelected)));
+                    break;
+
+                case PickerConstants.CustomEntryTypePickerItemListCustomRenderersText:
+                    Device.BeginInvokeOnMainThread(async () => await Navigation.PushAsync(new MultipleCustomRendererEntryPage(inputTypeSelected)));
+                    break;
+
+                default:
+                    throw new Exception($"Unsupported EntryTypePicker: {_customEntryTypePicker.SelectedItem}");
+            }
+        }
+
+        void HandleOpenSelectEntryPageButtonClicked(object sender, EventArgs e)
+        {
+            var inputTypeSelected = (InputViewType)_inputTypePicker.SelectedIndex;
+
+            switch (_customEntryTypePicker.SelectedItem)
+            {
+                case PickerConstants.CustomEntryTypePickerItemListEffectsText:
+                    Device.BeginInvokeOnMainThread(async () => await Navigation.PushAsync(new PickEffectsEntryReturnTypePage(inputTypeSelected)));
+                    break;
+
+                case PickerConstants.CustomEntryTypePickerItemListCustomRenderersText:
+                    Device.BeginInvokeOnMainThread(async () => await Navigation.PushAsync(new PickCustomRendererEntryReturnTypePage(inputTypeSelected)));
+                    break;
+
+                default:
+                    throw new Exception($"Unsupported EntryTypePicker: {_customEntryTypePicker.SelectedItem}");
+            }
+        }
+        #endregion
+    }
 }

@@ -4,12 +4,13 @@ namespace EntryCustomReturnSampleApp.Shared
 {
 	public static class StringBuilderHelpers
 	{
-		public static string ConvertTextInputToResultsLabel(string defaultReturnTypeEntryText,
-													string nextReturnTypeEntryText,
-													string doneReturnTypeEntryText,
-													string sendReturnTypeEntryText,
-													string searchReturnTypeEntryText,
-													string goReturnTypeEntryText)
+        public static StringBuilder ConvertTextInputToResultsLabel(string defaultReturnTypeEntryText,
+                                                                   string nextReturnTypeEntryText,
+                                                                   string doneReturnTypeEntryText,
+                                                                   string sendReturnTypeEntryText,
+                                                                   string searchReturnTypeEntryText,
+                                                                   string goReturnTypeEntryText,
+                                                                   object commandParamter = null)
 		{
 			var outputStringBuilder = new StringBuilder();
 			outputStringBuilder.AppendLine($"{nameof(defaultReturnTypeEntryText)}: {defaultReturnTypeEntryText}");
@@ -30,7 +31,9 @@ namespace EntryCustomReturnSampleApp.Shared
 			outputStringBuilder.AppendLine($"{nameof(goReturnTypeEntryText)}: {goReturnTypeEntryText}");
 			outputStringBuilder.AppendLine();
 
-			return outputStringBuilder.ToString();
+            outputStringBuilder.AppendLine($"Command Parameter Type: {commandParamter.GetType()}");
+
+            return outputStringBuilder;
 		}
 	}
 }

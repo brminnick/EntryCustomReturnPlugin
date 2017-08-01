@@ -12,15 +12,18 @@ namespace EntryCustomReturnSampleApp
         string _resultLabelText, _nextReturnTypeEntryText, _doneReturnTypeEntryText, _goReturnTypeEntryText,
             _searchReturnTypeEntryText, _sendReturnTypeEntryText, _defaultReturnTypeEntryText;
 
-        ICommand _goButtonCommand, _goReturnTypeEntryReturnCommand;
+        ICommand _goButtonCommand;
+        Command<string> _goReturnTypeEntryReturnCommand;
         #endregion
 
         #region Properties
         public ICommand GoButtonCommand => _goButtonCommand ??
             (_goButtonCommand = new Command(ExecuteGoButtonCommand));
 
-        public ICommand GoReturnTypeEntryReturnCommand => _goReturnTypeEntryReturnCommand ??
-            (_goReturnTypeEntryReturnCommand = new Command(ExecuteGoReturnTypeEntryReturnCommand));
+        public Command<string> GoReturnTypeEntryReturnCommand => _goReturnTypeEntryReturnCommand ??
+            (_goReturnTypeEntryReturnCommand = new Command<string>(ExecuteGoReturnTypeEntryReturnCommand));
+
+        public string AdditionalText => "Command Parameters are Working!";
 
         public string ResultLabelText
         {
@@ -69,16 +72,17 @@ namespace EntryCustomReturnSampleApp
         void ExecuteGoButtonCommand() =>
             OutputTextInputToResultsLabel();
 
-        void ExecuteGoReturnTypeEntryReturnCommand() =>
-            OutputTextInputToResultsLabel();
+        void ExecuteGoReturnTypeEntryReturnCommand(string parameter) =>
+            OutputTextInputToResultsLabel(parameter);
 
-        void OutputTextInputToResultsLabel() =>
+        void OutputTextInputToResultsLabel(object commandParameter = null) =>
             ResultLabelText = StringBuilderHelpers.ConvertTextInputToResultsLabel(DefaultReturnTypeEntryText,
-                                                                                 NextReturnTypeEntryText,
-                                                                                 DoneReturnTypeEntryText,
-                                                                                 SendReturnTypeEntryText,
-                                                                                 SearchReturnTypeEntryText,
-                                                                                 GoReturnTypeEntryText);
+                                                                                  NextReturnTypeEntryText,
+                                                                                  DoneReturnTypeEntryText,
+                                                                                  SendReturnTypeEntryText,
+                                                                                  SearchReturnTypeEntryText,
+                                                                                  GoReturnTypeEntryText,
+                                                                                  commandParameter).ToString();
         #endregion
     }
 }

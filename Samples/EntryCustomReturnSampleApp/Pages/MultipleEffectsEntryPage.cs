@@ -1,21 +1,18 @@
-﻿using Xamarin.Forms;
-
-using EntryCustomReturnSampleApp.Shared;
+﻿using EntryCustomReturnSampleApp.Shared;
 
 namespace EntryCustomReturnSampleApp
 {
 	public class MultipleEffectsEntryPage : BaseContentPage<MultipleEntryViewModel>
 	{
 		#region Constructors
-		public MultipleEffectsEntryPage()
+		public MultipleEffectsEntryPage(InputViewType inputViewType)
 		{
 			Title = PageTitles.MultipleEntryPageTitle;
 
 			Padding = ViewHelpers.GetPagePadding();
 
-			Content = ViewHelpers.CreateMultipleEntryPageLayout(true, ViewModel);
+			Content = ViewHelpers.CreateMultipleEntryPageLayout(inputViewType, true, ViewModel);
 		}
-
 		#endregion
 
 		#region Methods

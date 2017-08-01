@@ -4,13 +4,21 @@ namespace EntryCustomReturnSampleApp.Shared
 {
 	public static class PickerConstants
 	{
-		public const string PickerItemListEffectsText = "Effects";
-		public const string PickerItemListCustomRenderersText = "CustomRenderers";
+		public const string CustomEntryTypePickerItemListEffectsText = "Effects";
+		public const string CustomEntryTypePickerItemListCustomRenderersText = "CustomRenderers";
+        public const string InputViewPickerItemListEntryText = "Entry";
+        public const string InputViewPickerItemListEditorText = "Editor";
 
-		public static readonly List<string> PickerItemSourceList = new List<string>
+		public static readonly List<string> CustomEntryPickerItemSourceList = new List<string>
 			{
-				PickerItemListEffectsText,
-				PickerItemListCustomRenderersText
+				CustomEntryTypePickerItemListEffectsText,
+				CustomEntryTypePickerItemListCustomRenderersText
+			};
+
+		public static readonly List<string> InputViewPickerItemSourceList = new List<string>
+			{
+                InputViewPickerItemListEditorText,
+			    InputViewPickerItemListEntryText
 			};
 	}
 
@@ -19,4 +27,10 @@ namespace EntryCustomReturnSampleApp.Shared
 		Effects,
 		CustomRenderers
 	}
+
+    public enum InputViewType
+    {
+		Editor,
+        Entry
+    }
 }

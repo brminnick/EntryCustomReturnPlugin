@@ -30,7 +30,7 @@ namespace EntryCustomReturn.Forms.Plugin.Android
 
 		void SetKeyboardReturnButton()
 		{
-			var customControl = Control as EntryEditText;
+			var customControl = Control as FormsEditText;
 			var entry = Element as Entry;
 
 			if (customControl != null && entry != null)
@@ -52,7 +52,7 @@ namespace EntryCustomReturn.Forms.Plugin.Android
 
         void UnsetKeyboardReturnButton()
 		{
-			var customControl = Control as EntryEditText;
+			var customControl = Control as FormsEditText;
 
 			try
 			{

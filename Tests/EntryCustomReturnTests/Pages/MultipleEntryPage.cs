@@ -18,7 +18,7 @@ namespace EntryCustomReturnUITests
 		#endregion
 
 		#region Constructors
-		public MultipleEntryPage(IApp app, Platform platform) : base(app, platform, PageTitles.MultipleEntryPageTitle)
+		public MultipleEntryPage(IApp app) : base(app, PageTitles.MultipleEntryPageTitle)
 		{
 			_defaultReturnTypeEntry = x => x.Marked(AutomationIdConstants.DefaultReturnTypeEntryAutomationId);
 			_nextReturnTypeEntry = x => x.Marked(AutomationIdConstants.NextReturnTypeEntryAutomationId);
@@ -32,83 +32,83 @@ namespace EntryCustomReturnUITests
 		#endregion
 
 		#region Properties
-		public string ResultsLabelText => app.Query(_resultsLabel)?.FirstOrDefault()?.Text;
+		public string ResultsLabelText => App.Query(_resultsLabel)?.FirstOrDefault()?.Text;
 		#endregion
 
 		#region Methods
 		public void EnterTextIntoAllEntrysUsingReturnButton(string text)
 		{
-			app.Tap(_defaultReturnTypeEntry);
+			App.Tap(_defaultReturnTypeEntry);
 
 			for (int i = 0; i < Enum.GetNames(typeof(ReturnType)).Length; i++)
 			{
 				ClearThenEnterText(text);
-				app.PressEnter();
+				App.PressEnter();
 			}
 
-            app.DismissKeyboard();
+            App.DismissKeyboard();
 
-			app.Screenshot($"Entered Text Into All Entrys Using Return Button: {text}");
+			App.Screenshot($"Entered Text Into All Entrys Using Return Button: {text}");
 		}
 
 		public void EnterDefaultReturnTypeEntryText(string text)
 		{
-			app.Tap(_defaultReturnTypeEntry);
+			App.Tap(_defaultReturnTypeEntry);
 			ClearThenEnterText(text);
-			app.DismissKeyboard();
-			app.Screenshot($"Entered Default Return Type Entry Text: {text}");
+			App.DismissKeyboard();
+			App.Screenshot($"Entered Default Return Type Entry Text: {text}");
 		}
 
 		public void EnterNextReturnTypeEntryText(string text)
 		{
-			app.Tap(_nextReturnTypeEntry);
+			App.Tap(_nextReturnTypeEntry);
 			ClearThenEnterText(text);
-			app.DismissKeyboard();
-			app.Screenshot($"Entered Next Return Type Entry Text: {text}");
+			App.DismissKeyboard();
+			App.Screenshot($"Entered Next Return Type Entry Text: {text}");
 		}
 
 		public void EnterGoReturnTypeEntryText(string text)
 		{
-			app.Tap(_goReturnTypeEntry);
+			App.Tap(_goReturnTypeEntry);
 			ClearThenEnterText(text);
-			app.DismissKeyboard();
-			app.Screenshot($"Entered Go Return Type Entry Text: {text}");
+			App.DismissKeyboard();
+			App.Screenshot($"Entered Go Return Type Entry Text: {text}");
 		}
 
 		public void EnterSearchReturnTypeEntryText(string text)
 		{
-			app.Tap(_searchReturnTypeEntry);
+			App.Tap(_searchReturnTypeEntry);
 			ClearThenEnterText(text);
-			app.DismissKeyboard();
-			app.Screenshot($"Entered Search Return Type Entry Text: {text}");
+			App.DismissKeyboard();
+			App.Screenshot($"Entered Search Return Type Entry Text: {text}");
 		}
 
 		public void EnterSendReturnTypeEntryText(string text)
 		{
-			app.Tap(_sendReturnTypeEntry);
+			App.Tap(_sendReturnTypeEntry);
 			ClearThenEnterText(text);
-			app.DismissKeyboard();
-			app.Screenshot($"Entered Send Return Type Entry Text: {text}");
+			App.DismissKeyboard();
+			App.Screenshot($"Entered Send Return Type Entry Text: {text}");
 		}
 
 		public void EnterDoneReturnTypeEntryText(string text)
 		{
-			app.Tap(_doneReturnTypeEntry);
+			App.Tap(_doneReturnTypeEntry);
 			ClearThenEnterText(text);
-			app.DismissKeyboard();
-			app.Screenshot($"Entered Done Return Type Entry Text: {text}");
+			App.DismissKeyboard();
+			App.Screenshot($"Entered Done Return Type Entry Text: {text}");
 		}
 
 		public void TapGoButton()
 		{
-			app.Tap(_goButton);
-			app.Screenshot("Go Button Tapped");
+			App.Tap(_goButton);
+			App.Screenshot("Go Button Tapped");
 		}
 
 		void ClearThenEnterText(string text)
 		{
-			app.ClearText();
-			app.EnterText(text);
+			App.ClearText();
+			App.EnterText(text);
 		}
 		#endregion
 	}

@@ -130,8 +130,7 @@ namespace EntryCustomReturnSampleApp
 		{
 			switch (Device.RuntimePlatform)
 			{
-				case Device.Windows:
-				case Device.WinPhone:
+                case Device.UWP:
 				case Device.Android:
 					return new Thickness(10, 0, 10, 0);
 				case Device.iOS:

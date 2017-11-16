@@ -4,34 +4,43 @@ using Xamarin.UITest;
 
 namespace EntryCustomReturnUITests
 {
-	[TestFixture(Platform.Android)]
-	[TestFixture(Platform.iOS)]
-	public abstract class BaseTest
-	{
-		protected IApp App;
-		protected Platform Platform;
+    [TestFixture(Platform.Android)]
+    [TestFixture(Platform.iOS)]
+    public abstract class BaseTest
+    {
+        #region Fields
+        IApp _app;
+        Platform _platform;
+        MultipleEntryPage _multipleEntryPage;
+        OptionSelectionPage _optionSelectionPage;
+        PickEntryReturnTypePage _pickEntryReturnTypePage;
+        #endregion
 
-		protected MultipleEntryPage MultipleEntryPage;
-		protected OptionSelectionPage OptionSelectionPage;
-		protected PickEntryReturnTypePage PickEntryReturnTypePage;
+        #region Constructors
+        protected BaseTest(Platform platform) => _platform = platform;
+        #endregion
 
+        #region Properties
+        protected IApp App => _app;
+        protected Platform Platform => _platform;
+        protected MultipleEntryPage MultipleEntryPage => _multipleEntryPage;
+        protected OptionSelectionPage OptionSelectionPage => _optionSelectionPage;
+        protected PickEntryReturnTypePage PickEntryReturnTypePage => _pickEntryReturnTypePage;
+        #endregion
 
-		protected BaseTest(Platform platform)
-		{
-			Platform = platform;
-		}
+        #region Methods
+        [SetUp]
+        public virtual void TestSetup()
+        {
+            _app = AppInitializer.StartApp(Platform);
 
-		[SetUp]
-		public virtual void TestSetup()
-		{
-			App = AppInitializer.StartApp(Platform);
+            App.Screenshot("App Launched");
 
-			App.Screenshot("App Launched");
-
-			MultipleEntryPage = new MultipleEntryPage(App, Platform);
-			OptionSelectionPage = new OptionSelectionPage(App, Platform);
-			PickEntryReturnTypePage = new PickEntryReturnTypePage(App, Platform);
-		}
-	}
+            _multipleEntryPage = new MultipleEntryPage(App);
+            _optionSelectionPage = new OptionSelectionPage(App);
+            _pickEntryReturnTypePage = new PickEntryReturnTypePage(App);
+        }
+        #endregion
+    }
 
 }

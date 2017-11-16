@@ -19,6 +19,7 @@ namespace EntryCustomReturnUITests
 
 			OptionSelectionPage.WaitForPageToLoad();
 		}
+
 		[TestCase(ReturnType.Default, CustomEntryType.Effects)]
 		[TestCase(ReturnType.Done, CustomEntryType.Effects)]
 		[TestCase(ReturnType.Go, CustomEntryType.Effects)]
@@ -31,7 +32,6 @@ namespace EntryCustomReturnUITests
 		[TestCase(ReturnType.Next, CustomEntryType.CustomRenderers)]
 		[TestCase(ReturnType.Search, CustomEntryType.CustomRenderers)]
 		[TestCase(ReturnType.Send, CustomEntryType.CustomRenderers)]
-		[Test]
 		public void VerifyKeyboardReturnType(ReturnType returnType, CustomEntryType customEntryType)
 		{
 			//Arrange

@@ -1,30 +1,40 @@
 ﻿using Xamarin.UITest;
+using Xamarin.UITest.iOS;
+using Xamarin.UITest.Android;
 
 namespace EntryCustomReturnUITests
 {
-	public abstract class BasePage
-	{
-		protected readonly IApp app;
-		protected readonly bool OnAndroid, OniOS;
+    public abstract class BasePage
+    {
+        #region Fields
+        string _pageTitle;
+        #endregion
 
-		string _pageTitle;
+        #region Constructors
+        protected BasePage(IApp app, string pageTitle)
+        {
+            App = app;
 
-		protected BasePage(IApp app, Platform platform, string pageTitle)
-		{
-			this.app = app;
+            OnAndroid = app is AndroidApp;
+            OniOS = app is iOSApp;
 
-			OnAndroid = platform == Platform.Android;
-			OniOS = platform == Platform.iOS;
+            _pageTitle = pageTitle;
+        }
+        #endregion
 
-			_pageTitle = pageTitle;
-		}
+        #region Properties
+        public string PageTitle => _pageTitle;
+        protected IApp App { get; }
+        protected bool OnAndroid { get; }
+        protected bool OniOS { get; }
+        #endregion
 
-		public string PageTitle => _pageTitle;
-
-		public virtual void WaitForPageToLoad()
-		{
-			app.WaitForElement(PageTitle);
-			app.Screenshot("Page Loaded");
-		}
-	}
+        #region Methods
+        public virtual void WaitForPageToLoad()
+        {
+            App.WaitForElement(PageTitle);
+            App.Screenshot("Page Loaded");
+        }
+        #endregion
+    }
 }

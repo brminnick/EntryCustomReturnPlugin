@@ -1,9 +1,9 @@
-[![Build Status](https://www.bitrise.io/app/01a7d986a483dc66/status.svg?token=rLlWyVD2Qe1pY9nZy-mN0A&branch=master)](https://www.bitrise.io/app/01a7d986a483dc66)
-
 # Custom `Xamarin.Forms.Entry` Keyboard Return Button
 
+[![Build Status](https://www.bitrise.io/app/01a7d986a483dc66/status.svg?token=rLlWyVD2Qe1pY9nZy-mN0A&branch=master)](https://www.bitrise.io/app/01a7d986a483dc66)
+
 | ReturnType | Android | iOS | UWP |
-|--------------------|---------|-----|-----| 
+|--------------------|---------|-----|-----|
 | **Default**            |![](https://github.com/brminnick/EntryCustomReturnPlugin/blob/master/Artwork/Return%20Button%20Images/Android/DefaultButton.png)|![](https://github.com/brminnick/EntryCustomReturnPlugin/blob/master/Artwork/Return%20Button%20Images/iOS/DefaultButton.png)|![](https://github.com/brminnick/EntryCustomReturnPlugin/blob/master/Artwork/Return%20Button%20Images/UWP/DefaultButton.png)|
 | **Done**            |![](https://github.com/brminnick/EntryCustomReturnPlugin/blob/master/Artwork/Return%20Button%20Images/Android/DoneButton.png)|![](https://github.com/brminnick/EntryCustomReturnPlugin/blob/master/Artwork/Return%20Button%20Images/iOS/DoneButton.png)|![](https://github.com/brminnick/EntryCustomReturnPlugin/blob/master/Artwork/Return%20Button%20Images/UWP/DefaultButton.png)|
 | **Go**            |![](https://github.com/brminnick/EntryCustomReturnPlugin/blob/master/Artwork/Return%20Button%20Images/Android/GoButton.png)|![](https://github.com/brminnick/EntryCustomReturnPlugin/blob/master/Artwork/Return%20Button%20Images/iOS/GoButton.png)|![](https://github.com/brminnick/EntryCustomReturnPlugin/blob/master/Artwork/Return%20Button%20Images/UWP/DefaultButton.png)|
@@ -30,99 +30,114 @@
 * Install into your PCL project and Client projects.
 
 ## iOS
-In the `FinishedLaunching` method of `AppDelegate.cs`, add `CustomReturnEntryRenderer.Init();`:
-```
-	public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
-	{
-		public override bool FinishedLaunching(UIApplication app, NSDictionary options)
-		{
-                        ...
-      
-			global::Xamarin.Forms.Forms.Init();
 
-			EntryCustomReturn.Forms.Plugin.iOS.CustomReturnEntryRenderer.Init();
-  
-                        ...
-		}
-	}
+In the `FinishedLaunching` method of `AppDelegate.cs`, add `CustomReturnEntryRenderer.Init();`:
+
+```csharp
+public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
+{
+    public override bool FinishedLaunching(UIApplication app, NSDictionary options)
+    {
+        ...
+
+        global::Xamarin.Forms.Forms.Init();
+
+        EntryCustomReturn.Forms.Plugin.iOS.CustomReturnEntryRenderer.Init();
+
+        ...
+    }
+}
 ```
 
 **Note:** You must call  `EntryCustomReturn.Forms.Plugin.iOS.CustomReturnEntryRenderer.Init();` *after* you call `global::Xamarin.Forms.Forms.Init();`
 
 ## Android
+
 In the `Oncreated` method of `MainActivity.cs`, add `CustomReturnEntryRenderer.Init();`:
+
+```csharp
+public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
+{
+    protected override void OnCreate(Bundle bundle)
+    {
+        ...
+
+        global::Xamarin.Forms.Forms.Init(this, bundle);
+
+        EntryCustomReturn.Forms.Plugin.Droid.CustomReturnEntryRenderer.Init();
+
+        ...
+    }
+}
 ```
-	public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
-	{
-		protected override void OnCreate(Bundle bundle)
-		{
-			...
 
-			global::Xamarin.Forms.Forms.Init(this, bundle);
-
-			EntryCustomReturn.Forms.Plugin.Droid.CustomReturnEntryRenderer.Init();
-
-			...
-		}
-	}
-```
 **Note:** You must call  `EntryCustomReturn.Forms.Plugin.Droid.CustomReturnEntryRenderer.Init();` *after* you call `global::Xamarin.Forms.Forms.Init(this, bundle);`
 
 ## UWP
+
 In the `OnLaunched` method of `App.xaml.cs`, add `CustomReturnEntryRenderer.Init();`:
+
+```csharp
+public partial class App : Application
+{
+    protected override void OnLaunched(LaunchActivatedEventArgs e)
+    {
+        ...
+
+        global::Xamarin.Forms.Forms.Init(e);
+
+        EntryCustomReturn.Forms.Plugin.UWP.CustomReturnEntryRenderer.Init();
+
+        ...
+    }
+}
 ```
-	public partial class App : Application
-	{
-		protected override void OnLaunched(LaunchActivatedEventArgs e)
-		{
-			...
 
-			global::Xamarin.Forms.Forms.Init(e);
-
-			EntryCustomReturn.Forms.Plugin.UWP.CustomReturnEntryRenderer.Init();
-
-			...
-		}
-	}
-```
 **Note:** You must call  `EntryCustomReturn.Forms.Plugin.UWP.CustomReturnEntryRenderer.Init();` *after* you call `global::Xamarin.Forms.Forms.Init(e);`
 
 # Usage in Xamarin.Forms Project
+
 The EntryCustomReturnPlugin can be consumed either as a [`CustomRenderer`](https://developer.xamarin.com/guides/xamarin-forms/custom-renderer/entry/#Consuming_the_Custom_Control/) or as an [`Effect`](https://developer.xamarin.com/guides/xamarin-forms/effects/creating/#Consuming_the_Effect_in_C).
 
 ## Custom Renderer
 
 ### 1. Set the `ReturnType` Property
- 
+
 The `ReturnType` Property is an enum containing 6 different types: Default, Go, Next, Done, Send, Search.
 
-```
+```csharp
 var goReturnTypeCustomEntry = new CustomReturnEntry
 {
-	ReturnType = ReturnType.Go
+    ReturnType = ReturnType.Go
 };
 ```
 
 It can also be used as a [Bindable Property to bind to a ViewModel](./Samples/EntryCustomReturnSampleApp/Helpers/ViewHelpers.cs#L25)
-```
+
+```csharp
 var viewModel = new MyViewModel();
+BindingContext = viewModel;
+
 var customReturnEntry = new CustomReturnEntry();
 customReturnEntry.SetBinding(CustomReturnEntry.ReturnTypeProperty, nameof(viewModel.EntryReturnType));
 ```
 
 ### 2. Set the `ReturnCommand` Command
- 
- `ReturnCommand` will fire when the user finalizes the text in an entry with the return key.
- 
-```
-goReturnTypeCustomEntry.ReturnCommand = new Command(() => Navigation.PushAsync(new ContentPage())); 
+
+`ReturnCommand` will fire when the user finalizes the text in an entry with the return key.
+
+```csharp
+goReturnTypeCustomEntry.ReturnCommand = new Command(() => Navigation.PushAsync(new ContentPage()));
 ```
 
 It can also be used as a [Bindable Property to bind to a ViewModel](./Samples/EntryCustomReturnSampleApp/Helpers/ViewHelpers.cs#L195)
-```
- var viewModel = new MyViewModel();
- var customReturnEntry = new CustomReturnEntry();
- customReturnEntry.SetBinding(CustomReturnEntry.ReturnCommandProperty, nameof(viewModel.EntryReturnCommand));
+
+```csharp
+var viewModel = new MyViewModel();
+BindingContext = viewModel;
+
+var customReturnEntry = new CustomReturnEntry();
+customReturnEntry.SetBinding(CustomReturnEntry.ReturnCommandProperty nameof(viewModel.EntryReturnCommand));
 ```
 
 ## Effect
@@ -131,32 +146,36 @@ It can also be used as a [Bindable Property to bind to a ViewModel](./Samples/En
 
 The `ReturnType` Property is an enum containing 6 different types: Default, Go, Next, Done, Send, Search.
 
-```
+```csharp
 var goReturnTypeEntry = new Entry()
 CustomReturnEffect.SetReturnType(goReturnTypeEntry, ReturnType.Go);
 ```
 
 It can also be used as a [Bindable Property to bind to a ViewModel](./Samples/EntryCustomReturnSampleApp/Helpers/ViewHelpers.cs#L21)
 
-```
+```csharp
 var viewModel = new MyViewModel();
+BindingContext = viewModel;
+
 var customReturnEntry = new Entry();
 customReturnEntry.SetBinding(CustomReturnEffect.ReturnTypeProperty, nameof(viewModel.EntryReturnType));
 ```
 
 ### 2. Set the `ReturnCommand` Command
- 
- `ReturnCommand` will fire when the user finalizes the text in an entry with the return key.
- ```
- var goReturnTypeEntry = new Entry()
- CustomReturnEffect.SetReturnCommand(goReturnTypeEntry, new Command(() => Navigation.PushAsync(new ContentPage()));
- ```
- 
- It can also be used as a [Bindable Property to bind to a ViewModel](./Samples/EntryCustomReturnSampleApp/Helpers/ViewHelpers.cs#L192)
- ```
- var viewModel = new MyViewModel();
- var customReturnEntry = new Entry();
- customReturnEntry.SetBinding(CustomReturnEffect.ReturnCommandProperty, nameof(viewModel.EntryReturnCommand));
- ```
+
+`ReturnCommand` will fire when the user finalizes the text in an entry with the return key.
+
+```csharp
+var goReturnTypeEntry = new Entry()
+CustomReturnEffect.SetReturnCommand(goReturnTypeEntry, new Command(() => Navigation.PushAsync(new ContentPage()));
+```
+
+It can also be used as a [Bindable Property to bind to a ViewModel](./Samples/EntryCustomReturnSampleApp/Helpers/ViewHelpers.cs#L192)
+
+```csharp
+var viewModel = new MyViewModel();
+var customReturnEntry = new Entry();
+customReturnEntry.SetBinding(CustomReturnEffect.ReturnCommandProperty, nameof(viewModel.EntryReturnCommand));
+```
 
 ![iPhone Demo](./Artwork/iOS%20Gif.gif)

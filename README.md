@@ -181,5 +181,3 @@ customReturnEntry.SetBinding(CustomReturnEffect.ReturnCommandProperty, nameof(vi
 ```
 
 ![iPhone Demo](https://github.com/brminnick/Videos/blob/master/EntryCustomReturnPlugin/iOS%20Gif.gif)
-
-![Android Demo](https://github.com/brminnick/Videos/blob/master/EntryCustomReturnPlugin/Android%20Gif.gif)

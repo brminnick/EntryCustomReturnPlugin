@@ -24,7 +24,7 @@
 |Windows Store RT|No||
 |Xamarin.Mac|No||
 
-# Setup 
+# Setup
 
 * Available on NuGet: https://www.nuget.org/packages/Xam.Plugins.Forms.CustomReturnEntry/ [![NuGet](https://img.shields.io/nuget/v/Xam.Plugins.Forms.CustomReturnEntry.svg?label=NuGet)](https://www.nuget.org/packages/Xam.Plugins.Forms.CustomReturnEntry/)
 * Install into your PCL project and Client projects.
@@ -41,7 +41,7 @@ public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsAppli
         ...
 
         global::Xamarin.Forms.Forms.Init();
-
+        
         EntryCustomReturn.Forms.Plugin.iOS.CustomReturnEntryRenderer.Init();
 
         ...
@@ -174,6 +174,8 @@ It can also be used as a [Bindable Property to bind to a ViewModel](./Samples/En
 
 ```csharp
 var viewModel = new MyViewModel();
+BindingContext = viewModel;
+
 var customReturnEntry = new Entry();
 customReturnEntry.SetBinding(CustomReturnEffect.ReturnCommandProperty, nameof(viewModel.EntryReturnCommand));
 ```

@@ -8,37 +8,30 @@ namespace EntryCustomReturnUITests
     [TestFixture(Platform.iOS)]
     public abstract class BaseTest
     {
-        #region Fields
-        IApp _app;
-        Platform _platform;
-        MultipleEntryPage _multipleEntryPage;
-        OptionSelectionPage _optionSelectionPage;
-        PickEntryReturnTypePage _pickEntryReturnTypePage;
-        #endregion
-
         #region Constructors
-        protected BaseTest(Platform platform) => _platform = platform;
+        protected BaseTest(Platform platform) => Platform = platform;
         #endregion
 
         #region Properties
-        protected IApp App => _app;
-        protected Platform Platform => _platform;
-        protected MultipleEntryPage MultipleEntryPage => _multipleEntryPage;
-        protected OptionSelectionPage OptionSelectionPage => _optionSelectionPage;
-        protected PickEntryReturnTypePage PickEntryReturnTypePage => _pickEntryReturnTypePage;
+        protected Platform Platform { get; }
+
+        protected IApp App { get; private set; }
+        protected MultipleEntryPage MultipleEntryPage { get; private set; }
+        protected OptionSelectionPage OptionSelectionPage { get; private set; }
+        protected PickEntryReturnTypePage PickEntryReturnTypePage { get; private set; }
         #endregion
 
         #region Methods
         [SetUp]
         public virtual void TestSetup()
         {
-            _app = AppInitializer.StartApp(Platform);
+            App = AppInitializer.StartApp(Platform);
 
             App.Screenshot("App Launched");
 
-            _multipleEntryPage = new MultipleEntryPage(App);
-            _optionSelectionPage = new OptionSelectionPage(App);
-            _pickEntryReturnTypePage = new PickEntryReturnTypePage(App);
+            MultipleEntryPage = new MultipleEntryPage(App);
+            OptionSelectionPage = new OptionSelectionPage(App);
+            PickEntryReturnTypePage = new PickEntryReturnTypePage(App);
         }
         #endregion
     }

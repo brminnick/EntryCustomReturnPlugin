@@ -6,24 +6,18 @@ namespace EntryCustomReturnUITests
 {
     public abstract class BasePage
     {
-        #region Fields
-        string _pageTitle;
-        #endregion
-
         #region Constructors
         protected BasePage(IApp app, string pageTitle)
         {
             App = app;
-
             OnAndroid = app is AndroidApp;
             OniOS = app is iOSApp;
-
-            _pageTitle = pageTitle;
+            PageTitle = pageTitle;
         }
         #endregion
 
         #region Properties
-        public string PageTitle => _pageTitle;
+        public string PageTitle { get; }
         protected IApp App { get; }
         protected bool OnAndroid { get; }
         protected bool OniOS { get; }

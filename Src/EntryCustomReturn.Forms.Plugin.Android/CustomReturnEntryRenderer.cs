@@ -3,6 +3,7 @@ using System;
 using Android.Views;
 using Android.Widget;
 using Android.Runtime;
+using Android.Content;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
@@ -20,10 +21,14 @@ namespace EntryCustomReturn.Forms.Plugin.Android
 	[Preserve(AllMembers = true)]
 	public sealed class CustomReturnEntryRenderer : EntryRenderer
 	{
-		/// <summary>
-		/// Used for registration with dependency service
-		/// </summary>
-		public static void Init()
+        public CustomReturnEntryRenderer(Context context) : base(context)
+        {
+        }
+
+        /// <summary>
+        /// Used for registration with dependency service
+        /// </summary>
+        public static void Init()
 		{
 			var temp = DateTime.Now;
 		}
@@ -67,7 +72,6 @@ namespace EntryCustomReturn.Forms.Plugin.Android
 				if (Control != null && customEntry != null)
 					Control.ImeOptions = KeyboardHelpers.GetKeyboardButtonType(customEntry.ReturnType);
 			}
-
 		}
 	}
 }

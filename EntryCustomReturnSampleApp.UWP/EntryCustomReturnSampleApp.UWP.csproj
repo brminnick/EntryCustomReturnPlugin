@@ -128,7 +128,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Src\EntryCustomReturn.Forms.Plugin.UWP\EntryCustomReturn.Forms.Plugin.UWP.csproj">
+    <ProjectReference Include="..\EntryCustomReturn.Forms.Plugin.UWP\EntryCustomReturn.Forms.Plugin.UWP.csproj">
       <Project>{bce20e6a-9af6-47ea-bdd8-f372ea19d201}</Project>
       <Name>EntryCustomReturn.Forms.Plugin.UWP</Name>
     </ProjectReference>

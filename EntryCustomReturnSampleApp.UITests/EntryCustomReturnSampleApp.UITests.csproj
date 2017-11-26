@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -48,19 +48,15 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Pages\" />
-    <Folder Include="Tests\" />
-    <Folder Include="Helpers\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\Samples\Droid\EntryCustomReturnSampleApp.Droid.csproj">
+    <ProjectReference Include="..\EntryCustomReturnSampleApp.Droid\EntryCustomReturnSampleApp.Droid.csproj">
       <Project>{D44D8A4B-E5AF-4629-AC50-98966AB42D11}</Project>
       <Name>EntryCustomReturnSampleApp.Droid</Name>
       <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
       <Private>False</Private>
     </ProjectReference>
-    <ProjectReference Include="..\..\Samples\iOS\EntryCustomReturnSampleApp.iOS.csproj">
+    <ProjectReference Include="..\EntryCustomReturnSampleApp.iOS\EntryCustomReturnSampleApp.iOS.csproj">
       <Project>{A76C73CF-FC6F-4AF9-B702-1EA82CDE36F3}</Project>
       <Name>EntryCustomReturnSampleApp.iOS</Name>
       <ReferenceOutputAssembly>False</ReferenceOutputAssembly>

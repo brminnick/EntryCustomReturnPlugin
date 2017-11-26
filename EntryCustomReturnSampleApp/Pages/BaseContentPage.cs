@@ -1,47 +1,41 @@
-﻿using Xamarin.Forms;
+﻿using System;
+
+using Xamarin.Forms;
 
 namespace EntryCustomReturnSampleApp
 {
-	public abstract class BaseContentPage<T> : ContentPage where T : BaseViewModel, new()
-	{
-		#region Constructors
-		protected BaseContentPage()
-		{
-			BindingContext = new T();
-		}
-		#endregion
+    public abstract class BaseContentPage<T> : ContentPage where T : BaseViewModel, new()
+    {
+        #region Fields
+        Lazy<T> _viewModelHolder = new Lazy<T>();
+        #endregion
 
-		#region Properties
-		protected T ViewModel => GetViewModel();
-		protected bool AreEventHandlersSubscribed { get; set; }
-		#endregion
+        #region Constructors
+        protected BaseContentPage() => BindingContext = ViewModel;
+        #endregion
 
-		#region Methods
-		protected abstract void SubscribeEventHandlers();
-				  
-		protected abstract void UnsubscribeEventHandlers();
+        #region Properties
+        protected T ViewModel => _viewModelHolder.Value;
+        #endregion
 
-		protected override void OnAppearing()
-		{
-			base.OnAppearing();
+        #region Methods
+        protected abstract void SubscribeEventHandlers();
 
-			SubscribeEventHandlers();
-		}
+        protected abstract void UnsubscribeEventHandlers();
 
-		protected override void OnDisappearing()
-		{
-			base.OnDisappearing();
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
 
-			UnsubscribeEventHandlers();
-		}
+            SubscribeEventHandlers();
+        }
 
-		T GetViewModel()
-		{
-			if (BindingContext is T)
-				return BindingContext as T;
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
 
-			return null;
-		}
-		#endregion
-	}
+            UnsubscribeEventHandlers();
+        }
+        #endregion
+    }
 }

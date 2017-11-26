@@ -64,16 +64,12 @@ namespace EntryCustomReturnSampleApp
 		{
 			_openPickerEntryPageButton.Clicked += HandleOpenSelectEntryPageButtonClicked;
 			_openMultileEntryPageButton.Clicked += HandleOpenMultipleEntryPageButtonClicked;
-
-			AreEventHandlersSubscribed = true;
 		}
 
 		protected override void UnsubscribeEventHandlers()
 		{
 			_openPickerEntryPageButton.Clicked -= HandleOpenSelectEntryPageButtonClicked;
 			_openMultileEntryPageButton.Clicked -= HandleOpenMultipleEntryPageButtonClicked;
-
-			AreEventHandlersSubscribed = false;
 		}
 
 		void HandleOpenMultipleEntryPageButtonClicked(object sender, EventArgs e)

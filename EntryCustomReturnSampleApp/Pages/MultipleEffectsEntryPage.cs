@@ -4,30 +4,29 @@ using EntryCustomReturnSampleApp.Shared;
 
 namespace EntryCustomReturnSampleApp
 {
-	public class MultipleEffectsEntryPage : BaseContentPage<MultipleEntryViewModel>
-	{
-		#region Constructors
-		public MultipleEffectsEntryPage()
-		{
-			Title = PageTitles.MultipleEntryPageTitle;
+    public class MultipleEffectsEntryPage : BaseContentPage<MultipleEntryViewModel>
+    {
+        #region Constructors
+        public MultipleEffectsEntryPage()
+        {
+            Title = PageTitles.MultipleEntryPageTitle;
 
-			Padding = ViewHelpers.GetPagePadding();
+            Padding = ViewHelpers.GetPagePadding();
 
-			Content = ViewHelpers.CreateMultipleEntryPageLayout(true, ViewModel);
-		}
+            Content = ViewHelpers.CreateMultipleEntryPageLayout(true, ViewModel);
+        }
+        #endregion
 
-		#endregion
+        #region Methods
+        protected override void SubscribeEventHandlers()
+        {
 
-		#region Methods
-		protected override void SubscribeEventHandlers()
-		{
-			AreEventHandlersSubscribed = true;
-		}
+        }
 
-		protected override void UnsubscribeEventHandlers()
-		{
-			AreEventHandlersSubscribed = false;
-		}
-		#endregion
-	}
+        protected override void UnsubscribeEventHandlers()
+        {
+
+        }
+        #endregion
+    }
 }

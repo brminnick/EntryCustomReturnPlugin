@@ -66,11 +66,11 @@
       <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
       <Private>False</Private>
     </ProjectReference>
-    <ProjectReference Include="..\..\Src\EntryCustomReturn.Forms.Plugin.Abstractions\EntryCustomReturn.Forms.Plugin.Abstractions.csproj">
+    <ProjectReference Include="..\EntryCustomReturn.Forms.Plugin.Abstractions\EntryCustomReturn.Forms.Plugin.Abstractions.csproj">
       <Project>{67F9D3A8-F71E-4428-913F-C37AE82CDB24}</Project>
       <Name>EntryCustomReturn.Forms.Plugin.Abstractions</Name>
     </ProjectReference>
   </ItemGroup>
-  <Import Project="..\..\Samples\EntryCustomReturnSampleApp.Shared\EntryCustomReturnSampleApp.Shared.projitems" Label="Shared" Condition="Exists('..\..\Samples\EntryCustomReturnSampleApp.Shared\EntryCustomReturnSampleApp.Shared.projitems')" />
+  <Import Project="..\EntryCustomReturnSampleApp.Shared\EntryCustomReturnSampleApp.Shared.projitems" Label="Shared" Condition="Exists('..\EntryCustomReturnSampleApp.Shared\EntryCustomReturnSampleApp.Shared.projitems')" />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

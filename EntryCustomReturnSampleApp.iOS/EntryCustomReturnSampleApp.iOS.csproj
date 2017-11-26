@@ -112,7 +112,7 @@
       <Project>{4668C385-45C4-495D-803C-FFDAE866FD60}</Project>
       <Name>EntryCustomReturnSampleApp</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Src\EntryCustomReturn.Forms.Plugin.iOSUnified\EntryCustomReturn.Forms.Plugin.iOS.csproj">
+    <ProjectReference Include="..\EntryCustomReturn.Forms.Plugin.iOSUnified\EntryCustomReturn.Forms.Plugin.iOS.csproj">
       <Project>{085E453B-C898-4D35-BA27-61EF81A6BAB4}</Project>
       <Name>EntryCustomReturn.Forms.Plugin.iOS</Name>
     </ProjectReference>

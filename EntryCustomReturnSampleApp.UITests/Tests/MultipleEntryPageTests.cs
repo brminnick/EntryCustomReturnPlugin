@@ -4,7 +4,7 @@ using Xamarin.UITest;
 
 using EntryCustomReturnSampleApp.Shared;
 
-namespace EntryCustomReturnUITests
+namespace EntryCustomReturnSampleApp.UITests
 {
     public class MultipleEntryPageTests : BaseTest
     {

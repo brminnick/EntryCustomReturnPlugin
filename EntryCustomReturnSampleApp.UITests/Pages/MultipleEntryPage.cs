@@ -8,7 +8,7 @@ using EntryCustomReturn.Forms.Plugin.Abstractions;
 
 using Query = System.Func<Xamarin.UITest.Queries.AppQuery, Xamarin.UITest.Queries.AppQuery>;
 
-namespace EntryCustomReturnUITests
+namespace EntryCustomReturnSampleApp.UITests
 {
 	public class MultipleEntryPage : BasePage
 	{

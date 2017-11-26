@@ -10,7 +10,7 @@ using Query = System.Func<Xamarin.UITest.Queries.AppQuery, Xamarin.UITest.Querie
 
 using EntryCustomReturn.Forms.Plugin.Abstractions;
 
-namespace EntryCustomReturnUITests
+namespace EntryCustomReturnSampleApp.UITests
 {
 	public class PickEntryReturnTypePage : BasePage
 	{

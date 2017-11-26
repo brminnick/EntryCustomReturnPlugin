@@ -2,7 +2,7 @@
 using Xamarin.UITest.iOS;
 using Xamarin.UITest.Android;
 
-namespace EntryCustomReturnUITests
+namespace EntryCustomReturnSampleApp.UITests
 {
     public abstract class BasePage
     {

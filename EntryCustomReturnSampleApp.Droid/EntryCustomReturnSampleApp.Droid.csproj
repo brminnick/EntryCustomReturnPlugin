@@ -124,7 +124,7 @@
       <Project>{4668C385-45C4-495D-803C-FFDAE866FD60}</Project>
       <Name>EntryCustomReturnSampleApp</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Src\EntryCustomReturn.Forms.Plugin.Android\EntryCustomReturn.Forms.Plugin.Android.csproj">
+    <ProjectReference Include="..\EntryCustomReturn.Forms.Plugin.Android\EntryCustomReturn.Forms.Plugin.Android.csproj">
       <Project>{1477793F-94BF-450F-A1F6-059B29DB18BE}</Project>
       <Name>EntryCustomReturn.Forms.Plugin.Android</Name>
     </ProjectReference>

@@ -2,8 +2,7 @@
 
 using NUnit.Framework;
 
-
-namespace EntryCustomReturnUITests
+namespace EntryCustomReturnSampleApp.UITests
 {
     [TestFixture(Platform.Android)]
     [TestFixture(Platform.iOS)]

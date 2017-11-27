@@ -1171,8 +1171,6 @@ namespace SimpleSample.Droid
 			global::EntryCustomReturn.Forms.Plugin.Android.Resource.Layout.select_dialog_multichoice_material = global::SimpleSample.Droid.Resource.Layout.select_dialog_multichoice_material;
 			global::EntryCustomReturn.Forms.Plugin.Android.Resource.Layout.select_dialog_singlechoice_material = global::SimpleSample.Droid.Resource.Layout.select_dialog_singlechoice_material;
 			global::EntryCustomReturn.Forms.Plugin.Android.Resource.Layout.support_simple_spinner_dropdown_item = global::SimpleSample.Droid.Resource.Layout.support_simple_spinner_dropdown_item;
-			global::EntryCustomReturn.Forms.Plugin.Android.Resource.String.ApplicationName = global::SimpleSample.Droid.Resource.String.ApplicationName;
-			global::EntryCustomReturn.Forms.Plugin.Android.Resource.String.Hello = global::SimpleSample.Droid.Resource.String.Hello;
 			global::EntryCustomReturn.Forms.Plugin.Android.Resource.String.abc_action_bar_home_description = global::SimpleSample.Droid.Resource.String.abc_action_bar_home_description;
 			global::EntryCustomReturn.Forms.Plugin.Android.Resource.String.abc_action_bar_home_description_format = global::SimpleSample.Droid.Resource.String.abc_action_bar_home_description_format;
 			global::EntryCustomReturn.Forms.Plugin.Android.Resource.String.abc_action_bar_home_subtitle_description_format = global::SimpleSample.Droid.Resource.String.abc_action_bar_home_subtitle_description_format;
@@ -5745,12 +5743,6 @@ namespace SimpleSample.Droid
 		
 		public partial class String
 		{
-			
-			// aapt resource value: 0x7f09003f
-			public const int ApplicationName = 2131296319;
-			
-			// aapt resource value: 0x7f09003e
-			public const int Hello = 2131296318;
 			
 			// aapt resource value: 0x7f090015
 			public const int abc_action_bar_home_description = 2131296277;

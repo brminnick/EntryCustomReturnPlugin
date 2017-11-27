@@ -36,50 +36,32 @@ namespace EntryCustomReturn.Forms.Plugin.Abstractions
         /// </summary>
         /// <returns>The return type.</returns>
         /// <param name="view">View.</param>
-        public static ReturnType GetReturnType(BindableObject view)
-        {
-            return (ReturnType)view.GetValue(ReturnTypeProperty);
-        }
+        public static ReturnType GetReturnType(BindableObject view) => (ReturnType)view.GetValue(ReturnTypeProperty);
 
         /// <summary>
         /// Sets the Type of the Keyboard Return Key
         /// </summary>
         /// <param name="view">View.</param>
         /// <param name="value">Value.</param>
-        public static void SetReturnType(BindableObject view, ReturnType value)
-        {
-            view.SetValue(ReturnTypeProperty, value);
-        }
+        public static void SetReturnType(BindableObject view, ReturnType value) => view.SetValue(ReturnTypeProperty, value);
 
         /// <summary>
         /// Gets the Command that occurs when the user finalizes the text in an entry with the return key
         /// </summary>
         /// <returns>The return type.</returns>
         /// <param name="view">View.</param>
-        public static ICommand GetReturnCommand(BindableObject view)
-        {
-            return (ICommand)view.GetValue(ReturnCommandProperty);
-        }
+        public static ICommand GetReturnCommand(BindableObject view) => (ICommand)view.GetValue(ReturnCommandProperty);
 
         /// <summary>
         /// Set the Command that occurs when the user finalizes the text in an entry with the return key
         /// </summary>
         /// <param name="view">View.</param>
         /// <param name="value">Value.</param>
-        public static void SetReturnCommand(BindableObject view, ICommand value)
-        {
-            view.SetValue(ReturnCommandProperty, value);
-        }
+        public static void SetReturnCommand(BindableObject view, ICommand value) => view.SetValue(ReturnCommandProperty, value);
 
-        static void OnReturnTypeChanged(BindableObject bindable, object oldValue, object newValue)
-        {
-            UpdateEffect(bindable);
-        }
+        static void OnReturnTypeChanged(BindableObject bindable, object oldValue, object newValue) => UpdateEffect(bindable);
 
-        static void OnReturnCommandPropertyChanged(BindableObject bindable, object oldValue, object newValue)
-        {
-            UpdateEffect(bindable);
-        }
+        static void OnReturnCommandPropertyChanged(BindableObject bindable, object oldValue, object newValue) => UpdateEffect(bindable);
 
         static void UpdateEffect(BindableObject bindable)
         {

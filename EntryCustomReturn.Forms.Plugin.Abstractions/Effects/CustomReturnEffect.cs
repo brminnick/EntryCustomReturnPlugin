@@ -19,7 +19,7 @@ namespace EntryCustomReturn.Forms.Plugin.Abstractions
                 propertyChanged: OnReturnTypeChanged));
 
         static readonly Lazy<BindableProperty> _returnCommandPropertyHolder = new Lazy<BindableProperty>(() =>
-            BindableProperty.CreateAttached(propertyName: "Command",
+            BindableProperty.CreateAttached(propertyName: typeof(Command).Name,
                 returnType: typeof(ICommand),
                 declaringType: typeof(Entry),
                 defaultValue: null,

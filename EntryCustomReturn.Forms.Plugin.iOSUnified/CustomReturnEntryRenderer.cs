@@ -53,7 +53,6 @@ namespace EntryCustomReturn.Forms.Plugin.iOS
 				if (Control != null && customEntry != null)
 					Control.ReturnKeyType = KeyboardHelpers.GetKeyboardButtonType(customEntry.ReturnType);
 			}
-
 		}
 	}
 }

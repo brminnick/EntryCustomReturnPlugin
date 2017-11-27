@@ -7,7 +7,7 @@ using Xamarin.Forms.Platform.iOS;
 using EntryCustomReturn.Forms.Plugin.iOS;
 using EntryCustomReturn.Forms.Plugin.Abstractions;
 
-[assembly: ResolutionGroupName("EntryCustomReturn.Forms.Plugin")]
+[assembly: ResolutionGroupName(EffectConstants.ResolutionGroupName)]
 [assembly: ExportEffect(typeof(CustomKeyboardReturnEffect), nameof(CustomKeyboardReturnEffect))]
 namespace EntryCustomReturn.Forms.Plugin.iOS
 {

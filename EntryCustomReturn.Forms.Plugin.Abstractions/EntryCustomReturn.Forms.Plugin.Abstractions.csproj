@@ -40,8 +40,8 @@
     <Compile Include="Effects\CustomReturnEffect.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CustomControls\CustomReturnEntry.cs" />
-    <Compile Include="Effects\EffectConstants.cs" />
     <Compile Include="Enums\CustomEnums.cs" />
+    <Compile Include="Effects\EffectConstants.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">

@@ -1,6 +1,5 @@
-﻿using System;
+﻿using Xamarin.Forms;
 
-using Xamarin.Forms;
 using EntryCustomReturn.Forms.Plugin.Abstractions;
 
 namespace SimpleSample

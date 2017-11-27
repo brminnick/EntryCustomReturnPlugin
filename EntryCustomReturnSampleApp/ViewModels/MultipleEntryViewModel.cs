@@ -66,19 +66,17 @@ namespace EntryCustomReturnSampleApp
         #endregion
 
         #region Methods
-        void ExecuteGoButtonCommand() =>
-            OutputTextInputToResultsLabel();
+        void ExecuteGoButtonCommand() => OutputTextInputToResultsLabel();
 
-        void ExecuteGoReturnTypeEntryReturnCommand() =>
-            OutputTextInputToResultsLabel();
+        void ExecuteGoReturnTypeEntryReturnCommand() => OutputTextInputToResultsLabel();
 
         void OutputTextInputToResultsLabel() =>
             ResultLabelText = StringBuilderHelpers.ConvertTextInputToResultsLabel(DefaultReturnTypeEntryText,
-                                                                                 NextReturnTypeEntryText,
-                                                                                 DoneReturnTypeEntryText,
-                                                                                 SendReturnTypeEntryText,
-                                                                                 SearchReturnTypeEntryText,
-                                                                                 GoReturnTypeEntryText);
+                                                                                    NextReturnTypeEntryText,
+                                                                                    DoneReturnTypeEntryText,
+                                                                                    SendReturnTypeEntryText,
+                                                                                    SearchReturnTypeEntryText,
+                                                                                    GoReturnTypeEntryText);
         #endregion
     }
 }

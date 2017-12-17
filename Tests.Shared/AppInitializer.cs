@@ -2,7 +2,7 @@
 
 using Xamarin.UITest;
 
-namespace EntryCustomReturnSampleApp.UITests
+namespace Tests.Shared
 {
     public static class AppInitializer
     {

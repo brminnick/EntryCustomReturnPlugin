@@ -30,20 +30,18 @@
       <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.UITest">
-      <HintPath>..\packages\Xamarin.UITest.2.2.1\lib\net45\Xamarin.UITest.dll</HintPath>
+      <HintPath>..\packages\Xamarin.UITest.2.2.2\lib\net45\Xamarin.UITest.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppInitializer.cs" />
-    <Compile Include="Pages\BasePage.cs" />
     <Compile Include="Tests\MultipleEntryPageTests.cs" />
-    <Compile Include="Tests\BaseTest.cs" />
     <Compile Include="Pages\MultipleEntryPage.cs" />
     <Compile Include="Tests\ReplTests.cs" />
     <Compile Include="Pages\OptionSelectionPage.cs" />
     <Compile Include="Pages\PickEntryReturnTypePage.cs" />
     <Compile Include="Helpers\TestHelpers.cs" />
     <Compile Include="Tests\PickEntryReturnTypeTests.cs" />
+    <Compile Include="Tests\Base\EntryCustomReturnSampleAppBaseTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -67,6 +65,10 @@
       <Name>EntryCustomReturn.Forms.Plugin.Abstractions</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Tests\Base\" />
+  </ItemGroup>
+  <Import Project="..\Tests.Shared\Tests.Shared.projitems" Label="Shared" Condition="Exists('..\Tests.Shared\Tests.Shared.projitems')" />
   <Import Project="..\EntryCustomReturnSampleApp.Shared\EntryCustomReturnSampleApp.Shared.projitems" Label="Shared" Condition="Exists('..\EntryCustomReturnSampleApp.Shared\EntryCustomReturnSampleApp.Shared.projitems')" />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

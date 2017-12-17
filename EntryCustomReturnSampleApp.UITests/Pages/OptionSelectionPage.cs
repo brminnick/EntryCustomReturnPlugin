@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Xamarin.UITest;
 
 using EntryCustomReturnSampleApp.Shared;
+using Tests.Shared;
 
 using Query = System.Func<Xamarin.UITest.Queries.AppQuery, Xamarin.UITest.Queries.AppQuery>;
 

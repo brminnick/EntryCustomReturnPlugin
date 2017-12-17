@@ -1,6 +1,7 @@
 ﻿using Xamarin.Forms;
 
 using EntryCustomReturn.Forms.Plugin.Abstractions;
+using SimpleSample.Shared;
 
 namespace SimpleSample
 {
@@ -13,11 +14,21 @@ namespace SimpleSample
     {
         public SelectionPage()
         {
-            var customRendererPageButton = new Button { Text = "Custom Renderer Page" };
+            var customRendererPageButton = new Button
+            {
+                Text = "Custom Renderer Page",
+                AutomationId = AutomationIdConstants.CustomRendererButton
+            };
             customRendererPageButton.Clicked += async (sender, e) => await Navigation.PushAsync(new CustomRendererPage());
 
-            var effectsPageButton = new Button { Text = "Efects Page" };
+            var effectsPageButton = new Button
+            {
+                Text = "Efects Page",
+                AutomationId = AutomationIdConstants.EffectsButton
+            };
             effectsPageButton.Clicked += async (sender, e) => await Navigation.PushAsync(new EffectsPage());
+
+            Title = PageTitles.Selection;
 
             Content = new StackLayout
             {
@@ -35,7 +46,7 @@ namespace SimpleSample
     {
         public CustomRendererPage()
         {
-            Title = "Custom Renderer";
+            Title = PageTitles.CustomRenderer;
 
             Content = new CustomReturnEntry
             {
@@ -43,7 +54,8 @@ namespace SimpleSample
                 VerticalOptions = LayoutOptions.Center,
                 Placeholder = "Custom Return Entry",
                 ReturnType = ReturnType.Go,
-                ReturnCommand = new Command(async () => await Navigation.PopAsync())
+                ReturnCommand = new Command(async () => await Navigation.PopAsync()),
+                AutomationId = AutomationIdConstants.CustomReturnEntry
             };
         }
     }
@@ -57,11 +69,12 @@ namespace SimpleSample
                 HorizontalOptions = LayoutOptions.Center,
                 VerticalOptions = LayoutOptions.Center,
                 Placeholder = "Effects Entry",
+                AutomationId = AutomationIdConstants.EffectsEntry
             };
             CustomReturnEffect.SetReturnType(effectsEntry, ReturnType.Go);
             CustomReturnEffect.SetReturnCommand(effectsEntry, new Command(async () => await Navigation.PopAsync()));
 
-            Title = "Effects";
+            Title = PageTitles.Effects;
 
             Content = effectsEntry;
         }

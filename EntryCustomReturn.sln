@@ -46,9 +46,7 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "SimpleSample.Shared", "Simp
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		EntryCustomReturnSampleApp.Shared\EntryCustomReturnSampleApp.Shared.projitems*{085e453b-c898-4d35-ba27-61ef81a6bab4}*SharedItemsImports = 4
 		EntryCustomReturnSampleApp.Shared\EntryCustomReturnSampleApp.Shared.projitems*{0f0c2c76-ec87-4832-80cb-cd8c6889bbe8}*SharedItemsImports = 13
-		EntryCustomReturnSampleApp.Shared\EntryCustomReturnSampleApp.Shared.projitems*{1477793f-94bf-450f-a1f6-059b29db18be}*SharedItemsImports = 4
 		SimpleSample.Shared\SimpleSample.Shared.projitems*{431efc7d-acdc-48a7-ba5a-873a64273639}*SharedItemsImports = 13
 		EntryCustomReturnSampleApp.Shared\EntryCustomReturnSampleApp.Shared.projitems*{4668c385-45c4-495d-803c-ffdae866fd60}*SharedItemsImports = 4
 		SimpleSample.Shared\SimpleSample.Shared.projitems*{49c40333-2758-4e0e-948f-a62b8c6642d1}*SharedItemsImports = 4

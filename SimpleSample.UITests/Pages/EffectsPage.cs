@@ -9,11 +9,16 @@ namespace SimpleSample.UITests
 {
     public class EffectsPage : BasePage
     {
+        #region Constant Fields
         readonly Query _effectsEntry;
+        #endregion
 
+        #region Constructors
         public EffectsPage(IApp app) : base(app, PageTitles.Effects) =>
             _effectsEntry = x => x.Marked(AutomationIdConstants.EffectsEntry);
+        #endregion
 
+        #region Methods
         public void TapEffectsEntryReturnButton()
         {
             App.Tap(_effectsEntry);
@@ -21,5 +26,6 @@ namespace SimpleSample.UITests
 
             App.Screenshot("Effects Entry Return Button Tapped");
         }
+        #endregion
     }
 }

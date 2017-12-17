@@ -3,8 +3,9 @@ using System.Linq;
 
 using Xamarin.UITest;
 
-using EntryCustomReturnSampleApp.Shared;
 using EntryCustomReturn.Forms.Plugin.Abstractions;
+
+using EntryCustomReturnSampleApp.Shared;
 
 using Tests.Shared;
 

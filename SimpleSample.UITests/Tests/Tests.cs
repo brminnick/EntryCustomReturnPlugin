@@ -7,10 +7,13 @@ namespace SimpleSample.UITests
 {
     public class Tests : SimpleSampleBaseTest
     {
+        #region Constructors
         public Tests(Platform platform) : base(platform)
         {
         }
+        #endregion
 
+        #region Methods
         public override void TestSetup()
         {
             base.TestSetup();
@@ -43,5 +46,6 @@ namespace SimpleSample.UITests
             //Assert
             App.WaitForElement(PageTitles.Selection);
         }
+        #endregion
     }
 }

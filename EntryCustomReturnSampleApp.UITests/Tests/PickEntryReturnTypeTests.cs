@@ -7,7 +7,7 @@ using EntryCustomReturn.Forms.Plugin.Abstractions;
 
 namespace EntryCustomReturnSampleApp.UITests
 {
-	public class PickEntryReturnTypeTests : BaseTest
+	public class PickEntryReturnTypeTests : EntryCustomReturnSampleAppBaseTest
 	{
 		public PickEntryReturnTypeTests(Platform platform) : base(platform)
 		{

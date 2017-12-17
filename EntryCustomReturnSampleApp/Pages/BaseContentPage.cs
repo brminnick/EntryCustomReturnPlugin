@@ -7,7 +7,7 @@ namespace EntryCustomReturnSampleApp
     public abstract class BaseContentPage<T> : ContentPage where T : BaseViewModel, new()
     {
         #region Fields
-        Lazy<T> _viewModelHolder = new Lazy<T>();
+        readonly Lazy<T> _viewModelHolder = new Lazy<T>();
         #endregion
 
         #region Constructors

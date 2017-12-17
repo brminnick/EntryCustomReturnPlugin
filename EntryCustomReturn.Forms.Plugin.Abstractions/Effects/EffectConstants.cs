@@ -1,10 +1,9 @@
 ﻿namespace EntryCustomReturn.Forms.Plugin.Abstractions
 {
-	static class EffectConstants
+    public static class EffectConstants
 	{
-		const string ResolutionGroupName = "EntryCustomReturn.Forms.Plugin";
+        public const string ResolutionGroupName = "EntryCustomReturn.Forms.Plugin";
+		internal static string Name => $"{ResolutionGroupName}.{EffectName}";
 		const string EffectName = "CustomKeyboardReturnEffect";
-
-		public static readonly string Name = $"{ResolutionGroupName}.{EffectName}";
 	}
 }

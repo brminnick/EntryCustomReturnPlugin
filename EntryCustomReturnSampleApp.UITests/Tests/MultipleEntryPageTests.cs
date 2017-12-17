@@ -6,7 +6,7 @@ using EntryCustomReturnSampleApp.Shared;
 
 namespace EntryCustomReturnSampleApp.UITests
 {
-    public class MultipleEntryPageTests : BaseTest
+    public class MultipleEntryPageTests : EntryCustomReturnSampleAppBaseTest
     {
         public MultipleEntryPageTests(Platform platform) : base(platform)
         {

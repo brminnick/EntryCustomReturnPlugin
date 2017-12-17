@@ -4,11 +4,13 @@ using System.Threading;
 
 using Xamarin.UITest;
 
+using EntryCustomReturn.Forms.Plugin.Abstractions;
+
 using EntryCustomReturnSampleApp.Shared;
 
-using Query = System.Func<Xamarin.UITest.Queries.AppQuery, Xamarin.UITest.Queries.AppQuery>;
+using Tests.Shared;
 
-using EntryCustomReturn.Forms.Plugin.Abstractions;
+using Query = System.Func<Xamarin.UITest.Queries.AppQuery, Xamarin.UITest.Queries.AppQuery>;
 
 namespace EntryCustomReturnSampleApp.UITests
 {

@@ -2,7 +2,7 @@
 
 using Xamarin.UITest;
 
-namespace EntryCustomReturnSampleApp.UITests
+namespace Tests.Shared
 {
     [TestFixture(Platform.Android)]
     [TestFixture(Platform.iOS)]
@@ -14,11 +14,7 @@ namespace EntryCustomReturnSampleApp.UITests
 
         #region Properties
         protected Platform Platform { get; }
-
         protected IApp App { get; private set; }
-        protected MultipleEntryPage MultipleEntryPage { get; private set; }
-        protected OptionSelectionPage OptionSelectionPage { get; private set; }
-        protected PickEntryReturnTypePage PickEntryReturnTypePage { get; private set; }
         #endregion
 
         #region Methods
@@ -28,10 +24,6 @@ namespace EntryCustomReturnSampleApp.UITests
             App = AppInitializer.StartApp(Platform);
 
             App.Screenshot("App Launched");
-
-            MultipleEntryPage = new MultipleEntryPage(App);
-            OptionSelectionPage = new OptionSelectionPage(App);
-            PickEntryReturnTypePage = new PickEntryReturnTypePage(App);
         }
         #endregion
     }

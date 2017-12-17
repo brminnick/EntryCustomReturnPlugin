@@ -36,7 +36,6 @@
   <ItemGroup>
     <Compile Include="Tests\MultipleEntryPageTests.cs" />
     <Compile Include="Pages\MultipleEntryPage.cs" />
-    <Compile Include="Tests\ReplTests.cs" />
     <Compile Include="Pages\OptionSelectionPage.cs" />
     <Compile Include="Pages\PickEntryReturnTypePage.cs" />
     <Compile Include="Helpers\TestHelpers.cs" />

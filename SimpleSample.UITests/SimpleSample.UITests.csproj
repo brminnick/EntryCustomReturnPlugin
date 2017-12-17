@@ -49,6 +49,20 @@
     <Compile Include="Tests\Base\SimpleSampleBaseTest.cs" />
     <Compile Include="Tests\Tests.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SimpleSample.Droid\SimpleSample.Droid.csproj">
+      <Project>{54F40CFF-83C5-47BA-915C-25442BFFBB72}</Project>
+      <Name>SimpleSample.Droid</Name>
+      <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\SimpleSample.iOS\SimpleSample.iOS.csproj">
+      <Project>{33683B02-E1A3-4A93-ABBF-41819ED8FA01}</Project>
+      <Name>SimpleSample.iOS</Name>
+      <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="..\SimpleSample.Shared\SimpleSample.Shared.projitems" Label="Shared" Condition="Exists('..\SimpleSample.Shared\SimpleSample.Shared.projitems')" />
   <Import Project="..\Tests.Shared\Tests.Shared.projitems" Label="Shared" Condition="Exists('..\Tests.Shared\Tests.Shared.projitems')" />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

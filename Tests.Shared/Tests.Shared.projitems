@@ -12,5 +12,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)BasePage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)BaseTest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AppInitializer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ReplTests.cs" />
   </ItemGroup>
 </Project>

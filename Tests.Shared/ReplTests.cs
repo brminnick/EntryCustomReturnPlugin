@@ -2,9 +2,7 @@
 
 using NUnit.Framework;
 
-using Tests.Shared;
-
-namespace EntryCustomReturnSampleApp.UITests
+namespace Tests.Shared
 {
     [TestFixture(Platform.Android)]
     [TestFixture(Platform.iOS)]

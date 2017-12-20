@@ -12,11 +12,10 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using Xamarin.Forms.Platform.UWP;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
-namespace EntryCustomReturnSampleApp.UWP
+namespace SimpleSample.UWP
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
@@ -27,7 +26,7 @@ namespace EntryCustomReturnSampleApp.UWP
         {
             this.InitializeComponent();
 
-            LoadApplication(new EntryCustomReturnSampleApp.App());
+            LoadApplication(new SimpleSample.App());
         }
     }
 }

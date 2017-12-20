@@ -3,6 +3,7 @@
 using Xamarin.Forms;
 
 using EntryCustomReturnSampleApp.Shared;
+using System.Text;
 
 namespace EntryCustomReturnSampleApp
 {
@@ -17,10 +18,14 @@ namespace EntryCustomReturnSampleApp
 
         #region Properties
         public ICommand GoButtonCommand => _goButtonCommand ??
-            (_goButtonCommand = new Command(ExecuteGoButtonCommand));
+            (_goButtonCommand = new Command<string>(ExecuteGoButtonCommand));
 
         public ICommand GoReturnTypeEntryReturnCommand => _goReturnTypeEntryReturnCommand ??
-            (_goReturnTypeEntryReturnCommand = new Command(ExecuteGoReturnTypeEntryReturnCommand));
+            (_goReturnTypeEntryReturnCommand = new Command<string>(ExecuteGoReturnTypeEntryReturnCommand));
+
+        public string GoButtonCommandParameter => MultipleEntryPageConstants.GoButtonCommandParameterString;
+
+        public string GoReturnTypeEntryReturnCommandParameter => MultipleEntryPageConstants.GoReturnTypeCommandParameterString;
 
         public string ResultLabelText
         {
@@ -66,17 +71,20 @@ namespace EntryCustomReturnSampleApp
         #endregion
 
         #region Methods
-        void ExecuteGoButtonCommand() => OutputTextInputToResultsLabel();
+        void ExecuteGoButtonCommand(string commandParameter) => OutputTextInputToResultsLabel(commandParameter);
 
-        void ExecuteGoReturnTypeEntryReturnCommand() => OutputTextInputToResultsLabel();
+        void ExecuteGoReturnTypeEntryReturnCommand(string commandParameter) => OutputTextInputToResultsLabel(commandParameter);
 
-        void OutputTextInputToResultsLabel() =>
-            ResultLabelText = StringBuilderHelpers.ConvertTextInputToResultsLabel(DefaultReturnTypeEntryText,
+        void OutputTextInputToResultsLabel(string commandParameter)
+        {
+            ResultLabelText = StringBuilderHelpers.ConvertTextInputToResultsLabel(commandParameter,
+                                                                                    DefaultReturnTypeEntryText,
                                                                                     NextReturnTypeEntryText,
                                                                                     DoneReturnTypeEntryText,
                                                                                     SendReturnTypeEntryText,
                                                                                     SearchReturnTypeEntryText,
                                                                                     GoReturnTypeEntryText);
+        }
         #endregion
     }
 }

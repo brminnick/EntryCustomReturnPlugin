@@ -42,7 +42,6 @@ namespace EntryCustomReturn.Forms.Plugin.UWP
             switch (Control)
             {
                 case FormsTextBox formsTextBox:
-
                     KeyboardHelpers.SetKeyboardEnterButton(customControl, ReturnType.Default);
                     Control.KeyUp -= HandleKeyUp;
                     break;

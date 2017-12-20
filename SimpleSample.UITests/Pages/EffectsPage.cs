@@ -1,13 +1,12 @@
 ﻿using Xamarin.UITest;
 
-using Tests.Shared;
 using SimpleSample.Shared;
 
 using Query = System.Func<Xamarin.UITest.Queries.AppQuery, Xamarin.UITest.Queries.AppQuery>;
 
 namespace SimpleSample.UITests
 {
-    public class EffectsPage : BasePage
+    public class EffectsPage : BaseEntryPage
     {
         #region Constant Fields
         readonly Query _effectsEntry;

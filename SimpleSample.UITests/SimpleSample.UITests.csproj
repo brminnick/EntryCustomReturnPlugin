@@ -41,6 +41,7 @@
     <Folder Include="Pages\" />
     <Folder Include="Tests\" />
     <Folder Include="Tests\Base\" />
+    <Folder Include="Pages\Base\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Pages\SelectionPage.cs" />
@@ -48,6 +49,7 @@
     <Compile Include="Pages\EffectsPage.cs" />
     <Compile Include="Tests\Base\SimpleSampleBaseTest.cs" />
     <Compile Include="Tests\Tests.cs" />
+    <Compile Include="Pages\Base\BaseEntryPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SimpleSample.Droid\SimpleSample.Droid.csproj">

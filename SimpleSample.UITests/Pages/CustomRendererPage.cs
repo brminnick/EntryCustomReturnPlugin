@@ -1,6 +1,5 @@
 ﻿using Xamarin.UITest;
 
-using Tests.Shared;
 using SimpleSample.Shared;
 
 using Query = System.Func<Xamarin.UITest.Queries.AppQuery, Xamarin.UITest.Queries.AppQuery>;
@@ -8,7 +7,7 @@ using Query = System.Func<Xamarin.UITest.Queries.AppQuery, Xamarin.UITest.Querie
 
 namespace SimpleSample.UITests
 {
-    public class CustomRendererPage : BasePage
+    public class CustomRendererPage : BaseEntryPage
     {
         #region Constant Fields
         readonly Query _customReturnEntry;

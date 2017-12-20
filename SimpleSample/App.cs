@@ -1,6 +1,9 @@
-﻿using Xamarin.Forms;
+﻿using System.Threading.Tasks;
+
+using Xamarin.Forms;
 
 using EntryCustomReturn.Forms.Plugin.Abstractions;
+
 using SimpleSample.Shared;
 
 namespace SimpleSample
@@ -54,9 +57,16 @@ namespace SimpleSample
                 VerticalOptions = LayoutOptions.Center,
                 Placeholder = "Custom Return Entry",
                 ReturnType = ReturnType.Go,
-                ReturnCommand = new Command(async () => await Navigation.PopAsync()),
+                ReturnCommand = new Command<string>(async title => await ExecuteEntryCommand(title)),
+                ReturnCommandParameter = EntryConstants.CommandParameterString,
                 AutomationId = AutomationIdConstants.CustomReturnEntry
             };
+        }
+
+        async Task ExecuteEntryCommand(string title)
+        {
+            await DisplayAlert(title, "", EntryConstants.OKString);
+            await Navigation.PopAsync();
         }
     }
 
@@ -72,11 +82,18 @@ namespace SimpleSample
                 AutomationId = AutomationIdConstants.EffectsEntry
             };
             CustomReturnEffect.SetReturnType(effectsEntry, ReturnType.Go);
-            CustomReturnEffect.SetReturnCommand(effectsEntry, new Command(async () => await Navigation.PopAsync()));
+            CustomReturnEffect.SetReturnCommand(effectsEntry, new Command<string>(async title => await ExecuteEntryCommand(title)));
+            CustomReturnEffect.SetReturnCommandParameter(effectsEntry, EntryConstants.CommandParameterString);
 
             Title = PageTitles.Effects;
 
             Content = effectsEntry;
+        }
+
+        async Task ExecuteEntryCommand(string title)
+        {
+            await DisplayAlert(title, "", EntryConstants.OKString);
+            await Navigation.PopAsync();
         }
     }
 }

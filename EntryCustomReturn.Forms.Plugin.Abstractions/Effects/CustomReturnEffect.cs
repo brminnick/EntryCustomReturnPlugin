@@ -71,20 +71,18 @@ namespace EntryCustomReturn.Forms.Plugin.Abstractions
         public static void SetReturnCommand(BindableObject view, ICommand value) => view.SetValue(ReturnCommandProperty, value);
 
         /// <summary>
-        /// Gets the backing store for the Command that occurs when the user finalizes the text in an InputView with the return key
+        /// Gets the backing store for the Command that occurs when the user finalizes the text in an entry with the return key
         /// </summary>
         /// <returns>The return type.</returns>
         /// <param name="view">View.</param>
-        public static object GetReturnCommandParameter(BindableObject view) =>
-            view.GetValue(ReturnCommandParameterProperty);
+        public static object GetReturnCommandParameter(BindableObject view) => view.GetValue(ReturnCommandParameterProperty);
 
         /// <summary>
-        /// Set the backing store for the Command that occurs when the user finalizes the text in an InputView with the return key
+        /// Set the backing store for the Command that occurs when the user finalizes the text in an entry with the return key
         /// </summary>
         /// <param name="view">View.</param>
         /// <param name="value">Value.</param>
-        public static void SetReturnCommandParameter(BindableObject view, object value) =>
-            view.SetValue(ReturnCommandParameterProperty, value);
+        public static void SetReturnCommandParameter(BindableObject view, object value) => view.SetValue(ReturnCommandParameterProperty, value);
 
         static void OnReturnTypeChanged(BindableObject bindable, object oldValue, object newValue) => UpdateEffect(bindable);
 

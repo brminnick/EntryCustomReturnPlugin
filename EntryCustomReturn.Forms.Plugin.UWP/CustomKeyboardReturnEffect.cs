@@ -14,15 +14,9 @@ namespace EntryCustomReturn.Forms.Plugin.UWP
     [Preserve(AllMembers = true)]
     sealed class CustomKeyboardReturnEffect : PlatformEffect
     {
-        protected override void OnAttached()
-        {
-            SetKeyboardReturnButton();
-        }
+        protected override void OnAttached() => SetKeyboardReturnButton();
 
-        protected override void OnDetached()
-        {
-            UnsetKeyboardReturnButton();
-        }
+        protected override void OnDetached() => UnsetKeyboardReturnButton();
 
         protected override void OnElementPropertyChanged(System.ComponentModel.PropertyChangedEventArgs args)
         {
@@ -34,30 +28,31 @@ namespace EntryCustomReturn.Forms.Plugin.UWP
 
         void SetKeyboardReturnButton()
         {
-            var customControl = Control as FormsTextBox;
-
-            if (customControl == null)
-                return;
-
-            KeyboardHelpers.SetKeyboardEnterButton(customControl, CustomReturnEffect.GetReturnType(Element));
-            Control.KeyUp += HandleKeyUp;
+            switch (Control)
+            {
+                case FormsTextBox formsTextBox:
+                    KeyboardHelpers.SetKeyboardEnterButton(customControl, CustomReturnEffect.GetReturnType(Element));
+                    Control.KeyUp += HandleKeyUp;
+                    break;
+            }
         }
 
         void UnsetKeyboardReturnButton()
         {
-            var customControl = Control as FormsTextBox;
+            switch (Control)
+            {
+                case FormsTextBox formsTextBox:
 
-            if (customControl == null)
-                return;
-
-            KeyboardHelpers.SetKeyboardEnterButton(customControl, ReturnType.Default);
-            Control.KeyUp -= HandleKeyUp;
+                    KeyboardHelpers.SetKeyboardEnterButton(customControl, ReturnType.Default);
+                    Control.KeyUp -= HandleKeyUp;
+                    break;
+            }
         }
 
         void HandleKeyUp(object sender, KeyRoutedEventArgs e)
         {
             if (e.Key == Windows.System.VirtualKey.Enter)
-                CustomReturnEffect.GetReturnCommand(Element)?.Execute(null);
+                CustomReturnEffect.GetReturnCommand(Element)?.Execute(CustomKeyboardReturnEffect.GetReturnCommandParameter(Element));
         }
     }
 }

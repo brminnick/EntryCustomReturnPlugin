@@ -10,24 +10,26 @@ namespace EntryCustomReturn.Forms.Plugin.Abstractions
     /// </summary>
     public class CustomReturnEntry : Entry
     {
-        static BindableProperty _returnCommandProperty;
-        static BindableProperty _returnTypeProperty;
+        static BindableProperty _returnCommandProperty, _returnTypeProperty, _returnCommandParameterProperty;
 
         /// <summary>
         /// Command Property that occurs when the user finalizes the text in an entry with the return key
         /// </summary>
-        public static BindableProperty ReturnCommandProperty => _returnCommandProperty ?? 
-            (_returnCommandProperty = BindableProperty.Create(nameof(ReturnCommand), typeof(ICommand), typeof(CustomReturnEntry), null));
+        public static BindableProperty ReturnCommandProperty => _returnCommandProperty ??
+            (_returnCommandProperty = BindableProperty.Create(nameof(ReturnCommand), typeof(ICommand), typeof(CustomReturnEntry)));
 
         /// <summary>
         /// Return Type Property of the Entry
         /// </summary>
         public static BindableProperty ReturnTypeProperty => _returnTypeProperty ??
-            (_returnTypeProperty = BindableProperty.Create(propertyName: nameof(ReturnType),
-                                                            returnType: typeof(ReturnType),
-                                                            declaringType: typeof(CustomReturnEntry),
-                                                            defaultValue: ReturnType.Done));
-            
+            (_returnTypeProperty = BindableProperty.Create(nameof(ReturnType), typeof(ReturnType), typeof(CustomReturnEntry), ReturnType.Done));
+
+        /// <summary>
+        /// Backing store for the ReturnCommandParameter bindable property
+        /// </summary>
+        public static readonly BindableProperty ReturnCommandParameterProperty = _returnCommandParameterProperty ??
+            (_returnCommandParameterProperty = BindableProperty.Create(nameof(ReturnCommandParameter), typeof(object), typeof(CustomReturnEntry)));
+
         /// <summary>
         /// Type of the Keyboard Return Key
         /// </summary>
@@ -44,6 +46,15 @@ namespace EntryCustomReturn.Forms.Plugin.Abstractions
         {
             get => (ICommand)GetValue(ReturnCommandProperty);
             set => SetValue(ReturnCommandProperty, value);
+        }
+
+        /// <summary>
+        /// Gets or sets the ReturnCommand parameter
+        /// </summary>
+        public object ReturnCommandParameter
+        {
+            get => GetValue(ReturnCommandParameterProperty);
+            set => SetValue(ReturnCommandParameterProperty, value);
         }
     }
 }

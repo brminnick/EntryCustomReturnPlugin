@@ -11,55 +11,47 @@ using EntryCustomReturn.Forms.Plugin.Abstractions;
 [assembly: ExportEffect(typeof(CustomKeyboardReturnEffect), nameof(CustomKeyboardReturnEffect))]
 namespace EntryCustomReturn.Forms.Plugin.iOS
 {
-	[Preserve(AllMembers = true)]
-	sealed class CustomKeyboardReturnEffect : PlatformEffect
-	{
-		protected override void OnAttached()
-		{
-			SetKeyboardReturnButton();
-		}
+    [Preserve(AllMembers = true)]
+    sealed class CustomKeyboardReturnEffect : PlatformEffect
+    {
+        protected override void OnAttached() => SetKeyboardReturnButton();
 
-		protected override void OnDetached()
-		{
-			UnsetKeyboardReturnButton();
-		}
+        protected override void OnDetached() => UnsetKeyboardReturnButton();
 
-		protected override void OnElementPropertyChanged(System.ComponentModel.PropertyChangedEventArgs args)
-		{
-			base.OnElementPropertyChanged(args);
+        protected override void OnElementPropertyChanged(System.ComponentModel.PropertyChangedEventArgs args)
+        {
+            base.OnElementPropertyChanged(args);
 
-			if (args.PropertyName == CustomReturnEntry.ReturnTypeProperty.PropertyName)
-				SetKeyboardReturnButton();
-		}
+            if (args.PropertyName == CustomReturnEntry.ReturnTypeProperty.PropertyName)
+                SetKeyboardReturnButton();
+        }
 
-		void SetKeyboardReturnButton()
-		{
-			var customControl = Control as UITextField;
+        void SetKeyboardReturnButton()
+        {
+            switch (Control)
+            {
+                case UITextField uiTextField:
+                    uiTextField.ReturnKeyType = KeyboardHelpers.GetKeyboardButtonType(CustomReturnEffect.GetReturnType(Element));
+                    uiTextField.ShouldReturn += HandleShouldReturn;
+                    break;
+            }
+        }
 
-			if (customControl == null)
-				return;
+        void UnsetKeyboardReturnButton()
+        {
+            switch (Control)
+            {
+                case UITextField uiTextField:
+                    uiTextField.ReturnKeyType = UIReturnKeyType.Default;
+                    uiTextField.ShouldReturn -= HandleShouldReturn;
+                    break;
+            }
+        }
 
-			customControl.ReturnKeyType = KeyboardHelpers.GetKeyboardButtonType(CustomReturnEffect.GetReturnType(Element));
-
-			customControl.ShouldReturn += HandleShouldReturn;
-		}
-
-		void UnsetKeyboardReturnButton()
-		{
-			var customControl = Control as UITextField;
-
-			if (customControl == null)
-				return;
-
-			customControl.ReturnKeyType = UIReturnKeyType.Default;
-
-			customControl.ShouldReturn -= HandleShouldReturn;
-		}
-
-		bool HandleShouldReturn(UITextField textField)
-		{
-            CustomReturnEffect.GetReturnCommand(Element)?.Execute(null);
-			return true;
-		}
-	}
+        bool HandleShouldReturn(UITextField textField)
+        {
+            CustomReturnEffect.GetReturnCommand(Element)?.Execute(CustomReturnEffect.GetReturnCommandParameter(Element));
+            return true;
+        }
+    }
 }

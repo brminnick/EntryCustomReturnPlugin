@@ -41,7 +41,7 @@ namespace EntryCustomReturn.Forms.Plugin.Abstractions
                                                                                typeof(CustomReturnEntry),
                                                                                null,
                                                                                propertyChanged: OnReturnCommandParameterPropertyChanged));
-        
+
         /// <summary>
         /// Gets the Type of the Keyboard Return Key
         /// </summary>
@@ -94,17 +94,19 @@ namespace EntryCustomReturn.Forms.Plugin.Abstractions
 
         static void UpdateEffect(BindableObject bindable)
         {
-            if (!(bindable is Entry entry))
-                return;
-
-            RemoveEffect(entry);
-
-            entry.Effects.Add(new EntryReturnTypeEffect());
+            switch (bindable)
+            {
+                case Entry entry:
+                    RemoveEffect(entry);
+                    entry.Effects.Add(new EntryReturnTypeEffect());
+                    break;
+            }
         }
 
         static void RemoveEffect(Entry entry)
         {
-            var effectToRemoveList = entry.Effects.Where(e => e is EntryReturnTypeEffect);
+            var effectToRemoveList = entry.Effects.Where(e => e is EntryReturnTypeEffect).ToList();
+
             foreach (var entryReturnTypeEffect in effectToRemoveList)
                 entry.Effects.Remove(entryReturnTypeEffect);
         }

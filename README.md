@@ -112,7 +112,7 @@ var goReturnTypeCustomEntry = new CustomReturnEntry
 };
 ```
 
-It can also be used as a [Bindable Property to bind to a ViewModel](./Samples/EntryCustomReturnSampleApp/Helpers/ViewHelpers.cs#L25)
+It can also be used as a [Bindable Property to bind to a ViewModel](./EntryCustomReturnSampleApp/Helpers/ViewHelpers.cs#L25)
 
 ```csharp
 var viewModel = new MyViewModel();
@@ -130,7 +130,7 @@ customReturnEntry.SetBinding(CustomReturnEntry.ReturnTypeProperty, nameof(viewMo
 goReturnTypeCustomEntry.ReturnCommand = new Command(() => Navigation.PushAsync(new ContentPage()));
 ```
 
-It can also be used as a [Bindable Property to bind to a ViewModel](./Samples/EntryCustomReturnSampleApp/Helpers/ViewHelpers.cs#L195)
+It can also be used as a [Bindable Property to bind to a ViewModel](./EntryCustomReturnSampleApp/Helpers/ViewHelpers.cs#L185)
 
 ```csharp
 var viewModel = new MyViewModel();
@@ -140,7 +140,7 @@ var customReturnEntry = new CustomReturnEntry();
 customReturnEntry.SetBinding(CustomReturnEntry.ReturnCommandProperty nameof(viewModel.EntryReturnCommand));
 ```
 
-### 3. Set the `ReturnCommandParameter` Property (New in v3.3.0!)
+### 3. Set the `ReturnCommandParameter` Property (New in v3.3.0)
 
 The `ReturnCommandParameter` property is an object that can be passed to the `ReturnCommand` property.
 
@@ -156,7 +156,7 @@ var viewModel = new ViewModel();
 BindingContext = viewModel;
 
 var customReturnEntry = new CustomReturnEntry();
-customReturnEntry.SetBinding(CustomReturnEntry.ReturnCommandParameterProperty nameof(viewModel.EntryReturnCommandParameter));
+customReturnEntry.SetBinding(CustomReturnEntry.ReturnCommandParameterProperty, nameof(viewModel.EntryReturnCommandParameter));
 ```
 
 ## Effect
@@ -170,7 +170,7 @@ var goReturnTypeEntry = new Entry()
 CustomReturnEffect.SetReturnType(goReturnTypeEntry, ReturnType.Go);
 ```
 
-It can also be used as a [Bindable Property to bind to a ViewModel](./Samples/EntryCustomReturnSampleApp/Helpers/ViewHelpers.cs#L21)
+It can also be used as a [Bindable Property to bind to a ViewModel](./EntryCustomReturnSampleApp/Helpers/ViewHelpers.cs#L21)
 
 ```csharp
 var viewModel = new MyViewModel();
@@ -189,7 +189,7 @@ var goReturnTypeEntry = new Entry()
 CustomReturnEffect.SetReturnCommand(goReturnTypeEntry, new Command(() => Navigation.PushAsync(new ContentPage()));
 ```
 
-It can also be used as a [Bindable Property to bind to a ViewModel](./Samples/EntryCustomReturnSampleApp/Helpers/ViewHelpers.cs#L192)
+It can also be used as a [Bindable Property to bind to a ViewModel](./EntryCustomReturnSampleApp/Helpers/ViewHelpers.cs#L188)
 
 ```csharp
 var viewModel = new MyViewModel();
@@ -199,7 +199,7 @@ var customReturnEntry = new Entry();
 customReturnEntry.SetBinding(CustomReturnEffect.ReturnCommandProperty, nameof(viewModel.EntryReturnCommand));
 ```
 
-### 3. Set the `ReturnCommandParameter` Property (New in v3.3.0!)
+### 3. Set the `ReturnCommandParameter` Property (New in v3.3.0)
 
 The `ReturnCommandParameter` property is an object that can be passed to the `ReturnCommand` property.
 

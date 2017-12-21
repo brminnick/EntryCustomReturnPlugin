@@ -17,7 +17,6 @@ namespace EntryCustomReturnSampleApp
             {
                 case true:
                     customizableEntry = new Entry();
-                    CustomReturnEffect.SetReturnType(customizableEntry, ReturnType.Go);
                     customizableEntry.SetBinding(CustomReturnEffect.ReturnTypeProperty, nameof(pickEntryReturnTypeViewModel.EntryReturnType));
                     break;
                 case false:

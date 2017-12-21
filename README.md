@@ -103,7 +103,7 @@ The EntryCustomReturnPlugin can be consumed either as a [`CustomRenderer`](https
 
 ### 1. Set the `ReturnType` Property
 
-The `ReturnType` Property is an enum containing 6 different types: Default, Go, Next, Done, Send, Search.
+The `ReturnType` property is an enum containing 6 different types: Default, Go, Next, Done, Send, Search.
 
 ```csharp
 var goReturnTypeCustomEntry = new CustomReturnEntry
@@ -140,11 +140,30 @@ var customReturnEntry = new CustomReturnEntry();
 customReturnEntry.SetBinding(CustomReturnEntry.ReturnCommandProperty nameof(viewModel.EntryReturnCommand));
 ```
 
+### 3. Set the `ReturnCommandParameter` Property (New in v3.3.0!)
+
+The `ReturnCommandParameter` property is an object that can be passed to the `ReturnCommand` property.
+
+```csharp
+goReturnTypeCustomEntry.ReturnCommand = new Command<string>(async title => await DisplayAlert(title, "", "Ok"));
+goReturnTypeCustomEntry.ReturnCommandParameter = "Return Button Tapped";
+```
+
+It can also be used as a Bindable Property to bind to a ViewModel
+
+```csharp
+var viewModel = new ViewModel();
+BindingContext = viewModel;
+
+var customReturnEntry = new CustomReturnEntry();
+customReturnEntry.SetBinding(CustomReturnEntry.ReturnCommandParameterProperty nameof(viewModel.EntryReturnCommandParameter));
+```
+
 ## Effect
 
 ### 1. Set the `ReturnType` Property
 
-The `ReturnType` Property is an enum containing 6 different types: Default, Go, Next, Done, Send, Search.
+The `ReturnType` property is an enum containing 6 different types: Default, Go, Next, Done, Send, Search.
 
 ```csharp
 var goReturnTypeEntry = new Entry()
@@ -178,6 +197,26 @@ BindingContext = viewModel;
 
 var customReturnEntry = new Entry();
 customReturnEntry.SetBinding(CustomReturnEffect.ReturnCommandProperty, nameof(viewModel.EntryReturnCommand));
+```
+
+### 3. Set the `ReturnCommandParameter` Property (New in v3.3.0!)
+
+The `ReturnCommandParameter` property is an object that can be passed to the `ReturnCommand` property.
+
+```csharp
+var goReturnTypeEntry = new Entry()
+CustomReturnEffect.SetReturnCommand(goReturnTypeEntry, new Command<string>(async title => await DisplayAlert(title, "", "Ok")));
+CustomReturnEffect.SetReturnCommandParameter(goReturnTypeEntry, "Return Button Tapped");
+```
+
+It can also be used as a Bindable Property to bind to a ViewModel
+
+```csharp
+var viewModel = new ViewModel();
+BindingContext = viewModel;
+
+var customReturnEntry = new Entry();
+customReturnEntry.SetBinding(CustomReturnEffect.ReturnCommandParameterProperty, nameof(viewModel.EntryReturnCommandParameter));
 ```
 
 ![iPhone Demo](https://github.com/brminnick/Videos/blob/master/EntryCustomReturnPlugin/iOS%20Gif.gif)

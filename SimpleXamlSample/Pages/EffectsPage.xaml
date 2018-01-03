@@ -15,6 +15,6 @@
             VerticalOptions="Center"
             Placeholder="{x:Static simpleSampleShared:EffectsPageConstants.EffectsEntryPlaceholderText}"
             AutomationId="{x:Static simpleSampleShared:AutomationIdConstants.EffectsEntry}"/>
-        
+<!--            entryCustomReturn:CustomReturnEffect.ReturnType="{x:Static entryCustomReturn:ReturnType.Go}"/>-->
     </ContentPage.Content>
 </ContentPage>

@@ -69,7 +69,7 @@ namespace SimpleSample
             {
                 HorizontalOptions = LayoutOptions.Center,
                 VerticalOptions = LayoutOptions.Center,
-                Placeholder = "Effects Entry",
+                Placeholder = EffectsPageConstants.EffectsEntryPlaceholderText,
                 AutomationId = AutomationIdConstants.EffectsEntry
             };
             CustomReturnEffect.SetReturnType(effectsEntry, ReturnType.Go);

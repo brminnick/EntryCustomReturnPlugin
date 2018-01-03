@@ -13,5 +13,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)AutomationIdConstants.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SelectionPageConstants.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CustomRendererPageConstants.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EffectsPageConstats.cs" />
   </ItemGroup>
 </Project>

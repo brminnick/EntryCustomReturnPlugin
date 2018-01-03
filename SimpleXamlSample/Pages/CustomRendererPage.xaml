@@ -14,7 +14,7 @@
             HorizontalOptions="Center"
             VerticalOptions="Center"
             Placeholder="{x:Static simpleSampleShared:CustomRendererPageConstants.CustomReturnEntryPlaceholderText}"
-            AutomationId="x:Static simpleSampleShared.AutomationIdConstants.CustomReturnEntry"/>
+            AutomationId="{x:Static simpleSampleShared:AutomationIdConstants.CustomReturnEntry}"/>
         
 	</ContentPage.Content>
 </ContentPage>

@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
+using EntryCustomReturn.Forms.Plugin.Abstractions;
 
 namespace SimpleXamlSample
 {
@@ -10,6 +8,8 @@ namespace SimpleXamlSample
         public EffectsPage()
         {
             InitializeComponent();
+
+            CustomReturnEffect.SetReturnCommand(EffectsEntry, new Command(async () => await Navigation.PopAsync()));
         }
     }
 }

@@ -1,5 +1,5 @@
 ﻿using System;
-namespace SimpleSample.Shared
+namespace SimpleSamples.Shared
 {
     public static class AutomationIdConstants
     {

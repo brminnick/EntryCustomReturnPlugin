@@ -1,7 +1,8 @@
 ﻿using Xamarin.Forms;
 
 using EntryCustomReturn.Forms.Plugin.Abstractions;
-using SimpleSample.Shared;
+
+using SimpleSamples.Shared;
 
 namespace SimpleSample
 {

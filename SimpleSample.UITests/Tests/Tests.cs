@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 
 using Xamarin.UITest;
-using SimpleSample.Shared;
+using SimpleSamples.Shared;
 
 namespace SimpleSample.UITests
 {

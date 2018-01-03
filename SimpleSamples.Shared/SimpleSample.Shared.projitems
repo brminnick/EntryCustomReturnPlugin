@@ -6,10 +6,12 @@
     <SharedGUID>{431EFC7D-ACDC-48A7-BA5A-873A64273639}</SharedGUID>
   </PropertyGroup>
   <PropertyGroup Label="Configuration">
-    <Import_RootNamespace>SimpleSample.Shared</Import_RootNamespace>
+    <Import_RootNamespace>SimpleSamples.Shared</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)PageTitles.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AutomationIdConstants.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SelectionPageConstants.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CustomRendererPageConstants.cs" />
   </ItemGroup>
 </Project>

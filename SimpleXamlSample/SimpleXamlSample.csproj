@@ -12,5 +12,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pages\" />
+    <Folder Include="Pages\" />
   </ItemGroup>
+  <Import Project="..\SimpleSamples.Shared\SimpleSample.Shared.projitems" Label="Shared" Condition="Exists('..\SimpleSamples.Shared\SimpleSample.Shared.projitems')" />
 </Project>

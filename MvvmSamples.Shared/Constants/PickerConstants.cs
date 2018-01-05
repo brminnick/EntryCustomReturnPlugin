@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace EntryCustomReturnSampleApp.Shared
+namespace MvvmSamples.Shared
 {
 	public static class PickerConstants
 	{

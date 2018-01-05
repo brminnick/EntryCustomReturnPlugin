@@ -4,8 +4,8 @@ using Xamarin.Forms;
 
 using EntryCustomReturn.Forms.Plugin.Abstractions;
 
-using EntryCustomReturnSampleApp.Shared;
-using EntryCustomReturnSampleApp.Common.Forms;
+using MvvmSamples.Shared;
+using MvvmSamples.Common.Forms;
 
 namespace EntryCustomReturnSampleApp
 {
@@ -106,7 +106,6 @@ namespace EntryCustomReturnSampleApp
                 AutomationId = AutomationIdConstants.ResultsLabelAutomationId
             };
             resultLabel.SetBinding(Label.TextProperty, nameof(multipleEntryViewModel.ResultLabelText));
-
 
             var mainStackLayout = new StackLayout
             {

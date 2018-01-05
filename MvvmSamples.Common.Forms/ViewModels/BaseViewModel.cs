@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 
-namespace EntryCustomReturnSampleApp.Common.Forms
+namespace MvvmSamples.Common.Forms
 {
 	public class BaseViewModel : INotifyPropertyChanged
 	{

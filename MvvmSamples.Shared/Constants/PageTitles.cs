@@ -1,5 +1,4 @@
-﻿using System;
-namespace EntryCustomReturnSampleApp.Shared
+﻿namespace MvvmSamples.Shared
 {
 	public static class PageTitles
 	{

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 using EntryCustomReturn.Forms.Plugin.Abstractions;
 
-namespace EntryCustomReturnSampleApp.Common.Forms
+namespace MvvmSamples.Common.Forms
 {
 	public class PickEntryReturnTypeViewModel : BaseViewModel
 	{

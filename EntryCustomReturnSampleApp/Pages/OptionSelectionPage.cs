@@ -2,36 +2,36 @@
 
 using Xamarin.Forms;
 
-using EntryCustomReturnSampleApp.Shared;
-using EntryCustomReturnSampleApp.Common.Forms;
+using MvvmSamples.Shared;
+using MvvmSamples.Common.Forms;
 
 namespace EntryCustomReturnSampleApp
 {
     public class OptionSelectionPage : BaseContentPage<BaseViewModel>
     {
         #region Constant Fields
-        readonly Button _openMultileEntryPageButton, _openPickerEntryPageButton;
+        readonly Button _openMultipleEntryPageButton, _openPickerEntryPageButton;
         readonly Picker _entryTypePicker;
         #endregion
 
         #region Constructors
         public OptionSelectionPage()
         {
-            _openMultileEntryPageButton = new Button
+            _openMultipleEntryPageButton = new Button
             {
-                Text = "Multiple Entry Page",
+                Text = OpenSelectionPageConstants.OpenMultipleEntryPageButtonText,
                 AutomationId = AutomationIdConstants.OpenMultileEntryPageButtonAutomationId
             };
 
             _openPickerEntryPageButton = new Button
             {
-                Text = "Return Type Picker Page",
+                Text = OpenSelectionPageConstants.OpenPickerEntryPageButtonText,
                 AutomationId = AutomationIdConstants.OpenPickerEntryPageButtonAutomationId
             };
 
             var pickerLabel = new Label
             {
-                Text = "Generate Entrys Using"
+                Text = OpenSelectionPageConstants.PickerLabelText
             };
 
             _entryTypePicker = new Picker
@@ -53,7 +53,7 @@ namespace EntryCustomReturnSampleApp
                     pickerLabel,
                     _entryTypePicker,
                     _openPickerEntryPageButton,
-                    _openMultileEntryPageButton
+                    _openMultipleEntryPageButton
                 }
             };
         }
@@ -63,13 +63,13 @@ namespace EntryCustomReturnSampleApp
         protected override void SubscribeEventHandlers()
         {
             _openPickerEntryPageButton.Clicked += HandleOpenSelectEntryPageButtonClicked;
-            _openMultileEntryPageButton.Clicked += HandleOpenMultipleEntryPageButtonClicked;
+            _openMultipleEntryPageButton.Clicked += HandleOpenMultipleEntryPageButtonClicked;
         }
 
         protected override void UnsubscribeEventHandlers()
         {
             _openPickerEntryPageButton.Clicked -= HandleOpenSelectEntryPageButtonClicked;
-            _openMultileEntryPageButton.Clicked -= HandleOpenMultipleEntryPageButtonClicked;
+            _openMultipleEntryPageButton.Clicked -= HandleOpenMultipleEntryPageButtonClicked;
         }
 
         void HandleOpenMultipleEntryPageButtonClicked(object sender, EventArgs e)

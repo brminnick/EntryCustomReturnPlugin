@@ -1,5 +1,5 @@
-﻿using EntryCustomReturnSampleApp.Shared;
-using EntryCustomReturnSampleApp.Common.Forms;
+﻿using MvvmSamples.Shared;
+using MvvmSamples.Common.Forms;
 
 namespace EntryCustomReturnSampleApp
 {

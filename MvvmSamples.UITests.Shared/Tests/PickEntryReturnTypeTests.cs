@@ -5,7 +5,7 @@ using Xamarin.UITest;
 using MvvmSamples.Shared;
 using EntryCustomReturn.Forms.Plugin.Abstractions;
 
-namespace EntryCustomReturnSampleApp.UITests
+namespace MvvmSamples.UITests.Shared
 {
 	public class PickEntryReturnTypeTests : EntryCustomReturnSampleAppBaseTest
 	{

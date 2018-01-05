@@ -4,8 +4,8 @@
     xmlns:mvvmSamplesCommonForms="clr-namespace:MvvmSamples.Common.Forms;assembly=MvvmSamples.Common.Forms"
     xmlns:mvvmSamplesShared="clr-namespace:MvvmSamples.Shared;assembly=MvvmSamples.Common.Forms"
     x:TypeArguments="mvvmSamplesCommonForms:PickEntryReturnTypeViewModel"
- 
-    x:Class="EntryCustomReturnXamlSampleApp.PickEffectsEntryReturnTypePage">
+    x:Class="EntryCustomReturnXamlSampleApp.PickEffectsEntryReturnTypePage"
+    Title="{x:Static mvvmSamplesShared.PageTitles.PickEntryReturnTypePageTitle}">
     
     <ContentPage.Content>
         <StackLayout>

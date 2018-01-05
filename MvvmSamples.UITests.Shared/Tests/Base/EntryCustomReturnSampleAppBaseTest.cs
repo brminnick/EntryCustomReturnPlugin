@@ -2,7 +2,7 @@
 
 using Tests.Shared;
 
-namespace EntryCustomReturnSampleApp.UITests
+namespace MvvmSamples.UITests.Shared
 {
     public abstract class EntryCustomReturnSampleAppBaseTest : BaseTest
     {

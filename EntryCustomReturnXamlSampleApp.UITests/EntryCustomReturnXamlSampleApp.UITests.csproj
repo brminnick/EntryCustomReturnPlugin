@@ -1,13 +1,13 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9DB24B67-9058-4352-8414-47074CECB66B}</ProjectGuid>
+    <ProjectGuid>{99D0CCFC-B1C1-40B3-B0CF-5A9127983EDD}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>EntryCustomReturnUITests</RootNamespace>
-    <AssemblyName>EntryCustomReturnUITests</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <RootNamespace>EntryCustomReturnXamlSampleApp.UITests</RootNamespace>
+    <AssemblyName>EntryCustomReturnXamlSampleApp.UITests</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -27,7 +27,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="nunit.framework">
-      <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+      <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.UITest">
       <HintPath>..\packages\Xamarin.UITest.2.2.2\lib\net45\Xamarin.UITest.dll</HintPath>
@@ -36,27 +36,26 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\EntryCustomReturnSampleApp.Droid\EntryCustomReturnSampleApp.Droid.csproj">
-      <Project>{D44D8A4B-E5AF-4629-AC50-98966AB42D11}</Project>
-      <Name>EntryCustomReturnSampleApp.Droid</Name>
-      <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
-      <Private>False</Private>
-    </ProjectReference>
-    <ProjectReference Include="..\EntryCustomReturnSampleApp.iOS\EntryCustomReturnSampleApp.iOS.csproj">
-      <Project>{A76C73CF-FC6F-4AF9-B702-1EA82CDE36F3}</Project>
-      <Name>EntryCustomReturnSampleApp.iOS</Name>
-      <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
-      <Private>False</Private>
-    </ProjectReference>
     <ProjectReference Include="..\EntryCustomReturn.Forms.Plugin.Abstractions\EntryCustomReturn.Forms.Plugin.Abstractions.csproj">
       <Project>{67F9D3A8-F71E-4428-913F-C37AE82CDB24}</Project>
       <Name>EntryCustomReturn.Forms.Plugin.Abstractions</Name>
     </ProjectReference>
+    <ProjectReference Include="..\EntryCustomReturnXamlSampleApp.iOS\EntryCustomReturnXamlSampleApp.iOS.csproj">
+      <Project>{44FBAAA0-43BF-459E-AD5E-DBA7FA8EF139}</Project>
+      <Name>EntryCustomReturnXamlSampleApp.iOS</Name>
+      <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\EntryCustomReturnXamlSampleApp.Droid\EntryCustomReturnXamlSampleApp.Droid.csproj">
+      <Project>{310CE094-0342-4312-971B-7DE476880CAE}</Project>
+      <Name>EntryCustomReturnXamlSampleApp.Droid</Name>
+      <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
+      <Private>False</Private>
+    </ProjectReference>
   </ItemGroup>
-  <Import Project="..\MvvmSamples.UITests.Shared\MvvmSamples.UITests.Shared.projitems" Label="Shared" Condition="Exists('..\MvvmSamples.UITests.Shared\MvvmSamples.UITests.Shared.projitems')" />
   <Import Project="..\MvvmSamples.Shared\MvvmSamples.Shared.projitems" Label="Shared" Condition="Exists('..\MvvmSamples.Shared\MvvmSamples.Shared.projitems')" />
   <Import Project="..\Tests.Shared\Tests.Shared.projitems" Label="Shared" Condition="Exists('..\Tests.Shared\Tests.Shared.projitems')" />
+  <Import Project="..\MvvmSamples.UITests.Shared\MvvmSamples.UITests.Shared.projitems" Label="Shared" Condition="Exists('..\MvvmSamples.UITests.Shared\MvvmSamples.UITests.Shared.projitems')" />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

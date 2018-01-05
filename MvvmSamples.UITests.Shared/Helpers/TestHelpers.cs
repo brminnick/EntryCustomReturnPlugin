@@ -5,7 +5,7 @@ using Xamarin.UITest;
 using Xamarin.UITest.iOS;
 using Xamarin.UITest.Android;
 
-namespace EntryCustomReturnSampleApp.UITests
+namespace MvvmSamples.UITests.Shared
 {
 	public static class TestHelpers
 	{

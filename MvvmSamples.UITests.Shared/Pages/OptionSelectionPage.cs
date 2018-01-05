@@ -9,7 +9,7 @@ using Tests.Shared;
 
 using Query = System.Func<Xamarin.UITest.Queries.AppQuery, Xamarin.UITest.Queries.AppQuery>;
 
-namespace EntryCustomReturnSampleApp.UITests
+namespace MvvmSamples.UITests.Shared
 {
 	public class OptionSelectionPage : BasePage
 	{

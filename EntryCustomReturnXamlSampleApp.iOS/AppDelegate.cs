@@ -11,6 +11,10 @@ namespace EntryCustomReturnXamlSampleApp.iOS
             global::Xamarin.Forms.Forms.Init();
             EntryCustomReturn.Forms.Plugin.iOS.CustomReturnEntryRenderer.Init();
 
+#if DEBUG
+            Xamarin.Calabash.Start();
+#endif
+
             LoadApplication(new App());
 
             return base.FinishedLaunching(uiApplication, launchOptions);

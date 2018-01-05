@@ -5,7 +5,8 @@
     xmlns:mvvmSamplesCommonForms="clr-namespace:MvvmSamples.Common.Forms;assembly=MvvmSamples.Common.Forms"
     xmlns:mvvmSamplesShared="clr-namespace:MvvmSamples.Shared;assembly=MvvmSamples.Common.Forms"
     x:TypeArguments="mvvmSamplesCommonForms:MultipleEntryViewModel"
-    x:Class="EntryCustomReturnXamlSampleApp.MultipleEffectsEntryPage">
+    x:Class="EntryCustomReturnXamlSampleApp.MultipleEffectsEntryPage"
+    Title="{x:Static mvvmSamplesShared.PageTitles.MultipleEntryPageTitle}">
     
     <ContentPage.Content>
         <ScrollView>

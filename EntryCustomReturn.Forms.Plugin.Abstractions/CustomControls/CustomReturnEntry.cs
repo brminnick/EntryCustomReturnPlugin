@@ -26,7 +26,7 @@ namespace EntryCustomReturn.Forms.Plugin.Abstractions
             (_returnTypeProperty = BindableProperty.Create(propertyName: nameof(ReturnType),
                                                             returnType: typeof(ReturnType),
                                                             declaringType: typeof(CustomReturnEntry),
-                                                            defaultValue: ReturnType.Done));
+                                                            defaultValue: ReturnType.Default));
             
         /// <summary>
         /// Type of the Keyboard Return Key

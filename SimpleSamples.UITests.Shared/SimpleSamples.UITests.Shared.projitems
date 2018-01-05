@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{76B8D6B9-7D32-49BB-A706-4177FFAFA736}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>SimpleSamples.UITests.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\CustomRendererPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\EffectsPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\SelectionPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\Base\SimpleSampleBaseTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tests\Tests.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Pages\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Tests\" />
+  </ItemGroup>
+</Project>

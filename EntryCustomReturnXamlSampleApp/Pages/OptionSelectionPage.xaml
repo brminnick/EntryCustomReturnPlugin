@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mvvmSamplesCommonForms:BaseContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:mvvmSamplesCommonForms="clr-namespace:MvvmSamples.Common.Forms;assembly=MvvmSamples.Common.Forms"
+    xmlns:mvvmSamplesShared="clr-namespace:MvvmSamples.Shared;assembly=MvvmSamples.Common.Forms"
+    x:TypeArguments="mvvmSamplesCommonForms:BaseViewModel"
+    x:Class="EntryCustomReturnXamlSampleApp.OptionSelectionPage"
+    Title="{x:Static mvvmSamplesShared:PageTitles.OptionSelectionPageTitle}"
+    Padding="10">
+    
+	<ContentPage.Content>
+        <StackLayout>
+            
+            <Label
+                Text="{x:Static mvvmSamplesShared:OpenSelectionPageConstants.PickerLabelText}"/>
+
+            <Picker
+                x:Name="EntryTypePicker"
+                AutomationId="{x:Static mvvmSamplesShared:AutomationIdConstants.EntryTypePickerAutomationId}"
+                ItemsSource="{x:Static mvvmSamplesShared:PickerConstants.PickerItemSourceList}"/>
+            
+            <Button
+                x:Name="OpenMultipleEntryPageButton"
+                Text="{x:Static mvvmSamplesShared:OpenSelectionPageConstants.OpenMultipleEntryPageButtonText}"
+                AutomationId="{x:Static mvvmSamplesShared:AutomationIdConstants.OpenMultileEntryPageButtonAutomationId}"/>
+
+            <Button
+                x:Name="OpenPickerEntryPageButton"
+                Text="{x:Static mvvmSamplesShared:OpenSelectionPageConstants.OpenPickerEntryPageButtonText}"
+                AutomationId="{x:Static mvvmSamplesShared:AutomationIdConstants.OpenPickerEntryPageButtonAutomationId}"/>
+
+            
+            
+        </StackLayout>
+	</ContentPage.Content>
+    
+</mvvmSamplesCommonForms:BaseContentPage>

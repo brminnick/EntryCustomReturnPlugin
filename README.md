@@ -112,6 +112,25 @@ var goReturnTypeCustomEntry = new CustomReturnEntry
 };
 ```
 
+```xml
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="SimpleXamlSample.CustomRendererPage"
+    xmlns:entryCustomReturn="clr-namespace:EntryCustomReturn.Forms.Plugin.Abstractions;assembly=EntryCustomReturn.Forms.Plugin.Abstractions">
+
+    <ContentPage.Content>
+
+        <entryCustomReturn:CustomReturnEntry
+            x:Name = "MyCustomReturnEntry"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            ReturnType="Go"/>
+
+    </ContentPage.Content>
+</ContentPage>
+```
+
 It can also be used as a [Bindable Property to bind to a ViewModel](./EntryCustomReturnSampleApp/Helpers/ViewHelpers.cs#L25)
 
 ```csharp

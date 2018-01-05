@@ -1,6 +1,5 @@
-﻿using Xamarin.Forms;
-
-using EntryCustomReturnSampleApp.Shared;
+﻿using MvvmSamples.Shared;
+using MvvmSamples.Common.Forms;
 
 namespace EntryCustomReturnSampleApp
 {
@@ -11,7 +10,7 @@ namespace EntryCustomReturnSampleApp
         {
             Title = PageTitles.MultipleEntryPageTitle;
 
-            Padding = ViewHelpers.GetPagePadding();
+            Padding = GetDefaultPagePadding();
 
             Content = ViewHelpers.CreateMultipleEntryPageLayout(true, ViewModel);
         }

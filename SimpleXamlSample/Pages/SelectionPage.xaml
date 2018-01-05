@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="SimpleXamlSample.SelectionPage"
+    xmlns:simpleSampleShared="clr-namespace:SimpleSamples.Shared;assembly=SimpleXamlSample"
+    Title="{x:Static simpleSampleShared:PageTitles.Selection}">
+    
+	<ContentPage.Content>
+        <StackLayout
+            HorizontalOptions="Center"
+            VerticalOptions="Center">   
+            
+            <Button 
+                Text="{x:Static simpleSampleShared:SelectionPageConstants.CustomRendererPageButtonText}"
+                AutomationId="{x:Static simpleSampleShared:AutomationIdConstants.CustomRendererButton}"
+                Clicked="HandleCustomRendererPageButtonClicked"/>
+
+            <Button
+                Text="{x:Static simpleSampleShared:SelectionPageConstants.EfectsPageButtonText}"
+                AutomationId="{x:Static simpleSampleShared:AutomationIdConstants.EffectsButton}"
+                Clicked="HandleEffectsPageButtonClicked"/>
+            
+        </StackLayout>
+	</ContentPage.Content>
+</ContentPage>

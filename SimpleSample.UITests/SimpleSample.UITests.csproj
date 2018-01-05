@@ -38,18 +38,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Pages\" />
-    <Folder Include="Tests\" />
-    <Folder Include="Tests\Base\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Pages\SelectionPage.cs" />
-    <Compile Include="Pages\CustomRendererPage.cs" />
-    <Compile Include="Pages\EffectsPage.cs" />
-    <Compile Include="Tests\Base\SimpleSampleBaseTest.cs" />
-    <Compile Include="Tests\Tests.cs" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\SimpleSample.Droid\SimpleSample.Droid.csproj">
       <Project>{54F40CFF-83C5-47BA-915C-25442BFFBB72}</Project>
       <Name>SimpleSample.Droid</Name>
@@ -63,7 +51,8 @@
       <Private>False</Private>
     </ProjectReference>
   </ItemGroup>
-  <Import Project="..\SimpleSample.Shared\SimpleSample.Shared.projitems" Label="Shared" Condition="Exists('..\SimpleSample.Shared\SimpleSample.Shared.projitems')" />
+  <Import Project="..\SimpleSamples.UITests.Shared\SimpleSamples.UITests.Shared.projitems" Label="Shared" Condition="Exists('..\SimpleSamples.UITests.Shared\SimpleSamples.UITests.Shared.projitems')" />
+  <Import Project="..\SimpleSamples.Shared\SimpleSample.Shared.projitems" Label="Shared" Condition="Exists('..\SimpleSamples.Shared\SimpleSample.Shared.projitems')" />
   <Import Project="..\Tests.Shared\Tests.Shared.projitems" Label="Shared" Condition="Exists('..\Tests.Shared\Tests.Shared.projitems')" />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

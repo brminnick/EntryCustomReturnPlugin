@@ -1,7 +1,8 @@
 ﻿using Xamarin.Forms;
 
 using EntryCustomReturn.Forms.Plugin.Abstractions;
-using SimpleSample.Shared;
+
+using SimpleSamples.Shared;
 
 namespace SimpleSample
 {
@@ -16,14 +17,14 @@ namespace SimpleSample
         {
             var customRendererPageButton = new Button
             {
-                Text = "Custom Renderer Page",
+                Text = SelectionPageConstants.CustomRendererPageButtonText,
                 AutomationId = AutomationIdConstants.CustomRendererButton
             };
             customRendererPageButton.Clicked += async (sender, e) => await Navigation.PushAsync(new CustomRendererPage());
 
             var effectsPageButton = new Button
             {
-                Text = "Efects Page",
+                Text = SelectionPageConstants.EfectsPageButtonText,
                 AutomationId = AutomationIdConstants.EffectsButton
             };
             effectsPageButton.Clicked += async (sender, e) => await Navigation.PushAsync(new EffectsPage());
@@ -52,7 +53,7 @@ namespace SimpleSample
             {
                 HorizontalOptions = LayoutOptions.Center,
                 VerticalOptions = LayoutOptions.Center,
-                Placeholder = "Custom Return Entry",
+                Placeholder = CustomRendererPageConstants.CustomReturnEntryPlaceholderText,
                 ReturnType = ReturnType.Go,
                 ReturnCommand = new Command(async () => await Navigation.PopAsync()),
                 AutomationId = AutomationIdConstants.CustomReturnEntry
@@ -68,7 +69,7 @@ namespace SimpleSample
             {
                 HorizontalOptions = LayoutOptions.Center,
                 VerticalOptions = LayoutOptions.Center,
-                Placeholder = "Effects Entry",
+                Placeholder = EffectsPageConstants.EffectsEntryPlaceholderText,
                 AutomationId = AutomationIdConstants.EffectsEntry
             };
             CustomReturnEffect.SetReturnType(effectsEntry, ReturnType.Go);

@@ -7,7 +7,7 @@
     xmlns:entryCustomReturn="clr-namespace:EntryCustomReturn.Forms.Plugin.Abstractions;assembly=EntryCustomReturn.Forms.Plugin.Abstractions"
     x:TypeArguments="mvvmSamplesCommonForms:MultipleEntryViewModel"
     x:Class="EntryCustomReturnXamlSampleApp.MultipleCustomRendererEntryPage"
-    Title="{x:Static mvvmSamplesShared.PageTitles.MultipleEntryPageTitle}">
+    Title="{x:Static mvvmSamplesShared:PageTitles.MultipleEntryPageTitle}">
     
 	<ContentPage.Content>
         <ScrollView>

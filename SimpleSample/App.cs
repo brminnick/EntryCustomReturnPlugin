@@ -45,7 +45,7 @@ namespace SimpleSample
         }
     }
 
-    class CustomRendererPage : ContentPage
+    class CustomRendererPage : BaseEntryContentPage
     {
         public CustomRendererPage()
         {
@@ -62,15 +62,9 @@ namespace SimpleSample
                 AutomationId = AutomationIdConstants.CustomReturnEntry
             };
         }
-
-        async Task ExecuteEntryCommand(string title)
-        {
-            await DisplayAlert(title, "", EntryConstants.OKString);
-            await Navigation.PopAsync();
-        }
     }
 
-    class EffectsPage : ContentPage
+    class EffectsPage : BaseEntryContentPage
     {
         public EffectsPage()
         {
@@ -88,12 +82,6 @@ namespace SimpleSample
             Title = PageTitles.Effects;
 
             Content = effectsEntry;
-        }
-
-        async Task ExecuteEntryCommand(string title)
-        {
-            await DisplayAlert(title, "", EntryConstants.OKString);
-            await Navigation.PopAsync();
         }
     }
 }

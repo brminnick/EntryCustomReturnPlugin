@@ -14,5 +14,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)SelectionPageConstants.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CustomRendererPageConstants.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)EffectsPageConstats.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EntryConstants.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)BaseEntryContentPage.cs" />
   </ItemGroup>
 </Project>

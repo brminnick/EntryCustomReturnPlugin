@@ -8,6 +8,7 @@
         public const string SendReturnTypeEntryPlaceholder = "Return Type: Send";
         public const string SearchReturnTypeEntryPlaceholder = "Return Type: Search";
         public const string GoReturnTypeEntryPlaceholder = "Return Type: Go";
+        public const string GoButtonText = "Go";
     }
 }
 

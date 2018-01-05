@@ -9,14 +9,62 @@
     x:Class="EntryCustomReturnXamlSampleApp.MultipleCustomRendererEntryPage">
     
 	<ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                
+                <entryCustomReturn:CustomReturnEntry
+                    x:Name = "DefaultReturnTypeEntry"
+                    AutomationId="{x:Static mvvmSamplesShared:AutomationIdConstants.DefaultReturnTypeEntryAutomationId}"
+                    Text="{Binding DefaultReturnTypeEntryText}"
+                    Placeholder="{x:Static mvvmSamplesShared:MultipleEntryPageConstants.DefaultReturnTypeEntryPlaceholder}"
+                    ReturnType="Default"/>
 
-        <entryCustomReturn:CustomReturnEntry
-            x:Name = "DefaultReturnTypeEntry"
-            AutomationId="{x:Static mvvmSamplesShared:AutomationIdConstants.DefaultReturnTypeEntryAutomationId}"
-            Text="{Binding DefaultReturnTypeEntryText}"
-            Placeholder="{x:Static mvvmSamplesShared:MultipleEntryPageConstants.DefaultReturnTypeEntryPlaceholder}"
-            ReturnType="Default"/>
-        
+                <entryCustomReturn:CustomReturnEntry
+                    x:Name = "NextReturnTypeEntry"
+                    AutomationId="{x:Static mvvmSamplesShared:AutomationIdConstants.NextReturnTypeEntryAutomationId}"
+                    Text="{Binding NextReturnTypeEntryText}"
+                    Placeholder="{x:Static mvvmSamplesShared:MultipleEntryPageConstants.NextReturnTypeEntryPlaceholder}"
+                    ReturnType="Next"/>
+
+                <entryCustomReturn:CustomReturnEntry
+                    x:Name = "DoneReturnTypeEntry"
+                    AutomationId="{x:Static mvvmSamplesShared:AutomationIdConstants.DoneReturnTypeEntryAutomationId}"
+                    Text="{Binding DoneReturnTypeEntryText}"
+                    Placeholder="{x:Static mvvmSamplesShared:MultipleEntryPageConstants.DoneReturnTypeEntryPlaceholder}"
+                    ReturnType="Done"/>
+
+                <entryCustomReturn:CustomReturnEntry
+                    x:Name = "SendReturnTypeEntry"
+                    AutomationId="{x:Static mvvmSamplesShared:AutomationIdConstants.SendReturnTypeEntryAutomationId}"
+                    Text="{Binding SendReturnTypeEntryText}"
+                    Placeholder="{x:Static mvvmSamplesShared:MultipleEntryPageConstants.SendReturnTypeEntryPlaceholder}"
+                    ReturnType="Send"/>
+
+                <entryCustomReturn:CustomReturnEntry
+                    x:Name = "SearchReturnTypeEntry"
+                    AutomationId="{x:Static mvvmSamplesShared:AutomationIdConstants.SearchReturnTypeEntryAutomationId}"
+                    Text="{Binding SearchReturnTypeEntryText}"
+                    Placeholder="{x:Static mvvmSamplesShared:MultipleEntryPageConstants.SearchReturnTypeEntryPlaceholder}"
+                    ReturnType="Search"/>
+                
+                 <entryCustomReturn:CustomReturnEntry
+                    x:Name = "GoReturnTypeEntry"
+                    AutomationId="{x:Static mvvmSamplesShared:AutomationIdConstants.GoReturnTypeEntryAutomationId}"
+                    Text="{Binding GoReturnTypeEntryText}"
+                    Placeholder="{x:Static mvvmSamplesShared:MultipleEntryPageConstants.GoReturnTypeEntryPlaceholder}"
+                    ReturnType="Go"/>
+
+                <Button 
+                    Text="{x:Static mvvmSamplesShared:MultipleEntryPageConstants.GoButtonText}"
+                    AutomationId="{x:Static mvvmSamplesShared:AutomationIdConstants.GoButtonAutomationId}"
+                    Command="{Binding GoButtonCommand}"/>
+
+                <Label
+                    AutomationId="{x:Static mvvmSamplesShared:AutomationIdConstants.ResultsLabelAutomationId}"
+                    Text="{Binding ResultLabelText}"/>
+
+                </StackLayout>
+            </ScrollView>
 	</ContentPage.Content>
     
 </mvvmSamplesCommonForms:BaseContentPage>

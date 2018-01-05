@@ -96,7 +96,7 @@ namespace EntryCustomReturnSampleApp
 
             var goButton = new Button
             {
-                Text = "Go",
+                Text = MultipleEntryPageConstants.GoButtonText,
                 AutomationId = AutomationIdConstants.GoButtonAutomationId
             };
             goButton.SetBinding(Button.CommandProperty, nameof(multipleEntryViewModel.GoButtonCommand));

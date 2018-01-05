@@ -6,6 +6,7 @@
     xmlns:entryCustomReturn="clr-namespace:EntryCustomReturn.Forms.Plugin.Abstractions;assembly=EntryCustomReturn.Forms.Plugin.Abstractions"
     x:TypeArguments="mvvmSamplesCommonForms:PickEntryReturnTypeViewModel"
     x:Class="EntryCustomReturnXamlSampleApp.PickCustomRendererEntryReturnTypePage"
+    Padding="10"
     Title="{x:Static mvvmSamplesShared:PageTitles.PickEntryReturnTypePageTitle}">
     
 	<ContentPage.Content>

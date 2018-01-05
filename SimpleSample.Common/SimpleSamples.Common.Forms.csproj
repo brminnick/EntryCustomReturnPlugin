@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="2.5.0.121934" />
+  </ItemGroup>
+  <Import Project="..\SimpleSamples.Shared\SimpleSamples.Shared.projitems" Label="Shared" Condition="Exists('..\SimpleSamples.Shared\SimpleSamples.Shared.projitems')" />
+</Project>

@@ -127,13 +127,13 @@
     <Compile Include="AppDelegate.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SimpleSample\SimpleSample.csproj">
-      <Project>{49C40333-2758-4E0E-948F-A62B8C6642D1}</Project>
-      <Name>SimpleSample</Name>
-    </ProjectReference>
     <ProjectReference Include="..\EntryCustomReturn.Forms.Plugin.iOSUnified\EntryCustomReturn.Forms.Plugin.iOS.csproj">
       <Project>{085E453B-C898-4D35-BA27-61EF81A6BAB4}</Project>
       <Name>EntryCustomReturn.Forms.Plugin.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SimpleSample\SimpleSample.csproj">
+      <Project>{B5E5E30B-4E4B-4E91-8F4C-32431902F2EE}</Project>
+      <Name>SimpleSample</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

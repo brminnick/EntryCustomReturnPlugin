@@ -1,10 +1,9 @@
-﻿using System.Threading.Tasks;
-
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 using EntryCustomReturn.Forms.Plugin.Abstractions;
 
 using SimpleSamples.Shared;
+using SimpleSamples.Common.Forms;
 
 namespace SimpleSample
 {

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace SimpleSamples.Shared
+﻿namespace SimpleSamples.Shared
 {
     public static class EffectsPageConstants
     {

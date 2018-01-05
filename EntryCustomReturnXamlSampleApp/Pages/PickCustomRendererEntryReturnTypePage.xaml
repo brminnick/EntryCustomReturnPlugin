@@ -1,5 +1,27 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="EntryCustomReturnXamlSampleApp.PickCustomRendererEntryReturnTypePage">
+<?xml version="1.0" encoding="UTF-8"?>
+<mvvmSamplesCommonForms:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:mvvmSamplesCommonForms="clr-namespace:MvvmSamples.Common.Forms;assembly=MvvmSamples.Common.Forms"
+    xmlns:mvvmSamplesShared="clr-namespace:MvvmSamples.Shared;assembly=MvvmSamples.Common.Forms"
+    xmlns:entryCustomReturn="clr-namespace:EntryCustomReturn.Forms.Plugin.Abstractions;assembly=EntryCustomReturn.Forms.Plugin.Abstractions"
+    x:TypeArguments="mvvmSamplesCommonForms:PickEntryReturnTypeViewModel"
+ 
+    x:Class="EntryCustomReturnXamlSampleApp.PickCustomRendererEntryReturnTypePage">
+    
 	<ContentPage.Content>
+        <StackLayout>
+
+            <entryCustomReturn:CustomReturnEntry
+                x:Name = "CustomizableEntry"
+                AutomationId="{x:Static mvvmSamplesShared:AutomationIdConstants.CustomizableEntryAutomationId}"
+                Placeholder="{Binding EntryPlaceHolderText}"/>
+
+            <Picker
+                x:Name="EntryReturnTypePicker"
+                ItemsSource="{Binding EntryReturnTypePickerSource}"
+                SelectedItem="{Binding PickerSelection}"
+                AutomationId="{x:Static mvvmSamplesShared:AutomationIdConstants.EntryReturnTypePickerAutomationId}"/>
+
+        </StackLayout>
 	</ContentPage.Content>
-</ContentPage>
+</mvvmSamplesCommonForms:BaseContentPage>

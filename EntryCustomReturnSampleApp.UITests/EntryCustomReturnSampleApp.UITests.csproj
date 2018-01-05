@@ -67,7 +67,7 @@
   <ItemGroup>
     <Folder Include="Tests\Base\" />
   </ItemGroup>
+  <Import Project="..\MvvmSamples.Shared\MvvmSamples.Shared.projitems" Label="Shared" Condition="Exists('..\MvvmSamples.Shared\MvvmSamples.Shared.projitems')" />
   <Import Project="..\Tests.Shared\Tests.Shared.projitems" Label="Shared" Condition="Exists('..\Tests.Shared\Tests.Shared.projitems')" />
-  <Import Project="..\EntryCustomReturnSampleApp.Shared\EntryCustomReturnSampleApp.Shared.projitems" Label="Shared" Condition="Exists('..\EntryCustomReturnSampleApp.Shared\EntryCustomReturnSampleApp.Shared.projitems')" />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

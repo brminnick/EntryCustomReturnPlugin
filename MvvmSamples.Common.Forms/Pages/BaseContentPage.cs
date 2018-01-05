@@ -36,6 +36,20 @@ namespace MvvmSamples.Common.Forms
 
             UnsubscribeEventHandlers();
         }
+
+        protected static Thickness GetDefaultPagePadding()
+        {
+            switch (Device.RuntimePlatform)
+            {
+                case Device.UWP:
+                case Device.Android:
+                    return new Thickness(10, 0, 10, 0);
+                case Device.iOS:
+                    return new Thickness(10, 10, 10, 0);
+                default:
+                    throw new Exception("OS Not Supported");
+            }
+        }
         #endregion
     }
 }

@@ -2,7 +2,7 @@
 
 using Xamarin.Forms;
 
-using EntryCustomReturnSampleApp.Shared;
+using MvvmSamples.Shared;
 
 namespace MvvmSamples.Common.Forms
 {

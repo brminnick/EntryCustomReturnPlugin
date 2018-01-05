@@ -18,6 +18,8 @@ namespace EntryCustomReturnXamlSampleApp
             SendReturnTypeEntry.ReturnCommand = new Command(() => SearchReturnTypeEntry.Focus());
             SearchReturnTypeEntry.ReturnCommand = new Command(() => GoReturnTypeEntry.Focus());
             GoReturnTypeEntry.SetBinding(CustomReturnEntry.ReturnCommandProperty, nameof(ViewModel.GoReturnTypeEntryReturnCommand));
+
+            Padding = GetDefaultPagePadding();
         }
 
         protected override void SubscribeEventHandlers()

@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace EntryCustomReturnSampleApp.Shared
+namespace MvvmSamples.Shared
 {
 	public static class StringBuilderHelpers
 	{

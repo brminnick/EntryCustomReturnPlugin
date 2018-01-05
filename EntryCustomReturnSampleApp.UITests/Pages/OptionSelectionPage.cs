@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 using Xamarin.UITest;
 
-using EntryCustomReturnSampleApp.Shared;
+using MvvmSamples.Shared;
 
 using Tests.Shared;
 

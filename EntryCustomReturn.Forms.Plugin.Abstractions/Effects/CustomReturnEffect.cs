@@ -26,7 +26,7 @@ namespace EntryCustomReturn.Forms.Plugin.Abstractions
         /// Command that occurs when the user finalizes the text in an entry with the return key
         /// </summary>
         public static BindableProperty ReturnCommandProperty => _returnCommandProperty ??
-            (_returnCommandProperty = BindableProperty.CreateAttached(nameof(ICommand),
+            (_returnCommandProperty = BindableProperty.CreateAttached("ReturnCommand",
                                                                         typeof(ICommand),
                                                                         typeof(Entry),
                                                                         null,
@@ -37,10 +37,10 @@ namespace EntryCustomReturn.Forms.Plugin.Abstractions
         /// </summary>
         public static BindableProperty ReturnCommandParameterProperty => _returnCommandParameterProperty ??
             (_returnCommandParameterProperty = BindableProperty.CreateAttached("ReturnCommandParameter",
-                                                                               typeof(object),
-                                                                               typeof(CustomReturnEntry),
-                                                                               null,
-                                                                               propertyChanged: OnReturnCommandParameterPropertyChanged));
+                                                                                typeof(object),
+                                                                                typeof(Entry),
+                                                                                null,
+                                                                                propertyChanged: OnReturnCommandParameterPropertyChanged));
 
         /// <summary>
         /// Gets the Type of the Keyboard Return Key

@@ -1,9 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 
 using Xamarin.Forms;
 
 using EntryCustomReturnSampleApp.Shared;
+using EntryCustomReturnSampleApp.Common.Forms;
 
 namespace EntryCustomReturnSampleApp
 {

@@ -2,7 +2,7 @@
 
 using Xamarin.Forms;
 
-namespace EntryCustomReturnSampleApp
+namespace EntryCustomReturnSampleApp.Common.Forms
 {
     public abstract class BaseContentPage<T> : ContentPage where T : BaseViewModel, new()
     {

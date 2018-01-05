@@ -4,7 +4,7 @@ using Xamarin.Forms;
 
 using EntryCustomReturnSampleApp.Shared;
 
-namespace EntryCustomReturnSampleApp
+namespace EntryCustomReturnSampleApp.Common.Forms
 {
     public class MultipleEntryViewModel : BaseViewModel
     {

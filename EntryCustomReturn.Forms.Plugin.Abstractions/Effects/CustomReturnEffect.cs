@@ -36,7 +36,7 @@ namespace EntryCustomReturn.Forms.Plugin.Abstractions
         /// Backing store for the ReturnCommandParameter bindable property
         /// </summary>
         public static BindableProperty ReturnCommandParameterProperty => _returnCommandParameterProperty ??
-            (_returnCommandParameterProperty = BindableProperty.CreateAttached("CommandParameter",
+            (_returnCommandParameterProperty = BindableProperty.CreateAttached("ReturnCommandParameter",
                                                                                typeof(object),
                                                                                typeof(CustomReturnEntry),
                                                                                null,

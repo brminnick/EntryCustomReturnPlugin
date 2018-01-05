@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage 
+<simpleSampleShared:BaseEntryContentPage
+    x:Class="SimpleXamlSample.EffectsPage"
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-    x:Class="SimpleXamlSample.EffectsPage"
+    xmlns:base="clr-namespace:SimpleXamlSample"
     xmlns:simpleSampleShared="clr-namespace:SimpleSamples.Shared;assembly=SimpleXamlSample"
     xmlns:entryCustomReturn="clr-namespace:EntryCustomReturn.Forms.Plugin.Abstractions;assembly=EntryCustomReturn.Forms.Plugin.Abstractions"
     Title="{x:Static simpleSampleShared:PageTitles.Effects}">
@@ -17,4 +18,4 @@
             AutomationId="{x:Static simpleSampleShared:AutomationIdConstants.EffectsEntry}"/>
 <!--            entryCustomReturn:CustomReturnEffect.ReturnType="{x:Static entryCustomReturn:ReturnType.Go}"/>-->
     </ContentPage.Content>
-</ContentPage>
+</simpleSampleShared:BaseEntryContentPage>

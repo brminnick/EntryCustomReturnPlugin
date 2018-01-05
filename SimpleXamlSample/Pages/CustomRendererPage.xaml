@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage 
+<simpleSampleShared:BaseEntryContentPage
+    x:Class="SimpleXamlSample.CustomRendererPage"
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-    xmlns:local="clr-namespace:SimpleSamples.Shared"
-    x:Class="SimpleXamlSample.CustomRendererPage"
+    xmlns:local="clr-namespace:SimpleXamlSample"
     xmlns:simpleSampleShared="clr-namespace:SimpleSamples.Shared;assembly=SimpleXamlSample"
     xmlns:entryCustomReturn="clr-namespace:EntryCustomReturn.Forms.Plugin.Abstractions;assembly=EntryCustomReturn.Forms.Plugin.Abstractions"
     Title="{x:Static simpleSampleShared:PageTitles.CustomRenderer}">
@@ -16,8 +16,8 @@
             VerticalOptions="Center"
             Placeholder="{x:Static simpleSampleShared:CustomRendererPageConstants.CustomReturnEntryPlaceholderText}"
             AutomationId="{x:Static simpleSampleShared:AutomationIdConstants.CustomReturnEntry}"
-            ReturnCommandParameter="{x:Static simpleSampleShared.EntryConstants.CommandParameterString}"
+            ReturnCommandParameter="{x:Static simpleSampleShared:EntryConstants.CommandParameterString}"
             ReturnType="Go"/>
         
 	</ContentPage.Content>
-</ContentPage>
+</simpleSampleShared:BaseEntryContentPage>

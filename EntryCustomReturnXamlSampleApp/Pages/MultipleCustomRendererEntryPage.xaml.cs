@@ -1,5 +1,7 @@
-﻿using MvvmSamples.Common.Forms;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
+
+using MvvmSamples.Common.Forms;
+
 using EntryCustomReturn.Forms.Plugin.Abstractions;
 
 namespace EntryCustomReturnXamlSampleApp

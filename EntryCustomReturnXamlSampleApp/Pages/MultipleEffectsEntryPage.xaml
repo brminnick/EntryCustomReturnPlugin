@@ -1,5 +1,63 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="EntryCustomReturnXamlSampleApp.MultipleEffectsEntryPage">
-	<ContentPage.Content>
-	</ContentPage.Content>
-</ContentPage>
+<?xml version="1.0" encoding="UTF-8"?>
+<mvvmSamplesCommonForms:BaseContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:mvvmSamplesCommonForms="clr-namespace:MvvmSamples.Common.Forms;assembly=MvvmSamples.Common.Forms"
+    xmlns:mvvmSamplesShared="clr-namespace:MvvmSamples.Shared;assembly=MvvmSamples.Common.Forms"
+    x:TypeArguments="mvvmSamplesCommonForms:MultipleEntryViewModel"
+    x:Class="EntryCustomReturnXamlSampleApp.MultipleEffectsEntryPage">
+    
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                
+                <Entry
+                    x:Name = "DefaultReturnTypeEntry"
+                    AutomationId="{x:Static mvvmSamplesShared:AutomationIdConstants.DefaultReturnTypeEntryAutomationId}"
+                    Text="{Binding DefaultReturnTypeEntryText}"
+                    Placeholder="{x:Static mvvmSamplesShared:MultipleEntryPageConstants.DefaultReturnTypeEntryPlaceholder}"/>
+
+                <Entry
+                    x:Name = "NextReturnTypeEntry"
+                    AutomationId="{x:Static mvvmSamplesShared:AutomationIdConstants.NextReturnTypeEntryAutomationId}"
+                    Text="{Binding NextReturnTypeEntryText}"
+                    Placeholder="{x:Static mvvmSamplesShared:MultipleEntryPageConstants.NextReturnTypeEntryPlaceholder}"/>
+
+                <Entry
+                    x:Name = "DoneReturnTypeEntry"
+                    AutomationId="{x:Static mvvmSamplesShared:AutomationIdConstants.DoneReturnTypeEntryAutomationId}"
+                    Text="{Binding DoneReturnTypeEntryText}"
+                    Placeholder="{x:Static mvvmSamplesShared:MultipleEntryPageConstants.DoneReturnTypeEntryPlaceholder}"/>
+
+                <Entry
+                    x:Name = "SendReturnTypeEntry"
+                    AutomationId="{x:Static mvvmSamplesShared:AutomationIdConstants.SendReturnTypeEntryAutomationId}"
+                    Text="{Binding SendReturnTypeEntryText}"
+                    Placeholder="{x:Static mvvmSamplesShared:MultipleEntryPageConstants.SendReturnTypeEntryPlaceholder}"/>
+
+                <Entry
+                    x:Name = "SearchReturnTypeEntry"
+                    AutomationId="{x:Static mvvmSamplesShared:AutomationIdConstants.SearchReturnTypeEntryAutomationId}"
+                    Text="{Binding SearchReturnTypeEntryText}"
+                    Placeholder="{x:Static mvvmSamplesShared:MultipleEntryPageConstants.SearchReturnTypeEntryPlaceholder}"/>
+                
+                 <Entry
+                    x:Name = "GoReturnTypeEntry"
+                    AutomationId="{x:Static mvvmSamplesShared:AutomationIdConstants.GoReturnTypeEntryAutomationId}"
+                    Text="{Binding GoReturnTypeEntryText}"
+                    Placeholder="{x:Static mvvmSamplesShared:MultipleEntryPageConstants.GoReturnTypeEntryPlaceholder}"/>
+
+                <Button 
+                    Text="{x:Static mvvmSamplesShared:MultipleEntryPageConstants.GoButtonText}"
+                    AutomationId="{x:Static mvvmSamplesShared:AutomationIdConstants.GoButtonAutomationId}"
+                    Command="{Binding GoButtonCommand}"/>
+
+                <Label
+                    AutomationId="{x:Static mvvmSamplesShared:AutomationIdConstants.ResultsLabelAutomationId}"
+                    Text="{Binding ResultLabelText}"/>
+
+                </StackLayout>
+            </ScrollView>
+    </ContentPage.Content>
+    
+</mvvmSamplesCommonForms:BaseContentPage>

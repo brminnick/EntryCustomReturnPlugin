@@ -11,12 +11,8 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)PageTitles.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AutomationIdConstants.cs" />
-<<<<<<< HEAD:SimpleSample.Shared/SimpleSample.Shared.projitems
-    <Compile Include="$(MSBuildThisFileDirectory)EntryConstants.cs" />
-=======
     <Compile Include="$(MSBuildThisFileDirectory)SelectionPageConstants.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CustomRendererPageConstants.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)EffectsPageConstats.cs" />
->>>>>>> Add-Xaml-Documentation:SimpleSamples.Shared/SimpleSample.Shared.projitems
   </ItemGroup>
 </Project>

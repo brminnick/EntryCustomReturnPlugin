@@ -38,23 +38,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <Folder Include="Pages\" />
-    <Folder Include="Tests\" />
-    <Folder Include="Tests\Base\" />
-    <Folder Include="Pages\Base\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Pages\SelectionPage.cs" />
-    <Compile Include="Pages\CustomRendererPage.cs" />
-    <Compile Include="Pages\EffectsPage.cs" />
-    <Compile Include="Tests\Base\SimpleSampleBaseTest.cs" />
-    <Compile Include="Tests\Tests.cs" />
-    <Compile Include="Pages\Base\BaseEntryPage.cs" />
-  </ItemGroup>
-  <ItemGroup>
-=======
->>>>>>> Add-Xaml-Documentation
     <ProjectReference Include="..\SimpleSample.Droid\SimpleSample.Droid.csproj">
       <Project>{54F40CFF-83C5-47BA-915C-25442BFFBB72}</Project>
       <Name>SimpleSample.Droid</Name>

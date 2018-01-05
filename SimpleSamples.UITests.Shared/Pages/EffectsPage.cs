@@ -1,11 +1,7 @@
 ﻿using Xamarin.UITest;
 
-<<<<<<< HEAD:SimpleSample.UITests/Pages/EffectsPage.cs
-using SimpleSample.Shared;
-=======
 using Tests.Shared;
 using SimpleSamples.Shared;
->>>>>>> Add-Xaml-Documentation:SimpleSamples.UITests.Shared/Pages/EffectsPage.cs
 
 using Query = System.Func<Xamarin.UITest.Queries.AppQuery, Xamarin.UITest.Queries.AppQuery>;
 

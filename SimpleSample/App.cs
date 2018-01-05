@@ -4,11 +4,7 @@ using Xamarin.Forms;
 
 using EntryCustomReturn.Forms.Plugin.Abstractions;
 
-<<<<<<< HEAD
-using SimpleSample.Shared;
-=======
 using SimpleSamples.Shared;
->>>>>>> Add-Xaml-Documentation
 
 namespace SimpleSample
 {

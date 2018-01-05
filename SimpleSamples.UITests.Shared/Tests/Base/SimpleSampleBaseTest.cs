@@ -2,6 +2,8 @@
 
 using Tests.Shared;
 
+using SimpleSamples.UITests.Shared;
+
 namespace SimpleSample.UITests
 {
     public abstract class SimpleSampleBaseTest : BaseTest

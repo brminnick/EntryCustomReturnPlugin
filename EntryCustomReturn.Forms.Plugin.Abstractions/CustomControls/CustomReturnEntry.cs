@@ -21,6 +21,7 @@ namespace EntryCustomReturn.Forms.Plugin.Abstractions
         /// Return Type Property of the Entry
         /// </summary>
         public static BindableProperty ReturnTypeProperty => _returnTypeProperty ??
+<<<<<<< HEAD
             (_returnTypeProperty = BindableProperty.Create(nameof(ReturnType), typeof(ReturnType), typeof(CustomReturnEntry), ReturnType.Done));
 
         /// <summary>
@@ -29,6 +30,13 @@ namespace EntryCustomReturn.Forms.Plugin.Abstractions
         public static readonly BindableProperty ReturnCommandParameterProperty = _returnCommandParameterProperty ??
             (_returnCommandParameterProperty = BindableProperty.Create(nameof(ReturnCommandParameter), typeof(object), typeof(CustomReturnEntry)));
 
+=======
+            (_returnTypeProperty = BindableProperty.Create(propertyName: nameof(ReturnType),
+                                                            returnType: typeof(ReturnType),
+                                                            declaringType: typeof(CustomReturnEntry),
+                                                            defaultValue: ReturnType.Default));
+            
+>>>>>>> Add-Xaml-Documentation
         /// <summary>
         /// Type of the Keyboard Return Key
         /// </summary>

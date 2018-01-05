@@ -1,11 +1,15 @@
 ﻿using Xamarin.UITest;
 
+<<<<<<< HEAD:SimpleSample.UITests/Pages/CustomRendererPage.cs
 using SimpleSample.Shared;
+=======
+using Tests.Shared;
+using SimpleSamples.Shared;
+>>>>>>> Add-Xaml-Documentation:SimpleSamples.UITests.Shared/Pages/CustomRendererPage.cs
 
 using Query = System.Func<Xamarin.UITest.Queries.AppQuery, Xamarin.UITest.Queries.AppQuery>;
 
-
-namespace SimpleSample.UITests
+namespace SimpleSamples.UITests.Shared
 {
     public class CustomRendererPage : BaseEntryPage
     {

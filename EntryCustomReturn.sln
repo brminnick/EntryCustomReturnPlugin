@@ -24,9 +24,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntryCustomReturnSampleApp.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntryCustomReturnSampleApp.UITests", "EntryCustomReturnSampleApp.UITests\EntryCustomReturnSampleApp.UITests.csproj", "{9DB24B67-9058-4352-8414-47074CECB66B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Simple C# Sample", "Simple C# Sample", "{FB1E45D3-3DB3-44F3-AFAD-5465B7314ABD}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Simple Coded UI Sample", "Simple Coded UI Sample", "{FB1E45D3-3DB3-44F3-AFAD-5465B7314ABD}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MVVM C# Sample", "MVVM C# Sample", "{D22CB153-D701-44D4-9639-E93A18222BC0}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MVVM Coded UI Sample", "MVVM Coded UI Sample", "{D22CB153-D701-44D4-9639-E93A18222BC0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleSample", "SimpleSample\SimpleSample.csproj", "{49C40333-2758-4E0E-948F-A62B8C6642D1}"
 EndProject
@@ -60,7 +60,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MVVM Sample UITests", "MVVM
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Simple Sample UITests", "Simple Sample UITests", "{1B726705-D0B5-4AA7-B820-A47FBCC3E4D6}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Simple C# Sample UITests", "Simple C# Sample UITests", "{D57EE697-837A-4FF8-ACA4-3CAA3282BA7B}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Simple Coded UI Sample UITests", "Simple Coded UI Sample UITests", "{D57EE697-837A-4FF8-ACA4-3CAA3282BA7B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Simple Xaml Sample UITests", "Simple Xaml Sample UITests", "{D32EBC91-6319-4B4F-B0C1-1B44EDF80BFD}"
 EndProject
@@ -78,7 +78,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntryCustomReturnXamlSample
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntryCustomReturnXamlSampleApp.Droid", "EntryCustomReturnXamlSampleApp.Droid\EntryCustomReturnXamlSampleApp.Droid.csproj", "{310CE094-0342-4312-971B-7DE476880CAE}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MVVM C# Sample UITests", "MVVM C# Sample UITests", "{4316DEB7-C7F8-48FE-9F1F-BE10B6038CA4}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MVVM Coded UI Sample UITests", "MVVM Coded UI Sample UITests", "{4316DEB7-C7F8-48FE-9F1F-BE10B6038CA4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MVVM XAML Sample UITests", "MVVM XAML Sample UITests", "{C1BFA5B0-0D50-4189-9369-D0116C97AD6F}"
 EndProject

@@ -9,14 +9,14 @@
     <OutputType>Library</OutputType>
     <RootNamespace>EntryCustomReturnXamlSampleApp.Droid</RootNamespace>
     <AssemblyName>EntryCustomReturnXamlSampleApp.Droid</AssemblyName>
-    <TargetFrameworkVersion>v7.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
     <AndroidApplication>True</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidResgenClass>Resource</AndroidResgenClass>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
+    <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -132,6 +132,10 @@
     <ProjectReference Include="..\EntryCustomReturnXamlSampleApp\EntryCustomReturnXamlSampleApp.csproj">
       <Project>{F510CAEF-FE0F-4FD4-88CD-F5FAB64C65CA}</Project>
       <Name>EntryCustomReturnXamlSampleApp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EntryCustomReturn.Forms.Plugin.Android\EntryCustomReturn.Forms.Plugin.Android.csproj">
+      <Project>{1477793F-94BF-450F-A1F6-059B29DB18BE}</Project>
+      <Name>EntryCustomReturn.Forms.Plugin.Android</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

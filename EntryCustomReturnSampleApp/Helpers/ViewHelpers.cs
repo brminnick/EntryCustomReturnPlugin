@@ -53,37 +53,37 @@ namespace EntryCustomReturnSampleApp
         {
             var defaultReturnTypeEntry = CreateEntry(shouldUseEffects,
                                                         ReturnType.Default,
-                                                        "Return Type: Default",
+                                                        MultipleEntryPageConstants.DefaultReturnTypeEntryPlaceholder,
                                                         AutomationIdConstants.DefaultReturnTypeEntryAutomationId,
                                                         nameof(multipleEntryViewModel.DefaultReturnTypeEntryText));
 
             var nextReturnTypeEntry = CreateEntry(shouldUseEffects,
                                                     ReturnType.Next,
-                                                    "Return Type: Next",
+                                                    MultipleEntryPageConstants.NextReturnTypeEntryPlaceholder,
                                                     AutomationIdConstants.NextReturnTypeEntryAutomationId,
                                                     nameof(multipleEntryViewModel.NextReturnTypeEntryText));
 
             var doneReturnTypeEntry = CreateEntry(shouldUseEffects,
                                                     ReturnType.Done,
-                                                    "Return Type: Done",
+                                                    MultipleEntryPageConstants.DoneReturnTypeEntryPlaceholder,
                                                     AutomationIdConstants.DoneReturnTypeEntryAutomationId,
                                                     nameof(multipleEntryViewModel.DoneReturnTypeEntryText));
 
             var sendReturnTypeEntry = CreateEntry(shouldUseEffects,
                                                     ReturnType.Send,
-                                                    "Return Type: Send",
+                                                    MultipleEntryPageConstants.SendReturnTypeEntryPlaceholder,
                                                     AutomationIdConstants.SendReturnTypeEntryAutomationId,
                                                     nameof(multipleEntryViewModel.SendReturnTypeEntryText));
 
             var searchReturnTypeEntry = CreateEntry(shouldUseEffects,
                                                     ReturnType.Search,
-                                                    "Return Type: Search",
+                                                    MultipleEntryPageConstants.SearchReturnTypeEntryPlaceholder,
                                                     AutomationIdConstants.SearchReturnTypeEntryAutomationId,
                                                     nameof(multipleEntryViewModel.SearchReturnTypeEntryText));
 
             var goReturnTypeEntry = CreateEntry(shouldUseEffects,
                                                     ReturnType.Go,
-                                                    "Return Type: Go",
+                                                    MultipleEntryPageConstants.GoReturnTypeEntryPlaceholder,
                                                     AutomationIdConstants.GoReturnTypeEntryAutomationId,
                                                     nameof(multipleEntryViewModel.GoReturnTypeEntryText));
 

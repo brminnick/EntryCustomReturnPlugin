@@ -14,6 +14,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Constants\PickerConstants.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)StringHelpers\StringBuilderHelpers.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Constants\OpenSelectionPageConstants.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Constants\MultipleEntryPageConstants.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Constants\" />

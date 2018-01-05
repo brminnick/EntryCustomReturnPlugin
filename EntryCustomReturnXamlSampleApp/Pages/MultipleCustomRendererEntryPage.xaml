@@ -1,5 +1,22 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="EntryCustomReturnXamlSampleApp.MultipleCustomRendererEntryPage">
+<?xml version="1.0" encoding="UTF-8"?>
+<mvvmSamplesCommonForms:BaseContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:mvvmSamplesCommonForms="clr-namespace:MvvmSamples.Common.Forms;assembly=MvvmSamples.Common.Forms"
+    xmlns:mvvmSamplesShared="clr-namespace:MvvmSamples.Shared;assembly=MvvmSamples.Common.Forms"
+    xmlns:entryCustomReturn="clr-namespace:EntryCustomReturn.Forms.Plugin.Abstractions;assembly=EntryCustomReturn.Forms.Plugin.Abstractions"
+    x:TypeArguments="mvvmSamplesCommonForms:MultipleEntryViewModel"
+    x:Class="EntryCustomReturnXamlSampleApp.MultipleCustomRendererEntryPage">
+    
 	<ContentPage.Content>
+
+        <entryCustomReturn:CustomReturnEntry
+            x:Name = "DefaultReturnTypeEntry"
+            AutomationId="{x:Static mvvmSamplesShared:AutomationIdConstants.DefaultReturnTypeEntryAutomationId}"
+            Text="{Binding DefaultReturnTypeEntryText}"
+            Placeholder="{x:Static mvvmSamplesShared:MultipleEntryPageConstants.DefaultReturnTypeEntryPlaceholder}"
+            ReturnType="Default"/>
+        
 	</ContentPage.Content>
-</ContentPage>
+    
+</mvvmSamplesCommonForms:BaseContentPage>

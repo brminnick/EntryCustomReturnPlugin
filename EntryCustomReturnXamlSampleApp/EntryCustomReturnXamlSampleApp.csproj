@@ -91,6 +91,10 @@
       <Project>{85B970D3-6428-4C86-9065-AE2CD46DA4E7}</Project>
       <Name>MvvmSamples.Common.Forms</Name>
     </ProjectReference>
+    <ProjectReference Include="..\EntryCustomReturn.Forms.Plugin.Abstractions\EntryCustomReturn.Forms.Plugin.Abstractions.csproj">
+      <Project>{67F9D3A8-F71E-4428-913F-C37AE82CDB24}</Project>
+      <Name>EntryCustomReturn.Forms.Plugin.Abstractions</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pages\" />

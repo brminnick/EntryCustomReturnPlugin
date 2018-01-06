@@ -2,12 +2,7 @@
 
 using Xamarin.Forms;
 
-<<<<<<< HEAD:EntryCustomReturnSampleApp/ViewModels/MultipleEntryViewModel.cs
-using EntryCustomReturnSampleApp.Shared;
-using System.Text;
-=======
 using MvvmSamples.Shared;
->>>>>>> master:MvvmSamples.Common.Forms/ViewModels/MultipleEntryViewModel.cs
 
 namespace MvvmSamples.Common.Forms
 {

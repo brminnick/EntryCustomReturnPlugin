@@ -124,23 +124,6 @@ namespace EntryCustomReturnSampleApp
             return new ScrollView { Content = mainStackLayout };
         }
 
-<<<<<<< HEAD
-        public static Thickness GetPagePadding()
-        {
-            switch (Device.RuntimePlatform)
-            {
-                case Device.UWP:
-                case Device.Android:
-                    return new Thickness(10, 0, 10, 0);
-                case Device.iOS:
-                    return new Thickness(10, 10, 10, 0);
-                default:
-                    throw new NotSupportedException("Runtime Platform Not Supported");
-            }
-        }
-
-=======
->>>>>>> master
         static Entry CreateEntry(bool shouldUseEffects, ReturnType returnType, string placeholder, string automationId, string bindingSource)
         {
             Entry entry;

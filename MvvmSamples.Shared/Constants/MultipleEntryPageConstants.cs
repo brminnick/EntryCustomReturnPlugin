@@ -2,7 +2,7 @@
 {
     public static class MultipleEntryPageConstants 
     {
-        public const string GoReturnTypeCommandParameterString = "Go Return Button Tapped";
+        public const string GoReturnTypeCommandParameterString = "Go Keyboard Return Button Tapped";
         public const string GoButtonCommandParameterString = "Go Button Tapped";
         public const string DefaultReturnTypeEntryPlaceholder = "Return Type: Default";
         public const string NextReturnTypeEntryPlaceholder = "Return Type: Next";

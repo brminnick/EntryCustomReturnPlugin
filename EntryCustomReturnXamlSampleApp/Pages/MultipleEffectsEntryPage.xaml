@@ -51,7 +51,8 @@
                 <Button 
                     Text="{x:Static mvvmSamplesShared:MultipleEntryPageConstants.GoButtonText}"
                     AutomationId="{x:Static mvvmSamplesShared:AutomationIdConstants.GoButtonAutomationId}"
-                    Command="{Binding GoButtonCommand}"/>
+                    Command="{Binding GoButtonCommand}"
+                    CommandParameter="{Binding GoButtonCommandParameter}"/>
 
                 <Label
                     AutomationId="{x:Static mvvmSamplesShared:AutomationIdConstants.ResultsLabelAutomationId}"

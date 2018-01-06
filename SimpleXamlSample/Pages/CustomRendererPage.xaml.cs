@@ -11,8 +11,8 @@ namespace SimpleXamlSample
         {
             InitializeComponent();
 
+			CustomReturnEntry.ReturnCommand = new Command<string>(async title => await ExecuteEntryCommand(title));
             CustomReturnEntry.ReturnCommandParameter = EntryConstants.CommandParameterString;
-            CustomReturnEntry.ReturnCommand = new Command<string>(async title => await ExecuteEntryCommand(title));
         }
     }
 }

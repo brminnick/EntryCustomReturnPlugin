@@ -134,7 +134,7 @@
       <Name>EntryCustomReturn.Forms.Plugin.Android</Name>
     </ProjectReference>
     <ProjectReference Include="..\SimpleXamlSample\SimpleXamlSample.csproj">
-      <Project>{B97FCF2E-EB0A-4FB5-A336-8B0138838CBF}</Project>
+      <Project>{F86B9A87-46C9-4E64-AD6D-6F3C78C0E499}</Project>
       <Name>SimpleXamlSample</Name>
     </ProjectReference>
   </ItemGroup>

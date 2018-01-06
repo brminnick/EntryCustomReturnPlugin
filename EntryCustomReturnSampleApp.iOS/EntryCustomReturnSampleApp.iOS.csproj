@@ -108,13 +108,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EntryCustomReturnSampleApp\EntryCustomReturnSampleApp.csproj">
-      <Project>{4668C385-45C4-495D-803C-FFDAE866FD60}</Project>
-      <Name>EntryCustomReturnSampleApp</Name>
-    </ProjectReference>
     <ProjectReference Include="..\EntryCustomReturn.Forms.Plugin.iOSUnified\EntryCustomReturn.Forms.Plugin.iOS.csproj">
       <Project>{085E453B-C898-4D35-BA27-61EF81A6BAB4}</Project>
       <Name>EntryCustomReturn.Forms.Plugin.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EntryCustomReturnSampleApp\EntryCustomReturnSampleApp.csproj">
+      <Project>{BBF1C237-8185-4ADF-8481-DF6E2F3CE8ED}</Project>
+      <Name>EntryCustomReturnSampleApp</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

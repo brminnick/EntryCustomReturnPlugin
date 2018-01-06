@@ -112,7 +112,30 @@ var goReturnTypeCustomEntry = new CustomReturnEntry
 };
 ```
 
+<<<<<<< HEAD
 It can also be used as a [Bindable Property to bind to a ViewModel](./EntryCustomReturnSampleApp/Helpers/ViewHelpers.cs#L24)
+=======
+```xml
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="SimpleXamlSample.CustomRendererPage"
+    xmlns:entryCustomReturn="clr-namespace:EntryCustomReturn.Forms.Plugin.Abstractions;assembly=EntryCustomReturn.Forms.Plugin.Abstractions">
+
+    <ContentPage.Content>
+
+        <entryCustomReturn:CustomReturnEntry
+            x:Name = "MyCustomReturnEntry"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            ReturnType="Go"/>
+
+    </ContentPage.Content>
+</ContentPage>
+```
+
+It can also be used as a `Bindable Property` to bind to a ViewModel
+>>>>>>> master
 
 ```csharp
 var viewModel = new MyViewModel();
@@ -130,7 +153,11 @@ customReturnEntry.SetBinding(CustomReturnEntry.ReturnTypeProperty, nameof(viewMo
 goReturnTypeCustomEntry.ReturnCommand = new Command(() => Navigation.PushAsync(new ContentPage()));
 ```
 
+<<<<<<< HEAD
 It can also be used as a [Bindable Property to bind to a ViewModel](./EntryCustomReturnSampleApp/Helpers/ViewHelpers.cs#L186)
+=======
+It can also be used as a `Bindable Property` to bind to a ViewModel
+>>>>>>> master
 
 ```csharp
 var viewModel = new MyViewModel();
@@ -149,7 +176,11 @@ goReturnTypeCustomEntry.ReturnCommand = new Command<string>(async title => await
 goReturnTypeCustomEntry.ReturnCommandParameter = "Return Button Tapped";
 ```
 
+<<<<<<< HEAD
 It can also be used as a [Bindable Property to bind to a ViewModel](./EntryCustomReturnSampleApp/Helpers/ViewHelpers.cs#L187)
+=======
+It can also be used as a `Bindable Property` to bind to a ViewModel
+>>>>>>> master
 
 ```csharp
 var viewModel = new ViewModel();
@@ -170,7 +201,11 @@ var goReturnTypeEntry = new Entry()
 CustomReturnEffect.SetReturnType(goReturnTypeEntry, ReturnType.Go);
 ```
 
+<<<<<<< HEAD
 It can also be used as a [Bindable Property to bind to a ViewModel](./EntryCustomReturnSampleApp/Helpers/ViewHelpers.cs#L20)
+=======
+It can also be used as a `Bindable Property` to bind to a ViewModel
+>>>>>>> master
 
 ```csharp
 var viewModel = new MyViewModel();
@@ -189,7 +224,11 @@ var goReturnTypeEntry = new Entry()
 CustomReturnEffect.SetReturnCommand(goReturnTypeEntry, new Command(() => Navigation.PushAsync(new ContentPage()));
 ```
 
+<<<<<<< HEAD
 It can also be used as a [Bindable Property to bind to a ViewModel](./EntryCustomReturnSampleApp/Helpers/ViewHelpers.cs#L190)
+=======
+It can also be used as a `Bindable Property` to bind to a ViewModel
+>>>>>>> master
 
 ```csharp
 var viewModel = new MyViewModel();
@@ -209,7 +248,11 @@ CustomReturnEffect.SetReturnCommand(goReturnTypeEntry, new Command<string>(async
 CustomReturnEffect.SetReturnCommandParameter(goReturnTypeEntry, "Return Button Tapped");
 ```
 
+<<<<<<< HEAD
 It can also be used as a [Bindable Property to bind to a ViewModel](./EntryCustomReturnSampleApp/Helpers/ViewHelpers.cs#L191)
+=======
+It can also be used as a `Bindable Property` to bind to a ViewModel
+>>>>>>> master
 
 ```csharp
 var viewModel = new ViewModel();

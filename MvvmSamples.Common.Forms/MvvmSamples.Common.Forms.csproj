@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
+    <Folder Include="Pages\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="2.5.0.121934" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EntryCustomReturn.Forms.Plugin.Abstractions\EntryCustomReturn.Forms.Plugin.Abstractions.csproj" />
+  </ItemGroup>
+  <Import Project="..\MvvmSamples.Shared\MvvmSamples.Shared.projitems" Label="Shared" Condition="Exists('..\MvvmSamples.Shared\MvvmSamples.Shared.projitems')" />
+</Project>

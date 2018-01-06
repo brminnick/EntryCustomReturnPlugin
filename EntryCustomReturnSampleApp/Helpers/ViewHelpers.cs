@@ -3,7 +3,9 @@
 using Xamarin.Forms;
 
 using EntryCustomReturn.Forms.Plugin.Abstractions;
-using EntryCustomReturnSampleApp.Shared;
+
+using MvvmSamples.Shared;
+using MvvmSamples.Common.Forms;
 
 namespace EntryCustomReturnSampleApp
 {
@@ -50,37 +52,37 @@ namespace EntryCustomReturnSampleApp
         {
             var defaultReturnTypeEntry = CreateEntry(shouldUseEffects,
                                                         ReturnType.Default,
-                                                        "Return Type: Default",
+                                                        MultipleEntryPageConstants.DefaultReturnTypeEntryPlaceholder,
                                                         AutomationIdConstants.DefaultReturnTypeEntryAutomationId,
                                                         nameof(multipleEntryViewModel.DefaultReturnTypeEntryText));
 
             var nextReturnTypeEntry = CreateEntry(shouldUseEffects,
                                                     ReturnType.Next,
-                                                    "Return Type: Next",
+                                                    MultipleEntryPageConstants.NextReturnTypeEntryPlaceholder,
                                                     AutomationIdConstants.NextReturnTypeEntryAutomationId,
                                                     nameof(multipleEntryViewModel.NextReturnTypeEntryText));
 
             var doneReturnTypeEntry = CreateEntry(shouldUseEffects,
                                                     ReturnType.Done,
-                                                    "Return Type: Done",
+                                                    MultipleEntryPageConstants.DoneReturnTypeEntryPlaceholder,
                                                     AutomationIdConstants.DoneReturnTypeEntryAutomationId,
                                                     nameof(multipleEntryViewModel.DoneReturnTypeEntryText));
 
             var sendReturnTypeEntry = CreateEntry(shouldUseEffects,
                                                     ReturnType.Send,
-                                                    "Return Type: Send",
+                                                    MultipleEntryPageConstants.SendReturnTypeEntryPlaceholder,
                                                     AutomationIdConstants.SendReturnTypeEntryAutomationId,
                                                     nameof(multipleEntryViewModel.SendReturnTypeEntryText));
 
             var searchReturnTypeEntry = CreateEntry(shouldUseEffects,
                                                     ReturnType.Search,
-                                                    "Return Type: Search",
+                                                    MultipleEntryPageConstants.SearchReturnTypeEntryPlaceholder,
                                                     AutomationIdConstants.SearchReturnTypeEntryAutomationId,
                                                     nameof(multipleEntryViewModel.SearchReturnTypeEntryText));
 
             var goReturnTypeEntry = CreateEntry(shouldUseEffects,
                                                     ReturnType.Go,
-                                                    "Return Type: Go",
+                                                    MultipleEntryPageConstants.GoReturnTypeEntryPlaceholder,
                                                     AutomationIdConstants.GoReturnTypeEntryAutomationId,
                                                     nameof(multipleEntryViewModel.GoReturnTypeEntryText));
 
@@ -93,7 +95,7 @@ namespace EntryCustomReturnSampleApp
 
             var goButton = new Button
             {
-                Text = "Go",
+                Text = MultipleEntryPageConstants.GoButtonText,
                 AutomationId = AutomationIdConstants.GoButtonAutomationId
             };
             goButton.SetBinding(Button.CommandProperty, nameof(multipleEntryViewModel.GoButtonCommand));
@@ -104,7 +106,6 @@ namespace EntryCustomReturnSampleApp
                 AutomationId = AutomationIdConstants.ResultsLabelAutomationId
             };
             resultLabel.SetBinding(Label.TextProperty, nameof(multipleEntryViewModel.ResultLabelText));
-
 
             var mainStackLayout = new StackLayout
             {
@@ -123,6 +124,7 @@ namespace EntryCustomReturnSampleApp
             return new ScrollView { Content = mainStackLayout };
         }
 
+<<<<<<< HEAD
         public static Thickness GetPagePadding()
         {
             switch (Device.RuntimePlatform)
@@ -137,6 +139,8 @@ namespace EntryCustomReturnSampleApp
             }
         }
 
+=======
+>>>>>>> master
         static Entry CreateEntry(bool shouldUseEffects, ReturnType returnType, string placeholder, string automationId, string bindingSource)
         {
             Entry entry;

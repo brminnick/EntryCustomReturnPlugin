@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{20810C87-7E98-41A3-A8C5-911651CEB0F9}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>MvvmSamples.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Constants\AutomationIdConstants.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Constants\PageTitles.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Constants\PickerConstants.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)StringHelpers\StringBuilderHelpers.cs" />
+<<<<<<< HEAD:EntryCustomReturnSampleApp.Shared/EntryCustomReturnSampleApp.Shared.projitems
+=======
+    <Compile Include="$(MSBuildThisFileDirectory)Constants\OpenSelectionPageConstants.cs" />
+>>>>>>> master:MvvmSamples.Shared/MvvmSamples.Shared.projitems
+    <Compile Include="$(MSBuildThisFileDirectory)Constants\MultipleEntryPageConstants.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Constants\" />
+    <Folder Include="$(MSBuildThisFileDirectory)StringHelpers\" />
+  </ItemGroup>
+</Project>

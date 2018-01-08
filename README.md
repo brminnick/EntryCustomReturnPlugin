@@ -93,13 +93,11 @@ public partial class App : Application
 
 **Note:** You must call  `EntryCustomReturn.Forms.Plugin.UWP.CustomReturnEntryRenderer.Init();` *after* you call `global::Xamarin.Forms.Forms.Init(e);`
 
-# Usage in Xamarin.Forms Project
+# Usage in Xamarin.Forms Project as a Custom Control
 
-The EntryCustomReturnPlugin can be consumed either as a [`CustomRenderer`](https://developer.xamarin.com/guides/xamarin-forms/custom-renderer/entry/#Consuming_the_Custom_Control/) or as an [`Effect`](https://developer.xamarin.com/guides/xamarin-forms/effects/creating/#Consuming_the_Effect_in_C).
+The EntryCustomReturnPlugin can be consumed as a [`CustomRenderer Control`](https://developer.xamarin.com/guides/xamarin-forms/custom-renderer/entry/#Consuming_the_Custom_Control/) or as an [`Effect`](https://developer.xamarin.com/guides/xamarin-forms/effects/creating/#Consuming_the_Effect_in_C).
 
-## Custom Renderer
-
-### 1. Set the `ReturnType` Property
+## 1. Set the `ReturnType` Property
 
 The `ReturnType` property is an enum containing 6 different types: Default, Go, Next, Done, Send, Search.
 
@@ -133,7 +131,7 @@ var goReturnTypeCustomEntry = new CustomReturnEntry
 </ContentPage>
 ```
 
-----
+### Bindable Property
 
 It can also be used as a `Bindable Property` to bind to a ViewModel
 
@@ -157,7 +155,7 @@ customReturnEntry.SetBinding(CustomReturnEntry.ReturnTypeProperty, nameof(viewMo
     ReturnType="{Binding EntryReturnType}"/>
 ```
 
-### 2. Set the `ReturnCommand` Command
+## 2. Set the `ReturnCommand` Command
 
 `ReturnCommand` will fire when the user finalizes the text in an entry with the return key.
 
@@ -170,7 +168,7 @@ goReturnTypeCustomEntry.ReturnCommand = new Command(() => Navigation.PushAsync(n
 #### XAML UI
 It is not possible to initialize a `Command` in XAML
 
-----
+### Bindable Property
 
 It can also be used as a `Bindable Property` to bind to a ViewModel
 
@@ -239,7 +237,7 @@ goReturnTypeCustomEntry.ReturnCommandParameter = "Return Button Tapped";
 </ContentPage>
 ```
 
-----
+### Bindable Property
 
 It can also be used as a `Bindable Property` to bind to a ViewModel
 
@@ -264,9 +262,11 @@ customReturnEntry.SetBinding(CustomReturnEntry.ReturnCommandParameterProperty, n
     ReturnCommandParameter="{Binding EntryReturnCommandParameter}"/>
 ```
 
-## Effect
+# Usage in Xamarin.Forms Project as an Effect
 
-### 1. Set the `ReturnType` Property
+The EntryCustomReturnPlugin can be consumed as a [`CustomRenderer Control`](https://developer.xamarin.com/guides/xamarin-forms/custom-renderer/entry/#Consuming_the_Custom_Control/) or as an [`Effect`](https://developer.xamarin.com/guides/xamarin-forms/effects/creating/#Consuming_the_Effect_in_C).
+
+## 1. Set the `ReturnType` Property
 
 The `ReturnType` property is an enum containing 6 different types: Default, Go, Next, Done, Send, Search.
 
@@ -299,7 +299,7 @@ CustomReturnEffect.SetReturnType(goReturnTypeEntry, ReturnType.Go);
 </ContentPage>
 ```
 
-----
+### Bindable Property
 
 It can also be used as a `Bindable Property` to bind to a ViewModel
 
@@ -338,7 +338,7 @@ CustomReturnEffect.SetReturnCommand(goReturnTypeEntry, new Command(() => Navigat
 
 It is not possible to initialize a `Command` in XAML
 
-----
+### Bindable Property
 
 It can also be used as a `Bindable Property` to bind to a ViewModel
 
@@ -408,7 +408,7 @@ CustomReturnEffect.SetReturnCommandParameter(goReturnTypeEntry, "Return Button T
 </ContentPage>
 ```
 
-----
+### Bindable Property
 
 It can also be used as a `Bindable Property` to bind to a ViewModel
 

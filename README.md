@@ -135,7 +135,7 @@ var goReturnTypeCustomEntry = new CustomReturnEntry
 
 ### Bindable Property
 
-It can also be used as a `Bindable Property` to bind to a ViewModel
+`ReturnType` can also be used as a `Bindable Property` to bind to a ViewModel
 
 #### Coded UI
 
@@ -172,7 +172,7 @@ It is not possible to initialize a `Command` in XAML
 
 ### Bindable Property
 
-It can also be used as a `Bindable Property` to bind to a ViewModel
+`ReturnCommand` can also be used as a `Bindable Property` to bind to a ViewModel
 
 #### Coded UI
 
@@ -241,7 +241,7 @@ goReturnTypeCustomEntry.ReturnCommandParameter = "Return Button Tapped";
 
 ### Bindable Property
 
-It can also be used as a `Bindable Property` to bind to a ViewModel
+`ReturnCommandParameter` can also be used as a `Bindable Property` to bind to a ViewModel
 
 #### Coded UI
 
@@ -303,7 +303,7 @@ CustomReturnEffect.SetReturnType(goReturnTypeEntry, ReturnType.Go);
 
 ### Bindable Property
 
-It can also be used as a `Bindable Property` to bind to a ViewModel
+`ReturnType` can also be used as a `Bindable Property` to bind to a ViewModel
 
 #### Coded UI
 
@@ -342,7 +342,7 @@ It is not possible to initialize a `Command` in XAML
 
 ### Bindable Property
 
-It can also be used as a `Bindable Property` to bind to a ViewModel
+`ReturnCommand` can also be used as a `Bindable Property` to bind to a ViewModel
 
 #### Coded UI
 
@@ -412,7 +412,7 @@ CustomReturnEffect.SetReturnCommandParameter(goReturnTypeEntry, "Return Button T
 
 ### Bindable Property
 
-It can also be used as a `Bindable Property` to bind to a ViewModel
+`ReturnCommandParameter` can also be used as a `Bindable Property` to bind to a ViewModel
 
 #### Coded UI
 

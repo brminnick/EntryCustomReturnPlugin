@@ -22,7 +22,7 @@
 |Windows Store RT|No||
 |Xamarin.Mac|No||
 
-This pluging can be consumed as a [`CustomRenderer Control`](./README.md#usage-in-xamarinforms-project-as-a-custom-control) or as an [`Effect`](./README.md#usage-in-xamarinforms-project-as-an-effect).
+This plugin can be consumed as a [`CustomRenderer Control`](./README.md#usage-in-xamarinforms-project-as-a-custom-control) or as an [`Effect`](./README.md#usage-in-xamarinforms-project-as-an-effect).
 
 # Setup
 
@@ -97,7 +97,7 @@ public partial class App : Application
 
 # Usage in Xamarin.Forms Project as a Custom Control
 
-This pluging can be consumed as a [`CustomRenderer Control`](./README.md#usage-in-xamarinforms-project-as-a-custom-control) or as an [`Effect`](./README.md#usage-in-xamarinforms-project-as-an-effect).
+This plugin can be consumed as a [`CustomRenderer Control`](./README.md#usage-in-xamarinforms-project-as-a-custom-control) or as an [`Effect`](./README.md#usage-in-xamarinforms-project-as-an-effect).
 
 ## 1. Set the `ReturnType` Property
 
@@ -266,7 +266,7 @@ customReturnEntry.SetBinding(CustomReturnEntry.ReturnCommandParameterProperty, n
 
 # Usage in Xamarin.Forms Project as an Effect
 
-This pluging can be consumed as a [`CustomRenderer Control`](./README.md#usage-in-xamarinforms-project-as-a-custom-control) or as an [`Effect`](./README.md#usage-in-xamarinforms-project-as-an-effect).
+This plugin can be consumed as a [`CustomRenderer Control`](./README.md#usage-in-xamarinforms-project-as-a-custom-control) or as an [`Effect`](./README.md#usage-in-xamarinforms-project-as-an-effect).
 
 ## 1. Set the `ReturnType` Property
 

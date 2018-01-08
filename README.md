@@ -433,5 +433,3 @@ customReturnEntry.SetBinding(CustomReturnEffect.ReturnCommandParameterProperty, 
     VerticalOptions="Center"
     entryCustomReturn:CustomReturnEffect.ReturnCommandParameter="{Binding EntryReturnCommandParameter}"/>
 ```
-
-![iPhone Demo](https://github.com/brminnick/Videos/blob/master/EntryCustomReturnPlugin/iOS%20Gif.gif)

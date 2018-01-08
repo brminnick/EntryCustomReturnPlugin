@@ -22,6 +22,8 @@
 |Windows Store RT|No||
 |Xamarin.Mac|No||
 
+This pluging can be consumed as a [`CustomRenderer Control`](./README.md#usage-in-xamarinforms-project-as-a-custom-control) or as an [`Effect`](./README.md#usage-in-xamarinforms-project-as-an-effect).
+
 # Setup
 
 * Available on NuGet: https://www.nuget.org/packages/Xam.Plugins.Forms.CustomReturnEntry/ [![NuGet](https://img.shields.io/nuget/v/Xam.Plugins.Forms.CustomReturnEntry.svg?label=NuGet)](https://www.nuget.org/packages/Xam.Plugins.Forms.CustomReturnEntry/)
@@ -95,7 +97,7 @@ public partial class App : Application
 
 # Usage in Xamarin.Forms Project as a Custom Control
 
-The EntryCustomReturnPlugin can be consumed as a [`CustomRenderer Control`](./README.md#usage-in-xamarinforms-project-as-a-custom-control) or as an [`Effect`](./README.md#usage-in-xamarinforms-project-as-an-effect).
+This pluging can be consumed as a [`CustomRenderer Control`](./README.md#usage-in-xamarinforms-project-as-a-custom-control) or as an [`Effect`](./README.md#usage-in-xamarinforms-project-as-an-effect).
 
 ## 1. Set the `ReturnType` Property
 
@@ -264,7 +266,7 @@ customReturnEntry.SetBinding(CustomReturnEntry.ReturnCommandParameterProperty, n
 
 # Usage in Xamarin.Forms Project as an Effect
 
-The EntryCustomReturnPlugin can be consumed as a [`CustomRenderer Control`](./README.md#usage-in-xamarinforms-project-as-a-custom-control) or as an [`Effect`](./README.md#usage-in-xamarinforms-project-as-an-effect).
+This pluging can be consumed as a [`CustomRenderer Control`](./README.md#usage-in-xamarinforms-project-as-a-custom-control) or as an [`Effect`](./README.md#usage-in-xamarinforms-project-as-an-effect).
 
 ## 1. Set the `ReturnType` Property
 

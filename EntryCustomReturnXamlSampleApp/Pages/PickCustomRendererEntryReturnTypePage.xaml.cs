@@ -8,21 +8,16 @@ namespace EntryCustomReturnXamlSampleApp
 {
     public partial class PickCustomRendererEntryReturnTypePage : BaseContentPage<PickEntryReturnTypeViewModel>
     {
-        public PickCustomRendererEntryReturnTypePage()
-        {
-            InitializeComponent();
-
-            CustomizableEntry.SetBinding(CustomReturnEntry.ReturnTypeProperty, nameof(ViewModel.EntryReturnType));
-        }
+        public PickCustomRendererEntryReturnTypePage() => InitializeComponent();
 
         protected override void SubscribeEventHandlers()
         {
-            
+
         }
 
         protected override void UnsubscribeEventHandlers()
         {
-            
+
         }
     }
 }

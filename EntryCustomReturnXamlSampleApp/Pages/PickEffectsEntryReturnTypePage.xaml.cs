@@ -11,12 +11,7 @@ namespace EntryCustomReturnXamlSampleApp
 {
     public partial class PickEffectsEntryReturnTypePage : BaseContentPage<PickEntryReturnTypeViewModel>
     {
-        public PickEffectsEntryReturnTypePage()
-        {
-            InitializeComponent();
-
-            CustomizableEntry.SetBinding(CustomReturnEffect.ReturnTypeProperty, nameof(ViewModel.EntryReturnType));
-        }
+        public PickEffectsEntryReturnTypePage() => InitializeComponent();
 
         protected override void SubscribeEventHandlers()
         {

@@ -42,6 +42,7 @@
     <Compile Include="CustomControls\CustomReturnEntry.cs" />
     <Compile Include="Enums\CustomEnums.cs" />
     <Compile Include="Effects\EffectConstants.cs" />
+    <Compile Include="BindablePropertyConstants.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">

@@ -16,9 +16,9 @@
             HorizontalOptions="Center"
             VerticalOptions="Center"
             Placeholder="{x:Static simpleSamplesShared:EffectsPageConstants.EffectsEntryPlaceholderText}"
-            AutomationId="{x:Static simpleSamplesShared:AutomationIdConstants.EffectsEntry}"/>
-<!--            entryCustomReturn:CustomReturnEffect.ReturnCommandParameter="{x:Static simpleSampleShared:EntryConstants.CommandParameterString}"-->
-<!--            entryCustomReturn:CustomReturnEffect.ReturnType="{x:Static entryCustomReturn:ReturnType.Go}"/>-->
+            AutomationId="{x:Static simpleSamplesShared:AutomationIdConstants.EffectsEntry}"
+            entryCustomReturn:CustomReturnEffect.ReturnCommandParameter="{x:Static simpleSamplesShared:EntryConstants.CommandParameterString}"
+            entryCustomReturn:CustomReturnEffect.ReturnType="{x:Static entryCustomReturn:ReturnType.Go}"/>
         
     </ContentPage.Content>
 </simpleSamplesCommonForms:BaseEntryContentPage>

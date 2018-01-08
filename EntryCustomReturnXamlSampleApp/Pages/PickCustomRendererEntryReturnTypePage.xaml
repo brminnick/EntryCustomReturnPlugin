@@ -15,7 +15,8 @@
             <entryCustomReturn:CustomReturnEntry
                 x:Name = "CustomizableEntry"
                 AutomationId="{x:Static mvvmSamplesShared:AutomationIdConstants.CustomizableEntryAutomationId}"
-                Placeholder="{Binding EntryPlaceHolderText}"/>
+                Placeholder="{Binding EntryPlaceHolderText}"
+                ReturnType="{Binding EntryReturnType}"/>
 
             <Picker
                 x:Name="EntryReturnTypePicker"

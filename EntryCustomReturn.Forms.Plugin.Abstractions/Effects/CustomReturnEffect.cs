@@ -10,37 +10,36 @@ namespace EntryCustomReturn.Forms.Plugin.Abstractions
     /// </summary>
     public static class CustomReturnEffect
     {
-        static BindableProperty _returnTypeProperty, _returnCommandProperty, _returnCommandParameterProperty;
-
         /// <summary>
         /// Return Type Property of the Keyboard Return Key
         /// </summary>
-        public static BindableProperty ReturnTypeProperty => _returnTypeProperty ??
-            (_returnTypeProperty = BindableProperty.CreateAttached(nameof(ReturnType),
-                                                                    typeof(ReturnType),
-                                                                    typeof(Entry),
-                                                                    ReturnType.Default,
-                                                                    propertyChanged: OnReturnTypeChanged));
+        public static readonly BindableProperty ReturnTypeProperty = 
+            BindableProperty.CreateAttached(BindablePropertyConstants.ReturnTypePropertyName,
+                typeof(ReturnType),
+                typeof(Entry),
+                ReturnType.Default,
+                propertyChanged: OnReturnTypeChanged);
 
         /// <summary>
         /// Command that occurs when the user finalizes the text in an entry with the return key
         /// </summary>
-        public static BindableProperty ReturnCommandProperty => _returnCommandProperty ??
-            (_returnCommandProperty = BindableProperty.CreateAttached("ReturnCommand",
-                                                                        typeof(ICommand),
-                                                                        typeof(Entry),
-                                                                        null,
-                                                                        propertyChanged: OnReturnCommandPropertyChanged));
+        public static readonly BindableProperty ReturnCommandProperty = 
+            BindableProperty.CreateAttached(
+                BindablePropertyConstants.ReturnCommandPropertyName,
+                typeof(ICommand),
+                typeof(Entry),
+                null,
+                propertyChanged: OnReturnCommandPropertyChanged);
 
         /// <summary>
         /// Backing store for the ReturnCommandParameter bindable property
         /// </summary>
-        public static BindableProperty ReturnCommandParameterProperty => _returnCommandParameterProperty ??
-            (_returnCommandParameterProperty = BindableProperty.CreateAttached("ReturnCommandParameter",
-                                                                                typeof(object),
-                                                                                typeof(Entry),
-                                                                                null,
-                                                                                propertyChanged: OnReturnCommandParameterPropertyChanged));
+        public static readonly BindableProperty ReturnCommandParameterProperty = 
+            BindableProperty.CreateAttached(BindablePropertyConstants.ReturnCommandParameterPropertyName,
+                typeof(object),
+                typeof(Entry),
+                null,
+                propertyChanged: OnReturnCommandParameterPropertyChanged);
 
         /// <summary>
         /// Gets the Type of the Keyboard Return Key

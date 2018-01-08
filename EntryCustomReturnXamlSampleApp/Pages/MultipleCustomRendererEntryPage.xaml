@@ -53,7 +53,9 @@
                     AutomationId="{x:Static mvvmSamplesShared:AutomationIdConstants.GoReturnTypeEntryAutomationId}"
                     Text="{Binding GoReturnTypeEntryText}"
                     Placeholder="{x:Static mvvmSamplesShared:MultipleEntryPageConstants.GoReturnTypeEntryPlaceholder}"
-                    ReturnType="Go"/>
+                    ReturnType="Go"
+                    ReturnCommand="{Binding GoReturnTypeEntryReturnCommand}"
+                    ReturnCommandParameter="{Binding GoReturnTypeEntryReturnCommandParameter}"/>
 
                 <Button 
                     Text="{x:Static mvvmSamplesShared:MultipleEntryPageConstants.GoButtonText}"

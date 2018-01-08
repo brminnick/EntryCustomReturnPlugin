@@ -13,9 +13,7 @@ namespace SimpleXamlSample
         {
             InitializeComponent();
 
-            CustomReturnEffect.SetReturnType(EffectsEntry, ReturnType.Go);
             CustomReturnEffect.SetReturnCommand(EffectsEntry, new Command<string>(async title => await ExecuteEntryCommand(title)));
-            CustomReturnEffect.SetReturnCommandParameter(EffectsEntry, EntryConstants.CommandParameterString);
         }
     }
 }

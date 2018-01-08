@@ -95,7 +95,7 @@ public partial class App : Application
 
 # Usage in Xamarin.Forms Project as a Custom Control
 
-The EntryCustomReturnPlugin can be consumed as a [`CustomRenderer Control`](./#usage-in-xamarinforms-project-as-a-custom-control) or as an [`Effect`](./#usage-in-xamarinforms-project-as-an-effect).
+The EntryCustomReturnPlugin can be consumed as a [`CustomRenderer Control`](./README.md#usage-in-xamarinforms-project-as-a-custom-control) or as an [`Effect`](./README.md#usage-in-xamarinforms-project-as-an-effect).
 
 ## 1. Set the `ReturnType` Property
 
@@ -264,7 +264,7 @@ customReturnEntry.SetBinding(CustomReturnEntry.ReturnCommandParameterProperty, n
 
 # Usage in Xamarin.Forms Project as an Effect
 
-The EntryCustomReturnPlugin can be consumed as a [`CustomRenderer Control`](./#usage-in-xamarinforms-project-as-a-custom-control) or as an [`Effect`](./#usage-in-xamarinforms-project-as-an-effect).
+The EntryCustomReturnPlugin can be consumed as a [`CustomRenderer Control`](./README.md#usage-in-xamarinforms-project-as-a-custom-control) or as an [`Effect`](./README.md#usage-in-xamarinforms-project-as-an-effect).
 
 ## 1. Set the `ReturnType` Property
 

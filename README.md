@@ -103,12 +103,16 @@ The EntryCustomReturnPlugin can be consumed either as a [`CustomRenderer`](https
 
 The `ReturnType` property is an enum containing 6 different types: Default, Go, Next, Done, Send, Search.
 
+#### Coded UI
+
 ```csharp
 var goReturnTypeCustomEntry = new CustomReturnEntry
 {
     ReturnType = ReturnType.Go
 };
 ```
+
+#### XAML UI
 
 ```xml
 <ContentPage
@@ -129,7 +133,11 @@ var goReturnTypeCustomEntry = new CustomReturnEntry
 </ContentPage>
 ```
 
+----
+
 It can also be used as a `Bindable Property` to bind to a ViewModel
+
+#### Coded UI
 
 ```csharp
 var viewModel = new MyViewModel();
@@ -138,6 +146,8 @@ BindingContext = viewModel;
 var customReturnEntry = new CustomReturnEntry();
 customReturnEntry.SetBinding(CustomReturnEntry.ReturnTypeProperty, nameof(viewModel.EntryReturnType));
 ```
+
+#### XAML UI
 
 ```xml
 <entryCustomReturn:CustomReturnEntry
@@ -151,11 +161,20 @@ customReturnEntry.SetBinding(CustomReturnEntry.ReturnTypeProperty, nameof(viewMo
 
 `ReturnCommand` will fire when the user finalizes the text in an entry with the return key.
 
+#### Coded UI
+
 ```csharp
 goReturnTypeCustomEntry.ReturnCommand = new Command(() => Navigation.PushAsync(new ContentPage()));
 ```
 
+#### XAML UI
+It is not possible to initialize a `Command` in XAML
+
+----
+
 It can also be used as a `Bindable Property` to bind to a ViewModel
+
+#### Coded UI
 
 ```csharp
 var viewModel = new MyViewModel();
@@ -164,6 +183,8 @@ BindingContext = viewModel;
 var customReturnEntry = new CustomReturnEntry();
 customReturnEntry.SetBinding(CustomReturnEntry.ReturnCommandProperty nameof(viewModel.EntryReturnCommand));
 ```
+
+#### XAML UI
 
 ```xml
 <ContentPage
@@ -190,10 +211,14 @@ customReturnEntry.SetBinding(CustomReturnEntry.ReturnCommandProperty nameof(view
 
 The `ReturnCommandParameter` property is an object that can be passed to the `ReturnCommand` property.
 
+#### Coded UI
+
 ```csharp
 goReturnTypeCustomEntry.ReturnCommand = new Command<string>(async title => await DisplayAlert(title, "", "Ok"));
 goReturnTypeCustomEntry.ReturnCommandParameter = "Return Button Tapped";
 ```
+
+#### XAML UI
 
 ```xml
 <ContentPage
@@ -214,7 +239,11 @@ goReturnTypeCustomEntry.ReturnCommandParameter = "Return Button Tapped";
 </ContentPage>
 ```
 
+----
+
 It can also be used as a `Bindable Property` to bind to a ViewModel
+
+#### Coded UI
 
 ```csharp
 var viewModel = new ViewModel();
@@ -223,6 +252,8 @@ BindingContext = viewModel;
 var customReturnEntry = new CustomReturnEntry();
 customReturnEntry.SetBinding(CustomReturnEntry.ReturnCommandParameterProperty, nameof(viewModel.EntryReturnCommandParameter));
 ```
+
+#### XAML UI
 
 ```xml
 
@@ -239,10 +270,14 @@ customReturnEntry.SetBinding(CustomReturnEntry.ReturnCommandParameterProperty, n
 
 The `ReturnType` property is an enum containing 6 different types: Default, Go, Next, Done, Send, Search.
 
+#### Coded UI
+
 ```csharp
 var goReturnTypeEntry = new Entry()
 CustomReturnEffect.SetReturnType(goReturnTypeEntry, ReturnType.Go);
 ```
+
+#### XAML UI
 
 ```xml
 <ContentPage
@@ -264,7 +299,11 @@ CustomReturnEffect.SetReturnType(goReturnTypeEntry, ReturnType.Go);
 </ContentPage>
 ```
 
+----
+
 It can also be used as a `Bindable Property` to bind to a ViewModel
+
+#### Coded UI
 
 ```csharp
 var viewModel = new MyViewModel();
@@ -273,6 +312,8 @@ BindingContext = viewModel;
 var customReturnEntry = new Entry();
 customReturnEntry.SetBinding(CustomReturnEffect.ReturnTypeProperty, nameof(viewModel.EntryReturnType));
 ```
+
+#### XAML UI
 
 ```xml
     <Entry
@@ -286,12 +327,22 @@ customReturnEntry.SetBinding(CustomReturnEffect.ReturnTypeProperty, nameof(viewM
 
 `ReturnCommand` will fire when the user finalizes the text in an entry with the return key.
 
+#### Coded UI
+
 ```csharp
 var goReturnTypeEntry = new Entry()
 CustomReturnEffect.SetReturnCommand(goReturnTypeEntry, new Command(() => Navigation.PushAsync(new ContentPage()));
 ```
 
+#### XAML UI
+
+It is not possible to initialize a `Command` in XAML
+
+----
+
 It can also be used as a `Bindable Property` to bind to a ViewModel
+
+#### Coded UI
 
 ```csharp
 var viewModel = new MyViewModel();
@@ -300,6 +351,8 @@ BindingContext = viewModel;
 var customReturnEntry = new Entry();
 customReturnEntry.SetBinding(CustomReturnEffect.ReturnCommandProperty, nameof(viewModel.EntryReturnCommand));
 ```
+
+#### XAML UI
 
 ```xml
 <ContentPage
@@ -326,11 +379,15 @@ customReturnEntry.SetBinding(CustomReturnEffect.ReturnCommandProperty, nameof(vi
 
 The `ReturnCommandParameter` property is an object that can be passed to the `ReturnCommand` property.
 
+#### Coded UI
+
 ```csharp
 var goReturnTypeEntry = new Entry()
 CustomReturnEffect.SetReturnCommand(goReturnTypeEntry, new Command<string>(async title => await DisplayAlert(title, "", "Ok")));
 CustomReturnEffect.SetReturnCommandParameter(goReturnTypeEntry, "Return Button Tapped");
 ```
+
+#### XAML UI
 
 ```xml
 <ContentPage
@@ -351,7 +408,11 @@ CustomReturnEffect.SetReturnCommandParameter(goReturnTypeEntry, "Return Button T
 </ContentPage>
 ```
 
+----
+
 It can also be used as a `Bindable Property` to bind to a ViewModel
+
+#### Coded UI
 
 ```csharp
 var viewModel = new ViewModel();
@@ -360,6 +421,8 @@ BindingContext = viewModel;
 var customReturnEntry = new Entry();
 customReturnEntry.SetBinding(CustomReturnEffect.ReturnCommandParameterProperty, nameof(viewModel.EntryReturnCommandParameter));
 ```
+
+#### XAML UI
 
 ```xml
 <entryCustomReturn:CustomReturnEntry

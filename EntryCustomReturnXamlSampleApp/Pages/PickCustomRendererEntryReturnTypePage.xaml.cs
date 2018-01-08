@@ -1,19 +1,9 @@
-﻿using MvvmSamples.Common.Forms;
+﻿using Xamarin.Forms;
 
 namespace EntryCustomReturnXamlSampleApp
 {
-    public partial class PickCustomRendererEntryReturnTypePage : BaseContentPage<PickEntryReturnTypeViewModel>
+    public partial class PickCustomRendererEntryReturnTypePage : ContentPage
     {
         public PickCustomRendererEntryReturnTypePage() => InitializeComponent();
-
-        protected override void SubscribeEventHandlers()
-        {
-
-        }
-
-        protected override void UnsubscribeEventHandlers()
-        {
-
-        }
     }
 }

@@ -169,8 +169,10 @@ customReturnEntry.SetBinding(CustomReturnEntry.ReturnCommandProperty nameof(view
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:SimpleXamlSample"
     x:Class="SimpleXamlSample.CustomRendererPage"
-    xmlns:entryCustomReturn="clr-namespace:EntryCustomReturn.Forms.Plugin.Abstractions;assembly=EntryCustomReturn.Forms.Plugin.Abstractions">
+    xmlns:entryCustomReturn="clr-namespace:EntryCustomReturn.Forms.Plugin.Abstractions;assembly=EntryCustomReturn.Forms.Plugin.Abstractions"
+    BindingContext="{Binding Source={local:MyViewModel}}">
 
     <ContentPage.Content>
 
@@ -303,8 +305,10 @@ customReturnEntry.SetBinding(CustomReturnEffect.ReturnCommandProperty, nameof(vi
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="SimpleXamlSample"
     x:Class="SimpleXamlSample.CustomRendererPage"
-    xmlns:entryCustomReturn="clr-namespace:EntryCustomReturn.Forms.Plugin.Abstractions;assembly=EntryCustomReturn.Forms.Plugin.Abstractions">
+    xmlns:entryCustomReturn="clr-namespace:EntryCustomReturn.Forms.Plugin.Abstractions;assembly=EntryCustomReturn.Forms.Plugin.Abstractions"
+    BindingContext="{Binding Source={local:MyViewModel}}">
 
     <ContentPage.Content>
 

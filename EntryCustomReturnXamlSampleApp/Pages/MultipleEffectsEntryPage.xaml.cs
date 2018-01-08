@@ -2,11 +2,9 @@
 
 using EntryCustomReturn.Forms.Plugin.Abstractions;
 
-using MvvmSamples.Common.Forms;
-
 namespace EntryCustomReturnXamlSampleApp
 {
-    public partial class MultipleEffectsEntryPage : BaseContentPage<MultipleEntryViewModel>
+    public partial class MultipleEffectsEntryPage : ContentPage
     {
         public MultipleEffectsEntryPage()
         {
@@ -17,18 +15,6 @@ namespace EntryCustomReturnXamlSampleApp
             CustomReturnEffect.SetReturnCommand(DoneReturnTypeEntry, new Command(() => SendReturnTypeEntry.Focus()));
             CustomReturnEffect.SetReturnCommand(SendReturnTypeEntry, new Command(() => SearchReturnTypeEntry.Focus()));
             CustomReturnEffect.SetReturnCommand(SearchReturnTypeEntry, new Command(() => GoReturnTypeEntry.Focus()));
-
-            Padding = GetDefaultPagePadding();
-        }
-
-        protected override void SubscribeEventHandlers()
-        {
-
-        }
-
-        protected override void UnsubscribeEventHandlers()
-        {
-
         }
     }
 }

@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mvvmSamplesCommonForms:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     xmlns:mvvmSamplesShared="clr-namespace:MvvmSamples.Shared;assembly=MvvmSamples.Common.Forms"
     xmlns:mvvmSamplesCommonForms="clr-namespace:MvvmSamples.Common.Forms;assembly=MvvmSamples.Common.Forms"
     xmlns:entryCustomReturn="clr-namespace:EntryCustomReturn.Forms.Plugin.Abstractions;assembly=EntryCustomReturn.Forms.Plugin.Abstractions"
-    x:TypeArguments="mvvmSamplesCommonForms:PickEntryReturnTypeViewModel"
     x:Class="EntryCustomReturnXamlSampleApp.PickEffectsEntryReturnTypePage"
     Padding="10"
-    Title="{x:Static mvvmSamplesShared:PageTitles.PickEntryReturnTypePageTitle}">
+    Title="{x:Static mvvmSamplesShared:PageTitles.PickEntryReturnTypePageTitle}"
+    BindingContext="{Binding Source={mvvmSamplesCommonForms:PickEntryReturnTypeViewModel}}">
     
     <ContentPage.Content>
         <StackLayout>
@@ -26,4 +27,4 @@
 
         </StackLayout>
     </ContentPage.Content>
-</mvvmSamplesCommonForms:BaseContentPage>
+</ContentPage>

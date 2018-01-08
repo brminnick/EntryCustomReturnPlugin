@@ -29,10 +29,7 @@
                 x:Name="OpenPickerEntryPageButton"
                 Text="{x:Static mvvmSamplesShared:OpenSelectionPageConstants.OpenPickerEntryPageButtonText}"
                 AutomationId="{x:Static mvvmSamplesShared:AutomationIdConstants.OpenPickerEntryPageButtonAutomationId}"/>
-
-            
             
         </StackLayout>
 	</ContentPage.Content>
-    
 </mvvmSamplesCommonForms:BaseContentPage>

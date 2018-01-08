@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mvvmSamplesCommonForms:BaseContentPage
+<ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     xmlns:mvvmSamplesCommonForms="clr-namespace:MvvmSamples.Common.Forms;assembly=MvvmSamples.Common.Forms"
     xmlns:mvvmSamplesShared="clr-namespace:MvvmSamples.Shared;assembly=MvvmSamples.Common.Forms"
     xmlns:entryCustomReturn="clr-namespace:EntryCustomReturn.Forms.Plugin.Abstractions;assembly=EntryCustomReturn.Forms.Plugin.Abstractions"
-    x:TypeArguments="mvvmSamplesCommonForms:MultipleEntryViewModel"
     x:Class="EntryCustomReturnXamlSampleApp.MultipleEffectsEntryPage"
-    Title="{x:Static mvvmSamplesShared:PageTitles.MultipleEntryPageTitle}">
+    Title="{x:Static mvvmSamplesShared:PageTitles.MultipleEntryPageTitle}"
+    Padding="10, 10, 10, 0"
+    BindingContext="{Binding Source={mvvmSamplesCommonForms:MultipleEntryViewModel}}">
     
     <ContentPage.Content>
         <ScrollView>
@@ -71,4 +72,4 @@
             </ScrollView>
     </ContentPage.Content>
     
-</mvvmSamplesCommonForms:BaseContentPage>
+</ContentPage>

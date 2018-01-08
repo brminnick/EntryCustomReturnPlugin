@@ -2,7 +2,6 @@
 
 using EntryCustomReturn.Forms.Plugin.Abstractions;
 
-using SimpleSamples.Shared;
 using SimpleSamples.Common.Forms;
 
 namespace SimpleXamlSample

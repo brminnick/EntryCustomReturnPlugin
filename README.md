@@ -318,11 +318,11 @@ customReturnEntry.SetBinding(CustomReturnEffect.ReturnTypeProperty, nameof(viewM
 #### XAML UI
 
 ```xml
-    <Entry
-        x:Name = "GoReturnTypeEntry"
-        HorizontalOptions="Center"
-        VerticalOptions="Center"
-        entryCustomReturn:CustomReturnEffect.ReturnType="{Binding EntryReturnType}"/>
+<Entry
+    x:Name = "GoReturnTypeEntry"
+    HorizontalOptions="Center"
+    VerticalOptions="Center"
+    entryCustomReturn:CustomReturnEffect.ReturnType="{Binding EntryReturnType}"/>
 ```
 
 ### 2. Set the `ReturnCommand` Command

@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-using Xamarin.Forms;
-
-using EntryCustomReturn.Forms.Plugin.Abstractions;
-
-using MvvmSamples.Common.Forms;
+﻿using MvvmSamples.Common.Forms;
 
 namespace EntryCustomReturnXamlSampleApp
 {

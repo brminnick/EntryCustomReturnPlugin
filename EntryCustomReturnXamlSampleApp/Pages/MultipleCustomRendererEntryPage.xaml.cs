@@ -2,8 +2,6 @@
 
 using MvvmSamples.Common.Forms;
 
-using EntryCustomReturn.Forms.Plugin.Abstractions;
-
 namespace EntryCustomReturnXamlSampleApp
 {
     public partial class MultipleCustomRendererEntryPage : BaseContentPage<MultipleEntryViewModel>

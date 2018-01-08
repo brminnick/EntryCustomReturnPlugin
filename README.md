@@ -139,6 +139,14 @@ var customReturnEntry = new CustomReturnEntry();
 customReturnEntry.SetBinding(CustomReturnEntry.ReturnTypeProperty, nameof(viewModel.EntryReturnType));
 ```
 
+```xml
+<entryCustomReturn:CustomReturnEntry
+    x:Name = "MyCustomReturnEntry"
+    HorizontalOptions="Center"
+    VerticalOptions="Center"
+    ReturnType="{Binding EntryReturnType}"/>
+```
+
 ### 2. Set the `ReturnCommand` Command
 
 `ReturnCommand` will fire when the user finalizes the text in an entry with the return key.
@@ -157,6 +165,25 @@ var customReturnEntry = new CustomReturnEntry();
 customReturnEntry.SetBinding(CustomReturnEntry.ReturnCommandProperty nameof(viewModel.EntryReturnCommand));
 ```
 
+```xml
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="SimpleXamlSample.CustomRendererPage"
+    xmlns:entryCustomReturn="clr-namespace:EntryCustomReturn.Forms.Plugin.Abstractions;assembly=EntryCustomReturn.Forms.Plugin.Abstractions">
+
+    <ContentPage.Content>
+
+        <entryCustomReturn:CustomReturnEntry
+            x:Name = "MyCustomReturnEntry"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            ReturnCommand="{Binding EntryReturnCommand}"/>
+
+    </ContentPage.Content>
+</ContentPage>
+```
+
 ### 3. Set the `ReturnCommandParameter` Property (New in v3.3.0)
 
 The `ReturnCommandParameter` property is an object that can be passed to the `ReturnCommand` property.
@@ -164,6 +191,25 @@ The `ReturnCommandParameter` property is an object that can be passed to the `Re
 ```csharp
 goReturnTypeCustomEntry.ReturnCommand = new Command<string>(async title => await DisplayAlert(title, "", "Ok"));
 goReturnTypeCustomEntry.ReturnCommandParameter = "Return Button Tapped";
+```
+
+```xml
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="SimpleXamlSample.CustomRendererPage"
+    xmlns:entryCustomReturn="clr-namespace:EntryCustomReturn.Forms.Plugin.Abstractions;assembly=EntryCustomReturn.Forms.Plugin.Abstractions">
+
+    <ContentPage.Content>
+
+        <entryCustomReturn:CustomReturnEntry
+            x:Name = "MyCustomReturnEntry"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            ReturnCommandParameter="Return Button Tapped"/>
+
+    </ContentPage.Content>
+</ContentPage>
 ```
 
 It can also be used as a `Bindable Property` to bind to a ViewModel
@@ -174,6 +220,15 @@ BindingContext = viewModel;
 
 var customReturnEntry = new CustomReturnEntry();
 customReturnEntry.SetBinding(CustomReturnEntry.ReturnCommandParameterProperty, nameof(viewModel.EntryReturnCommandParameter));
+```
+
+```xml
+
+<entryCustomReturn:CustomReturnEntry
+    x:Name = "MyCustomReturnEntry"
+    HorizontalOptions="Center"
+    VerticalOptions="Center"
+    ReturnCommandParameter="{Binding EntryReturnCommandParameter}"/>
 ```
 
 ## Effect
@@ -187,6 +242,26 @@ var goReturnTypeEntry = new Entry()
 CustomReturnEffect.SetReturnType(goReturnTypeEntry, ReturnType.Go);
 ```
 
+```xml
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="SimpleXamlSample.CustomRendererPage"
+    xmlns:entryCustomReturn="clr-namespace:EntryCustomReturn.Forms.Plugin.Abstractions;assembly=EntryCustomReturn.Forms.Plugin.Abstractions">
+
+    <ContentPage.Content>
+
+        <Entry
+            x:Name = "GoReturnTypeEntry"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            entryCustomReturn:CustomReturnEffect.ReturnType="{x:Static entryCustomReturn:ReturnType.Default}"/>
+
+
+    </ContentPage.Content>
+</ContentPage>
+```
+
 It can also be used as a `Bindable Property` to bind to a ViewModel
 
 ```csharp
@@ -195,6 +270,14 @@ BindingContext = viewModel;
 
 var customReturnEntry = new Entry();
 customReturnEntry.SetBinding(CustomReturnEffect.ReturnTypeProperty, nameof(viewModel.EntryReturnType));
+```
+
+```xml
+    <Entry
+        x:Name = "GoReturnTypeEntry"
+        HorizontalOptions="Center"
+        VerticalOptions="Center"
+        entryCustomReturn:CustomReturnEffect.ReturnType="{Binding EntryReturnType}"/>
 ```
 
 ### 2. Set the `ReturnCommand` Command
@@ -216,6 +299,25 @@ var customReturnEntry = new Entry();
 customReturnEntry.SetBinding(CustomReturnEffect.ReturnCommandProperty, nameof(viewModel.EntryReturnCommand));
 ```
 
+```xml
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="SimpleXamlSample.CustomRendererPage"
+    xmlns:entryCustomReturn="clr-namespace:EntryCustomReturn.Forms.Plugin.Abstractions;assembly=EntryCustomReturn.Forms.Plugin.Abstractions">
+
+    <ContentPage.Content>
+
+        <entryCustomReturn:CustomReturnEntry
+            x:Name = "MyCustomReturnEntry"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            entryCustomReturn:CustomReturnEffect.ReturnCommand="{Binding EntryReturnCommand}"/>
+
+    </ContentPage.Content>
+</ContentPage>
+```
+
 ### 3. Set the `ReturnCommandParameter` Property (New in v3.3.0)
 
 The `ReturnCommandParameter` property is an object that can be passed to the `ReturnCommand` property.
@@ -226,6 +328,25 @@ CustomReturnEffect.SetReturnCommand(goReturnTypeEntry, new Command<string>(async
 CustomReturnEffect.SetReturnCommandParameter(goReturnTypeEntry, "Return Button Tapped");
 ```
 
+```xml
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="SimpleXamlSample.CustomRendererPage"
+    xmlns:entryCustomReturn="clr-namespace:EntryCustomReturn.Forms.Plugin.Abstractions;assembly=EntryCustomReturn.Forms.Plugin.Abstractions">
+
+    <ContentPage.Content>
+
+        <entryCustomReturn:CustomReturnEntry
+            x:Name = "MyCustomReturnEntry"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            entryCustomReturn:CustomReturnEffect.ReturnCommandParameter="Return Button Tapped"/>
+
+    </ContentPage.Content>
+</ContentPage>
+```
+
 It can also be used as a `Bindable Property` to bind to a ViewModel
 
 ```csharp
@@ -234,6 +355,14 @@ BindingContext = viewModel;
 
 var customReturnEntry = new Entry();
 customReturnEntry.SetBinding(CustomReturnEffect.ReturnCommandParameterProperty, nameof(viewModel.EntryReturnCommandParameter));
+```
+
+```xml
+<entryCustomReturn:CustomReturnEntry
+    x:Name = "MyCustomReturnEntry"
+    HorizontalOptions="Center"
+    VerticalOptions="Center"
+    entryCustomReturn:CustomReturnEffect.ReturnCommandParameter="{Binding EntryReturnCommandParameter}"/>
 ```
 
 ![iPhone Demo](https://github.com/brminnick/Videos/blob/master/EntryCustomReturnPlugin/iOS%20Gif.gif)

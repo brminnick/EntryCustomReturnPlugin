@@ -45,6 +45,10 @@
       <Project>{D839530B-6E23-4C86-B9D1-5340A1AD7AFC}</Project>
       <Name>SimpleSamples.Common.Forms</Name>
     </ProjectReference>
+    <ProjectReference Include="..\EntryCustomReturn.Forms.Plugin.Abstractions\EntryCustomReturn.Forms.Plugin.Abstractions.csproj">
+      <Project>{2E265660-7C43-4C7F-945A-7FA02A56521C}</Project>
+      <Name>EntryCustomReturn.Forms.Plugin.Abstractions</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">

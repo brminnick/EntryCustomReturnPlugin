@@ -49,6 +49,10 @@
       <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
       <Private>False</Private>
     </ProjectReference>
+    <ProjectReference Include="..\EntryCustomReturn.Forms.Plugin.Abstractions\EntryCustomReturn.Forms.Plugin.Abstractions.csproj">
+      <Project>{2E265660-7C43-4C7F-945A-7FA02A56521C}</Project>
+      <Name>EntryCustomReturn.Forms.Plugin.Abstractions</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="..\MvvmSamples.Shared\MvvmSamples.Shared.projitems" Label="Shared" Condition="Exists('..\MvvmSamples.Shared\MvvmSamples.Shared.projitems')" />
   <Import Project="..\Tests.Shared\Tests.Shared.projitems" Label="Shared" Condition="Exists('..\Tests.Shared\Tests.Shared.projitems')" />

@@ -91,6 +91,10 @@
       <Project>{F9B29B53-D8DB-4874-8D67-C84B1F4F956A}</Project>
       <Name>MvvmSamples.Common.Forms</Name>
     </ProjectReference>
+    <ProjectReference Include="..\EntryCustomReturn.Forms.Plugin.Abstractions\EntryCustomReturn.Forms.Plugin.Abstractions.csproj">
+      <Project>{2E265660-7C43-4C7F-945A-7FA02A56521C}</Project>
+      <Name>EntryCustomReturn.Forms.Plugin.Abstractions</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />

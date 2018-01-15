@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
    <metadata minClientVersion="2.8.1">
        <id>Xam.Plugins.Forms.CustomReturnEntry</id>
-       <version>3.3.0-pre2</version>
+       <version>3.3.0</version>
        <title>Custom Return Entry Control Plugin for Xamarin.Forms</title>
        <authors>Brandon Minnick</authors>
        <owners>Brandon Minnick</owners>

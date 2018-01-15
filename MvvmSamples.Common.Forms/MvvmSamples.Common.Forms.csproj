@@ -11,8 +11,5 @@
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="2.5.0.121934" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\EntryCustomReturn.Forms.Plugin.Abstractions\EntryCustomReturn.Forms.Plugin.Abstractions.csproj" />
-  </ItemGroup>
   <Import Project="..\MvvmSamples.Shared\MvvmSamples.Shared.projitems" Label="Shared" Condition="Exists('..\MvvmSamples.Shared\MvvmSamples.Shared.projitems')" />
 </Project>

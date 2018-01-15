@@ -6,6 +6,5 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SimpleSample.Common\SimpleSamples.Common.Forms.csproj" />
-    <ProjectReference Include="..\EntryCustomReturn.Forms.Plugin.Abstractions\EntryCustomReturn.Forms.Plugin.Abstractions.csproj" />
   </ItemGroup>
 </Project>

@@ -3,6 +3,7 @@
 using EntryCustomReturn.Forms.Plugin.Abstractions;
 
 using SimpleSamples.Shared;
+using SimpleSamples.Common.Forms;
 
 namespace SimpleSample
 {
@@ -43,7 +44,7 @@ namespace SimpleSample
         }
     }
 
-    class CustomRendererPage : ContentPage
+    class CustomRendererPage : BaseEntryContentPage
     {
         public CustomRendererPage()
         {
@@ -55,13 +56,14 @@ namespace SimpleSample
                 VerticalOptions = LayoutOptions.Center,
                 Placeholder = CustomRendererPageConstants.CustomReturnEntryPlaceholderText,
                 ReturnType = ReturnType.Go,
-                ReturnCommand = new Command(async () => await Navigation.PopAsync()),
+                ReturnCommand = new Command<string>(async title => await ExecuteEntryCommand(title)),
+                ReturnCommandParameter = EntryConstants.CommandParameterString,
                 AutomationId = AutomationIdConstants.CustomReturnEntry
             };
         }
     }
 
-    class EffectsPage : ContentPage
+    class EffectsPage : BaseEntryContentPage
     {
         public EffectsPage()
         {
@@ -73,7 +75,8 @@ namespace SimpleSample
                 AutomationId = AutomationIdConstants.EffectsEntry
             };
             CustomReturnEffect.SetReturnType(effectsEntry, ReturnType.Go);
-            CustomReturnEffect.SetReturnCommand(effectsEntry, new Command(async () => await Navigation.PopAsync()));
+            CustomReturnEffect.SetReturnCommand(effectsEntry, new Command<string>(async title => await ExecuteEntryCommand(title)));
+            CustomReturnEffect.SetReturnCommandParameter(effectsEntry, EntryConstants.CommandParameterString);
 
             Title = PageTitles.Effects;
 

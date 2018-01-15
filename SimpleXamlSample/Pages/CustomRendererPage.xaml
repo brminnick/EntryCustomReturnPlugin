@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage 
+<simpleSamplesCommonForms:BaseEntryContentPage
+    x:Class="SimpleXamlSample.CustomRendererPage"
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-    x:Class="SimpleXamlSample.CustomRendererPage"
-    xmlns:simpleSampleShared="clr-namespace:SimpleSamples.Shared;assembly=SimpleXamlSample"
+    xmlns:simpleSamplesShared="clr-namespace:SimpleSamples.Shared;assembly=SimpleSamples.Common.Forms"
+    xmlns:simpleSamplesCommonForms="clr-namespace:SimpleSamples.Common.Forms;assembly=SimpleSamples.Common.Forms"
     xmlns:entryCustomReturn="clr-namespace:EntryCustomReturn.Forms.Plugin.Abstractions;assembly=EntryCustomReturn.Forms.Plugin.Abstractions"
-    Title="{x:Static simpleSampleShared:PageTitles.CustomRenderer}">
+    Title="{x:Static simpleSamplesShared:PageTitles.CustomRenderer}">
     
-	<ContentPage.Content>
+    <ContentPage.Content>
 
         <entryCustomReturn:CustomReturnEntry
             x:Name = "CustomReturnEntry"
             HorizontalOptions="Center"
             VerticalOptions="Center"
-            Placeholder="{x:Static simpleSampleShared:CustomRendererPageConstants.CustomReturnEntryPlaceholderText}"
-            AutomationId="{x:Static simpleSampleShared:AutomationIdConstants.CustomReturnEntry}"
+            Placeholder="{x:Static simpleSamplesShared:CustomRendererPageConstants.CustomReturnEntryPlaceholderText}"
+            AutomationId="{x:Static simpleSamplesShared:AutomationIdConstants.CustomReturnEntry}"
+            ReturnCommandParameter="{x:Static simpleSamplesShared:EntryConstants.CommandParameterString}"
             ReturnType="Go"/>
         
-	</ContentPage.Content>
-</ContentPage>
+    </ContentPage.Content>
+</simpleSamplesCommonForms:BaseEntryContentPage>

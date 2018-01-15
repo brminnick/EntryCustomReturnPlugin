@@ -1,31 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-
-using Xamarin.Forms;
-
-using EntryCustomReturn.Forms.Plugin.Abstractions;
-
-using MvvmSamples.Common.Forms;
+﻿using Xamarin.Forms;
 
 namespace EntryCustomReturnXamlSampleApp
 {
-    public partial class PickEffectsEntryReturnTypePage : BaseContentPage<PickEntryReturnTypeViewModel>
+    public partial class PickEffectsEntryReturnTypePage : ContentPage
     {
-        public PickEffectsEntryReturnTypePage()
-        {
-            InitializeComponent();
-
-            CustomizableEntry.SetBinding(CustomReturnEffect.ReturnTypeProperty, nameof(ViewModel.EntryReturnType));
-        }
-
-        protected override void SubscribeEventHandlers()
-        {
-
-        }
-
-        protected override void UnsubscribeEventHandlers()
-        {
-
-        }
+        public PickEffectsEntryReturnTypePage() => InitializeComponent();
     }
 }

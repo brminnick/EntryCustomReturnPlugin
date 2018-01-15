@@ -38,7 +38,7 @@ namespace EntryCustomReturn.Forms.Plugin.UWP
                 Control.KeyUp += (sender, eventArgs) =>
                 {
                     if (eventArgs.Key == Windows.System.VirtualKey.Enter)
-                        customEntry.ReturnCommand?.Execute(null);
+                        customEntry.ReturnCommand?.Execute(customEntry.ReturnCommandParameter);
                 };
             }
         }

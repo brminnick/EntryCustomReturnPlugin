@@ -88,7 +88,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MvvmSamples.Common.Forms\MvvmSamples.Common.Forms.csproj">
-      <Project>{85B970D3-6428-4C86-9065-AE2CD46DA4E7}</Project>
+      <Project>{F9B29B53-D8DB-4874-8D67-C84B1F4F956A}</Project>
       <Name>MvvmSamples.Common.Forms</Name>
     </ProjectReference>
     <ProjectReference Include="..\EntryCustomReturn.Forms.Plugin.Abstractions\EntryCustomReturn.Forms.Plugin.Abstractions.csproj">

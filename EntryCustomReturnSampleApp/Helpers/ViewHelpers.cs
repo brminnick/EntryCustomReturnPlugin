@@ -19,7 +19,6 @@ namespace EntryCustomReturnSampleApp
             {
                 case true:
                     customizableEntry = new Entry();
-                    CustomReturnEffect.SetReturnType(customizableEntry, ReturnType.Go);
                     customizableEntry.SetBinding(CustomReturnEffect.ReturnTypeProperty, nameof(pickEntryReturnTypeViewModel.EntryReturnType));
                     break;
                 case false:
@@ -100,6 +99,7 @@ namespace EntryCustomReturnSampleApp
                 AutomationId = AutomationIdConstants.GoButtonAutomationId
             };
             goButton.SetBinding(Button.CommandProperty, nameof(multipleEntryViewModel.GoButtonCommand));
+            goButton.SetBinding(Button.CommandParameterProperty, nameof(multipleEntryViewModel.GoButtonCommandParameter));
 
             var resultLabel = new Label
             {
@@ -137,8 +137,9 @@ namespace EntryCustomReturnSampleApp
                 case false:
                     entry = new CustomReturnEntry { ReturnType = returnType };
                     break;
+
                 default:
-                    throw new Exception("Invalid Type");
+                    throw new NotSupportedException("Invalid Type");
             }
             entry.Placeholder = placeholder;
             entry.AutomationId = automationId;
@@ -160,7 +161,7 @@ namespace EntryCustomReturnSampleApp
                     CustomReturnEffect.SetReturnCommand(baseEntry, command);
                     break;
                 default:
-                    throw new Exception("Invalid Type");
+                    throw new NotSupportedException("Invalid Type");
             }
         }
 
@@ -169,13 +170,15 @@ namespace EntryCustomReturnSampleApp
             switch (goReturnTypeEntry)
             {
                 case CustomReturnEntry customReturnEntry:
-                    customReturnEntry.SetBinding(CustomReturnEntry.ReturnCommandProperty, nameof(multipleEntryViewModel.GoReturnTypeEntryReturnCommand));
+					customReturnEntry.SetBinding(CustomReturnEntry.ReturnCommandProperty, nameof(multipleEntryViewModel.GoReturnTypeEntryReturnCommand));
+                    customReturnEntry.SetBinding(CustomReturnEntry.ReturnCommandParameterProperty, nameof(multipleEntryViewModel.GoReturnTypeEntryReturnCommandParameter));
                     break;
                 case Entry baseEntry:
-                    baseEntry.SetBinding(CustomReturnEffect.ReturnCommandProperty, nameof(multipleEntryViewModel.GoReturnTypeEntryReturnCommand));
+					baseEntry.SetBinding(CustomReturnEffect.ReturnCommandProperty, nameof(multipleEntryViewModel.GoReturnTypeEntryReturnCommand));
+                    baseEntry.SetBinding(CustomReturnEffect.ReturnCommandParameterProperty, nameof(multipleEntryViewModel.GoReturnTypeEntryReturnCommandParameter));
                     break;
                 default:
-                    throw new Exception("Invalid Type");
+                    throw new NotSupportedException("Invalid Type");
 
             }
 

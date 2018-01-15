@@ -130,13 +130,13 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SimpleSample\SimpleSample.csproj">
-      <Project>{49C40333-2758-4E0E-948F-A62B8C6642D1}</Project>
-      <Name>SimpleSample</Name>
-    </ProjectReference>
     <ProjectReference Include="..\EntryCustomReturn.Forms.Plugin.Android\EntryCustomReturn.Forms.Plugin.Android.csproj">
       <Project>{1477793F-94BF-450F-A1F6-059B29DB18BE}</Project>
       <Name>EntryCustomReturn.Forms.Plugin.Android</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SimpleSample\SimpleSample.csproj">
+      <Project>{136EC8E9-F241-405D-8166-327DD5145FDA}</Project>
+      <Name>SimpleSample</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

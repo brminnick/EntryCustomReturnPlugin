@@ -11,10 +11,10 @@ namespace Tests.Shared
             switch (platform)
             {
                 case Platform.Android:
-                    return ConfigureApp.Android.StartApp();
+                    return ConfigureApp.Android.PreferIdeSettings().StartApp();
 
                 case Platform.iOS:
-                    return ConfigureApp.iOS.StartApp();
+                    return ConfigureApp.iOS.PreferIdeSettings().StartApp();
 
                 default:
                     throw new NotSupportedException("Platform Not Supported");

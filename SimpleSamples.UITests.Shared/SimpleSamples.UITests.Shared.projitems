@@ -14,6 +14,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Pages\SelectionPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tests\Base\SimpleSampleBaseTest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tests\Tests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\BaseEntryPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Pages\" />

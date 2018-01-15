@@ -27,7 +27,7 @@ namespace EntryCustomReturnSampleApp.UWP
         {
             this.InitializeComponent();
 
-           LoadApplication(new EntryCustomReturnSampleApp.App());
+            LoadApplication(new EntryCustomReturnSampleApp.App());
         }
     }
 }

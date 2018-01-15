@@ -8,7 +8,7 @@ namespace SimpleXamlSample
     {
         public SelectionPage() => InitializeComponent();
 
+		async void HandleEffectsPageButtonClicked(object sender, EventArgs e) => await Navigation.PushAsync(new EffectsPage());
         async void HandleCustomRendererPageButtonClicked(object sender, EventArgs e) => await Navigation.PushAsync(new CustomRendererPage());
-        async void HandleEffectsPageButtonClicked(object sender, EventArgs e) => await Navigation.PushAsync(new EffectsPage());
     }
 }

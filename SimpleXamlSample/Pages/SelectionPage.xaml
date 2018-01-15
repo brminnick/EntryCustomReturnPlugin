@@ -3,24 +3,24 @@
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     x:Class="SimpleXamlSample.SelectionPage"
-    xmlns:simpleSampleShared="clr-namespace:SimpleSamples.Shared;assembly=SimpleXamlSample"
-    Title="{x:Static simpleSampleShared:PageTitles.Selection}">
+    xmlns:simpleSamplesShared="clr-namespace:SimpleSamples.Shared;assembly=SimpleSamples.Common.Forms"
+    Title="{x:Static simpleSamplesShared:PageTitles.Selection}">
     
-	<ContentPage.Content>
+    <ContentPage.Content>
         <StackLayout
             HorizontalOptions="Center"
             VerticalOptions="Center">   
             
             <Button 
-                Text="{x:Static simpleSampleShared:SelectionPageConstants.CustomRendererPageButtonText}"
-                AutomationId="{x:Static simpleSampleShared:AutomationIdConstants.CustomRendererButton}"
+                Text="{x:Static simpleSamplesShared:SelectionPageConstants.CustomRendererPageButtonText}"
+                AutomationId="{x:Static simpleSamplesShared:AutomationIdConstants.CustomRendererButton}"
                 Clicked="HandleCustomRendererPageButtonClicked"/>
 
             <Button
-                Text="{x:Static simpleSampleShared:SelectionPageConstants.EfectsPageButtonText}"
-                AutomationId="{x:Static simpleSampleShared:AutomationIdConstants.EffectsButton}"
+                Text="{x:Static simpleSamplesShared:SelectionPageConstants.EfectsPageButtonText}"
+                AutomationId="{x:Static simpleSamplesShared:AutomationIdConstants.EffectsButton}"
                 Clicked="HandleEffectsPageButtonClicked"/>
             
         </StackLayout>
-	</ContentPage.Content>
+    </ContentPage.Content>
 </ContentPage>

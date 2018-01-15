@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage 
+<simpleSamplesCommonForms:BaseEntryContentPage
+    x:Class="SimpleXamlSample.EffectsPage"
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-    x:Class="SimpleXamlSample.EffectsPage"
-    xmlns:simpleSampleShared="clr-namespace:SimpleSamples.Shared;assembly=SimpleXamlSample"
+    xmlns:base="clr-namespace:SimpleXamlSample"
+    xmlns:simpleSamplesShared="clr-namespace:SimpleSamples.Shared;assembly=SimpleSamples.Common.Forms"
+    xmlns:simpleSamplesCommonForms="clr-namespace:SimpleSamples.Common.Forms;assembly=SimpleSamples.Common.Forms"
     xmlns:entryCustomReturn="clr-namespace:EntryCustomReturn.Forms.Plugin.Abstractions;assembly=EntryCustomReturn.Forms.Plugin.Abstractions"
-    Title="{x:Static simpleSampleShared:PageTitles.Effects}">
+    Title="{x:Static simpleSamplesShared:PageTitles.Effects}">
     
     <ContentPage.Content>
 
@@ -13,8 +15,10 @@
             x:Name = "EffectsEntry"
             HorizontalOptions="Center"
             VerticalOptions="Center"
-            Placeholder="{x:Static simpleSampleShared:EffectsPageConstants.EffectsEntryPlaceholderText}"
-            AutomationId="{x:Static simpleSampleShared:AutomationIdConstants.EffectsEntry}"/>
-<!--            entryCustomReturn:CustomReturnEffect.ReturnType="{x:Static entryCustomReturn:ReturnType.Go}"/>-->
+            Placeholder="{x:Static simpleSamplesShared:EffectsPageConstants.EffectsEntryPlaceholderText}"
+            AutomationId="{x:Static simpleSamplesShared:AutomationIdConstants.EffectsEntry}"
+            entryCustomReturn:CustomReturnEffect.ReturnCommandParameter="{x:Static simpleSamplesShared:EntryConstants.CommandParameterString}"
+            entryCustomReturn:CustomReturnEffect.ReturnType="{x:Static entryCustomReturn:ReturnType.Go}"/>
+        
     </ContentPage.Content>
-</ContentPage>
+</simpleSamplesCommonForms:BaseEntryContentPage>

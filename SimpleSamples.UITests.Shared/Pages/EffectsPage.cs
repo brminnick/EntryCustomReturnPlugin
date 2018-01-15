@@ -7,7 +7,7 @@ using Query = System.Func<Xamarin.UITest.Queries.AppQuery, Xamarin.UITest.Querie
 
 namespace SimpleSamples.UITests.Shared
 {
-    public class EffectsPage : BasePage
+    public class EffectsPage : BaseEntryPage
     {
         #region Constant Fields
         readonly Query _effectsEntry;

@@ -25,7 +25,7 @@ namespace MvvmSamples.UITests.Shared
         {
             //Arrange
             const string enteredText = "Hello World";
-            var expectedLabelTextStringBuilder = GetExpectedLabelText(enteredText);
+            string expectedLabelTextStringBuilder = GetExpectedLabelText(enteredText, MultipleEntryPageConstants.GoReturnTypeCommandParameterString);
 
             //Act
             OptionSelectionPage.SetEntryPickerType(customEntryType);
@@ -44,7 +44,7 @@ namespace MvvmSamples.UITests.Shared
         {
             //Arrange
             const string enteredText = "Hello World";
-            var expectedLabelTextStringBuilder = GetExpectedLabelText(enteredText);
+            var expectedLabelTextStringBuilder = GetExpectedLabelText(enteredText, MultipleEntryPageConstants.GoButtonCommandParameterString);
 
             //Act
             OptionSelectionPage.SetEntryPickerType(customEntryType);
@@ -64,7 +64,7 @@ namespace MvvmSamples.UITests.Shared
             Assert.AreEqual(expectedLabelTextStringBuilder, retrievedLabelText);
         }
 
-        string GetExpectedLabelText(string enteredText) => 
-            StringBuilderHelpers.ConvertTextInputToResultsLabel(enteredText, enteredText, enteredText, enteredText, enteredText, enteredText);
+        string GetExpectedLabelText(string enteredText, string commandParameterText) =>
+            StringBuilderHelpers.ConvertTextInputToResultsLabel(commandParameterText, enteredText, enteredText, enteredText, enteredText, enteredText, enteredText);
     }
 }

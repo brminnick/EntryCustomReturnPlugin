@@ -29,6 +29,7 @@ namespace SimpleSample.UITests
             //Act
             SelectionPage.TapCustomRendererPageButton();
             CustomRendererPage.TapCustomReturnEntryReturnButton();
+            CustomRendererPage.AcceptClosingDialogPopup();
 
             //Assert
             App.WaitForElement(PageTitles.Selection);
@@ -42,6 +43,7 @@ namespace SimpleSample.UITests
             //Act
             SelectionPage.TapEffectsPageButton();
             EffectsPage.TapEffectsEntryReturnButton();
+            EffectsPage.AcceptClosingDialogPopup();
 
             //Assert
             App.WaitForElement(PageTitles.Selection);

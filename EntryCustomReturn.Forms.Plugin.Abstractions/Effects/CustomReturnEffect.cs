@@ -10,28 +10,36 @@ namespace EntryCustomReturn.Forms.Plugin.Abstractions
     /// </summary>
     public static class CustomReturnEffect
     {
-        static BindableProperty _returnTypeProperty, _returnCommandProperty;
-
         /// <summary>
         /// Return Type Property of the Keyboard Return Key
         /// </summary>
-        public static BindableProperty ReturnTypeProperty => _returnTypeProperty ??
-            (_returnTypeProperty = BindableProperty.CreateAttached(propertyName: nameof(ReturnType),
-                                                                    returnType: typeof(ReturnType),
-                                                                    declaringType: typeof(Entry),
-                                                                    defaultValue: ReturnType.Default,
-                                                                    propertyChanged: OnReturnTypeChanged));
+        public static readonly BindableProperty ReturnTypeProperty = 
+            BindableProperty.CreateAttached(BindablePropertyConstants.ReturnTypePropertyName,
+                typeof(ReturnType),
+                typeof(Entry),
+                ReturnType.Default,
+                propertyChanged: OnReturnTypeChanged);
 
         /// <summary>
         /// Command that occurs when the user finalizes the text in an entry with the return key
         /// </summary>
-        public static BindableProperty ReturnCommandProperty => _returnCommandProperty ??
-            (_returnCommandProperty = BindableProperty.CreateAttached(propertyName: nameof(ICommand),
-                                                                        returnType: typeof(ICommand),
-                                                                        declaringType: typeof(Entry),
-                                                                        defaultValue: null,
-                                                                        propertyChanged: OnReturnCommandPropertyChanged));
+        public static readonly BindableProperty ReturnCommandProperty = 
+            BindableProperty.CreateAttached(
+                BindablePropertyConstants.ReturnCommandPropertyName,
+                typeof(ICommand),
+                typeof(Entry),
+                null,
+                propertyChanged: OnReturnCommandPropertyChanged);
 
+        /// <summary>
+        /// Backing store for the ReturnCommandParameter bindable property
+        /// </summary>
+        public static readonly BindableProperty ReturnCommandParameterProperty = 
+            BindableProperty.CreateAttached(BindablePropertyConstants.ReturnCommandParameterPropertyName,
+                typeof(object),
+                typeof(Entry),
+                null,
+                propertyChanged: OnReturnCommandParameterPropertyChanged);
 
         /// <summary>
         /// Gets the Type of the Keyboard Return Key
@@ -61,27 +69,43 @@ namespace EntryCustomReturn.Forms.Plugin.Abstractions
         /// <param name="value">Value.</param>
         public static void SetReturnCommand(BindableObject view, ICommand value) => view.SetValue(ReturnCommandProperty, value);
 
+        /// <summary>
+        /// Gets the backing store for the Command that occurs when the user finalizes the text in an entry with the return key
+        /// </summary>
+        /// <returns>The return type.</returns>
+        /// <param name="view">View.</param>
+        public static object GetReturnCommandParameter(BindableObject view) => view.GetValue(ReturnCommandParameterProperty);
+
+        /// <summary>
+        /// Set the backing store for the Command that occurs when the user finalizes the text in an entry with the return key
+        /// </summary>
+        /// <param name="view">View.</param>
+        /// <param name="value">Value.</param>
+        public static void SetReturnCommandParameter(BindableObject view, object value) => view.SetValue(ReturnCommandParameterProperty, value);
+
         static void OnReturnTypeChanged(BindableObject bindable, object oldValue, object newValue) => UpdateEffect(bindable);
 
         static void OnReturnCommandPropertyChanged(BindableObject bindable, object oldValue, object newValue) => UpdateEffect(bindable);
 
+        static void OnReturnCommandParameterPropertyChanged(BindableObject bindable, object oldValue, object newValue) => UpdateEffect(bindable);
+
         static void UpdateEffect(BindableObject bindable)
         {
-            var entry = bindable as Entry;
-
-            if (entry == null)
-                return;
-
-            RemoveEffect(entry);
-
-            entry.Effects.Add(new EntryReturnTypeEffect());
+            switch (bindable)
+            {
+                case Entry entry:
+                    RemoveEffect(entry);
+                    entry.Effects.Add(new EntryReturnTypeEffect());
+                    break;
+            }
         }
 
         static void RemoveEffect(Entry entry)
         {
-            var toRemove = entry.Effects.FirstOrDefault(e => e is EntryReturnTypeEffect);
-            if (toRemove != null)
-                entry.Effects.Remove(toRemove);
+            var effectToRemoveList = entry.Effects.Where(e => e is EntryReturnTypeEffect).ToList();
+
+            foreach (var entryReturnTypeEffect in effectToRemoveList)
+                entry.Effects.Remove(entryReturnTypeEffect);
         }
     }
 

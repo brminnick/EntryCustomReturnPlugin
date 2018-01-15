@@ -1,7 +1,7 @@
 ﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-[assembly: XamlCompilation(XamlCompilationOptions.Compile)] 
+[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace SimpleXamlSample
 {
     public class App : Application

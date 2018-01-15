@@ -128,6 +128,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\EntryCustomReturn.Forms.Plugin.Abstractions\EntryCustomReturn.Forms.Plugin.Abstractions.csproj">
+      <Project>{2e265660-7c43-4c7f-945a-7fa02a56521c}</Project>
+      <Name>EntryCustomReturn.Forms.Plugin.Abstractions</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EntryCustomReturn.Forms.Plugin.UWP\EntryCustomReturn.Forms.Plugin.UWP.csproj">
       <Project>{bce20e6a-9af6-47ea-bdd8-f372ea19d201}</Project>
       <Name>EntryCustomReturn.Forms.Plugin.UWP</Name>

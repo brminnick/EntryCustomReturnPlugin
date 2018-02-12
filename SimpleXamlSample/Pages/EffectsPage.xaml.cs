@@ -12,5 +12,7 @@ namespace SimpleXamlSample
 
             CustomReturnEffect.SetReturnCommand(EffectsEntry, BaseEntryReturnCommand);
         }
+
+        void HandleToggled(object sender, Xamarin.Forms.ToggledEventArgs e) => BaseEntryReturnCommandCanExecute = e.Value;
     }
 }

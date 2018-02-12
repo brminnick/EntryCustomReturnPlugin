@@ -36,8 +36,19 @@ namespace EntryCustomReturn.Forms.Plugin.iOS
 
                 Control.ShouldReturn += (UITextField tf) =>
                 {
-                    customEntry.ReturnCommand?.Execute(customEntry.ReturnCommandParameter);
-                    return true;
+                    var returnCommand = customEntry.ReturnCommand;
+                    var returnCommandParameter = customEntry.ReturnCommandParameter;
+
+                    var canExecute = returnCommand?.CanExecute(returnCommandParameter) ?? false;
+
+                    if (canExecute)
+                    {
+                        returnCommand?.Execute(returnCommandParameter);
+
+                        return true;
+                    }
+
+                    return false;
                 };
             }
         }

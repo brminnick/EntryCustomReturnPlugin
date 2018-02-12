@@ -61,13 +61,29 @@ namespace SimpleSample
                 AutomationId = AutomationIdConstants.CustomReturnEntry
             };
 
+            var canExecuteLabel = new Label { Text = "Can Execute" };
+
+            var canExecuteSwitch = new Switch { AutomationId = AutomationIdConstants.CanExecuteSwitch };
+            canExecuteSwitch.Toggled += (sender, e) => BaseEntryReturnCommandCanExecute = e.Value;
+
+            var baseCanExecuteStackLayout = new StackLayout
+            {
+                Orientation = StackOrientation.Horizontal,
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center,
+                Children ={
+                    canExecuteLabel,
+                    canExecuteSwitch
+                }
+            };
+
             Content = new StackLayout
             {
                 HorizontalOptions = LayoutOptions.Center,
                 VerticalOptions = LayoutOptions.Center,
                 Children = {
                     customReturnEntry,
-                    CanExecuteStackLayout
+                    baseCanExecuteStackLayout
                 }
             };
         }
@@ -88,6 +104,22 @@ namespace SimpleSample
             CustomReturnEffect.SetReturnCommand(effectsEntry, BaseEntryReturnCommand);
             CustomReturnEffect.SetReturnCommandParameter(effectsEntry, EntryConstants.CommandParameterString);
 
+            var canExecuteLabel = new Label { Text = "Can Execute" };
+
+            var canExecuteSwitch = new Switch { AutomationId = AutomationIdConstants.CanExecuteSwitch };
+            canExecuteSwitch.Toggled += (sender, e) => BaseEntryReturnCommandCanExecute = e.Value;
+
+            var baseCanExecuteStackLayout = new StackLayout
+            {
+                Orientation = StackOrientation.Horizontal,
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center,
+                Children ={
+                    canExecuteLabel,
+                    canExecuteSwitch
+                }
+            };
+
             Title = PageTitles.Effects;
 
             Content = new StackLayout
@@ -96,7 +128,7 @@ namespace SimpleSample
                 VerticalOptions = LayoutOptions.Center,
                 Children = {
                     effectsEntry,
-                    CanExecuteStackLayout
+                    baseCanExecuteStackLayout
                 }
             };
         }

@@ -62,15 +62,26 @@ namespace EntryCustomReturn.Forms.Plugin.Android
             if (e?.Event?.KeyCode == Keycode.Enter)
                 return;
 
-            CustomReturnEffect.GetReturnCommand(Element)?.Execute(CustomReturnEffect.GetReturnCommandParameter(Element));
+            ExecuteCommand();
         }
 
         void HandleKeyPress(object sender, global::Android.Views.View.KeyEventArgs e)
         {
             if (e?.Event?.KeyCode == Keycode.Enter && e?.Event?.Action == KeyEventActions.Up)
-                CustomReturnEffect.GetReturnCommand(Element)?.Execute(CustomReturnEffect.GetReturnCommandParameter(Element));
+                ExecuteCommand();
 
             e.Handled = false;
+        }
+
+        void ExecuteCommand()
+        {
+            var returnCommand = CustomReturnEffect.GetReturnCommand(Element);
+            var returnCommandParameter = CustomReturnEffect.GetReturnCommandParameter(Element);
+
+            var canExecute = returnCommand?.CanExecute(returnCommandParameter) ?? false;
+
+            if (canExecute)
+                returnCommand?.Execute(returnCommandParameter);
         }
     }
 }

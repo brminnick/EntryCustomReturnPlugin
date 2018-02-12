@@ -15,12 +15,12 @@ using EntryCustomReturn.Forms.Plugin.Abstractions;
 [assembly: ExportRenderer(typeof(CustomReturnEntry), typeof(CustomReturnEntryRenderer))]
 namespace EntryCustomReturn.Forms.Plugin.Android
 {
-	/// <summary>
-	/// CustomReturnEntry Implementation
-	/// </summary>
-	[Preserve(AllMembers = true)]
-	public sealed class CustomReturnEntryRenderer : EntryRenderer
-	{
+    /// <summary>
+    /// CustomReturnEntry Implementation
+    /// </summary>
+    [Preserve(AllMembers = true)]
+    public sealed class CustomReturnEntryRenderer : EntryRenderer
+    {
         public CustomReturnEntryRenderer(Context context) : base(context)
         {
         }
@@ -29,50 +29,61 @@ namespace EntryCustomReturn.Forms.Plugin.Android
         /// Used for registration with dependency service
         /// </summary>
         public static void Init()
-		{
-			var temp = DateTime.Now;
-		}
+        {
+            var temp = DateTime.Now;
+        }
 
-		protected override void OnElementChanged(ElementChangedEventArgs<Entry> e)
-		{
-			base.OnElementChanged(e);
+        protected override void OnElementChanged(ElementChangedEventArgs<Entry> e)
+        {
+            base.OnElementChanged(e);
 
-			var customEntry = Element as CustomReturnEntry;
+            var customEntry = Element as CustomReturnEntry;
 
-			if (Control != null && customEntry != null)
-			{
-				Control.ImeOptions = KeyboardHelpers.GetKeyboardButtonType(customEntry.ReturnType);
+            if (Control != null && customEntry != null)
+            {
+                Control.ImeOptions = KeyboardHelpers.GetKeyboardButtonType(customEntry.ReturnType);
 
-				Control.KeyPress += (sender, keyEventArgs) =>
-				{
-					if (keyEventArgs?.Event?.KeyCode == Keycode.Enter && keyEventArgs?.Event?.Action == KeyEventActions.Up)
-                        customEntry.ReturnCommand?.Execute(customEntry.ReturnCommandParameter);
+                Control.KeyPress += (sender, keyEventArgs) =>
+                {
+                    if (keyEventArgs?.Event?.KeyCode == Keycode.Enter && keyEventArgs?.Event?.Action == KeyEventActions.Up)
+                        ExecuteCommand(customEntry);
 
-					keyEventArgs.Handled = false;
-				};
+                    keyEventArgs.Handled = false;
+                };
 
-				Control.EditorAction += (object sender, TextView.EditorActionEventArgs args) =>
-				{
-					if (args?.Event?.KeyCode == Keycode.Enter)
-						return;
+                Control.EditorAction += (object sender, TextView.EditorActionEventArgs args) =>
+                {
+                    if (args?.Event?.KeyCode == Keycode.Enter)
+                        return;
 
-                    customEntry.ReturnCommand?.Execute(customEntry.ReturnCommandParameter);
-				};
-			}
-		}
+                    ExecuteCommand(customEntry);
+                };
+            }
+        }
 
-		protected override void OnElementPropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
-		{
-			base.OnElementPropertyChanged(sender, e);
+        protected override void OnElementPropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            base.OnElementPropertyChanged(sender, e);
 
-			if (e.PropertyName == CustomReturnEntry.ReturnTypeProperty.PropertyName)
-			{
-				var customEntry = sender as CustomReturnEntry;
+            if (e.PropertyName == CustomReturnEntry.ReturnTypeProperty.PropertyName)
+            {
+                var customEntry = sender as CustomReturnEntry;
 
-				if (Control != null && customEntry != null)
-					Control.ImeOptions = KeyboardHelpers.GetKeyboardButtonType(customEntry.ReturnType);
-			}
-		}
-	}
+                if (Control != null && customEntry != null)
+                    Control.ImeOptions = KeyboardHelpers.GetKeyboardButtonType(customEntry.ReturnType);
+            }
+        }
+
+        void ExecuteCommand(CustomReturnEntry customEntry)
+        {
+            var returnCommand = customEntry.ReturnCommand;
+            var returnCommandParameter = customEntry.ReturnCommandParameter;
+
+            var canExecute = returnCommand?.CanExecute(returnCommandParameter) ?? false;
+
+            if (canExecute)
+                returnCommand?.Execute(returnCommandParameter);
+        }
+    }
 }
 

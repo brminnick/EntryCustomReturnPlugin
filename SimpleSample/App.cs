@@ -50,15 +50,25 @@ namespace SimpleSample
         {
             Title = PageTitles.CustomRenderer;
 
-            Content = new CustomReturnEntry
+            var customReturnEntry = new CustomReturnEntry
             {
                 HorizontalOptions = LayoutOptions.Center,
                 VerticalOptions = LayoutOptions.Center,
                 Placeholder = CustomRendererPageConstants.CustomReturnEntryPlaceholderText,
                 ReturnType = ReturnType.Go,
-                ReturnCommand = new Command<string>(async title => await ExecuteEntryCommand(title)),
+                ReturnCommand = BaseEntryReturnCommand,
                 ReturnCommandParameter = EntryConstants.CommandParameterString,
                 AutomationId = AutomationIdConstants.CustomReturnEntry
+            };
+
+            Content = new StackLayout
+            {
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center,
+                Children = {
+                    customReturnEntry,
+                    CanExecuteStackLayout
+                }
             };
         }
     }
@@ -75,12 +85,20 @@ namespace SimpleSample
                 AutomationId = AutomationIdConstants.EffectsEntry
             };
             CustomReturnEffect.SetReturnType(effectsEntry, ReturnType.Go);
-            CustomReturnEffect.SetReturnCommand(effectsEntry, new Command<string>(async title => await ExecuteEntryCommand(title)));
+            CustomReturnEffect.SetReturnCommand(effectsEntry, BaseEntryReturnCommand);
             CustomReturnEffect.SetReturnCommandParameter(effectsEntry, EntryConstants.CommandParameterString);
 
             Title = PageTitles.Effects;
 
-            Content = effectsEntry;
+            Content = new StackLayout
+            {
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center,
+                Children = {
+                    effectsEntry,
+                    CanExecuteStackLayout
+                }
+            };
         }
     }
 }

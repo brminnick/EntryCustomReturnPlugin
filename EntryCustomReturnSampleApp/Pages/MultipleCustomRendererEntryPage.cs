@@ -5,10 +5,6 @@ namespace EntryCustomReturnSampleApp
 {
 	public class MultipleCustomRendererEntryPage : BaseContentPage<MultipleEntryViewModel>
 	{
-		#region Constant Fields
-		const bool _shouldUseEffects = false;
-		#endregion
-
 		#region Constructors
 		public MultipleCustomRendererEntryPage()
 		{

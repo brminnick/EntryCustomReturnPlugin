@@ -21,32 +21,46 @@ namespace SimpleSample.UITests
             SelectionPage.WaitForPageToLoad();
         }
 
-        [Test]
-        public void CustomRendererTest()
+        [TestCase(true)]
+        [TestCase(false)]
+        public void CustomRendererTest(bool canExecute)
         {
             //Arrange
 
             //Act
             SelectionPage.TapCustomRendererPageButton();
+
+            CustomRendererPage.SetCanExecuteSwitch(canExecute);
             CustomRendererPage.TapCustomReturnEntryReturnButton();
-            CustomRendererPage.AcceptClosingDialogPopup();
+
+            if(canExecute)
+                CustomRendererPage.AcceptClosingDialogPopup();
 
             //Assert
-            App.WaitForElement(PageTitles.Selection);
+            if (canExecute)
+                App.WaitForElement(PageTitles.Selection);
+            else
+                App.WaitForElement(PageTitles.CustomRenderer);
         }
 
-        [Test]
-        public void EffectsTest()
+        [TestCase(true)]
+        [TestCase(false)]
+        public void EffectsTest(bool canExecute)
         {
             //Arrange
 
             //Act
             SelectionPage.TapEffectsPageButton();
             EffectsPage.TapEffectsEntryReturnButton();
-            EffectsPage.AcceptClosingDialogPopup();
+
+            if(canExecute)
+                EffectsPage.AcceptClosingDialogPopup();
 
             //Assert
-            App.WaitForElement(PageTitles.Selection);
+            if (canExecute)
+                App.WaitForElement(PageTitles.Selection);
+            else
+                App.WaitForElement(PageTitles.Effects);
         }
         #endregion
     }

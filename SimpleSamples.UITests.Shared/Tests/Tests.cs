@@ -51,6 +51,8 @@ namespace SimpleSample.UITests
 
             //Act
             SelectionPage.TapEffectsPageButton();
+
+            EffectsPage.SetCanExecuteSwitch(canExecute);
             EffectsPage.TapEffectsEntryReturnButton();
 
             if(canExecute)

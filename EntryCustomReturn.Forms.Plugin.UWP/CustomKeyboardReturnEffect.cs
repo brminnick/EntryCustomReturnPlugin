@@ -51,7 +51,18 @@ namespace EntryCustomReturn.Forms.Plugin.UWP
         void HandleKeyUp(object sender, KeyRoutedEventArgs e)
         {
             if (e.Key == Windows.System.VirtualKey.Enter)
-                CustomReturnEffect.GetReturnCommand(Element)?.Execute(CustomReturnEffect.GetReturnCommandParameter(Element));
+                ExecuteCommand();
+        }
+
+        void ExecuteCommand()
+        {
+            var returnCommand = CustomReturnEffect.GetReturnCommand(Element);
+            var returnCommandParameter = CustomReturnEffect.GetReturnCommandParameter(Element);
+
+            var canExecute = returnCommand?.CanExecute(returnCommandParameter) ?? false;
+
+            if (canExecute)
+                returnCommand?.Execute(returnCommandParameter);
         }
     }
 }

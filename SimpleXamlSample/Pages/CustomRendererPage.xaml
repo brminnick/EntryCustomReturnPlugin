@@ -9,6 +9,7 @@
     Title="{x:Static simpleSamplesShared:PageTitles.CustomRenderer}">
     
     <ContentPage.Content>
+        
         <StackLayout
             HorizontalOptions="Center"
             VerticalOptions="Center">
@@ -36,5 +37,6 @@
             </StackLayout>
             
         </StackLayout>
+        
     </ContentPage.Content>
 </simpleSamplesCommonForms:BaseEntryContentPage>

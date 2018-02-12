@@ -10,9 +10,10 @@
     Title="{x:Static simpleSamplesShared:PageTitles.Effects}">
     
     <ContentPage.Content>
+        
         <StackLayout
             HorizontalOptions="Center"
-            VerticalOptions="Center">>
+            VerticalOptions="Center">
             
             <Entry
                 x:Name = "EffectsEntry"
@@ -37,5 +38,6 @@
             </StackLayout>
             
         </StackLayout>
+        
     </ContentPage.Content>
 </simpleSamplesCommonForms:BaseEntryContentPage>

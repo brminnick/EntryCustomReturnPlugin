@@ -168,7 +168,7 @@ goReturnTypeCustomEntry.ReturnCommand = new Command(() => Navigation.PushAsync(n
 ```
 
 #### XAML UI
-It is not possible to initialize a `Command` in XAML
+Use the [Coded UI example above](./README.md#coded-ui-2) to initialize a `Command` in the XAML Code Behind
 
 ### Bindable Property
 
@@ -338,7 +338,7 @@ CustomReturnEffect.SetReturnCommand(goReturnTypeEntry, new Command(() => Navigat
 
 #### XAML UI
 
-It is not possible to initialize a `Command` in XAML
+Use the [Coded UI example above](./README.md#coded-ui-8) to initialize a `Command` in the XAML Code Behind
 
 ### Bindable Property
 

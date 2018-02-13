@@ -64,14 +64,14 @@ public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompa
 
         global::Xamarin.Forms.Forms.Init(this, bundle);
 
-        EntryCustomReturn.Forms.Plugin.Droid.CustomReturnEntryRenderer.Init();
+        EntryCustomReturn.Forms.Plugin.Android.CustomReturnEntryRenderer.Init();
 
         ...
     }
 }
 ```
 
-**Note:** You must call  `EntryCustomReturn.Forms.Plugin.Droid.CustomReturnEntryRenderer.Init();` *after* you call `global::Xamarin.Forms.Forms.Init(this, bundle);`
+**Note:** You must call  `EntryCustomReturn.Forms.Plugin.Android.CustomReturnEntryRenderer.Init();` *after* you call `global::Xamarin.Forms.Forms.Init(this, bundle);`
 
 ## UWP
 
@@ -207,7 +207,7 @@ customReturnEntry.SetBinding(CustomReturnEntry.ReturnCommandProperty nameof(view
 </ContentPage>
 ```
 
-### 3. Set the `ReturnCommandParameter` Property (New in v3.3.0)
+### 3. Set the `ReturnCommandParameter` Property
 
 The `ReturnCommandParameter` property is an object that can be passed to the `ReturnCommand` property.
 
@@ -377,7 +377,7 @@ customReturnEntry.SetBinding(CustomReturnEffect.ReturnCommandProperty, nameof(vi
 </ContentPage>
 ```
 
-### 3. Set the `ReturnCommandParameter` Property (New in v3.3.0)
+### 3. Set the `ReturnCommandParameter` Property
 
 The `ReturnCommandParameter` property is an object that can be passed to the `ReturnCommand` property.
 

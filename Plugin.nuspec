@@ -27,6 +27,8 @@
          <dependency id="Xamarin.Forms" version="2.5.0.77107" />
        </dependencies>
      <releaseNotes>
+        New In This Release:
+            -Netstandard support
      </releaseNotes>
      <copyright>Copyright (c) 2017 Brandon Minnick</copyright>
    </metadata>

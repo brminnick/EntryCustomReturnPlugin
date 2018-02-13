@@ -30,7 +30,9 @@ namespace SimpleSample.UITests
             //Act
             SelectionPage.TapCustomRendererPageButton();
 
-            CustomRendererPage.SetCanExecuteSwitch(canExecute);
+            if (canExecute)
+                CustomRendererPage.ToggleCanExecuteSwitch();
+            
             CustomRendererPage.TapCustomReturnEntryReturnButton();
 
             if(canExecute)
@@ -52,7 +54,9 @@ namespace SimpleSample.UITests
             //Act
             SelectionPage.TapEffectsPageButton();
 
-            EffectsPage.SetCanExecuteSwitch(canExecute);
+            if (canExecute)
+                EffectsPage.ToggleCanExecuteSwitch();
+            
             EffectsPage.TapEffectsEntryReturnButton();
 
             if(canExecute)

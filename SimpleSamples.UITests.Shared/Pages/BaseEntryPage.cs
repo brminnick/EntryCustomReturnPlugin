@@ -33,10 +33,12 @@ namespace SimpleSamples.UITests.Shared
 
         public void SetCanExecuteSwitch(bool canExecute)
         {
+            App.WaitForElement(_canExecuteSwitch);
+
             switch(App)
             {
                 case iOSApp iosApp:
-                    App.Query(x => x.Class("UISwitch").Invoke("setOn", canExecute, true));
+                    App.Query(x => x.Class("UISwitch").Invoke("setOn", canExecute));
                     break;
 
                 case AndroidApp androidApp:

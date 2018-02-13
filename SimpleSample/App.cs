@@ -61,7 +61,12 @@ namespace SimpleSample
                 AutomationId = AutomationIdConstants.CustomReturnEntry
             };
 
-            var canExecuteLabel = new Label { Text = "Can Execute" };
+            var canExecuteLabel = new Label
+            {
+                Text = "Can Execute",
+                HorizontalTextAlignment = TextAlignment.Center,
+                VerticalTextAlignment = TextAlignment.Center
+            };
 
             var canExecuteSwitch = new Switch { AutomationId = AutomationIdConstants.CanExecuteSwitch };
             canExecuteSwitch.Toggled += (sender, e) => BaseEntryReturnCommandCanExecute = e.Value;
@@ -104,7 +109,12 @@ namespace SimpleSample
             CustomReturnEffect.SetReturnCommand(effectsEntry, BaseEntryReturnCommand);
             CustomReturnEffect.SetReturnCommandParameter(effectsEntry, EntryConstants.CommandParameterString);
 
-            var canExecuteLabel = new Label { Text = "Can Execute" };
+            var canExecuteLabel = new Label
+            {
+                Text = "Can Execute",
+                HorizontalTextAlignment = TextAlignment.Center,
+                VerticalTextAlignment = TextAlignment.Center
+            };
 
             var canExecuteSwitch = new Switch { AutomationId = AutomationIdConstants.CanExecuteSwitch };
             canExecuteSwitch.Toggled += (sender, e) => BaseEntryReturnCommandCanExecute = e.Value;

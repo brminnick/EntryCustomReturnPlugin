@@ -28,7 +28,11 @@
                 HorizontalOptions="Center"
                 VerticalOptions="Center">
 
-                <Label Text="Can Execute"/>
+                <Label 
+                    Text="Can Execute"
+                    HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Center"/>
+                
                 <Switch
                     x:Name="CanExecuteSwitch"
                     Toggled="HandleToggled"

@@ -64,14 +64,14 @@ public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompa
 
         global::Xamarin.Forms.Forms.Init(this, bundle);
 
-        EntryCustomReturn.Forms.Plugin.Droid.CustomReturnEntryRenderer.Init();
+        EntryCustomReturn.Forms.Plugin.Android.CustomReturnEntryRenderer.Init();
 
         ...
     }
 }
 ```
 
-**Note:** You must call  `EntryCustomReturn.Forms.Plugin.Droid.CustomReturnEntryRenderer.Init();` *after* you call `global::Xamarin.Forms.Forms.Init(this, bundle);`
+**Note:** You must call  `EntryCustomReturn.Forms.Plugin.Android.CustomReturnEntryRenderer.Init();` *after* you call `global::Xamarin.Forms.Forms.Init(this, bundle);`
 
 ## UWP
 
@@ -168,7 +168,7 @@ goReturnTypeCustomEntry.ReturnCommand = new Command(() => Navigation.PushAsync(n
 ```
 
 #### XAML UI
-It is not possible to initialize a `Command` in XAML
+Use the [Coded UI example above](./README.md#coded-ui-2) to initialize a `Command` in the XAML Code Behind
 
 ### Bindable Property
 
@@ -207,7 +207,7 @@ customReturnEntry.SetBinding(CustomReturnEntry.ReturnCommandProperty nameof(view
 </ContentPage>
 ```
 
-### 3. Set the `ReturnCommandParameter` Property (New in v3.3.0)
+### 3. Set the `ReturnCommandParameter` Property
 
 The `ReturnCommandParameter` property is an object that can be passed to the `ReturnCommand` property.
 
@@ -338,7 +338,7 @@ CustomReturnEffect.SetReturnCommand(goReturnTypeEntry, new Command(() => Navigat
 
 #### XAML UI
 
-It is not possible to initialize a `Command` in XAML
+Use the [Coded UI example above](./README.md#coded-ui-8) to initialize a `Command` in the XAML Code Behind
 
 ### Bindable Property
 
@@ -377,7 +377,7 @@ customReturnEntry.SetBinding(CustomReturnEffect.ReturnCommandProperty, nameof(vi
 </ContentPage>
 ```
 
-### 3. Set the `ReturnCommandParameter` Property (New in v3.3.0)
+### 3. Set the `ReturnCommandParameter` Property
 
 The `ReturnCommandParameter` property is an object that can be passed to the `ReturnCommand` property.
 

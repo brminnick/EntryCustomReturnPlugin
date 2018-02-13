@@ -338,7 +338,7 @@ CustomReturnEffect.SetReturnCommand(goReturnTypeEntry, new Command(() => Navigat
 
 #### XAML UI
 
-Use the Coded UI example above to initialize a `Command` in the XAML Code Behind
+Use the [Coded UI example above](./README.md#coded-ui-8) to initialize a `Command` in the XAML Code Behind
 
 ### Bindable Property
 

@@ -207,7 +207,7 @@ customReturnEntry.SetBinding(CustomReturnEntry.ReturnCommandProperty nameof(view
 </ContentPage>
 ```
 
-### 3. Set the `ReturnCommandParameter` Property (New in v3.3.0)
+### 3. Set the `ReturnCommandParameter` Property
 
 The `ReturnCommandParameter` property is an object that can be passed to the `ReturnCommand` property.
 
@@ -377,7 +377,7 @@ customReturnEntry.SetBinding(CustomReturnEffect.ReturnCommandProperty, nameof(vi
 </ContentPage>
 ```
 
-### 3. Set the `ReturnCommandParameter` Property (New in v3.3.0)
+### 3. Set the `ReturnCommandParameter` Property
 
 The `ReturnCommandParameter` property is an object that can be passed to the `ReturnCommand` property.
 

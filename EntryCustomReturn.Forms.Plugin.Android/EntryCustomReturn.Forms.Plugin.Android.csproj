@@ -129,7 +129,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EntryCustomReturn.Forms.Plugin.Abstractions\EntryCustomReturn.Forms.Plugin.Abstractions.csproj">
-      <Project>{67F9D3A8-F71E-4428-913F-C37AE82CDB24}</Project>
+      <Project>{2e265660-7c43-4c7f-945a-7fa02a56521c}</Project>
       <Name>EntryCustomReturn.Forms.Plugin.Abstractions</Name>
     </ProjectReference>
   </ItemGroup>

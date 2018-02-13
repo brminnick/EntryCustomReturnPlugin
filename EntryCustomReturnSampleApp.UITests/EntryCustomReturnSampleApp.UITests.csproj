@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -37,10 +37,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EntryCustomReturn.Forms.Plugin.Abstractions\EntryCustomReturn.Forms.Plugin.Abstractions.csproj">
-      <Project>{67F9D3A8-F71E-4428-913F-C37AE82CDB24}</Project>
-      <Name>EntryCustomReturn.Forms.Plugin.Abstractions</Name>
-    </ProjectReference>
     <ProjectReference Include="..\EntryCustomReturnSampleApp.Droid\EntryCustomReturnSampleApp.Droid.csproj">
       <Project>{D44D8A4B-E5AF-4629-AC50-98966AB42D11}</Project>
       <Name>EntryCustomReturnSampleApp.Droid</Name>
@@ -52,6 +48,10 @@
       <Name>EntryCustomReturnSampleApp.iOS</Name>
       <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
       <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\EntryCustomReturn.Forms.Plugin.Abstractions\EntryCustomReturn.Forms.Plugin.Abstractions.csproj">
+      <Project>{2E265660-7C43-4C7F-945A-7FA02A56521C}</Project>
+      <Name>EntryCustomReturn.Forms.Plugin.Abstractions</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="..\MvvmSamples.Shared\MvvmSamples.Shared.projitems" Label="Shared" Condition="Exists('..\MvvmSamples.Shared\MvvmSamples.Shared.projitems')" />

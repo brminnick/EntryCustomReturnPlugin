@@ -64,14 +64,14 @@ public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompa
 
         global::Xamarin.Forms.Forms.Init(this, bundle);
 
-        EntryCustomReturn.Forms.Plugin.Droid.CustomReturnEntryRenderer.Init();
+        EntryCustomReturn.Forms.Plugin.Android.CustomReturnEntryRenderer.Init();
 
         ...
     }
 }
 ```
 
-**Note:** You must call  `EntryCustomReturn.Forms.Plugin.Droid.CustomReturnEntryRenderer.Init();` *after* you call `global::Xamarin.Forms.Forms.Init(this, bundle);`
+**Note:** You must call  `EntryCustomReturn.Forms.Plugin.Android.CustomReturnEntryRenderer.Init();` *after* you call `global::Xamarin.Forms.Forms.Init(this, bundle);`
 
 ## UWP
 

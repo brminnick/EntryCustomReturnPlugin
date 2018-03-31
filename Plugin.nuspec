@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
    <metadata minClientVersion="2.8.1">
        <id>Xam.Plugins.Forms.CustomReturnEntry</id>
-       <version>4.0.0</version>
+       <version>4.1.0</version>
        <title>Custom Return Entry Control Plugin for Xamarin.Forms</title>
        <authors>Brandon Minnick</authors>
        <owners>Brandon Minnick</owners>
@@ -18,7 +18,7 @@
          https://github.com/brminnick/EntryCustomReturnPlugin
 
          New In This Release:
-         -Netstandard support
+         -Support for ReturnCommand.CanExecute
          
        </description>
        <summary>Customize the Keyboard Return Button for an Entry in your Xamarin.Forms projects! Ensure you call CustomEntryRenderer.Init() on each platform!</summary>
@@ -28,7 +28,7 @@
        </dependencies>
      <releaseNotes>
         New In This Release:
-            -Netstandard support
+            -Support for ReturnCommand.CanExecute
      </releaseNotes>
      <copyright>Copyright (c) 2017 Brandon Minnick</copyright>
    </metadata>

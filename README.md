@@ -26,7 +26,7 @@ This plugin can be consumed as a [`CustomRenderer Control`](./README.md#usage-in
 
 # Setup
 
-* Available on NuGet: https://www.nuget.org/packages/Xam.Plugins.Forms.CustomReturnEntry/ [![NuGet](https://img.shields.io/nuget/v/Xam.Plugins.Forms.CustomReturnEntry.svg?label=NuGet)](https://www.nuget.org/packages/Xam.Plugins.Forms.CustomReturnEntry/)
+* Available on NuGet: https://www.nuget.org/packages/Xam.Plugins.Forms.CustomReturnEntry/ [![NuGet](https://img.shields.io/nuget/v/Xam.Plugins.Forms.CustomReturnEntry.svg?label=NuGet)](https://www.nuget.org/packages/Xam.Plugins.Forms.CustomReturnEntry/) [![NuGet](https://img.shields.io/nuget/dt/Xam.Plugins.Forms.CustomReturnEntry.svg?label=Downloads)](https://www.nuget.org/packages/AsyncAwaitBestPractices/)
 * Install into your PCL project and Client projects.
 
 ## iOS
@@ -108,7 +108,7 @@ The `ReturnType` property is an enum containing 6 different types: Default, Go, 
 ```csharp
 var goReturnTypeCustomEntry = new CustomReturnEntry
 {
-    ReturnType = ReturnType.Go
+    ReturnType = EntryCustomReturn.Forms.Plugin.Abstractions.ReturnType.Go
 };
 ```
 
@@ -144,7 +144,7 @@ var viewModel = new MyViewModel();
 BindingContext = viewModel;
 
 var customReturnEntry = new CustomReturnEntry();
-customReturnEntry.SetBinding(CustomReturnEntry.ReturnTypeProperty, nameof(viewModel.EntryReturnType));
+customReturnEntry.SetBinding(CustomReturnEntry.ReturnTypeProperty, nameof(MyViewModel.EntryReturnType));
 ```
 
 #### XAML UI
@@ -181,7 +181,7 @@ var viewModel = new MyViewModel();
 BindingContext = viewModel;
 
 var customReturnEntry = new CustomReturnEntry();
-customReturnEntry.SetBinding(CustomReturnEntry.ReturnCommandProperty nameof(viewModel.EntryReturnCommand));
+customReturnEntry.SetBinding(CustomReturnEntry.ReturnCommandProperty nameof(MyViewModel.EntryReturnCommand));
 ```
 
 #### XAML UI
@@ -246,11 +246,11 @@ goReturnTypeCustomEntry.ReturnCommandParameter = "Return Button Tapped";
 #### Coded UI
 
 ```csharp
-var viewModel = new ViewModel();
+var viewModel = new MyViewModel();
 BindingContext = viewModel;
 
 var customReturnEntry = new CustomReturnEntry();
-customReturnEntry.SetBinding(CustomReturnEntry.ReturnCommandParameterProperty, nameof(viewModel.EntryReturnCommandParameter));
+customReturnEntry.SetBinding(CustomReturnEntry.ReturnCommandParameterProperty, nameof(MyViewModel.EntryReturnCommandParameter));
 ```
 
 #### XAML UI
@@ -276,7 +276,7 @@ The `ReturnType` property is an enum containing 6 different types: Default, Go, 
 
 ```csharp
 var goReturnTypeEntry = new Entry()
-CustomReturnEffect.SetReturnType(goReturnTypeEntry, ReturnType.Go);
+CustomReturnEffect.SetReturnType(goReturnTypeEntry, EntryCustomReturn.Forms.Plugin.Abstractions.ReturnType.Go);
 ```
 
 #### XAML UI
@@ -312,7 +312,7 @@ var viewModel = new MyViewModel();
 BindingContext = viewModel;
 
 var customReturnEntry = new Entry();
-customReturnEntry.SetBinding(CustomReturnEffect.ReturnTypeProperty, nameof(viewModel.EntryReturnType));
+customReturnEntry.SetBinding(CustomReturnEffect.ReturnTypeProperty, nameof(MyViewModel.EntryReturnType));
 ```
 
 #### XAML UI
@@ -351,7 +351,7 @@ var viewModel = new MyViewModel();
 BindingContext = viewModel;
 
 var customReturnEntry = new Entry();
-customReturnEntry.SetBinding(CustomReturnEffect.ReturnCommandProperty, nameof(viewModel.EntryReturnCommand));
+customReturnEntry.SetBinding(CustomReturnEffect.ReturnCommandProperty, nameof(MyViewModel.EntryReturnCommand));
 ```
 
 #### XAML UI
@@ -417,11 +417,11 @@ CustomReturnEffect.SetReturnCommandParameter(goReturnTypeEntry, "Return Button T
 #### Coded UI
 
 ```csharp
-var viewModel = new ViewModel();
+var viewModel = new MyViewModel();
 BindingContext = viewModel;
 
 var customReturnEntry = new Entry();
-customReturnEntry.SetBinding(CustomReturnEffect.ReturnCommandParameterProperty, nameof(viewModel.EntryReturnCommandParameter));
+customReturnEntry.SetBinding(CustomReturnEffect.ReturnCommandParameterProperty, nameof(MyViewModel.EntryReturnCommandParameter));
 ```
 
 #### XAML UI

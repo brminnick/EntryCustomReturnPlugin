@@ -49,7 +49,7 @@ namespace EntryCustomReturn.Forms.Plugin.iOS
             var returnCommand = CustomReturnEffect.GetReturnCommand(Element);
             var returnCommandParameter = CustomReturnEffect.GetReturnCommandParameter(Element);
 
-            var canExecute = returnCommand?.CanExecute(returnCommandParameter) ?? false;
+            var canExecute = returnCommand?.CanExecute(returnCommandParameter) ?? true;
 
             if (canExecute)
             {

@@ -60,7 +60,7 @@ namespace EntryCustomReturn.Forms.Plugin.UWP
             var returnCommand = customEntry.ReturnCommand;
             var returnCommandParameter = customEntry.ReturnCommandParameter;
 
-            var canExecute = returnCommand?.CanExecute(returnCommandParameter) ?? false;
+            var canExecute = returnCommand?.CanExecute(returnCommandParameter) ?? true;
 
             if (canExecute)
                 returnCommand?.Execute(returnCommandParameter);

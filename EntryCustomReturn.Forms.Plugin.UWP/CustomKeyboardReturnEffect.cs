@@ -22,35 +22,31 @@ namespace EntryCustomReturn.Forms.Plugin.UWP
         {
             base.OnElementPropertyChanged(args);
 
-            if (args.PropertyName == CustomReturnEntry.ReturnTypeProperty.PropertyName)
+            if (args.PropertyName.Equals(CustomReturnEntry.ReturnTypeProperty.PropertyName))
                 SetKeyboardReturnButton();
         }
 
         void SetKeyboardReturnButton()
         {
-            switch (Control)
+            if (Control is FormsTextBox formsTextBox)
             {
-                case FormsTextBox formsTextBox:
-                    KeyboardHelpers.SetKeyboardEnterButton(formsTextBox, CustomReturnEffect.GetReturnType(Element));
-                    Control.KeyUp += HandleKeyUp;
-                    break;
+                KeyboardHelpers.SetKeyboardEnterButton(formsTextBox, CustomReturnEffect.GetReturnType(Element));
+                Control.KeyUp += HandleKeyUp;
             }
         }
 
         void UnsetKeyboardReturnButton()
         {
-            switch (Control)
+            if (Control is FormsTextBox formsTextBox)
             {
-                case FormsTextBox formsTextBox:
-                    KeyboardHelpers.SetKeyboardEnterButton(formsTextBox, ReturnType.Default);
-                    Control.KeyUp -= HandleKeyUp;
-                    break;
+                KeyboardHelpers.SetKeyboardEnterButton(formsTextBox, ReturnType.Default);
+                Control.KeyUp -= HandleKeyUp;
             }
         }
 
         void HandleKeyUp(object sender, KeyRoutedEventArgs e)
         {
-            if (e.Key == Windows.System.VirtualKey.Enter)
+            if (e.Key is Windows.System.VirtualKey.Enter)
                 ExecuteCommand();
         }
 

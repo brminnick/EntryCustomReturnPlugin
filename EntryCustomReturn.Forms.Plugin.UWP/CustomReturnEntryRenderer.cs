@@ -37,7 +37,7 @@ namespace EntryCustomReturn.Forms.Plugin.UWP
 
                 Control.KeyUp += (sender, eventArgs) =>
                 {
-                    if (eventArgs.Key == Windows.System.VirtualKey.Enter)
+                    if (eventArgs.Key is Windows.System.VirtualKey.Enter)
                         ExecuteCommand(customEntry);
                 };
             }
@@ -47,11 +47,9 @@ namespace EntryCustomReturn.Forms.Plugin.UWP
         {
             base.OnElementPropertyChanged(sender, e);
 
-            if (e.PropertyName == CustomReturnEntry.ReturnTypeProperty.PropertyName)
+            if (e.PropertyName.Equals(CustomReturnEntry.ReturnTypeProperty.PropertyName))
             {
-                var customEntry = sender as CustomReturnEntry;
-
-                if (Control != null && customEntry != null)
+                if (Control != null && sender is CustomReturnEntry customEntry)
                     KeyboardHelpers.SetKeyboardEnterButton(Control, customEntry.ReturnType);
             }
 

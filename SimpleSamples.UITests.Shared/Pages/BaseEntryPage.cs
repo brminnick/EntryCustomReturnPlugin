@@ -38,11 +38,11 @@ namespace SimpleSamples.UITests.Shared
             switch(App)
             {
                 case iOSApp iosApp:
-                    App.Query(x => x.Class("UISwitch").Invoke("setOn", canExecute));
+                    iosApp.Query(x => x.Class("UISwitch").Invoke("setOn", canExecute));
                     break;
 
                 case AndroidApp androidApp:
-                    App.Query(x => x.Class("SwitchCompat").Invoke("setChecked", canExecute));
+                    androidApp.Query(x => x.Class("SwitchCompat").Invoke("setChecked", canExecute));
                     break;
 
                 default:

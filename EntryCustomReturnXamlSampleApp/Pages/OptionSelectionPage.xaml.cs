@@ -42,7 +42,7 @@ namespace EntryCustomReturnXamlSampleApp
                     break;
 
                 default:
-                    throw new Exception("Selected Item Not Supported");
+                    throw new NotSupportedException("Selected Item Not Supported");
             }
         }
 
@@ -59,7 +59,7 @@ namespace EntryCustomReturnXamlSampleApp
                     break;
 
                 default:
-                    throw new Exception("Selected Item Not Supported");
+                    throw new NotSupportedException("Selected Item Not Supported");
             }
         }
     }

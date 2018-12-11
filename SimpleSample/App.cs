@@ -55,7 +55,7 @@ namespace SimpleSample
                 HorizontalOptions = LayoutOptions.Center,
                 VerticalOptions = LayoutOptions.Center,
                 Placeholder = CustomRendererPageConstants.CustomReturnEntryPlaceholderText,
-                ReturnType = ReturnType.Go,
+                ReturnType = EntryCustomReturn.Forms.Plugin.Abstractions.ReturnType.Go,
                 ReturnCommand = BaseEntryReturnCommand,
                 ReturnCommandParameter = EntryConstants.CommandParameterString,
                 AutomationId = AutomationIdConstants.CustomReturnEntry
@@ -105,7 +105,7 @@ namespace SimpleSample
                 Placeholder = EffectsPageConstants.EffectsEntryPlaceholderText,
                 AutomationId = AutomationIdConstants.EffectsEntry
             };
-            CustomReturnEffect.SetReturnType(effectsEntry, ReturnType.Go);
+            CustomReturnEffect.SetReturnType(effectsEntry, EntryCustomReturn.Forms.Plugin.Abstractions.ReturnType.Go);
             CustomReturnEffect.SetReturnCommand(effectsEntry, BaseEntryReturnCommand);
             CustomReturnEffect.SetReturnCommandParameter(effectsEntry, EntryConstants.CommandParameterString);
 

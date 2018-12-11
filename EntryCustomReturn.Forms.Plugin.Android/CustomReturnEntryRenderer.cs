@@ -37,15 +37,13 @@ namespace EntryCustomReturn.Forms.Plugin.Android
         {
             base.OnElementChanged(e);
 
-            var customEntry = Element as CustomReturnEntry;
-
-            if (Control != null && customEntry != null)
+            if (Control != null && Element is CustomReturnEntry customEntry)
             {
                 Control.ImeOptions = KeyboardHelpers.GetKeyboardButtonType(customEntry.ReturnType);
 
                 Control.KeyPress += (sender, keyEventArgs) =>
                 {
-                    if (keyEventArgs?.Event?.KeyCode == Keycode.Enter && keyEventArgs?.Event?.Action == KeyEventActions.Up)
+                    if (keyEventArgs?.Event?.KeyCode is Keycode.Enter && keyEventArgs?.Event?.Action is KeyEventActions.Up)
                         ExecuteCommand(customEntry);
 
                     keyEventArgs.Handled = false;
@@ -53,7 +51,7 @@ namespace EntryCustomReturn.Forms.Plugin.Android
 
                 Control.EditorAction += (object sender, TextView.EditorActionEventArgs args) =>
                 {
-                    if (args?.Event?.KeyCode == Keycode.Enter)
+                    if (args?.Event?.KeyCode is Keycode.Enter)
                         return;
 
                     ExecuteCommand(customEntry);
@@ -65,11 +63,9 @@ namespace EntryCustomReturn.Forms.Plugin.Android
         {
             base.OnElementPropertyChanged(sender, e);
 
-            if (e.PropertyName == CustomReturnEntry.ReturnTypeProperty.PropertyName)
+            if (e.PropertyName.Equals(CustomReturnEntry.ReturnTypeProperty.PropertyName))
             {
-                var customEntry = sender as CustomReturnEntry;
-
-                if (Control != null && customEntry != null)
+                if (Control != null && sender is CustomReturnEntry customEntry)
                     Control.ImeOptions = KeyboardHelpers.GetKeyboardButtonType(customEntry.ReturnType);
             }
         }

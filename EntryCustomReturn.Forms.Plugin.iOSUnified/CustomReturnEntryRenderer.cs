@@ -28,9 +28,7 @@ namespace EntryCustomReturn.Forms.Plugin.iOS
         {
             base.OnElementChanged(e);
 
-            var customEntry = Element as CustomReturnEntry;
-
-            if (Control != null && customEntry != null)
+            if (Control != null && Element is CustomReturnEntry customEntry)
             {
                 Control.ReturnKeyType = KeyboardHelpers.GetKeyboardButtonType(customEntry.ReturnType);
 
@@ -57,11 +55,9 @@ namespace EntryCustomReturn.Forms.Plugin.iOS
         {
             base.OnElementPropertyChanged(sender, e);
 
-            if (e.PropertyName == CustomReturnEntry.ReturnTypeProperty.PropertyName)
+            if (e.PropertyName.Equals(CustomReturnEntry.ReturnTypeProperty.PropertyName))
             {
-                var customEntry = sender as CustomReturnEntry;
-
-                if (Control != null && customEntry != null)
+                if (Control != null && sender is CustomReturnEntry customEntry)
                     Control.ReturnKeyType = KeyboardHelpers.GetKeyboardButtonType(customEntry.ReturnType);
             }
         }

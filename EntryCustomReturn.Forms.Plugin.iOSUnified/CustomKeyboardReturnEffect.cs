@@ -22,29 +22,25 @@ namespace EntryCustomReturn.Forms.Plugin.iOS
         {
             base.OnElementPropertyChanged(args);
 
-            if (args.PropertyName == CustomReturnEntry.ReturnTypeProperty.PropertyName)
+            if (args.PropertyName.Equals(CustomReturnEntry.ReturnTypeProperty.PropertyName))
                 SetKeyboardReturnButton();
         }
 
         void SetKeyboardReturnButton()
         {
-            switch (Control)
+            if (Control is UITextField uiTextField)
             {
-                case UITextField uiTextField:
-                    uiTextField.ReturnKeyType = KeyboardHelpers.GetKeyboardButtonType(CustomReturnEffect.GetReturnType(Element));
-                    uiTextField.ShouldReturn += HandleShouldReturn;
-                    break;
+                uiTextField.ReturnKeyType = KeyboardHelpers.GetKeyboardButtonType(CustomReturnEffect.GetReturnType(Element));
+                uiTextField.ShouldReturn += HandleShouldReturn;
             }
         }
 
         void UnsetKeyboardReturnButton()
         {
-            switch (Control)
+            if (Control is UITextField uiTextField)
             {
-                case UITextField uiTextField:
-                    uiTextField.ReturnKeyType = UIReturnKeyType.Default;
-                    uiTextField.ShouldReturn -= HandleShouldReturn;
-                    break;
+                uiTextField.ReturnKeyType = UIReturnKeyType.Default;
+                uiTextField.ShouldReturn -= HandleShouldReturn;
             }
         }
 

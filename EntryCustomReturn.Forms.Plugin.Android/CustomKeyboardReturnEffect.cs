@@ -24,10 +24,8 @@ namespace EntryCustomReturn.Forms.Plugin.Android
 
         void SetKeyboardReturnButton()
         {
-            var customControl = Control as FormsEditText;
-            var entry = Element as Entry;
-
-            if (customControl != null && entry != null)
+            if (Element is Entry entry
+                && Control is FormsEditText customControl)
             {
                 customControl.ImeOptions = KeyboardHelpers.GetKeyboardButtonType(CustomReturnEffect.GetReturnType(entry));
 
@@ -38,17 +36,13 @@ namespace EntryCustomReturn.Forms.Plugin.Android
 
         void UnsetKeyboardReturnButton()
         {
-            var customControl = Control as FormsEditText;
-
             try
             {
-                switch (Control)
+                if (Control is FormsEditText formsEditText)
                 {
-                    case FormsEditText formsEditText:
-                        formsEditText.ImeOptions = KeyboardHelpers.GetKeyboardButtonType(ReturnType.Default);
-                        formsEditText.EditorAction -= HandleEditorAction;
-                        formsEditText.KeyPress -= HandleKeyPress;
-                        break;
+                    formsEditText.ImeOptions = KeyboardHelpers.GetKeyboardButtonType(ReturnType.Default);
+                    formsEditText.EditorAction -= HandleEditorAction;
+                    formsEditText.KeyPress -= HandleKeyPress;
                 }
             }
             catch (ObjectDisposedException e)
@@ -59,7 +53,7 @@ namespace EntryCustomReturn.Forms.Plugin.Android
 
         void HandleEditorAction(object sender, TextView.EditorActionEventArgs e)
         {
-            if (e?.Event?.KeyCode == Keycode.Enter)
+            if (e?.Event?.KeyCode is Keycode.Enter)
                 return;
 
             ExecuteCommand();
@@ -67,7 +61,7 @@ namespace EntryCustomReturn.Forms.Plugin.Android
 
         void HandleKeyPress(object sender, global::Android.Views.View.KeyEventArgs e)
         {
-            if (e?.Event?.KeyCode == Keycode.Enter && e?.Event?.Action == KeyEventActions.Up)
+            if (e?.Event?.KeyCode is Keycode.Enter && e?.Event?.Action is KeyEventActions.Up)
                 ExecuteCommand();
 
             e.Handled = false;

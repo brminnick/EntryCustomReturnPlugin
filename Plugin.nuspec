@@ -13,22 +13,22 @@
        <description>
          Custom control for your Xamarin.Forms project to customize the Keyboard Return button.
          Ensure you call CustomEntryRenderer.Init() on each platform!
-         Built against Xamarin.Forms 2.5.0.77107
+         Built against Xamarin.Forms 2.5.0.280555
 
          https://github.com/brminnick/EntryCustomReturnPlugin
 
          New In This Release:
-         -Support for ReturnCommand.CanExecute
+         - Support for ReturnCommand.CanExecute
          
        </description>
        <summary>Customize the Keyboard Return Button for an Entry in your Xamarin.Forms projects! Ensure you call CustomEntryRenderer.Init() on each platform!</summary>
        <tags>xamarin, forms, xamarin.forms, entry, plugin, custom, renderer, custom renderer, effect, keyboard, return, xamarin.ios, xamarin.android</tags>
        <dependencies>
-         <dependency id="Xamarin.Forms" version="2.5.0.77107" />
+         <dependency id="Xamarin.Forms" version="2.5.0.280555" />
        </dependencies>
      <releaseNotes>
         New In This Release:
-            -Support for ReturnCommand.CanExecute
+            - Support for ReturnCommand.CanExecute
      </releaseNotes>
      <copyright>Copyright (c) 2017 Brandon Minnick</copyright>
    </metadata>

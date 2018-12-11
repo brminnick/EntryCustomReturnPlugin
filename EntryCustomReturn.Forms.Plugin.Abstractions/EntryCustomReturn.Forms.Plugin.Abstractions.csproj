@@ -5,7 +5,8 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DebugType></DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
     <DocumentationFile>bin\Release\netstandard1.0\EntryCustomReturn.Forms.Plugin.Abstractions.xml</DocumentationFile>
   </PropertyGroup>
 

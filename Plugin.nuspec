@@ -8,7 +8,7 @@
        <owners>Brandon Minnick</owners>
        <licenseUrl>https://github.com/brminnick/EntryCustomReturnPlugin/blob/master/license</licenseUrl>
        <projectUrl>https://github.com/brminnick/EntryCustomReturnPlugin</projectUrl>
-      <iconUrl>https://github.com/brminnick/EntryCustomReturnPlugin/blob/master/Artwork/icon.png</iconUrl>
+      <iconUrl>https://user-images.githubusercontent.com/13558917/49831103-eddd2a80-fd47-11e8-9be4-c70777ce9b0f.png</iconUrl>
        <requireLicenseAcceptance>false</requireLicenseAcceptance>
        <description>
          Custom control for your Xamarin.Forms project to customize the Keyboard Return button.

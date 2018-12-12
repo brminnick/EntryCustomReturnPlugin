@@ -50,15 +50,46 @@ namespace SimpleSample
         {
             Title = PageTitles.CustomRenderer;
 
-            Content = new CustomReturnEntry
+            var customReturnEntry = new CustomReturnEntry
             {
                 HorizontalOptions = LayoutOptions.Center,
                 VerticalOptions = LayoutOptions.Center,
                 Placeholder = CustomRendererPageConstants.CustomReturnEntryPlaceholderText,
-                ReturnType = ReturnType.Go,
-                ReturnCommand = new Command<string>(async title => await ExecuteEntryCommand(title)),
+                ReturnType = EntryCustomReturn.Forms.Plugin.Abstractions.ReturnType.Go,
+                ReturnCommand = BaseEntryReturnCommand,
                 ReturnCommandParameter = EntryConstants.CommandParameterString,
                 AutomationId = AutomationIdConstants.CustomReturnEntry
+            };
+
+            var canExecuteLabel = new Label
+            {
+                Text = "Can Execute",
+                HorizontalTextAlignment = TextAlignment.Center,
+                VerticalTextAlignment = TextAlignment.Center
+            };
+
+            var canExecuteSwitch = new Switch { AutomationId = AutomationIdConstants.CanExecuteSwitch };
+            canExecuteSwitch.Toggled += (sender, e) => BaseEntryReturnCommandCanExecute = e.Value;
+
+            var baseCanExecuteStackLayout = new StackLayout
+            {
+                Orientation = StackOrientation.Horizontal,
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center,
+                Children ={
+                    canExecuteLabel,
+                    canExecuteSwitch
+                }
+            };
+
+            Content = new StackLayout
+            {
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center,
+                Children = {
+                    customReturnEntry,
+                    baseCanExecuteStackLayout
+                }
             };
         }
     }
@@ -74,13 +105,42 @@ namespace SimpleSample
                 Placeholder = EffectsPageConstants.EffectsEntryPlaceholderText,
                 AutomationId = AutomationIdConstants.EffectsEntry
             };
-            CustomReturnEffect.SetReturnType(effectsEntry, ReturnType.Go);
-            CustomReturnEffect.SetReturnCommand(effectsEntry, new Command<string>(async title => await ExecuteEntryCommand(title)));
+            CustomReturnEffect.SetReturnType(effectsEntry, EntryCustomReturn.Forms.Plugin.Abstractions.ReturnType.Go);
+            CustomReturnEffect.SetReturnCommand(effectsEntry, BaseEntryReturnCommand);
             CustomReturnEffect.SetReturnCommandParameter(effectsEntry, EntryConstants.CommandParameterString);
+
+            var canExecuteLabel = new Label
+            {
+                Text = "Can Execute",
+                HorizontalTextAlignment = TextAlignment.Center,
+                VerticalTextAlignment = TextAlignment.Center
+            };
+
+            var canExecuteSwitch = new Switch { AutomationId = AutomationIdConstants.CanExecuteSwitch };
+            canExecuteSwitch.Toggled += (sender, e) => BaseEntryReturnCommandCanExecute = e.Value;
+
+            var baseCanExecuteStackLayout = new StackLayout
+            {
+                Orientation = StackOrientation.Horizontal,
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center,
+                Children ={
+                    canExecuteLabel,
+                    canExecuteSwitch
+                }
+            };
 
             Title = PageTitles.Effects;
 
-            Content = effectsEntry;
+            Content = new StackLayout
+            {
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center,
+                Children = {
+                    effectsEntry,
+                    baseCanExecuteStackLayout
+                }
+            };
         }
     }
 }

@@ -1,6 +1,4 @@
-﻿using Xamarin.Forms;
-
-using SimpleSamples.Common.Forms;
+﻿using SimpleSamples.Common.Forms;
 
 namespace SimpleXamlSample
 {
@@ -10,7 +8,9 @@ namespace SimpleXamlSample
         {
             InitializeComponent();
 
-			CustomReturnEntry.ReturnCommand = new Command<string>(async title => await ExecuteEntryCommand(title));
+            CustomReturnEntry.ReturnCommand = BaseEntryReturnCommand;
         }
+
+        void HandleToggled(object sender, Xamarin.Forms.ToggledEventArgs e) => BaseEntryReturnCommandCanExecute = e.Value;
     }
 }

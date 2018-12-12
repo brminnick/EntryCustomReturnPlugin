@@ -85,7 +85,7 @@ namespace EntryCustomReturnSampleApp
                     break;
 
                 default:
-                    throw new Exception("Selected Item Not Supported");
+                    throw new NotSupportedException("Selected Item Not Supported");
             }
         }
 
@@ -102,7 +102,7 @@ namespace EntryCustomReturnSampleApp
                     break;
 
                 default:
-                    throw new Exception("Selected Item Not Supported");
+                    throw new NotSupportedException("Selected Item Not Supported");
             }
         }
         #endregion

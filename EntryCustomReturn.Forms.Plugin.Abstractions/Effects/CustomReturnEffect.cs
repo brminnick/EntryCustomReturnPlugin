@@ -13,7 +13,7 @@ namespace EntryCustomReturn.Forms.Plugin.Abstractions
         /// <summary>
         /// Return Type Property of the Keyboard Return Key
         /// </summary>
-        public static readonly BindableProperty ReturnTypeProperty = 
+        public static readonly BindableProperty ReturnTypeProperty =
             BindableProperty.CreateAttached(BindablePropertyConstants.ReturnTypePropertyName,
                 typeof(ReturnType),
                 typeof(Entry),
@@ -23,7 +23,7 @@ namespace EntryCustomReturn.Forms.Plugin.Abstractions
         /// <summary>
         /// Command that occurs when the user finalizes the text in an entry with the return key
         /// </summary>
-        public static readonly BindableProperty ReturnCommandProperty = 
+        public static readonly BindableProperty ReturnCommandProperty =
             BindableProperty.CreateAttached(
                 BindablePropertyConstants.ReturnCommandPropertyName,
                 typeof(ICommand),
@@ -34,7 +34,7 @@ namespace EntryCustomReturn.Forms.Plugin.Abstractions
         /// <summary>
         /// Backing store for the ReturnCommandParameter bindable property
         /// </summary>
-        public static readonly BindableProperty ReturnCommandParameterProperty = 
+        public static readonly BindableProperty ReturnCommandParameterProperty =
             BindableProperty.CreateAttached(BindablePropertyConstants.ReturnCommandParameterPropertyName,
                 typeof(object),
                 typeof(Entry),
@@ -91,12 +91,10 @@ namespace EntryCustomReturn.Forms.Plugin.Abstractions
 
         static void UpdateEffect(BindableObject bindable)
         {
-            switch (bindable)
+            if (bindable is Entry entry)
             {
-                case Entry entry:
-                    RemoveEffect(entry);
-                    entry.Effects.Add(new EntryReturnTypeEffect());
-                    break;
+                RemoveEffect(entry);
+                entry.Effects.Add(new EntryReturnTypeEffect());
             }
         }
 

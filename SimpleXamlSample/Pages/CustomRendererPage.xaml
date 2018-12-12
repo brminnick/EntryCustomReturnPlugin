@@ -9,15 +9,38 @@
     Title="{x:Static simpleSamplesShared:PageTitles.CustomRenderer}">
     
     <ContentPage.Content>
-
-        <entryCustomReturn:CustomReturnEntry
-            x:Name = "CustomReturnEntry"
+        
+        <StackLayout
             HorizontalOptions="Center"
-            VerticalOptions="Center"
-            Placeholder="{x:Static simpleSamplesShared:CustomRendererPageConstants.CustomReturnEntryPlaceholderText}"
-            AutomationId="{x:Static simpleSamplesShared:AutomationIdConstants.CustomReturnEntry}"
-            ReturnCommandParameter="{x:Static simpleSamplesShared:EntryConstants.CommandParameterString}"
-            ReturnType="Go"/>
+            VerticalOptions="Center">
+
+            <entryCustomReturn:CustomReturnEntry
+                x:Name="CustomReturnEntry"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Placeholder="{x:Static simpleSamplesShared:CustomRendererPageConstants.CustomReturnEntryPlaceholderText}"
+                AutomationId="{x:Static simpleSamplesShared:AutomationIdConstants.CustomReturnEntry}"
+                ReturnCommandParameter="{x:Static simpleSamplesShared:EntryConstants.CommandParameterString}"
+                ReturnType="Go"/>
+
+            <StackLayout
+                Orientation="Horizontal"
+                HorizontalOptions="Center"
+                VerticalOptions="Center">
+
+                <Label 
+                    Text="Can Execute"
+                    HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Center"/>
+                
+                <Switch
+                    x:Name="CanExecuteSwitch"
+                    Toggled="HandleToggled"
+                    AutomationId="{x:Static simpleSamplesShared:AutomationIdConstants.CanExecuteSwitch}"/>
+                  
+            </StackLayout>
+            
+        </StackLayout>
         
     </ContentPage.Content>
 </simpleSamplesCommonForms:BaseEntryContentPage>

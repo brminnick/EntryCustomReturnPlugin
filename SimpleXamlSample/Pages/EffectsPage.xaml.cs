@@ -1,6 +1,4 @@
-﻿using Xamarin.Forms;
-
-using EntryCustomReturn.Forms.Plugin.Abstractions;
+﻿using EntryCustomReturn.Forms.Plugin.Abstractions;
 
 using SimpleSamples.Common.Forms;
 
@@ -12,7 +10,9 @@ namespace SimpleXamlSample
         {
             InitializeComponent();
 
-            CustomReturnEffect.SetReturnCommand(EffectsEntry, new Command<string>(async title => await ExecuteEntryCommand(title)));
+            CustomReturnEffect.SetReturnCommand(EffectsEntry, BaseEntryReturnCommand);
         }
+
+        void HandleToggled(object sender, Xamarin.Forms.ToggledEventArgs e) => BaseEntryReturnCommandCanExecute = e.Value;
     }
 }

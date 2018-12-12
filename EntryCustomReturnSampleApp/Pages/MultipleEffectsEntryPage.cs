@@ -12,7 +12,7 @@ namespace EntryCustomReturnSampleApp
 
             Padding = GetDefaultPagePadding();
 
-            Content = ViewHelpers.CreateMultipleEntryPageLayout(true, ViewModel);
+            Content = ViewHelpers.CreateMultipleEntryPageLayout(true);
         }
         #endregion
 

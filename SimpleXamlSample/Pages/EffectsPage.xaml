@@ -10,15 +10,38 @@
     Title="{x:Static simpleSamplesShared:PageTitles.Effects}">
     
     <ContentPage.Content>
-
-        <Entry
-            x:Name = "EffectsEntry"
+        
+        <StackLayout
             HorizontalOptions="Center"
-            VerticalOptions="Center"
-            Placeholder="{x:Static simpleSamplesShared:EffectsPageConstants.EffectsEntryPlaceholderText}"
-            AutomationId="{x:Static simpleSamplesShared:AutomationIdConstants.EffectsEntry}"
-            entryCustomReturn:CustomReturnEffect.ReturnCommandParameter="{x:Static simpleSamplesShared:EntryConstants.CommandParameterString}"
-            entryCustomReturn:CustomReturnEffect.ReturnType="{x:Static entryCustomReturn:ReturnType.Go}"/>
+            VerticalOptions="Center">
+            
+            <Entry
+                x:Name = "EffectsEntry"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Placeholder="{x:Static simpleSamplesShared:EffectsPageConstants.EffectsEntryPlaceholderText}"
+                AutomationId="{x:Static simpleSamplesShared:AutomationIdConstants.EffectsEntry}"
+                entryCustomReturn:CustomReturnEffect.ReturnCommandParameter="{x:Static simpleSamplesShared:EntryConstants.CommandParameterString}"
+                entryCustomReturn:CustomReturnEffect.ReturnType="{x:Static entryCustomReturn:ReturnType.Go}"/>
+
+            <StackLayout
+                Orientation="Horizontal"
+                HorizontalOptions="Center"
+                VerticalOptions="Center">
+
+                <Label 
+                    Text="Can Execute"
+                    HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Center"/>
+                
+                <Switch
+                    x:Name="CanExecuteSwitch"
+                    Toggled="HandleToggled"
+                    AutomationId="{x:Static simpleSamplesShared:AutomationIdConstants.CanExecuteSwitch}"/>
+                  
+            </StackLayout>
+            
+        </StackLayout>
         
     </ContentPage.Content>
 </simpleSamplesCommonForms:BaseEntryContentPage>

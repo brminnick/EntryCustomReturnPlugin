@@ -47,7 +47,7 @@ namespace MvvmSamples.Common.Forms
                 case Device.iOS:
                     return new Thickness(10, 10, 10, 0);
                 default:
-                    throw new Exception("OS Not Supported");
+                    throw new NotSupportedException("OS Not Supported");
             }
         }
         #endregion

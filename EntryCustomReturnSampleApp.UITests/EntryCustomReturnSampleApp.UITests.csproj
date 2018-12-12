@@ -1,61 +1,56 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FE94B045-D147-4BC1-AEBC-B6C06F767452}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <RootNamespace>EntryCustomReturnSampleApp.UITests</RootNamespace>
-    <AssemblyName>EntryCustomReturnSampleApp.UITests</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug</OutputPath>
-    <DefineConstants>DEBUG;</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release</OutputPath>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="Xamarin.UITest">
-      <HintPath>..\packages\Xamarin.UITest.2.2.2\lib\net45\Xamarin.UITest.dll</HintPath>
-    </Reference>
-    <Reference Include="nunit.framework">
-      <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\EntryCustomReturnSampleApp.Droid\EntryCustomReturnSampleApp.Droid.csproj">
-      <Project>{D44D8A4B-E5AF-4629-AC50-98966AB42D11}</Project>
-      <Name>EntryCustomReturnSampleApp.Droid</Name>
-      <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
-      <Private>False</Private>
-    </ProjectReference>
-    <ProjectReference Include="..\EntryCustomReturnSampleApp.iOS\EntryCustomReturnSampleApp.iOS.csproj">
-      <Project>{A76C73CF-FC6F-4AF9-B702-1EA82CDE36F3}</Project>
-      <Name>EntryCustomReturnSampleApp.iOS</Name>
-      <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
-      <Private>False</Private>
-    </ProjectReference>
-    <ProjectReference Include="..\EntryCustomReturn.Forms.Plugin.Abstractions\EntryCustomReturn.Forms.Plugin.Abstractions.csproj">
-      <Project>{2E265660-7C43-4C7F-945A-7FA02A56521C}</Project>
-      <Name>EntryCustomReturn.Forms.Plugin.Abstractions</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <Import Project="..\MvvmSamples.Shared\MvvmSamples.Shared.projitems" Label="Shared" Condition="Exists('..\MvvmSamples.Shared\MvvmSamples.Shared.projitems')" />
-  <Import Project="..\Tests.Shared\Tests.Shared.projitems" Label="Shared" Condition="Exists('..\Tests.Shared\Tests.Shared.projitems')" />
-  <Import Project="..\MvvmSamples.UITests.Shared\MvvmSamples.UITests.Shared.projitems" Label="Shared" Condition="Exists('..\MvvmSamples.UITests.Shared\MvvmSamples.UITests.Shared.projitems')" />
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProjectGuid>{FE94B045-D147-4BC1-AEBC-B6C06F767452}</ProjectGuid>
+        <OutputType>Library</OutputType>
+        <RootNamespace>EntryCustomReturnSampleApp.UITests</RootNamespace>
+        <AssemblyName>EntryCustomReturnSampleApp.UITests</AssemblyName>
+        <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug</OutputPath>
+        <DefineConstants>DEBUG;</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release</OutputPath>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="System" />
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="NUnit" Version="2.6.4" />
+        <PackageReference Include="Xamarin.UITest" Version="2.2.7.2001-dev" />
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\EntryCustomReturnSampleApp.Droid\EntryCustomReturnSampleApp.Droid.csproj">
+            <Project>{D44D8A4B-E5AF-4629-AC50-98966AB42D11}</Project>
+            <Name>EntryCustomReturnSampleApp.Droid</Name>
+            <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
+            <Private>False</Private>
+        </ProjectReference>
+        <ProjectReference Include="..\EntryCustomReturnSampleApp.iOS\EntryCustomReturnSampleApp.iOS.csproj">
+            <Project>{A76C73CF-FC6F-4AF9-B702-1EA82CDE36F3}</Project>
+            <Name>EntryCustomReturnSampleApp.iOS</Name>
+            <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
+            <Private>False</Private>
+        </ProjectReference>
+        <ProjectReference Include="..\EntryCustomReturn.Forms.Plugin.Abstractions\EntryCustomReturn.Forms.Plugin.Abstractions.csproj">
+            <Project>{2E265660-7C43-4C7F-945A-7FA02A56521C}</Project>
+            <Name>EntryCustomReturn.Forms.Plugin.Abstractions</Name>
+        </ProjectReference>
+    </ItemGroup>
+    <Import Project="..\MvvmSamples.Shared\MvvmSamples.Shared.projitems" Label="Shared" Condition="Exists('..\MvvmSamples.Shared\MvvmSamples.Shared.projitems')" />
+    <Import Project="..\Tests.Shared\Tests.Shared.projitems" Label="Shared" Condition="Exists('..\Tests.Shared\Tests.Shared.projitems')" />
+    <Import Project="..\MvvmSamples.UITests.Shared\MvvmSamples.UITests.Shared.projitems" Label="Shared" Condition="Exists('..\MvvmSamples.UITests.Shared\MvvmSamples.UITests.Shared.projitems')" />
+    <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

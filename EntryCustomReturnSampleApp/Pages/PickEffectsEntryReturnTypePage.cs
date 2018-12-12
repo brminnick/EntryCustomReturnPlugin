@@ -5,30 +5,30 @@ using MvvmSamples.Common.Forms;
 
 namespace EntryCustomReturnSampleApp
 {
-	public class PickEffectsEntryReturnTypePage : BaseContentPage<PickEntryReturnTypeViewModel>
-	{
-		#region Constructors
-		public PickEffectsEntryReturnTypePage()
-		{
-			Title = PageTitles.PickEntryReturnTypePageTitle;
+    public class PickEffectsEntryReturnTypePage : BaseContentPage<PickEntryReturnTypeViewModel>
+    {
+        #region Constructors
+        public PickEffectsEntryReturnTypePage()
+        {
+            Title = PageTitles.PickEntryReturnTypePageTitle;
 
-			Padding = new Thickness(10);
+            Padding = new Thickness(10);
 
-			Content = ViewHelpers.CreatePickEntryReturnTypePageLayout(false, ViewModel);
-		}
+            Content = ViewHelpers.CreatePickEntryReturnTypePageLayout(false);
+        }
 
-		#endregion
+        #endregion
 
-		#region Methods
-		protected override void SubscribeEventHandlers()
-		{
-			
-		}
+        #region Methods
+        protected override void SubscribeEventHandlers()
+        {
 
-		protected override void UnsubscribeEventHandlers()
-		{
-			
-		}
-		#endregion
-	}
+        }
+
+        protected override void UnsubscribeEventHandlers()
+        {
+
+        }
+        #endregion
+    }
 }

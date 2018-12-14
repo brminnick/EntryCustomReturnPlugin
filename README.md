@@ -26,7 +26,7 @@ This plugin can be consumed as a [`CustomRenderer Control`](./README.md#usage-in
 
 # Setup
 
-* Available on NuGet: https://www.nuget.org/packages/Xam.Plugins.Forms.CustomReturnEntry/ [![NuGet](https://img.shields.io/nuget/v/Xam.Plugins.Forms.CustomReturnEntry.svg?label=NuGet)](https://www.nuget.org/packages/Xam.Plugins.Forms.CustomReturnEntry/) [![NuGet](https://img.shields.io/nuget/dt/Xam.Plugins.Forms.CustomReturnEntry.svg?label=Downloads)](https://www.nuget.org/packages/AsyncAwaitBestPractices/)
+* Available on NuGet: https://www.nuget.org/packages/Xam.Plugins.Forms.CustomReturnEntry/ [![NuGet](https://img.shields.io/nuget/v/Xam.Plugins.Forms.CustomReturnEntry.svg?label=NuGet)](https://www.nuget.org/packages/Xam.Plugins.Forms.CustomReturnEntry/) [![NuGet](https://img.shields.io/nuget/dt/Xam.Plugins.Forms.CustomReturnEntry.svg?label=Downloads)](https://www.nuget.org/packages/Xam.Plugins.Forms.CustomReturnEntry/)
 * Install into your PCL project and Client projects.
 
 ## iOS

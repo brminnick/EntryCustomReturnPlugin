@@ -1,90 +1,90 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-    <PropertyGroup>
-        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-        <ProjectGuid>{D44D8A4B-E5AF-4629-AC50-98966AB42D11}</ProjectGuid>
-        <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-        <OutputType>Library</OutputType>
-        <RootNamespace>EntryCustomReturnSampleApp.Droid</RootNamespace>
-        <AssemblyName>EntryCustomReturnSampleApp.Droid</AssemblyName>
-        <TargetFrameworkVersion>v9.0</TargetFrameworkVersion>
-        <AndroidApplication>True</AndroidApplication>
-        <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
-        <AndroidResgenClass>Resource</AndroidResgenClass>
-        <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
-        <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
-        <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-        <AndroidTlsProvider>
-        </AndroidTlsProvider>
-        <NuGetPackageImportStamp>
-        </NuGetPackageImportStamp>
-        <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
-        <AndroidSupportedAbis>armeabi-v7a;x86_64;x86;arm64-v8a</AndroidSupportedAbis>
-    </PropertyGroup>
-    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-        <DebugSymbols>true</DebugSymbols>
-        <DebugType>full</DebugType>
-        <Optimize>false</Optimize>
-        <OutputPath>bin\Debug</OutputPath>
-        <DefineConstants>DEBUG;</DefineConstants>
-        <ErrorReport>prompt</ErrorReport>
-        <WarningLevel>4</WarningLevel>
-        <AndroidLinkMode>None</AndroidLinkMode>
-        <AndroidHttpClientHandlerType>Xamarin.Android.Net.AndroidClientHandler</AndroidHttpClientHandlerType>
-        <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
-        <MandroidI18n />
-    </PropertyGroup>
-    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-        <DebugSymbols>true</DebugSymbols>
-        <DebugType>pdbonly</DebugType>
-        <Optimize>true</Optimize>
-        <OutputPath>bin\Release</OutputPath>
-        <ErrorReport>prompt</ErrorReport>
-        <WarningLevel>4</WarningLevel>
-        <AndroidManagedSymbols>true</AndroidManagedSymbols>
-    </PropertyGroup>
-    <ItemGroup>
-        <Reference Include="FormsViewGroup, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-            <HintPath>..\packages\Xamarin.Forms.3.6.0.293080\lib\MonoAndroid90\FormsViewGroup.dll</HintPath>
-        </Reference>
-        <Reference Include="Java.Interop" />
-        <Reference Include="System" />
-        <Reference Include="System.Xml" />
-        <Reference Include="System.Core" />
-        <Reference Include="Mono.Android" />
-    </ItemGroup>
-    <ItemGroup>
-        <PackageReference Include="Xamarin.Forms" Version="3.6.0.293080" />
-    </ItemGroup>
-    <ItemGroup>
-        <ProjectReference Include="..\EntryCustomReturn.Forms.Plugin.Android\EntryCustomReturn.Forms.Plugin.Android.csproj">
-            <Project>{1477793F-94BF-450F-A1F6-059B29DB18BE}</Project>
-            <Name>EntryCustomReturn.Forms.Plugin.Android</Name>
-        </ProjectReference>
-        <ProjectReference Include="..\EntryCustomReturnSampleApp\EntryCustomReturnSampleApp.csproj">
-            <Project>{BBF1C237-8185-4ADF-8481-DF6E2F3CE8ED}</Project>
-            <Name>EntryCustomReturnSampleApp</Name>
-        </ProjectReference>
-    </ItemGroup>
-    <ItemGroup>
-        <Compile Include="MainActivity.cs" />
-        <Compile Include="Resources\Resource.designer.cs" />
-        <Compile Include="Properties\AssemblyInfo.cs" />
-    </ItemGroup>
-    <ItemGroup>
-        <None Include="Resources\AboutResources.txt" />
-        <None Include="Properties\AndroidManifest.xml" />
-        <None Include="Assets\AboutAssets.txt" />
-    </ItemGroup>
-    <ItemGroup>
-        <AndroidResource Include="Resources\layout\Tabbar.axml" />
-        <AndroidResource Include="Resources\layout\Toolbar.axml" />
-        <AndroidResource Include="Resources\values\styles.xml" />
-        <AndroidResource Include="Resources\drawable\icon.png" />
-        <AndroidResource Include="Resources\drawable-hdpi\icon.png" />
-        <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
-        <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
-    </ItemGroup>
-    <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D44D8A4B-E5AF-4629-AC50-98966AB42D11}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>EntryCustomReturnSampleApp.Droid</RootNamespace>
+    <AssemblyName>EntryCustomReturnSampleApp.Droid</AssemblyName>
+    <TargetFrameworkVersion>v9.0</TargetFrameworkVersion>
+    <AndroidApplication>True</AndroidApplication>
+    <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
+    <AndroidResgenClass>Resource</AndroidResgenClass>
+    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <AndroidTlsProvider>
+    </AndroidTlsProvider>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    <AndroidSupportedAbis>armeabi-v7a;x86_64;x86;arm64-v8a</AndroidSupportedAbis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidLinkMode>None</AndroidLinkMode>
+    <AndroidHttpClientHandlerType>Xamarin.Android.Net.AndroidClientHandler</AndroidHttpClientHandlerType>
+    <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
+    <MandroidI18n />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidManagedSymbols>true</AndroidManagedSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FormsViewGroup, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.Forms.3.6.0.293080\lib\MonoAndroid90\FormsViewGroup.dll</HintPath>
+    </Reference>
+    <Reference Include="Java.Interop" />
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.Android" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="3.6.0.344457" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EntryCustomReturn.Forms.Plugin.Android\EntryCustomReturn.Forms.Plugin.Android.csproj">
+      <Project>{1477793F-94BF-450F-A1F6-059B29DB18BE}</Project>
+      <Name>EntryCustomReturn.Forms.Plugin.Android</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EntryCustomReturnSampleApp\EntryCustomReturnSampleApp.csproj">
+      <Project>{BBF1C237-8185-4ADF-8481-DF6E2F3CE8ED}</Project>
+      <Name>EntryCustomReturnSampleApp</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainActivity.cs" />
+    <Compile Include="Resources\Resource.designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AboutResources.txt" />
+    <None Include="Properties\AndroidManifest.xml" />
+    <None Include="Assets\AboutAssets.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Tabbar.axml" />
+    <AndroidResource Include="Resources\layout\Toolbar.axml" />
+    <AndroidResource Include="Resources\values\styles.xml" />
+    <AndroidResource Include="Resources\drawable\icon.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\icon.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

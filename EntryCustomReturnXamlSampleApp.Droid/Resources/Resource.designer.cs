@@ -26,6 +26,7 @@ namespace EntryCustomReturnXamlSampleApp.Droid
 		
 		public static void UpdateIdValues()
 		{
+			global::EntryCustomReturn.Forms.Plugin.Android.Resource.Animation.abc_fade_in = global::EntryCustomReturnXamlSampleApp.Droid.Resource.Animation.abc_fade_in;
 			global::EntryCustomReturn.Forms.Plugin.Android.Resource.Animation.abc_fade_out = global::EntryCustomReturnXamlSampleApp.Droid.Resource.Animation.abc_fade_out;
 			global::EntryCustomReturn.Forms.Plugin.Android.Resource.Animation.abc_grow_fade_in_from_bottom = global::EntryCustomReturnXamlSampleApp.Droid.Resource.Animation.abc_grow_fade_in_from_bottom;
 			global::EntryCustomReturn.Forms.Plugin.Android.Resource.Animation.abc_popup_enter = global::EntryCustomReturnXamlSampleApp.Droid.Resource.Animation.abc_popup_enter;

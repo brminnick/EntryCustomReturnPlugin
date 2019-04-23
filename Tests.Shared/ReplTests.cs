@@ -24,8 +24,7 @@ namespace Tests.Shared
         [SetUp]
         public void TestSetup() => _app = AppInitializer.StartApp(_platform);
 
-        [Ignore]
-        [Test]
+        [Test, Ignore("REPL used for manually exploring the app")]
         public void ReplTest() => _app.Repl();
         #endregion
     }

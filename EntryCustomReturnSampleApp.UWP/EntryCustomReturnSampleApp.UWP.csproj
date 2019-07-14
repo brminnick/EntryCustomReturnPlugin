@@ -25,7 +25,7 @@
     <OutputPath>bin\x86\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
     <NoWarn>;2008</NoWarn>
-    <DebugType>full</DebugType>
+    <DebugType>portable</DebugType>
     <PlatformTarget>x86</PlatformTarget>
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>prompt</ErrorReport>
@@ -36,7 +36,7 @@
     <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
     <Optimize>true</Optimize>
     <NoWarn>;2008</NoWarn>
-    <DebugType>pdbonly</DebugType>
+    <DebugType>portable</DebugType>
     <PlatformTarget>x86</PlatformTarget>
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>prompt</ErrorReport>
@@ -125,26 +125,22 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EntryCustomReturn.Forms.Plugin.Abstractions\EntryCustomReturn.Forms.Plugin.Abstractions.csproj">
-      <Project>{2e265660-7c43-4c7f-945a-7fa02a56521c}</Project>
-      <Name>EntryCustomReturn.Forms.Plugin.Abstractions</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EntryCustomReturn.Forms.Plugin.UWP\EntryCustomReturn.Forms.Plugin.UWP.csproj">
-      <Project>{bce20e6a-9af6-47ea-bdd8-f372ea19d201}</Project>
-      <Name>EntryCustomReturn.Forms.Plugin.UWP</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EntryCustomReturnSampleApp\EntryCustomReturnSampleApp.csproj">
-      <Project>{4668c385-45c4-495d-803c-ffdae866fd60}</Project>
-      <Name>EntryCustomReturnSampleApp</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.8</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms">
       <Version>4.1.0.581479</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EntryCustomReturn.Forms.Plugin.UWP\EntryCustomReturn.Forms.Plugin.UWP.csproj">
+      <Project>{bce20e6a-9af6-47ea-bdd8-f372ea19d201}</Project>
+      <Name>EntryCustomReturn.Forms.Plugin.UWP</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EntryCustomReturnSampleApp\EntryCustomReturnSampleApp.csproj">
+      <Project>{bbf1c237-8185-4adf-8481-df6e2f3ce8ed}</Project>
+      <Name>EntryCustomReturnSampleApp</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

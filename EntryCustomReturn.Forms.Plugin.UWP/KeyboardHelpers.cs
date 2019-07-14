@@ -8,7 +8,7 @@ namespace EntryCustomReturn.Forms.Plugin.UWP
 {
     static class KeyboardHelpers
     {
-        internal static InputScopeNameValue GetKeyboardButtonType(ReturnType returnType)
+        internal static InputScopeNameValue GetKeyboardButtonType(in ReturnType returnType)
         {
             switch (returnType)
             {
@@ -21,11 +21,11 @@ namespace EntryCustomReturn.Forms.Plugin.UWP
                 case ReturnType.Search:
                     return InputScopeNameValue.Search;
                 default:
-                    throw new System.Exception("Return Type Not Supported");
+                    throw new System.NotSupportedException($"{nameof(ReturnType)}, {returnType}, Not Supported");
             }
         }
 
-        internal static void SetKeyboardEnterButton(FormsTextBox control, ReturnType returnType)
+        internal static void SetKeyboardEnterButton(in FormsTextBox control, in ReturnType returnType)
         {
             var scopeName = new InputScopeName()
             {

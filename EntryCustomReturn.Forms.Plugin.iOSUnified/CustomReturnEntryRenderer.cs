@@ -63,7 +63,6 @@ namespace EntryCustomReturn.Forms.Plugin.iOS
 
                     return true;
                 }
-
             }
 
             return false;

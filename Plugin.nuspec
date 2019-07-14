@@ -2,11 +2,11 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
    <metadata minClientVersion="2.8.1">
        <id>Xam.Plugins.Forms.CustomReturnEntry</id>
-       <version>4.1.0</version>
+       <version>4.1.1</version>
        <title>Custom Return Entry Control Plugin for Xamarin.Forms</title>
        <authors>Brandon Minnick</authors>
        <owners>Brandon Minnick</owners>
-       <licenseUrl>https://github.com/brminnick/EntryCustomReturnPlugin/blob/master/license</licenseUrl>
+       <license type="expression">MIT</license>
        <projectUrl>https://github.com/brminnick/EntryCustomReturnPlugin</projectUrl>
       <iconUrl>https://user-images.githubusercontent.com/13558917/49831103-eddd2a80-fd47-11e8-9be4-c70777ce9b0f.png</iconUrl>
        <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -18,17 +18,17 @@
          https://github.com/brminnick/EntryCustomReturnPlugin
 
          New In This Release:
-         - Support for ReturnCommand.CanExecute
+         - Performance improvements & optimizations
          
        </description>
-       <summary>Customize the Keyboard Return Button for an Entry in your Xamarin.Forms projects! Ensure you call CustomEntryRenderer.Init() on each platform!</summary>
+       <summary>Customize the Keyboard Return Button for an Entry in your Xamarin.Forms projects. Ensure you call CustomEntryRenderer.Init() on each platform!</summary>
        <tags>xamarin, forms, xamarin.forms, entry, plugin, custom, renderer, custom renderer, effect, keyboard, return, xamarin.ios, xamarin.android</tags>
        <dependencies>
          <dependency id="Xamarin.Forms" version="2.5.0.280555" />
        </dependencies>
      <releaseNotes>
         New In This Release:
-            - Support for ReturnCommand.CanExecute
+            - Performance improvements & optimizations
      </releaseNotes>
      <copyright>Copyright (c) 2017 Brandon Minnick</copyright>
    </metadata>

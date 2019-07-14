@@ -21,6 +21,10 @@ namespace EntryCustomReturn.Forms.Plugin.Android
     [Preserve(AllMembers = true)]
     public sealed class CustomReturnEntryRenderer : EntryRenderer
     {
+        /// <summary>
+        /// Creates a new CustomReturnEntryRenderer
+        /// </summary>
+        /// <param name="context">Android context</param>
         public CustomReturnEntryRenderer(Context context) : base(context)
         {
         }
@@ -33,6 +37,10 @@ namespace EntryCustomReturn.Forms.Plugin.Android
             var temp = DateTime.Now;
         }
 
+        /// <summary>
+        /// Triggered when the Element changes
+        /// </summary>
+        /// <param name="e">ElementChangedEventArgs</param>
         protected override void OnElementChanged(ElementChangedEventArgs<Entry> e)
         {
             base.OnElementChanged(e);
@@ -53,6 +61,11 @@ namespace EntryCustomReturn.Forms.Plugin.Android
             }
         }
 
+        /// <summary>
+        /// Triggered when the Element Property changes
+        /// </summary>
+        /// <param name="sender">object</param>
+        /// <param name="e">PropertyChangedEventArgs</param>
         protected override void OnElementPropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
             base.OnElementPropertyChanged(sender, e);

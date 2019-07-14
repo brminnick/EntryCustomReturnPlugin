@@ -12,6 +12,9 @@ using EntryCustomReturn.Forms.Plugin.Abstractions;
 [assembly: ExportRenderer(typeof(CustomReturnEntry), typeof(CustomReturnEntryRenderer))]
 namespace EntryCustomReturn.Forms.Plugin.iOS
 {
+    /// <summary>
+    /// CustomReturnEntry Renderer for iOS
+    /// </summary>
     [Preserve(AllMembers = true)]
     public sealed class CustomReturnEntryRenderer : EntryRenderer
     {
@@ -24,6 +27,10 @@ namespace EntryCustomReturn.Forms.Plugin.iOS
             var temp = DateTime.Now;
         }
 
+        /// <summary>
+        /// Triggered when the Element changes
+        /// </summary>
+        /// <param name="e">ElementChangedEventArgs</param>
         protected override void OnElementChanged(ElementChangedEventArgs<Entry> e)
         {
             base.OnElementChanged(e);
@@ -33,10 +40,14 @@ namespace EntryCustomReturn.Forms.Plugin.iOS
                 Control.ReturnKeyType = KeyboardHelpers.GetKeyboardButtonType(customEntry.ReturnType);
 
                 Control.ShouldReturn += HandleControlShoudlReturn;
-
             }
         }
 
+        /// <summary>
+        /// Triggered when an Element Property changes
+        /// </summary>
+        /// <param name="sender">object</param>
+        /// <param name="e">PropertyChangedEventArgs</param>
         protected override void OnElementPropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
             base.OnElementPropertyChanged(sender, e);

@@ -12,6 +12,7 @@
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <AssemblyName>EntryCustomReturn.Forms.Plugin.iOS</AssemblyName>
     <ProduceReferenceAssembly>True</ProduceReferenceAssembly>
+    <LangVersion>latest</LangVersion>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>

@@ -21,6 +21,10 @@ namespace EntryCustomReturn.Forms.Plugin.Android
     [Preserve(AllMembers = true)]
     public sealed class CustomReturnEntryRenderer : EntryRenderer
     {
+        /// <summary>
+        /// Creates a new CustomReturnEntryRenderer
+        /// </summary>
+        /// <param name="context">Android context</param>
         public CustomReturnEntryRenderer(Context context) : base(context)
         {
         }
@@ -33,6 +37,10 @@ namespace EntryCustomReturn.Forms.Plugin.Android
             var temp = DateTime.Now;
         }
 
+        /// <summary>
+        /// Triggered when the Element changes
+        /// </summary>
+        /// <param name="e">ElementChangedEventArgs</param>
         protected override void OnElementChanged(ElementChangedEventArgs<Entry> e)
         {
             base.OnElementChanged(e);
@@ -41,13 +49,7 @@ namespace EntryCustomReturn.Forms.Plugin.Android
             {
                 Control.ImeOptions = KeyboardHelpers.GetKeyboardButtonType(customEntry.ReturnType);
 
-                Control.KeyPress += (sender, keyEventArgs) =>
-                {
-                    if (keyEventArgs?.Event?.KeyCode is Keycode.Enter && keyEventArgs?.Event?.Action is KeyEventActions.Up)
-                        ExecuteCommand(customEntry);
-
-                    keyEventArgs.Handled = false;
-                };
+                Control.KeyPress += HandleControlKeyPress;
 
                 Control.EditorAction += (object sender, TextView.EditorActionEventArgs args) =>
                 {
@@ -59,6 +61,11 @@ namespace EntryCustomReturn.Forms.Plugin.Android
             }
         }
 
+        /// <summary>
+        /// Triggered when the Element Property changes
+        /// </summary>
+        /// <param name="sender">object</param>
+        /// <param name="e">PropertyChangedEventArgs</param>
         protected override void OnElementPropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
             base.OnElementPropertyChanged(sender, e);
@@ -70,7 +77,7 @@ namespace EntryCustomReturn.Forms.Plugin.Android
             }
         }
 
-        void ExecuteCommand(CustomReturnEntry customEntry)
+        void ExecuteCommand(in CustomReturnEntry customEntry)
         {
             var returnCommand = customEntry.ReturnCommand;
             var returnCommandParameter = customEntry.ReturnCommandParameter;
@@ -79,6 +86,17 @@ namespace EntryCustomReturn.Forms.Plugin.Android
 
             if (canExecute)
                 returnCommand?.Execute(returnCommandParameter);
+        }
+
+        void HandleControlKeyPress(object sender, KeyEventArgs e)
+        {
+            if (Control != null && Element is CustomReturnEntry customEntry)
+            {
+                if (e?.Event?.KeyCode is Keycode.Enter && e?.Event?.Action is KeyEventActions.Up)
+                    ExecuteCommand(customEntry);
+            }
+
+            e.Handled = false;
         }
     }
 }

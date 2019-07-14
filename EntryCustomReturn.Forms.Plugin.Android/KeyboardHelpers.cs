@@ -6,7 +6,7 @@ namespace EntryCustomReturn.Forms.Plugin.Android
 {
 	static class KeyboardHelpers
 	{
-		internal static ImeAction GetKeyboardButtonType(ReturnType returnType)
+		internal static ImeAction GetKeyboardButtonType(in ReturnType returnType)
 		{
 			switch (returnType)
 			{
@@ -23,8 +23,8 @@ namespace EntryCustomReturn.Forms.Plugin.Android
 				case ReturnType.Default:
 					return ImeAction.Done;
                 default:
-                    throw new System.Exception("Return Type Not Supported");
-			}
+                    throw new System.NotSupportedException($"{nameof(ReturnType)}, {returnType}, Not Supported");
+            }
 		}
 	}
 }

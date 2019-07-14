@@ -28,18 +28,11 @@ namespace EntryCustomReturn.Forms.Plugin.UWP
         {
             base.OnElementChanged(e);
 
-            var customEntry = Element as CustomReturnEntry;
-
-
-            if (Control != null && customEntry != null)
+            if (Control != null && Element is CustomReturnEntry customEntry)
             {
                 KeyboardHelpers.SetKeyboardEnterButton(Control, customEntry.ReturnType);
 
-                Control.KeyUp += (sender, eventArgs) =>
-                {
-                    if (eventArgs.Key is Windows.System.VirtualKey.Enter)
-                        ExecuteCommand(customEntry);
-                };
+                Control.KeyUp += HandleControlKeyUp;
             }
         }
 
@@ -55,7 +48,7 @@ namespace EntryCustomReturn.Forms.Plugin.UWP
 
         }
 
-        void ExecuteCommand(CustomReturnEntry customEntry)
+        void ExecuteCommand(in CustomReturnEntry customEntry)
         {
             var returnCommand = customEntry.ReturnCommand;
             var returnCommandParameter = customEntry.ReturnCommandParameter;
@@ -64,6 +57,15 @@ namespace EntryCustomReturn.Forms.Plugin.UWP
 
             if (canExecute)
                 returnCommand?.Execute(returnCommandParameter);
+        }
+
+        void HandleControlKeyUp(object sender, KeyRoutedEventArgs e)
+        {
+            if (e.Key is Windows.System.VirtualKey.Enter
+                && Element is CustomReturnEntry customEntry)
+            {
+                ExecuteCommand(customEntry);
+            }
         }
     }
 }

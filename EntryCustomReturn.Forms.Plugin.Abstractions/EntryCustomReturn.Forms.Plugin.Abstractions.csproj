@@ -2,11 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard1.0</TargetFramework>
+    <ProduceReferenceAssembly>True</ProduceReferenceAssembly>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
+    <DebugType>portable</DebugType>
     <DocumentationFile>bin\Release\netstandard1.0\EntryCustomReturn.Forms.Plugin.Abstractions.xml</DocumentationFile>
   </PropertyGroup>
 

@@ -40,9 +40,6 @@
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FormsViewGroup, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Xamarin.Forms.3.6.0.293080\lib\MonoAndroid90\FormsViewGroup.dll</HintPath>
-    </Reference>
     <Reference Include="Java.Interop" />
     <Reference Include="System" />
     <Reference Include="System.Xml" />
@@ -50,7 +47,7 @@
     <Reference Include="Mono.Android" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="3.6.0.344457" />
+    <PackageReference Include="Xamarin.Forms" Version="4.1.0.581479" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />

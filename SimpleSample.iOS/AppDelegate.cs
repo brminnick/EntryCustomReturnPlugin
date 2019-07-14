@@ -15,9 +15,8 @@ namespace SimpleSample.iOS
 
             LoadApplication(new App());
 
-#if DEBUG
             Xamarin.Calabash.Start();
-#endif
+
             return base.FinishedLaunching(uiApplication, launchOptions);
         }
     }

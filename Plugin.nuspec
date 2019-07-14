@@ -8,7 +8,7 @@
        <owners>Brandon Minnick</owners>
        <license type="expression">MIT</license>
        <projectUrl>https://github.com/brminnick/EntryCustomReturnPlugin</projectUrl>
-      <iconUrl>https://user-images.githubusercontent.com/13558917/49831103-eddd2a80-fd47-11e8-9be4-c70777ce9b0f.png</iconUrl>
+       <iconUrl>https://user-images.githubusercontent.com/13558917/49831103-eddd2a80-fd47-11e8-9be4-c70777ce9b0f.png</iconUrl>
        <requireLicenseAcceptance>false</requireLicenseAcceptance>
        <description>
          Custom control for your Xamarin.Forms project to customize the Keyboard Return button.
@@ -18,8 +18,7 @@
          https://github.com/brminnick/EntryCustomReturnPlugin
 
          New In This Release:
-         - Performance improvements & optimizations
-         
+         - Performance improvements and optimizations
        </description>
        <summary>Customize the Keyboard Return Button for an Entry in your Xamarin.Forms projects. Ensure you call CustomEntryRenderer.Init() on each platform!</summary>
        <tags>xamarin, forms, xamarin.forms, entry, plugin, custom, renderer, custom renderer, effect, keyboard, return, xamarin.ios, xamarin.android</tags>
@@ -28,7 +27,7 @@
        </dependencies>
      <releaseNotes>
         New In This Release:
-            - Performance improvements & optimizations
+            - Performance improvements and optimizations
      </releaseNotes>
      <copyright>Copyright (c) 2017 Brandon Minnick</copyright>
    </metadata>

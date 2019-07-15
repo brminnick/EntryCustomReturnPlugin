@@ -1,5 +1,15 @@
 # Custom `Xamarin.Forms.Entry` Keyboard Return Button
 
+[![NuGet](https://buildstats.info/nuget/Xam.Plugins.Forms.CustomReturnEntry)](https://www.nuget.org/packages/Xam.Plugins.Forms.CustomReturnEntry/)
+
+This SDK was [officially merged into Xamarin.Forms v3.1.0](https://devblogs.microsoft.com/xamarin/xamarin-forms-3-1-improvments?WT.mc_id=entrycustomreturnplugin-github-bramin).
+
+Because this SDK supports Xamarin.Forms v2.5.0.280555, I will continue to maintain it for teams who have not yet upgraded to Xamarin.Forms v3.1.0 or higher.
+
+For developers using Xamarin.Forms 3.1.0 or higher, I recommend removing this NuGet package from your `csproj` and using the APIs included in Xamarin.Forms: `Xamarin.Forms.Entry.ReturnType` & `Xamarin.Forms.Entry.ReturnCommand`.
+
+## ReturnType
+
 | ReturnType | Android | iOS | UWP |
 |--------------------|---------|-----|-----|
 | **Default**            |![](https://github.com/brminnick/Videos/blob/master/EntryCustomReturnPlugin/Return%20Button%20Images/Android/DefaultButton.png)|![](https://github.com/brminnick/Videos/blob/master/EntryCustomReturnPlugin/Return%20Button%20Images/iOS/DefaultButton.png)|![](https://github.com/brminnick/Videos/blob/master/EntryCustomReturnPlugin/Return%20Button%20Images/UWP/DefaultButton.png)|

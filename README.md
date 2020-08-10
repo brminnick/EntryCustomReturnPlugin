@@ -127,7 +127,7 @@ var goReturnTypeCustomEntry = new CustomReturnEntry
 ```xml
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="https://schemas.microsoft.com:80/winfx/2009/xaml?WT.mc_id=entrycustomreturnplugin-github-bramin"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="SimpleXamlSample.CustomRendererPage"
     xmlns:entryCustomReturn="clr-namespace:EntryCustomReturn.Forms.Plugin.Abstractions;assembly=EntryCustomReturn.Forms.Plugin.Abstractions">
 
@@ -199,7 +199,7 @@ customReturnEntry.SetBinding(CustomReturnEntry.ReturnCommandProperty nameof(MyVi
 ```xml
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="https://schemas.microsoft.com:80/winfx/2009/xaml?WT.mc_id=entrycustomreturnplugin-github-bramin"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:SimpleXamlSample"
     x:Class="SimpleXamlSample.CustomRendererPage"
     xmlns:entryCustomReturn="clr-namespace:EntryCustomReturn.Forms.Plugin.Abstractions;assembly=EntryCustomReturn.Forms.Plugin.Abstractions"
@@ -233,7 +233,7 @@ goReturnTypeCustomEntry.ReturnCommandParameter = "Return Button Tapped";
 ```xml
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="https://schemas.microsoft.com:80/winfx/2009/xaml?WT.mc_id=entrycustomreturnplugin-github-bramin"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="SimpleXamlSample.CustomRendererPage"
     xmlns:entryCustomReturn="clr-namespace:EntryCustomReturn.Forms.Plugin.Abstractions;assembly=EntryCustomReturn.Forms.Plugin.Abstractions">
 
@@ -294,7 +294,7 @@ CustomReturnEffect.SetReturnType(goReturnTypeEntry, EntryCustomReturn.Forms.Plug
 ```xml
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="https://schemas.microsoft.com:80/winfx/2009/xaml?WT.mc_id=entrycustomreturnplugin-github-bramin"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="SimpleXamlSample.CustomRendererPage"
     xmlns:entryCustomReturn="clr-namespace:EntryCustomReturn.Forms.Plugin.Abstractions;assembly=EntryCustomReturn.Forms.Plugin.Abstractions">
 
@@ -369,7 +369,7 @@ customReturnEntry.SetBinding(CustomReturnEffect.ReturnCommandProperty, nameof(My
 ```xml
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="https://schemas.microsoft.com:80/winfx/2009/xaml?WT.mc_id=entrycustomreturnplugin-github-bramin"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="SimpleXamlSample"
     x:Class="SimpleXamlSample.CustomRendererPage"
     xmlns:entryCustomReturn="clr-namespace:EntryCustomReturn.Forms.Plugin.Abstractions;assembly=EntryCustomReturn.Forms.Plugin.Abstractions"
@@ -404,7 +404,7 @@ CustomReturnEffect.SetReturnCommandParameter(goReturnTypeEntry, "Return Button T
 ```xml
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="https://schemas.microsoft.com:80/winfx/2009/xaml?WT.mc_id=entrycustomreturnplugin-github-bramin"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="SimpleXamlSample.CustomRendererPage"
     xmlns:entryCustomReturn="clr-namespace:EntryCustomReturn.Forms.Plugin.Abstractions;assembly=EntryCustomReturn.Forms.Plugin.Abstractions">
 
